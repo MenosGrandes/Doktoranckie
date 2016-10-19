@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1476887527 source:c:\users\efilryn\desktop\opty\opty\main.cpp
+	"SortInsertTuple.h"
+	<time.h>
+
+1476884618 c:\users\efilryn\desktop\opty\opty\include\sort.h
+	<iostream>
+	<random>
+
+1476881318 source:c:\users\efilryn\desktop\opty\opty\src\sort.cpp
+	"Sort.h"
+	<time.h>
+	<stdlib.h>
+	<time.h>
+
+1476878588 source:c:\users\efilryn\desktop\opty\opty\src\soerinsert.cpp
+	"SoerInsert.h"
+
+1476878445 c:\users\efilryn\desktop\opty\opty\include\soerinsert.h
+	<Sort.h>
+
+1476885218 c:\users\efilryn\desktop\opty\opty\include\sortinserttuple.h
+	<Sort.h>
+	<utility>
+
+1476887322 source:c:\users\efilryn\desktop\opty\opty\src\sortinserttuple.cpp
+	"SortInsertTuple.h"
+
+1476903878 source:c:\users\menos\desktop\opty\opty\main.cpp
+	"SortInsertTuple.h"
+	<time.h>
+
+1476903269 c:\users\menos\desktop\opty\opty\include\sortinserttuple.h
+	<Sort.h>
+	<utility>
+
+1476903822 c:\users\menos\desktop\opty\opty\include\sort.h
+	<iostream>
+	<random>
+	<algorithm>
+	<functional>
+	<vector>
+
+1476903269 source:c:\users\menos\desktop\opty\opty\src\soerinsert.cpp
+	"SoerInsert.h"
+
+1476903289 c:\users\menos\desktop\opty\opty\include\soerinsert.h
+	<Sort.h>
+
+1476903860 source:c:\users\menos\desktop\opty\opty\src\sort.cpp
+	"Sort.h"
+	<time.h>
+	<stdlib.h>
+	<time.h>
+
+1476903479 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
+	"SortInsertTuple.h"
+
