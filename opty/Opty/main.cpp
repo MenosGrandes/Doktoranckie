@@ -35,7 +35,18 @@ int main()
 
 
 ////
-    SortInsertTuple *s= new SortInsertTuple(10,1000);
+
+//int n=7;
+//int * tab = new int[n];
+//tab[0]=5;
+//tab[1]=3;
+//tab[2]=4;
+//tab[3]=9;
+//tab[4]=8;
+//tab[5]=6;
+//tab[6]=2;
+
+    SortInsertTuple *s= new SortInsertTuple(1000,100);
 
     s->_sort();
 

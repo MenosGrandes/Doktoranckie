@@ -100,3 +100,47 @@
 	"Sort.h"
 	<chrono>
 
+1477081010 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+	"SortInsertTuple.h"
+	"SoerInsert.h"
+	"Timer.h"
+	<time.h>
+
+1477077709 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
+	<Sort.h>
+	<utility>
+
+1477076115 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
+	<iostream>
+	<algorithm>
+	<functional>
+	<vector>
+	"Random.h"
+
+1477076115 c:\users\menos\desktop\doktoranckie\opty\opty\include\random.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1477076115 c:\users\menos\desktop\doktoranckie\opty\opty\include\soerinsert.h
+	<Sort.h>
+
+1477076115 c:\users\menos\desktop\doktoranckie\opty\opty\include\timer.h
+	"Sort.h"
+	<chrono>
+
+1477076115 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\random.cpp
+	"Random.h"
+
+1477076115 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\soerinsert.cpp
+	"SoerInsert.h"
+
+1477081084 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sort.cpp
+	"Sort.h"
+
+1477076115 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\timer.cpp
+	"Timer.h"
+
+1477081032 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
+	"SortInsertTuple.h"
+

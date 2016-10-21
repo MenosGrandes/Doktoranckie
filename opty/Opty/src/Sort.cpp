@@ -30,7 +30,7 @@ Sort::~Sort()
 }
 bool Sort::compare()
 {
-std::sort(std::begin(compareData),std::end(compareData));
+std::sort(std::begin(compareData),std::end(compareData), std::greater<int>());
 for(int i=0;i<m_n;i++){
     if(compareData[i]!=m_data[i])
     {

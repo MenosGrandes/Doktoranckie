@@ -19,6 +19,7 @@ class SortInsertTuple : public Sort
         void swap(int x,int y);
         bool swapPair(int i);
         void swapPair(int i,bool&a1,bool&a2);
+        void swap(int x,int y,int z,int w);
 
 
 
