@@ -1,25 +1,28 @@
 #include "Sort.h"
-#include <time.h>
-#include <stdlib.h>
-#include <time.h>
+
 Sort::Sort(int n, int max)
 {
     this->m_n=n;
-
-
-
-
-
     m_data = new int[this->m_n];
 
     for(int i=0; i<m_n; i++)
     {
-        m_data[i]=rand()%max;
+        m_data[i]=Random::getInstance().generate(0,max);
         compareData.push_back(m_data[i]);
     }
 
 }
+Sort::Sort(int n, int *tab)
+{
+    this->m_n=n;
+    m_data = new int[this->m_n];
 
+    for(int i=0; i<m_n; i++)
+    {
+        m_data[i]=tab[i];
+    }
+
+}
 Sort::~Sort()
 {
     delete [] m_data;

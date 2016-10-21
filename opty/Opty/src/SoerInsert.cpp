@@ -1,9 +1,7 @@
 #include "SoerInsert.h"
 
-SoerInsert::SoerInsert(int n, int max):Sort(n,max)
-{
-    //ctor
-}
+SoerInsert::SoerInsert(int n, int max):Sort(n,max){}
+SoerInsert::SoerInsert(int n, int *tab):Sort(n,tab){}
 
 SoerInsert::~SoerInsert()
 {

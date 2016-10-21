@@ -56,3 +56,47 @@
 1476903479 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
+1477044869 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+	"SortInsertTuple.h"
+	"SoerInsert.h"
+	"Timer.h"
+	<time.h>
+
+1477028286 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
+	<Sort.h>
+	<utility>
+
+1477027989 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sort.h
+	<iostream>
+	<algorithm>
+	<functional>
+	<vector>
+	"Random.h"
+
+1477028379 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\random.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1477027958 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\random.cpp
+	"Random.h"
+
+1477028500 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\soerinsert.cpp
+	"SoerInsert.h"
+
+1477028429 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\soerinsert.h
+	<Sort.h>
+
+1477044853 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
+	"SortInsertTuple.h"
+
+1477028070 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sort.cpp
+	"Sort.h"
+
+1477028735 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\timer.cpp
+	"Timer.h"
+
+1477030124 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\timer.h
+	"Sort.h"
+	<chrono>
+

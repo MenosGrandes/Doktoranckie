@@ -2,15 +2,18 @@
 #define SORT_H
 
 #include <iostream>
-#include <random>
 #include <algorithm>
 #include <functional>
 #include <vector>
+
+
+#include "Random.h"
 class Sort
 {
 public:
     Sort(int n, int max);
     Sort(int n);
+    Sort(int n,int *tab);
 
     virtual ~Sort();
     virtual void _sort()=0;

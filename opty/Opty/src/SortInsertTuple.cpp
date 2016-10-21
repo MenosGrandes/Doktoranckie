@@ -1,14 +1,8 @@
 #include "SortInsertTuple.h"
 
-SortInsertTuple::SortInsertTuple(int n, int max):Sort(n,max)
-{
-    //ctor
-}
-
-SortInsertTuple::~SortInsertTuple()
-{
-    //dtor
-}
+SortInsertTuple::SortInsertTuple(int n, int max):Sort(n,max){}
+SortInsertTuple::SortInsertTuple(int n, int *tab):Sort(n,tab) {}
+SortInsertTuple::~SortInsertTuple(){}
 /**
 2 PARY
 SPRAWDZAMY CZY W PARZE JEST USTAWIONE ROSNACO, JAK NIE TO ZAMIEN
@@ -25,18 +19,19 @@ void SortInsertTuple::_sort()
     {
         swapPair(i);
         j=i;
+bool flag=true;
+        while(j>=0  && flag==true)
+        {
 
-            while(j>=0)
+            if(m_data[j+2]<m_data[j+1])
             {
-
-                if(m_data[j+2]<m_data[j+1])
-                {
-                    swap(j+2,j+1);
-                }
-                swapPair(j);
-
-                --j;
+                swap(j+2,j+1);
+                flag=false;
             }
+            swapPair(j);
+
+            --j;
+        }
     }
 
 
@@ -44,15 +39,15 @@ void SortInsertTuple::_sort()
 }
 void SortInsertTuple::swapPair(int i)
 {
-         if(m_data[i+1]<m_data[i])
-        {
-            swap(i,i+1);
-        }
+    if(m_data[i+1]<m_data[i])
+    {
+        swap(i,i+1);
+    }
 //ustaw rosnaco 2 pare
-        if(m_data[i+3]<m_data[i+2])
-        {
-            swap(i+3,i+2);
-        }
+    if(m_data[i+3]<m_data[i+2])
+    {
+        swap(i+3,i+2);
+    }
 }
 void SortInsertTuple::swap(int x,int y)
 {

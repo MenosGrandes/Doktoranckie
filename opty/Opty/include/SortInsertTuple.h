@@ -8,6 +8,8 @@ class SortInsertTuple : public Sort
 {
     public:
         SortInsertTuple(int n, int max);
+        SortInsertTuple(int n, int* tab);
+
         virtual ~SortInsertTuple();
         void _sort();
     protected:

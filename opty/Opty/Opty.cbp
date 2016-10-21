@@ -35,13 +35,17 @@
 			<Add option="-std=c++14" />
 			<Add option="-std=gnu++11" />
 		</Compiler>
+		<Unit filename="include/Random.h" />
 		<Unit filename="include/SoerInsert.h" />
 		<Unit filename="include/Sort.h" />
 		<Unit filename="include/SortInsertTuple.h" />
+		<Unit filename="include/Timer.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Random.cpp" />
 		<Unit filename="src/SoerInsert.cpp" />
 		<Unit filename="src/Sort.cpp" />
 		<Unit filename="src/SortInsertTuple.cpp" />
+		<Unit filename="src/Timer.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

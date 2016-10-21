@@ -8,6 +8,8 @@ class SoerInsert : public Sort
 {
     public:
         SoerInsert(int n, int max);
+                SoerInsert(int n, int*tab);
+
         virtual ~SoerInsert();
         void _sort();
     protected:
