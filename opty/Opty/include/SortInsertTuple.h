@@ -17,7 +17,9 @@ class SortInsertTuple : public Sort
     private:
 
         void swap(int x,int y);
-        void swapPair(int i);
+        bool swapPair(int i);
+        void swapPair(int i,bool&a1,bool&a2);
+
 
 
 };

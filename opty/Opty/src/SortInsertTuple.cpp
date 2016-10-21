@@ -15,39 +15,55 @@ void SortInsertTuple::_sort()
 
     int counter=10;
     int j=0;
-    for(int i=0; i<m_n; i++)
+    for(int i=1; i<m_n; i+=2)
     {
         swapPair(i);
-        j=i;
-bool flag=true;
-        while(j>=0  && flag==true)
-        {
+        //j=i-2;
 
-            if(m_data[j+2]<m_data[j+1])
-            {
-                swap(j+2,j+1);
-                flag=false;
-            }
-            swapPair(j);
+//        while(j>=0  )
+//        {
+////std::cout<<m_data[j+2]<<" j+2"<<std::endl;
+//            if(m_data[j+2]<m_data[j+1])
+//            {
+//                swap(j+2,j+1);
+//
+//            }
+//            swapPair(j);
+//
+//            --j;
+//        }
 
-            --j;
-        }
+
     }
 
 
 
 }
-void SortInsertTuple::swapPair(int i)
+bool SortInsertTuple::swapPair(int i)
 {
-    if(m_data[i+1]<m_data[i])
+    std::cout<<i<<"~~\n";
+    bool ret = true;
+
+    std::cout<<m_data[i+1]<<" @ "<<m_data[i+2]<<std::endl;
+    std::cout<<m_data[i-1]<<" ! "<<m_data[i]<<std::endl;
+
+
+    if(m_data[i-1]<m_data[i])
     {
-        swap(i,i+1);
+//std::cout<<m_data[i-1]<<" ! "<<m_data[i]<<std::endl;
+       // swap(i-1,i);
+        ret=false;
     }
 //ustaw rosnaco 2 pare
-    if(m_data[i+3]<m_data[i+2])
+    if((i+2)<m_n &&m_data[i+1]>m_data[i+2])
     {
-        swap(i+3,i+2);
+//        std::cout<<m_data[i+1]<<" @ "<<m_data[i+2]<<std::endl;
+
+       // swap(i+1,i+2);
+        ret=false;
     }
+
+    return ret;
 }
 void SortInsertTuple::swap(int x,int y)
 {

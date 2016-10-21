@@ -15,7 +15,7 @@ public:
         s->_sort();
 
         auto end = std::chrono::steady_clock::now();
-        return std::chrono::duration_cast<std::chrono::nanoseconds>( end - start).count();
+        return std::chrono::duration_cast<std::chrono::microseconds>( end - start).count();
     }
 protected:
 

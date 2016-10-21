@@ -20,6 +20,7 @@ Sort::Sort(int n, int *tab)
     for(int i=0; i<m_n; i++)
     {
         m_data[i]=tab[i];
+        compareData.push_back(m_data[i]);
     }
 
 }
@@ -50,4 +51,6 @@ void Sort::print()
         std::cout<<m_data[i]<<",";
     }
     std::cout<<std::endl;
+
+
 }
