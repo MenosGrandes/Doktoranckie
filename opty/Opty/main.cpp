@@ -1,5 +1,6 @@
 #include "SortInsertTuple.h"
 #include "SoerInsert.h"
+#include "BubbleSort.h"
 #include "Timer.h"
 #include <time.h>
 
@@ -7,6 +8,18 @@
 
 int main()
 {
+
+    srand(time(0));
+    BubbleSort *bs = new BubbleSort(10,100);
+    bs->print();
+    std::cout<<"~~~~~~~~~~~~~~~~~~~~~"<<std::endl;
+    bs->_sort();
+    bs->compare();
+    bs->print();
+
+
+
+
 //    int n=10000;
 //    int *tab= new int[n];
 //    Random::getInstance().generateRandomIntTab(n,tab,0,10000);
@@ -45,13 +58,26 @@ int main()
 //tab[4]=8;
 //tab[5]=6;
 //tab[6]=2;
+//    std::vector<Sort*> sorts;
+//    for(int i=0; i<1000; i++)
+//    {
+//        int max = Random::getInstance().generate(1,1000);
+//        int n   = Random::getInstance().generate(1,max);
+//        sorts.push_back(new SortInsertTuple(n,max));
+//    }
+//    for(int i=0; i<sorts.size(); i++)
+//    {
+//        sorts[i]->_sort();
+//
+//        if(!sorts[i]->compare())
+//        {
+//            std::cout<<"\t ERROR"<<std::endl;
+//            sorts[i]->print();
+//            std::cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
+//        }
+//    }
 
-    SortInsertTuple *s= new SortInsertTuple(1000,100);
 
-    s->_sort();
-
-    s->compare();
-      s->print();
 //
 //    if(s->compare()==true)
 //    {

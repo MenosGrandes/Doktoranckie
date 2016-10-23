@@ -1,20 +1,20 @@
 #ifndef SOERINSERT_H
 #define SOERINSERT_H
 
-#include <Sort.h>
+#include "Sort.h"
 
 
 class SoerInsert : public Sort
 {
-    public:
-        SoerInsert(int n, int max);
-                SoerInsert(int n, int*tab);
+public:
+    SoerInsert(int n, int max);
+    SoerInsert(int n, int*tab);
 
-        virtual ~SoerInsert();
-        void _sort();
-    protected:
+    ~SoerInsert();
+    void _sort();
+protected:
 
-    private:
+private:
 };
 
 #endif // SOERINSERT_H

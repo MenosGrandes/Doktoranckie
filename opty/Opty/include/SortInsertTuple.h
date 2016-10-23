@@ -6,20 +6,19 @@
 
 class SortInsertTuple : public Sort
 {
-    public:
-        SortInsertTuple(int n, int max);
-        SortInsertTuple(int n, int* tab);
+public:
+    SortInsertTuple(int n, int max);
+    SortInsertTuple(int n, int* tab);
 
-        virtual ~SortInsertTuple();
-        void _sort();
-    protected:
+    ~SortInsertTuple();
+    void _sort();
+protected:
 
-    private:
+private:
 
-        void swap(int x,int y);
-        bool swapPair(int i);
-        void swapPair(int i,bool&a1,bool&a2);
-        void swap(int x,int y,int z,int w);
+    bool swapPair(int i);
+    void swapPair(int i,bool&a1,bool&a2);
+    void _swap(int x,int y,int z,int w);
 
 
 

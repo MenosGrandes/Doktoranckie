@@ -21,9 +21,12 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Sort& dt);
     bool compare();
 protected:
-    int * m_data;
+    // int * m_data;
+    std::vector<int> m_data;
     std::vector<int> compareData;
     int m_n;
+    void _swap(int x,int y);
+
 
 
 };

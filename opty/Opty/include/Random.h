@@ -8,10 +8,7 @@ class Random
 {
 private:
 
-    Random()
-    {
-        srand(time(0));
-    };
+    Random() {};
     Random(const Random&r) {};
 
     ~Random() {};
@@ -26,13 +23,7 @@ public:
     {
         return ( rand() % max ) + min;
     }
-    void generateRandomIntTab(int n,int*tab,int min,int max)
-{
-    for(int i=0; i<n; i++)
-    {
-        tab[i]=Random::getInstance().generate(min,max);
-    }
-}
+
 };
 
 
