@@ -9,12 +9,23 @@
 int main()
 {
 
+//int n=8;
+//int * tab = new int[n];
+//tab[0]=9;
+//tab[1]=2;
+//tab[2]=1;
+//tab[3]=3;
+//tab[4]=5;
+//tab[5]=6;
+//tab[6]=7;
+//tab[7]=8;
+
     srand(time(0));
-    BubbleSort *bs = new BubbleSort(10,100);
+    SortInsertTuple *bs = new SortInsertTuple(8,9);
     bs->print();
     std::cout<<"~~~~~~~~~~~~~~~~~~~~~"<<std::endl;
     bs->_sort();
-    bs->compare();
+    //bs->compare();
     bs->print();
 
 

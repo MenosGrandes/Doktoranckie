@@ -53,12 +53,12 @@ void Sort::print()
     }
     std::cout<<std::endl;
 
-    std::cout<<"@@@@@@@@@@"<<std::endl;
-    for(int i=0; i<m_n; i++)
-    {
-        std::cout<<compareData[i]<<",";
-    }
-    std::cout<<std::endl;
+//    std::cout<<"@@@@@@@@@@"<<std::endl;
+//    for(int i=0; i<m_n; i++)
+//    {
+//        std::cout<<compareData[i]<<",";
+//    }
+//    std::cout<<std::endl;
 }
 void Sort::_swap(int x,int y)
 {

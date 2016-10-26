@@ -4,27 +4,47 @@ SortInsertTuple::SortInsertTuple(int n, int max):Sort(n,max) {}
 SortInsertTuple::SortInsertTuple(int n, int *tab):Sort(n,tab) {}
 SortInsertTuple::~SortInsertTuple() {}
 /**
-2 PARY
-SPRAWDZAMY CZY W PARZE JEST USTAWIONE ROSNACO, JAK NIE TO ZAMIEN
-potem sprawdzamy czy drugi element pierwszej pary jest mniejszy niz pierwszy element drugiej pary,
-jak jest to zamieniamy miejscami,
-jak nie to robimy pare przechodzac o 1 do nastepnej wartosci tablicy do tylu.
+
 */
 void SortInsertTuple::_sort()
 {
-    for(int i=2; i<m_n; i++)
+    for(int g=m_n; g!=0; g--)
     {
-        swapPair(i);
-        int j=i-2;
+        std::cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
 
-        while(j>=0 )
+        print();
+        int i=g;
+
+        int first=i-1;
+        int second=i-2;
+        std::cout<<g<<std::endl;
+
+        if(m_data[first]<m_data[second]) // w second jest zawsze najwieksza
         {
-            if((j+2)<=m_n&&m_data[j+1]>m_data[j+2])
-            {
-                Sort::_swap(j+1,j+2);
-            }
-            swapPair(j+2);
-            --j;
+           // std::cout<<"swap"<<m_data[first]<<" "<<m_data[second]<<std::endl;
+            Sort::_swap(second,first);
+
+        }
+        std::cout<<m_data[first]<<" "<<m_data[second]<<std::endl;
+        int j=second-1;
+        print();
+
+
+        //std::cout<<m_data[first]<<" first"<<m_data[second]<<" second"<<std::endl;
+//    std::cout<<m_data[first]<<" >"<<m_data[second-1]<<std::endl;
+        while(j>=0&&m_data[second]<=m_data[j])
+        {
+            std::cout<<"@@@@@@@@@@@@@@@@@@@"<<std::endl;
+            Sort::_swap(second,j);
+            Sort::_swap(first,second);
+
+
+            j--;
+            first--;
+            second--;
+            std::cout<<j<<" ~~"<<std::endl;
+            print();
+//std::cout<<m_data[second]<<" "<<m_data[j]<<std::endl;
         }
     }
 }
