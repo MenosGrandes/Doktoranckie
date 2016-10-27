@@ -9,20 +9,20 @@
 int main()
 {
 
-//int n=8;
-//int * tab = new int[n];
-//tab[0]=9;
-//tab[1]=2;
-//tab[2]=1;
-//tab[3]=3;
-//tab[4]=5;
-//tab[5]=6;
-//tab[6]=7;
-//tab[7]=8;
+int n=8;
+int * tab = new int[n];
+tab[0]=9;
+tab[1]=4;
+tab[2]=3;
+tab[3]=8;
+tab[4]=2;
+tab[5]=7;
+tab[6]=6;
+tab[7]=5;
 
     srand(time(0));
-    SortInsertTuple *bs = new SortInsertTuple(8,9);
-    bs->print();
+    SortInsertTuple *bs = new SortInsertTuple(n,tab);
+   // bs->print();
     std::cout<<"~~~~~~~~~~~~~~~~~~~~~"<<std::endl;
     bs->_sort();
     //bs->compare();
