@@ -21,14 +21,20 @@ int main()
 //tab[7]=5;
 
     srand(time(0));
-    SortInsertTuple *bs = new SortInsertTuple(10,9);
-    bs->print();
-    std::cout<<"@@@@@@@@@@@@@@@"<<std::endl;
+
+for(int i=0;i<1000;i++)
+{
+
+
+    SortInsertTuple *bs = new SortInsertTuple(1000,100);
+    //bs->print();
+    //std::cout<<"@@@@@@@@@@@@@@@"<<std::endl;
     bs->_sort();
-    //bs->compare();
-    bs->print();
+    bs->compare();
+   // bs->print();
+   delete bs;
 
-
+}
 
 
 //    int n=10000;

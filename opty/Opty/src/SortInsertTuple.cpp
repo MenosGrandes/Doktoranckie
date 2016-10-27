@@ -48,7 +48,7 @@ void SortInsertTuple::_sort()
 
     */
 
-    for(int i=2; i<m_n; i+=2)
+    for(int i=0; i<m_n; i+=2)
     {
 
         if(m_data[i] > m_data[i+1])
@@ -58,24 +58,24 @@ void SortInsertTuple::_sort()
         }
         int pom1 = m_data[i];
         int pom2 = m_data[i+1];
-    std::cout<<pom1<<" "<<pom2<<std::endl;
+   // std::cout<<pom1<<" "<<pom2<<std::endl;
         int j = i-1;
         while(j>=0 && m_data[j]>pom2)
         {
             _swap3(j,j+1,j+2);
-            std::cout<<"\t "<<j<<std::endl;
-            print();
+           // std::cout<<"\t "<<j<<std::endl;
+           // print();
             --j;
         }
 
-    std::cout<<"Po zmianie "<<std::endl;;
-        print();
+    //std::cout<<"Po zmianie "<<std::endl;;
+        //print();
 //std::cout<< j <<" "<<m_data[j]<<" "<<pom2<<std::endl;
         while(j>=0 && m_data[j]>pom1)
         {
 
             Sort::_swap(j+1,j);
-            print();
+            //print();
             --j;
 
         }
