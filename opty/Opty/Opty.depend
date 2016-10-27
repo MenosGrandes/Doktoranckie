@@ -56,14 +56,14 @@
 1476903479 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1477553591 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1477562094 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	"SortInsertTuple.h"
 	"SoerInsert.h"
 	"BubbleSort.h"
 	"Timer.h"
 	<time.h>
 
-1477405150 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
+1477557013 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
 	<Sort.h>
 	<utility>
 
@@ -88,7 +88,7 @@
 1477405150 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\soerinsert.h
 	"Sort.h"
 
-1477553574 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
+1477562433 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
 1477483775 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sort.cpp

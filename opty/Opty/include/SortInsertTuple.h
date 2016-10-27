@@ -19,6 +19,7 @@ private:
     bool swapPair(int i);
     void swapPair(int i,bool&a1,bool&a2);
     void _swap(int x,int y,int z,int w);
+    void _swap3(int x,int y, int z);
 
 
 
