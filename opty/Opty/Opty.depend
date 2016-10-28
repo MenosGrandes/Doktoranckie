@@ -56,7 +56,7 @@
 1476903479 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1477648440 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1477659104 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	"SortInsertTuple.h"
 	"SoerInsert.h"
 	"BubbleSort.h"
@@ -67,7 +67,7 @@
 	<Sort.h>
 	<utility>
 
-1477648802 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sort.h
+1477657129 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sort.h
 	<algorithm>
 	<functional>
 	<vector>
@@ -87,7 +87,7 @@
 1477405150 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\soerinsert.h
 	"Sort.h"
 
-1477648211 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
+1477659698 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
 1477648799 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sort.cpp
@@ -96,7 +96,7 @@
 1477028735 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\timer.cpp
 	"Timer.h"
 
-1477648220 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\timer.h
+1477657129 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\timer.h
 	"Sort.h"
 	<windows.h>
 

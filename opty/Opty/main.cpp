@@ -53,32 +53,32 @@ int main()
     srand(time(0));
     Timer t;
 
-    int n = 30000;
+    int numberOfTasks = 1000;
+
+//
+for(int i=0;i<numberOfTasks;i++)
+{
+
+    int n = 10000;
     int *tab= new int [n];
-    Random::getInstance().generateRandomTab(tab,n,1,1000);
-
-//for(int i=0;i<numberOfTasks;i++)
-//{
-
-    //int n = Random::getInstance().generate()
+    Random::getInstance().generateRandomTab(tab,n,1,10000);
     SortInsertTuple *bs = new SortInsertTuple(n,tab);
     SoerInsert *ins = new SoerInsert(n,tab);
 
-    //bs->print();
-    //std::cout<<"@@@@@@@@@@@@@@@"<<std::endl;
-    timeInsertSortTuple=t.measureWindows(bs);
-    timeInsert=t.measureWindows(ins);
-    std::cout<<"IsertTuple "<<timeInsertSortTuple<<std::endl;
-    std::cout<<"timeInsert "<<timeInsert<<std::endl;
+    timeInsertSortTuple+=t.measureWindows(bs);
+    timeInsert+=t.measureWindows(ins);
+
 
     bs->compare();
-      ins->compare();
+    ins->compare();
     //bs->print();
     delete bs;
     delete ins;
     delete[] tab;
-//}
-
+        std::cout<<i<<std::endl;
+    }
+    std::cout<<"Speed Up "<<100.0f-(float)(((timeInsertSortTuple/numberOfTasks)*100)/(timeInsert/numberOfTasks))<<std::endl;
+    //std::cout<<"timeInsert "<<timeInsert/numberOfTasks<<std::endl;
 
     return 0;
 }
