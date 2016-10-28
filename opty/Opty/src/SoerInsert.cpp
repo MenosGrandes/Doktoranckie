@@ -2,11 +2,7 @@
 
 SoerInsert::SoerInsert(int n, int max):Sort(n,max) {}
 SoerInsert::SoerInsert(int n, int *tab):Sort(n,tab) {}
-
-SoerInsert::~SoerInsert()
-{
-
-}
+SoerInsert::~SoerInsert(){}
 void SoerInsert::_sort()
 {
 

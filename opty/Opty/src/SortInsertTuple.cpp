@@ -55,7 +55,6 @@ inline void SortInsertTuple::_sort()
             m_data[i]=m_data[i+1];
             m_data[i+1]=tmp;
         }
-
     }
 
     for(int i=2; i<m_n; i+=2)

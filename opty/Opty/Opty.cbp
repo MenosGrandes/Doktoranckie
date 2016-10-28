@@ -48,6 +48,8 @@
 		<Unit filename="include/SoerInsert.h" />
 		<Unit filename="include/Sort.h" />
 		<Unit filename="include/SortInsertTuple.h" />
+		<Unit filename="include/SortSelection.h" />
+		<Unit filename="include/SortSelectionTuple.h" />
 		<Unit filename="include/Timer.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/BubbleSort.cpp" />
@@ -55,6 +57,8 @@
 		<Unit filename="src/SoerInsert.cpp" />
 		<Unit filename="src/Sort.cpp" />
 		<Unit filename="src/SortInsertTuple.cpp" />
+		<Unit filename="src/SortSelection.cpp" />
+		<Unit filename="src/SortSelectionTuple.cpp" />
 		<Unit filename="src/Timer.cpp" />
 		<Extensions>
 			<code_completion />

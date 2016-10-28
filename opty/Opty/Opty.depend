@@ -100,62 +100,75 @@
 	"Sort.h"
 	<windows.h>
 
-1477213569 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1477686100 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	"SortInsertTuple.h"
 	"SoerInsert.h"
 	"BubbleSort.h"
+	"SortSelection.h"
+	"SortSelectionTuple.h"
 	"Timer.h"
 	<time.h>
 
-1477213382 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
+1477683256 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
 	<Sort.h>
 	<utility>
 
-1477213212 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
-	<iostream>
+1477676573 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
 	<algorithm>
 	<functional>
 	<vector>
 	"Random.h"
 
-1477155860 c:\users\menos\desktop\doktoranckie\opty\opty\include\random.h
+1477676573 c:\users\menos\desktop\doktoranckie\opty\opty\include\random.h
 	<iostream>
 	<cstdlib>
 	<ctime>
 
-1477213140 c:\users\menos\desktop\doktoranckie\opty\opty\include\soerinsert.h
+1477213789 c:\users\menos\desktop\doktoranckie\opty\opty\include\soerinsert.h
 	"Sort.h"
 
-1477076115 c:\users\menos\desktop\doktoranckie\opty\opty\include\timer.h
+1477676573 c:\users\menos\desktop\doktoranckie\opty\opty\include\timer.h
 	"Sort.h"
-	<chrono>
+	<windows.h>
 
 1477076115 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\random.cpp
 	"Random.h"
 
-1477156276 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\soerinsert.cpp
+1477684564 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\soerinsert.cpp
 	"SoerInsert.h"
 
-1477213208 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sort.cpp
+1477676573 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sort.cpp
 	"Sort.h"
 
 1477076115 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\timer.cpp
 	"Timer.h"
 
-1477213429 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
+1477682365 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
 1477155100 c:\users\menos\desktop\doktoranckie\opty\opty\include\randomgen.hpp
 
-1477213504 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
+1477684711 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
 	"BubbleSort.h"
 
-1477212785 c:\users\menos\desktop\doktoranckie\opty\opty\include\bubblesort.h
+1477213789 c:\users\menos\desktop\doktoranckie\opty\opty\include\bubblesort.h
 	"Sort.h"
 
 1477646638 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
 	"BubbleSort.h"
 
 1477405150 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bubblesort.h
+	"Sort.h"
+
+1477683260 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselection.h
+	"Sort.h"
+
+1477684323 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselection.cpp
+	"SortSelection.h"
+
+1477686402 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselectiontuple.cpp
+	"SortSelectionTuple.h"
+
+1477684382 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
 	"Sort.h"
 
