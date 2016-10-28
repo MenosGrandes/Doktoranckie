@@ -6,7 +6,7 @@ SortInsertTuple::~SortInsertTuple() {}
 /**
 
 */
-void SortInsertTuple::_sort()
+inline void SortInsertTuple::_sort()
 {
     /**robimy tak jak z poprzednim
     bierz po pare liczb, nastepujacych po sobie
@@ -48,71 +48,49 @@ void SortInsertTuple::_sort()
 
     */
 
-    for(int i=0; i<m_n; i+=2)
+    if(m_data[0] > m_data[1])
+    {
+        const int tmp=m_data[0];
+        m_data[0]=m_data[1];
+        m_data[1]=tmp;
+
+
+    }
+
+//pozamieniac swapy na cos innego
+    for(int i=2; i<m_n; i+=2)
     {
 
         if(m_data[i] > m_data[i+1])
         {
-            Sort::_swap(i,i+1);
+            const int tmp=m_data[i];
+            m_data[i]=m_data[i+1];
+            m_data[i+1]=tmp;
+
 
         }
-        int pom1 = m_data[i];
-        int pom2 = m_data[i+1];
-   // std::cout<<pom1<<" "<<pom2<<std::endl;
+
+        const int pom1 = m_data[i];
+        const int pom2 = m_data[i+1];
+
         int j = i-1;
         while(j>=0 && m_data[j]>pom2)
         {
-            _swap3(j,j+1,j+2);
-           // std::cout<<"\t "<<j<<std::endl;
-           // print();
-            --j;
-        }
+            m_data[j+1] = m_data[j];
+            m_data[j+2] = m_data[j+1];
+            j--;
 
-    //std::cout<<"Po zmianie "<<std::endl;;
-        //print();
-//std::cout<< j <<" "<<m_data[j]<<" "<<pom2<<std::endl;
+        }
+        m_data[j+2] = pom2;
+        m_data[j+1] = pom1;
         while(j>=0 && m_data[j]>pom1)
         {
-
-            Sort::_swap(j+1,j);
-            //print();
+            m_data[j+1] = m_data[j];
             --j;
 
         }
+        m_data[j+1] = pom1;
     }
 }
 
-//    }
-//}
-bool SortInsertTuple::swapPair(int i)
-{
-    if(m_data[i+1]<m_data[i])
-    {
-        Sort::_swap(i+1,i);
-    }
-//ustaw rosnaco 2 pare
-    if((m_data[i-2]>m_data[i-1]))
-    {
-        Sort::_swap(i-1,i-2);
-    }
-    return true;
-}
 
-void SortInsertTuple::_swap(int x,int y,int z,int w)
-{
-    Sort::_swap(x,z);
-    Sort::_swap(y,w);
-}
-void SortInsertTuple::_swap3(int x,int y, int z)
-{
-Sort::_swap(x,y);
-Sort::_swap(y,z);
-}
-//void SortInsertTuple::swapFirst(int &i,int &first,int &second)
-//{
-//
-//}
-//void SortInsertTuple::swapSecond()
-//{
-//
-//}

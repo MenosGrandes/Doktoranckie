@@ -19,92 +19,66 @@ int main()
 //tab[5]=7;
 //tab[6]=6;
 //tab[7]=5;
+//int pom1=tab[2];
+//int pom2=tab[3];
+//int j=1;
+//
+//               tab[j+1] = tab[j];
+//               tab[j+2] = tab[j+1];
+//            /*
+//
+//            Sort::_swap(x,y);
+//            Sort::_swap(y,z);
+//            */
+//            j--;
+//
+//         tab[j+2] = pom2;
+//         tab[j+1] = pom1;
+//
+//
+//
+//for(int i=0;i<n;i++)
+//{
+//    std::cout<<tab[i];
+//}
 
-    srand(time(0));
-
-for(int i=0;i<1000;i++)
-{
 
 
-    SortInsertTuple *bs = new SortInsertTuple(1000,100);
+
+
+
+long long timeInsertSortTuple = 0;
+long long timeInsert = 0;
+int numberOfTasks=10000;
+srand(time(0));
+Timer t;
+
+int n = 100000;
+int *tab= new int [n];
+Random::getInstance().generateRandomTab(tab,n,1,1000);
+
+//for(int i=0;i<numberOfTasks;i++)
+//{
+
+    //int n = Random::getInstance().generate()
+    SortInsertTuple *bs = new SortInsertTuple(n,tab);
+    SoerInsert *ins = new SoerInsert(n,tab);
+
     //bs->print();
     //std::cout<<"@@@@@@@@@@@@@@@"<<std::endl;
-    bs->_sort();
+    timeInsertSortTuple=t.measureWindows(bs);
+    timeInsert=t.measureWindows(ins);
+    std::cout<<"IsertTuple "<<timeInsertSortTuple<<std::endl;
+    std::cout<<"timeInsert "<<timeInsert<<std::endl;
+
     bs->compare();
+    ins->compare();
    // bs->print();
    delete bs;
-
-}
-
-
-//    int n=10000;
-//    int *tab= new int[n];
-//    Random::getInstance().generateRandomIntTab(n,tab,0,10000);
-//
-//SortInsertTuple *sInsertTuple= new SortInsertTuple(n,tab);
-// SoerInsert *sInsert= new SoerInsert(n,tab);
-//
-//
-//Timer timer;
-////std::cout<<"Sort InsertTuple"<<s1Timer.measure(s1)<<std::endl;
-////std::cout<<"Sort Insert"<<s1Timer.measure(si)<<std::endl;
-//
-//int sInsertTime =timer.measure(sInsert);
-//int sInsertTupleTime =timer.measure(sInsertTuple);
-//std::cout<<sInsertTime<<std::endl<<sInsertTupleTime<<std::endl;
-//if(sInsertTime<sInsertTupleTime)
-//{
-//    std::cout<<"Sort insert Szybsze"<<std::endl;
-//}
-//else
-//{
-//        std::cout<<"Sort insertTuple Szybsze"<<std::endl;
-//
+   delete ins;
+   delete[] tab;
 //}
 
 
-
-////
-
-//int n=7;
-//int * tab = new int[n];
-//tab[0]=5;
-//tab[1]=3;
-//tab[2]=4;
-//tab[3]=9;
-//tab[4]=8;
-//tab[5]=6;
-//tab[6]=2;
-//    std::vector<Sort*> sorts;
-//    for(int i=0; i<1000; i++)
-//    {
-//        int max = Random::getInstance().generate(1,1000);
-//        int n   = Random::getInstance().generate(1,max);
-//        sorts.push_back(new SortInsertTuple(n,max));
-//    }
-//    for(int i=0; i<sorts.size(); i++)
-//    {
-//        sorts[i]->_sort();
-//
-//        if(!sorts[i]->compare())
-//        {
-//            std::cout<<"\t ERROR"<<std::endl;
-//            sorts[i]->print();
-//            std::cout<<"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<std::endl;
-//        }
-//    }
-
-
-//
-//    if(s->compare()==true)
-//    {
-//        std::cout<<"Takie same";
-//    }
-//    else
-//    {
-//        std::cout<<"Inne";
-//    }
-
-//delete [] tab;
     return 0;
 }

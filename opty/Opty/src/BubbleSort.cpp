@@ -16,7 +16,7 @@ void BubbleSort::_sort()
         {
             if (this->m_data[j - 1] > this->m_data[j])
             {
-                _swap(j - 1, j);
+                Sort::_swap(j - 1, j);
             }
         }
     }

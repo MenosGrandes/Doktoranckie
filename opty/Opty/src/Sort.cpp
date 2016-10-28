@@ -43,7 +43,7 @@ bool Sort::compare()
     return true;
 
 }
-void Sort::print()
+void Sort::print() const
 {
 
     std::cout<<"~~~~~~~~~~~~~~~~~~"<<std::endl;
@@ -60,9 +60,16 @@ void Sort::print()
 //    }
 //    std::cout<<std::endl;
 }
-void Sort::_swap(int x,int y)
+ void Sort::_swap(int x,int y)
 {
-    int tmp=m_data[x];
-    m_data[x]=m_data[y];
-    m_data[y]=tmp;
+
 }
+//Sort::Sort(const Sort& a)
+//{
+//    this->m_n=a.m_n;
+//    this->m_data= new int [this->m_n];
+//    for(int i=0;i<this->m_n;i++)
+//    {
+//        this->m_data[i]=a.m_data[i];
+//    }
+//}

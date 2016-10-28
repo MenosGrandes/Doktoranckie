@@ -9,12 +9,12 @@ SoerInsert::~SoerInsert()
 }
 void SoerInsert::_sort()
 {
-    int pom, j;
+
     for(int i=1; i<m_n; i++)
     {
 
-        pom = m_data[i];
-        j = i-1;
+        int pom = m_data[i];
+        int j = i-1;
 
 
         while(j>=0 && m_data[j]>pom)
