@@ -4,7 +4,7 @@ Sort::Sort(int n, int max)
 {
     this->m_n=n;
     m_data = new int[n];
-   // m_data.reserve(n);
+    compareData.reserve(n);
     for(int i=0; i<m_n; i++)
     {
         m_data[i]=Random::getInstance().generate(1,max);
@@ -16,7 +16,7 @@ Sort::Sort(int n, int *tab)
 {
     this->m_n=n;
     m_data = new int[n];
-    //m_data.reserve(n);
+    compareData.reserve(n);
     for(int i=0; i<m_n; i++)
     {
         m_data[i]=tab[i];
@@ -60,10 +60,7 @@ void Sort::print() const
 //    }
 //    std::cout<<std::endl;
 }
- void Sort::_swap(int x,int y)
-{
 
-}
 //Sort::Sort(const Sort& a)
 //{
 //    this->m_n=a.m_n;

@@ -13,7 +13,7 @@ void SoerInsert::_sort()
     for(int i=1; i<m_n; i++)
     {
 
-        int pom = m_data[i];
+        const int pom = m_data[i];
         int j = i-1;
 
 

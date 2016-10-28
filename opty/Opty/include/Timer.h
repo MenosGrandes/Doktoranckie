@@ -3,21 +3,14 @@
 
 #include "Sort.h"
 #include <windows.h>
-#include <chrono>
+
 class Timer
 {
 public:
     Timer();
     ~Timer();
-    int measure(Sort *s)
-    {
-        auto start = std::chrono::steady_clock::now();
-        s->_sort();
 
-        auto end = std::chrono::steady_clock::now();
-        return std::chrono::duration_cast<std::chrono::microseconds>( end - start).count();
-    }
-    long long measureWindows(Sort *s)
+    long long measureWindows( Sort *s)
     {
         StartCounter();
         s->_sort();

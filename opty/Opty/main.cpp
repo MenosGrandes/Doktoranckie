@@ -47,15 +47,15 @@ int main()
 
 
 
-long long timeInsertSortTuple = 0;
-long long timeInsert = 0;
-int numberOfTasks=10000;
-srand(time(0));
-Timer t;
+    long long timeInsertSortTuple = 0;
+    long long timeInsert = 0;
 
-int n = 100000;
-int *tab= new int [n];
-Random::getInstance().generateRandomTab(tab,n,1,1000);
+    srand(time(0));
+    Timer t;
+
+    int n = 30000;
+    int *tab= new int [n];
+    Random::getInstance().generateRandomTab(tab,n,1,1000);
 
 //for(int i=0;i<numberOfTasks;i++)
 //{
@@ -72,11 +72,11 @@ Random::getInstance().generateRandomTab(tab,n,1,1000);
     std::cout<<"timeInsert "<<timeInsert<<std::endl;
 
     bs->compare();
-    ins->compare();
-   // bs->print();
-   delete bs;
-   delete ins;
-   delete[] tab;
+      ins->compare();
+    //bs->print();
+    delete bs;
+    delete ins;
+    delete[] tab;
 //}
 
 

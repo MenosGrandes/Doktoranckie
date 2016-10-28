@@ -23,9 +23,9 @@ public:
     {
         return ( rand() % max ) + min;
     }
-    int generateRandomTab(int *tab,int n,int min,int max)
+    void generateRandomTab(int *tab,int n,int min,int max)
     {
-        for(int i=0;i<n;i++)
+        for(int i=0; i<n; i++)
         {
             tab[i]=  ( rand() % max ) + min;
         }
