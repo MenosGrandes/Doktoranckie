@@ -11,24 +11,28 @@ TestSort<BasicSort,TupleSort>::~TestSort()
 
 }
 template<class BasicSort,class TupleSort>
-float TestSort<BasicSort,TupleSort>::test(int testCounts)
+float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize)
 {
     std::cout<<"!~!~!~TESTING~!~!~!"<<std::endl;
     std::cout<<typeid(BasicSort).name()<<" "<<typeid(TupleSort).name()<<std::endl;
     Timer t;
     long long timeTuple = 0;
     long long timeNormal = 0;
-    const int n = 10000;
+
     for(int i=0; i<testCounts; i++)
     {
         std::cout<<i<<std::endl;
-        int *tab= new int [n];
-        Random::getInstance().generateRandomTab(tab,n,1,1000);
-        BasicSort *m_basicSort = new BasicSort(n,tab);
-        TupleSort *m_tupleSort = new TupleSort(n,tab);
+        int *tab= new int [tabSize];
+        Random::getInstance().generateRandomTab(tab,tabSize,1,1000);
+        BasicSort *m_basicSort = new BasicSort(tabSize,tab);
+        TupleSort *m_tupleSort = new TupleSort(tabSize,tab);
 
         timeNormal+=t.measureWindows(m_basicSort);
         timeTuple +=t.measureWindows(m_tupleSort);
+
+
+        m_tupleSort->compare();
+        m_basicSort->compare();
         delete[] tab;
         delete m_basicSort;
         delete m_tupleSort;
@@ -38,4 +42,6 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts)
 
 }
 template class TestSort<SortSelection,SortSelectionTuple>;
-template class TestSort<SoerInsert,SortInsertTuple>;
+template class TestSort<SortInsert,SortInsertTuple>;
+template class TestSort<BubbleSort,SortBubbleTuple>;
+

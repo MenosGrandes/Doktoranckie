@@ -45,8 +45,9 @@
 		</Linker>
 		<Unit filename="include/BubbleSort.h" />
 		<Unit filename="include/Random.h" />
-		<Unit filename="include/SoerInsert.h" />
 		<Unit filename="include/Sort.h" />
+		<Unit filename="include/SortBubbleTuple.h" />
+		<Unit filename="include/SortInsert.h" />
 		<Unit filename="include/SortInsertTuple.h" />
 		<Unit filename="include/SortSelection.h" />
 		<Unit filename="include/SortSelectionTuple.h" />
@@ -55,8 +56,9 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/BubbleSort.cpp" />
 		<Unit filename="src/Random.cpp" />
-		<Unit filename="src/SoerInsert.cpp" />
 		<Unit filename="src/Sort.cpp" />
+		<Unit filename="src/SortBubbleTuple.cpp" />
+		<Unit filename="src/SortInsert.cpp" />
 		<Unit filename="src/SortInsertTuple.cpp" />
 		<Unit filename="src/SortSelection.cpp" />
 		<Unit filename="src/SortSelectionTuple.cpp" />

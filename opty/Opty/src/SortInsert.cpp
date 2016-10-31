@@ -1,9 +1,9 @@
-#include "SoerInsert.h"
+#include "SortInsert.h"
 
-SoerInsert::SoerInsert(int n, int max):Sort(n,max) {}
-SoerInsert::SoerInsert(int n, int *tab):Sort(n,tab) {}
-SoerInsert::~SoerInsert(){}
-void SoerInsert::_sort()
+SortInsert::SortInsert(int n, int max):Sort(n,max) {}
+SortInsert::SortInsert(int n, int *tab):Sort(n,tab) {}
+SortInsert::~SortInsert(){}
+void SortInsert::_sort()
 {
 
     for(int i=1; i<m_n; i++)

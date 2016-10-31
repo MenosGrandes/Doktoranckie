@@ -56,7 +56,7 @@
 1476903479 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1477921414 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1477924003 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 
 1477898848 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
@@ -180,16 +180,30 @@
 1477916911 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortselectiontuple.cpp
 	"SortSelectionTuple.h"
 
-1477920090 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\testsort.cpp
+1477922732 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\testsort.cpp
 	"TestSort.h"
 
-1477920913 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\testsort.h
+1477923511 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\testsort.h
 	<type_traits>
 	"SortInsertTuple.h"
-	"SoerInsert.h"
+	"SortInsert.h"
 	"BubbleSort.h"
 	"SortSelection.h"
 	"SortSelectionTuple.h"
+	"BubbleSort.h"
+	"SortBubbleTuple.h"
 	"Timer.h"
 	"Random.h"
+
+1477922222 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinsert.cpp
+	"SortInsert.h"
+
+1477922222 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinsert.h
+	"Sort.h"
+
+1477923596 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
+	<Sort.h>
+
+1477923983 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
+	"SortBubbleTuple.h"
 
