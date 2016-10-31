@@ -6,11 +6,11 @@ SortSelection::~SortSelection(){}
 
 void SortSelection::_sort()
 {
-    int i,j,pmin;
-    for(j = 0; j < this->m_n - 1; j++)
+
+    for(int j = 0; j < this->m_n - 1; j++)
     {
-        pmin = j;
-        for(i = j + 1; i < this->m_n; i++)
+        int pmin = j;
+        for(int i = j + 1; i < this->m_n; i++)
         {
             if(m_data[i] < m_data[pmin])
             {

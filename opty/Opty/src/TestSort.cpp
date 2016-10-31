@@ -14,13 +14,14 @@ template<class BasicSort,class TupleSort>
 float TestSort<BasicSort,TupleSort>::test(int testCounts)
 {
     std::cout<<"!~!~!~TESTING~!~!~!"<<std::endl;
+    std::cout<<typeid(BasicSort).name()<<" "<<typeid(TupleSort).name()<<std::endl;
     Timer t;
     long long timeTuple = 0;
     long long timeNormal = 0;
     const int n = 10000;
     for(int i=0; i<testCounts; i++)
     {
-        std::cout<<"test "<<i<<std::endl;
+        std::cout<<i<<std::endl;
         int *tab= new int [n];
         Random::getInstance().generateRandomTab(tab,n,1,1000);
         BasicSort *m_basicSort = new BasicSort(n,tab);
@@ -28,7 +29,7 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts)
 
         timeNormal+=t.measureWindows(m_basicSort);
         timeTuple +=t.measureWindows(m_tupleSort);
-        delete tab;
+        delete[] tab;
         delete m_basicSort;
         delete m_tupleSort;
     }

@@ -56,7 +56,7 @@
 1476903479 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1477918798 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1477921414 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 
 1477898848 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
@@ -174,16 +174,17 @@
 1477898046 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
 	"Sort.h"
 
-1477897241 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortselection.cpp
+1477919576 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortselection.cpp
 	"SortSelection.h"
 
 1477916911 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortselectiontuple.cpp
 	"SortSelectionTuple.h"
 
-1477918989 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\testsort.cpp
+1477920090 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\testsort.cpp
 	"TestSort.h"
 
-1477918629 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\testsort.h
+1477920913 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\testsort.h
+	<type_traits>
 	"SortInsertTuple.h"
 	"SoerInsert.h"
 	"BubbleSort.h"
