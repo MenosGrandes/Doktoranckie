@@ -9,7 +9,7 @@ class SortSelectionTuple: public Sort
         SortSelectionTuple(int n, int* tab);
          SortSelectionTuple(int n, int max);
          ~SortSelectionTuple();
-        void _sort();
+        void __attribute__((hot)) _sort();
 };
 
 #endif // SORTSELECTIONTUPLE_H

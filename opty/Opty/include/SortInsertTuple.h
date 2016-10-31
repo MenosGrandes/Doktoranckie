@@ -10,7 +10,7 @@ public:
     SortInsertTuple(int n, int max);
     SortInsertTuple(int n, int* tab);
     ~SortInsertTuple();
-    void _sort();
+    void __attribute__((hot)) _sort();
 };
 
 #endif // SORTINSERTTUPLE_H

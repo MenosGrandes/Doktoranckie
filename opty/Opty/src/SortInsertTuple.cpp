@@ -6,7 +6,7 @@ SortInsertTuple::~SortInsertTuple() {}
 /**
 
 */
-inline void SortInsertTuple::_sort()
+inline void __attribute__((hot)) SortInsertTuple::_sort()
 {
     /**robimy tak jak z poprzednim
     bierz po pare liczb, nastepujacych po sobie

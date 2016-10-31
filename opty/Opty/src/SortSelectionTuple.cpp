@@ -5,42 +5,57 @@ SortSelectionTuple::SortSelectionTuple(int n, int max):Sort(n,max) {}
 SortSelectionTuple::~SortSelectionTuple() {}
 
 //min and max
+/**
+Sortowanie przez wybieranie 2 najmniejszej  wartosci w zbiorze.
+
+
+
+*/
 void SortSelectionTuple::_sort()
 {
 
-    for(int j = 0; j < this->m_n/2; j++)
+ for(unsigned minIndex = 0, maxIndex = m_n-1; minIndex < maxIndex;)
     {
-        std::cout<<"j="<<j<<std::endl;
-        int pmin = j;
-        int pmax = (this->m_n-1)-j;
-                    std::cout<<"pmin index="<<pmin<<" "<<m_data[pmin]<<std::endl;
-                    std::cout<<"pmax index="<<pmax<<" "<<m_data[pmax]<<std::endl;
+        int min = m_data[minIndex];
+        int max = m_data[maxIndex];
+        unsigned newMinIndex = minIndex+1;
+        unsigned newMaxIndex = maxIndex;
 
-        for(int i = j+1 ; i < this->m_n-j-1; i++)
+        for(unsigned index = newMinIndex; index <= newMaxIndex;)
         {
-            std::cout<<"i="<<i<<std::endl;
-            //find min
-            if(m_data[i] < m_data[pmin])
+            int value = m_data[index];
+
+            if(value <= min)
             {
-                pmin = i;
+                if(value < min)
+                {
+                    min = value;
+                    newMinIndex = minIndex;
+                    m_data[index] = m_data[newMinIndex];
+                }
+                else
+                {
+                    m_data[index] = m_data[newMinIndex];
+                    ++index;
+                }
+                m_data[newMinIndex] = value;
+                ++newMinIndex;
             }
-            //find max
-            if(m_data[i]>m_data[pmax])
+            else if(value >= max)
             {
-                pmax = i;
+                if(value > max)
+                {
+                    max = value;
+                    newMaxIndex = maxIndex;
+                }
+                m_data[index] = m_data[newMaxIndex];
+                m_data[newMaxIndex] = value;
+                --newMaxIndex;
             }
+            else ++index;
         }
-
-        /*Musi byc sprawdzanie kolejnosci przenoszenia.
-       jak mamy koncowa pare 54 to wtedy chcemy zamienic 5 z 4 a potem jeszcze raz 4 z 5 i mamy to samo.
-         */
-
-        std::cout<<pmax<<std::endl;
-        std::swap(m_data[pmin], m_data[j]);
-
-        std::swap(m_data[pmax], m_data[this->m_n -j-1]);
-
-
-        print();
+        minIndex = newMinIndex;
+        maxIndex = newMaxIndex;
     }
+
 }
