@@ -14,9 +14,9 @@ TestSort<SortSelection,SortSelectionTuple> selectionSortTest;
 std::cout<<selectionSortTest.test(1000,30000);
 
 #endif // TESTS
-SortBubbleTuple * bst= new SortBubbleTuple(9,10);
-bst->print();
-bst->_sort();
-bst->print();
+TestSort<BubbleSort,SortBubbleTuple>bubbleSortTest;
+std::cout<<bubbleSortTest.test(100,10000);
+
+
     return 0;
 }
