@@ -5,6 +5,7 @@
 		<Option title="Opty" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="Sort\TripleSort\;Sort\;Sort\TupleSort\;Helpers\;Sort\NormalSort\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Opty" prefix_auto="1" extension_auto="1" />
@@ -43,29 +44,74 @@
 			<Add option="-static-libgcc" />
 			<Add option="-static-libstdc++" />
 		</Linker>
-		<Unit filename="include/BubbleSort.h" />
-		<Unit filename="include/Random.h" />
-		<Unit filename="include/Sort.h" />
-		<Unit filename="include/SortBubbleTuple.h" />
-		<Unit filename="include/SortInsert.h" />
-		<Unit filename="include/SortInsertTriple.h" />
-		<Unit filename="include/SortInsertTuple.h" />
-		<Unit filename="include/SortSelection.h" />
-		<Unit filename="include/SortSelectionTuple.h" />
-		<Unit filename="include/TestSort.h" />
-		<Unit filename="include/Timer.h" />
+		<Unit filename="include/BubbleSort.h">
+			<Option virtualFolder="Sort/NormalSort/" />
+		</Unit>
+		<Unit filename="include/Random.h">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
+		<Unit filename="include/Sort.h">
+			<Option virtualFolder="Sort/NormalSort/" />
+		</Unit>
+		<Unit filename="include/SortBubbleTuple.h">
+			<Option virtualFolder="Sort/TupleSort/" />
+		</Unit>
+		<Unit filename="include/SortInsert.h">
+			<Option virtualFolder="Sort/NormalSort/" />
+		</Unit>
+		<Unit filename="include/SortInsertTriple.h">
+			<Option virtualFolder="Sort/TripleSort/" />
+		</Unit>
+		<Unit filename="include/SortInsertTuple.h">
+			<Option virtualFolder="Sort/TupleSort/" />
+		</Unit>
+		<Unit filename="include/SortSelection.h">
+			<Option virtualFolder="Sort/NormalSort/" />
+		</Unit>
+		<Unit filename="include/SortSelectionTuple.h">
+			<Option virtualFolder="Sort/TupleSort/" />
+		</Unit>
+		<Unit filename="include/TestSort.h">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
+		<Unit filename="include/Timer.h">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="src/BubbleSort.cpp" />
-		<Unit filename="src/Random.cpp" />
-		<Unit filename="src/Sort.cpp" />
-		<Unit filename="src/SortBubbleTuple.cpp" />
-		<Unit filename="src/SortInsert.cpp" />
-		<Unit filename="src/SortInsertTriple.cpp" />
-		<Unit filename="src/SortInsertTuple.cpp" />
-		<Unit filename="src/SortSelection.cpp" />
-		<Unit filename="src/SortSelectionTuple.cpp" />
-		<Unit filename="src/TestSort.cpp" />
-		<Unit filename="src/Timer.cpp" />
+		<Unit filename="src/BubbleSort.cpp">
+			<Option virtualFolder="Sort/NormalSort/" />
+		</Unit>
+		<Unit filename="src/Random.cpp">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
+		<Unit filename="src/Sort.cpp">
+			<Option virtualFolder="Sort/NormalSort/" />
+		</Unit>
+		<Unit filename="src/SortBubbleTuple.cpp">
+			<Option virtualFolder="Sort/TupleSort/" />
+		</Unit>
+		<Unit filename="src/SortInsert.cpp">
+			<Option virtualFolder="Sort/NormalSort/" />
+		</Unit>
+		<Unit filename="src/SortInsertTriple.cpp">
+			<Option virtualFolder="Sort/TripleSort/" />
+		</Unit>
+		<Unit filename="src/SortInsertTuple.cpp">
+			<Option virtualFolder="Sort/TupleSort/" />
+		</Unit>
+		<Unit filename="src/SortSelection.cpp">
+			<Option virtualFolder="Sort/NormalSort/" />
+		</Unit>
+		<Unit filename="src/SortSelectionTuple.cpp">
+			<Option virtualFolder="Sort/TupleSort/" />
+		</Unit>
+		<Unit filename="src/TestSort.cpp">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
+		<Unit filename="src/Timer.cpp">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
+		<Unit filename="typdefs.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

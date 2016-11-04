@@ -12,8 +12,8 @@ Sortowanie przez wybieranie 2 najmniejszej  wartosci w zbiorze.
 */
 void SortSelectionTuple::_sort()
 {
-
- for(unsigned minIndex = 0, maxIndex = m_n-1; minIndex < maxIndex;)
+#ifdef DOBLE_BURST_SELECTION_SORT
+    for(unsigned minIndex = 0, maxIndex = m_n-1; minIndex < maxIndex;)
     {
         int min = m_data[minIndex];
         int max = m_data[maxIndex];
@@ -56,5 +56,31 @@ void SortSelectionTuple::_sort()
         minIndex = newMinIndex;
         maxIndex = newMaxIndex;
     }
+#endif // DOBLE_BURST_SELECTION_SORT
+    /*
+        for(int j = 0; j < this->m_n - 1; j++)
+        {
+            int pmin = j;
+            for(int i = j + 1; i < this->m_n; i++)
+            {
+                if(m_data[i] < m_data[pmin])
+                {
+                    pmin = i;
+                }
+            }
+            std::swap(m_data[pmin], m_data[j]);
+        }
+
+
+    */
+
+//        for(VintIter it = m_data.begin(); it != m_data.end()-1; it-=2)
+//        {
+//
+//            VintIter minElem=std::min_element(next++,(m_data.end()-it));
+//            VintIter maxElem=std::max_element(next++,(m_data.end()-it));
+//
+//            std::iter_swap(),it);
+//        }
 
 }

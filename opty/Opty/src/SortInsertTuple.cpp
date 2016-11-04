@@ -5,7 +5,7 @@ SortInsertTuple::~SortInsertTuple() {}
 /**
 
 */
- void SortInsertTuple::_sort()
+void SortInsertTuple::_sort()
 {
     /**robimy tak jak z poprzednim
     bierz po pare liczb, nastepujacych po sobie
@@ -46,7 +46,9 @@ SortInsertTuple::~SortInsertTuple() {}
         2 3 4 5 6 7 8 9
 
     */
-    for(int i=0; i<m_n; i+=2)
+const int sizeOfArray=m_n-(m_n&1);
+
+    for(int i=0; i<sizeOfArray; i+=2)
     {
         if(m_data[i] > m_data[i+1])
         {
@@ -56,16 +58,13 @@ SortInsertTuple::~SortInsertTuple() {}
         }
     }
 
-    for(int i=2; i<m_n; i+=2)
+    for(int i=2; i<sizeOfArray; i+=2)
     {
         const int pom1 = m_data[i];
         const int pom2 = m_data[i+1];
 
         int j = i-1;
-        //tutaj jakas optymalizacja moze byc
-        /**jezeli tutaj nie wchodzi wcale to nie potrzeba zamiany
-                m_data[j+2] = pom2;
-        m_data[j+1] = pom1;*/
+
         while(j>=0 && m_data[j]>pom2)
         {
             m_data[j+2] = m_data[j+1] = m_data[j];
@@ -81,6 +80,18 @@ SortInsertTuple::~SortInsertTuple() {}
         }
         m_data[j+1] = pom1;
     }
+    if(m_n&1)
+    {
+        const int pom = m_data[m_n-1];
+        int k = m_n-2;
+        while(k>=0 && m_data[k]>pom)
+        {
+            m_data[k+1] = m_data[k];
+            --k;
+        }
+        m_data[k+1] = pom;
+    }
+
 }
 
 

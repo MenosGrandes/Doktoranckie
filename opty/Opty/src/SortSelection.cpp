@@ -5,17 +5,10 @@ SortSelection::~SortSelection(){}
 
 void SortSelection::_sort()
 {
-
-    for(int j = 0; j < this->m_n - 1; j++)
+    std::cout<<"!!@!@!@!@!@!@"<<std::endl;
+    for(VintIter it = m_data.begin(); it != m_data.end()-1; ++it)
     {
-        int pmin = j;
-        for(int i = j + 1; i < this->m_n; i++)
-        {
-            if(m_data[i] < m_data[pmin])
-            {
-                pmin = i;
-            }
-        }
-        std::swap(m_data[pmin], m_data[j]);
+        VintIter next=(it);
+        std::iter_swap((std::min_element(next++,m_data.end())),it);
     }
 }

@@ -4,8 +4,6 @@
 #include <algorithm>
 #include <functional>
 #include <vector>
-
-
 #include "Random.h"
 class Sort
 {

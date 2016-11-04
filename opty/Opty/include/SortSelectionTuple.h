@@ -2,7 +2,7 @@
 #define SORTSELECTIONTUPLE_H
 
 #include "Sort.h"
-
+#include <algorithm>
 class SortSelectionTuple: public Sort
 {
     public:

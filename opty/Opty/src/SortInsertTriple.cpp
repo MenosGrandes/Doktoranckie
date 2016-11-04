@@ -24,10 +24,6 @@ SortInsertTriple::~SortInsertTriple() {}
         const int pom2 = m_data[i+1];
 
         int j = i-1;
-        //tutaj jakas optymalizacja moze byc
-        /**jezeli tutaj nie wchodzi wcale to nie potrzeba zamiany
-                m_data[j+2] = pom2;
-        m_data[j+1] = pom1;*/
         while(j>=0 && m_data[j]>pom2)
         {
             m_data[j+2] = m_data[j+1] = m_data[j];

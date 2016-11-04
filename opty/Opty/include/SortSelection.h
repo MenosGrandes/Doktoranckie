@@ -2,6 +2,7 @@
 #define SORTSELECTION_H
 
 #include "Sort.h"
+#include "../typdefs.hpp"
 class SortSelection : public Sort
 {
     public:
