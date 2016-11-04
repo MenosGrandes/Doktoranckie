@@ -8,7 +8,6 @@ class SortInsert : public Sort
 {
 public:
     SortInsert(int n, int max);
-    SortInsert(int n, int*tab);
 
     ~SortInsert();
     void _sort();

@@ -8,7 +8,6 @@ class SortBubbleTuple : public Sort
 {
     public:
             SortBubbleTuple(int n, int max);
-            SortBubbleTuple(int n, int*tab);
         ~SortBubbleTuple();
     void _sort();
     protected:

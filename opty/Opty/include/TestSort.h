@@ -17,7 +17,7 @@ class TestSort
     public:
         TestSort();
          ~TestSort();
-        float test(int testCounts,const int tabSize);
+        float test(int testCounts,const int tabSize,int max);
     protected:
 
     private:

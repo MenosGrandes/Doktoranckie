@@ -8,9 +8,8 @@ class SortInsertTuple : public Sort
 {
 public:
     SortInsertTuple(int n, int max);
-    SortInsertTuple(int n, int* tab);
     ~SortInsertTuple();
-    void __attribute__((hot)) _sort();
+    void _sort() __attribute__ ((pure));;
 };
 
 #endif // SORTINSERTTUPLE_H

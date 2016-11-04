@@ -1,6 +1,5 @@
 #include "SortSelection.h"
 
-SortSelection::SortSelection(int n, int* tab):Sort(n,tab){}
 SortSelection::SortSelection(int n, int max):Sort(n,max){}
 SortSelection::~SortSelection(){}
 

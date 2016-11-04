@@ -3,30 +3,19 @@
 Sort::Sort(int n, int max)
 {
     this->m_n=n;
-    m_data = new int[n];
+    m_data.reserve(n);
     compareData.reserve(n);
     for(int i=0; i<m_n; i++)
     {
-        m_data[i]=Random::getInstance().generate(1,max);
+        m_data.push_back(Random::getInstance().generate(1,max));
         compareData.push_back(m_data[i]);
     }
 
 }
-Sort::Sort(int n, int *tab)
-{
-    this->m_n=n;
-    m_data = new int[n];
-    compareData.reserve(n);
-    for(int i=0; i<m_n; i++)
-    {
-        m_data[i]=tab[i];
-        compareData.push_back(m_data[i]);
-    }
 
-}
 Sort::~Sort()
 {
-delete[] m_data;
+//delete[] m_data;
 }
 bool Sort::compare()
 {

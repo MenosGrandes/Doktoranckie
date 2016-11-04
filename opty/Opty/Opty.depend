@@ -228,3 +228,88 @@
 1477927378 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\testsort.cpp
 	"TestSort.h"
 
+1478266452 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\main.cpp
+	"TestSort.h"
+
+1478267009 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\testsort.h
+	<type_traits>
+	"SortInsertTuple.h"
+	"SortInsert.h"
+	"BubbleSort.h"
+	"SortSelection.h"
+	"SortSelectionTuple.h"
+	"BubbleSort.h"
+	"SortBubbleTuple.h"
+	"Timer.h"
+	"Random.h"
+
+1478266683 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\sortinserttuple.h
+	<Sort.h>
+	<utility>
+
+1478266791 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\sort.h
+	<algorithm>
+	<functional>
+	<vector>
+	"Random.h"
+
+1478266868 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\random.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1478266684 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\sortinsert.h
+	"Sort.h"
+
+1478249290 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\bubblesort.h
+	"Sort.h"
+
+1478266683 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\sortselection.h
+	"Sort.h"
+
+1478266683 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\sortselectiontuple.h
+	"Sort.h"
+
+1478266684 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\sortbubbletuple.h
+	<Sort.h>
+
+1478249290 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\timer.h
+	"Sort.h"
+	<windows.h>
+
+1478266683 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\bubblesort.cpp
+	"BubbleSort.h"
+
+1478249290 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\random.cpp
+	"Random.h"
+
+1478266895 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\sort.cpp
+	"Sort.h"
+
+1478266684 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\sortinsert.cpp
+	"SortInsert.h"
+
+1478266683 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\sortselection.cpp
+	"SortSelection.h"
+
+1478266684 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\sortselectiontuple.cpp
+	"SortSelectionTuple.h"
+
+1478267000 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\testsort.cpp
+	"TestSort.h"
+
+1478249290 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\timer.cpp
+	"Timer.h"
+
+1478266684 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\sortbubbletuple.cpp
+	"SortBubbleTuple.h"
+
+1478266683 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\sortinserttuple.cpp
+	"SortInsertTuple.h"
+
+1478266684 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\src\sortinserttriple.cpp
+	"SortInsertTriple.h"
+
+1478266684 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\sortinserttriple.h
+	<Sort.h>
+

@@ -1,7 +1,6 @@
 #include "BubbleSort.h"
 
 BubbleSort::BubbleSort(int n, int max):Sort(n,max) {}
-BubbleSort::BubbleSort(int n, int *tab):Sort(n,tab) {}
 BubbleSort::~BubbleSort(){}
 void BubbleSort::_sort()
 {

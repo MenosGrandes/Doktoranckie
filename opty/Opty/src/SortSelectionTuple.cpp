@@ -1,6 +1,5 @@
 #include "SortSelectionTuple.h"
 
-SortSelectionTuple::SortSelectionTuple(int n, int* tab):Sort(n,tab) {}
 SortSelectionTuple::SortSelectionTuple(int n, int max):Sort(n,max) {}
 SortSelectionTuple::~SortSelectionTuple() {}
 

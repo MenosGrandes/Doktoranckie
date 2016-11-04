@@ -5,7 +5,6 @@
 class SortSelection : public Sort
 {
     public:
-        SortSelection(int n, int* tab);
          SortSelection(int n, int max);
          ~SortSelection();
         void _sort();

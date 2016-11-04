@@ -6,7 +6,6 @@
 class SortSelectionTuple: public Sort
 {
     public:
-        SortSelectionTuple(int n, int* tab);
          SortSelectionTuple(int n, int max);
          ~SortSelectionTuple();
         void __attribute__((hot)) _sort();

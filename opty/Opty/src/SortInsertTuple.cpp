@@ -1,12 +1,11 @@
 #include "SortInsertTuple.h"
 
 SortInsertTuple::SortInsertTuple(int n, int max):Sort(n,max) {}
-SortInsertTuple::SortInsertTuple(int n, int *tab):Sort(n,tab) {}
 SortInsertTuple::~SortInsertTuple() {}
 /**
 
 */
-inline void __attribute__((hot)) SortInsertTuple::_sort()
+ void SortInsertTuple::_sort()
 {
     /**robimy tak jak z poprzednim
     bierz po pare liczb, nastepujacych po sobie

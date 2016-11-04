@@ -48,6 +48,7 @@
 		<Unit filename="include/Sort.h" />
 		<Unit filename="include/SortBubbleTuple.h" />
 		<Unit filename="include/SortInsert.h" />
+		<Unit filename="include/SortInsertTriple.h" />
 		<Unit filename="include/SortInsertTuple.h" />
 		<Unit filename="include/SortSelection.h" />
 		<Unit filename="include/SortSelectionTuple.h" />
@@ -59,6 +60,7 @@
 		<Unit filename="src/Sort.cpp" />
 		<Unit filename="src/SortBubbleTuple.cpp" />
 		<Unit filename="src/SortInsert.cpp" />
+		<Unit filename="src/SortInsertTriple.cpp" />
 		<Unit filename="src/SortInsertTuple.cpp" />
 		<Unit filename="src/SortSelection.cpp" />
 		<Unit filename="src/SortSelectionTuple.cpp" />
