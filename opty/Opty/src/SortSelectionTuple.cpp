@@ -3,13 +3,7 @@
 SortSelectionTuple::SortSelectionTuple(int n, int max):Sort(n,max) {}
 SortSelectionTuple::~SortSelectionTuple() {}
 
-//min and max
-/**
-Sortowanie przez wybieranie 2 najmniejszej  wartosci w zbiorze.
 
-
-
-*/
 void SortSelectionTuple::_sort()
 {
 #ifdef DOBLE_BURST_SELECTION_SORT
@@ -73,7 +67,31 @@ void SortSelectionTuple::_sort()
 
 
     */
+/**
+wez 2 skrajne elementy i podpisz je jako element
+min = element1
+max = element2
 
+1 5 2 6 9 8
+min=1
+max=8
+w zbiorze od element1+1 do element2-1 znajdz najmniejsza i najwieksza
+min = 1 max = 9
+    zamien min z indeksem element1 i max z elementem w element2.
+    1 5 2 6 8 9
+
+min = 5 max = 8
+po przejsciu sprawdzania min max
+min = 2 max =8
+    1 2 5 6 8 9
+    min = 5 max =6
+    1 2 5 6 8 9
+    POSORTOWANE
+
+
+
+
+*/
 //        for(VintIter it = m_data.begin(); it != m_data.end()-1; it-=2)
 //        {
 //

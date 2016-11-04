@@ -22,8 +22,8 @@ protected:
     int m_n;
     void _swap(int x,int y);
 private:
-    Sort(const Sort &a) {};
-    Sort(Sort&& o) noexcept { }
+//    Sort(const Sort &a) {};
+//    Sort(Sort&& o) noexcept { }
 
 };
 

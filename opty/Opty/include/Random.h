@@ -9,7 +9,7 @@ class Random
 private:
 
     Random() {};
-    Random(const Random&r) {};
+    Random(const Random&r);
 
     ~Random() {};
 

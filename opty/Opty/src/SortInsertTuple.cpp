@@ -47,7 +47,7 @@ void SortInsertTuple::_sort()
 
     */
 const int sizeOfArray=m_n-(m_n&1);
-
+//
     for(int i=0; i<sizeOfArray; i+=2)
     {
         if(m_data[i] > m_data[i+1])

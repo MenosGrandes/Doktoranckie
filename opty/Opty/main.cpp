@@ -19,7 +19,7 @@ std::cout<<bubbleSortTest.test(100,10000);
 
 
 TestSort<SortInsert,SortInsertTuple> insertSortTest;
-std::cout<<insertSortTest.test(100,10000,1000);
+std::cout<<insertSortTest.test(100,10000,10000);
 //
 //SortSelection *sit = new SortSelection(10000,1000);
 ////sit->print();

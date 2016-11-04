@@ -9,7 +9,7 @@ class SortBubbleTuple : public Sort
     public:
             SortBubbleTuple(int n, int max);
         ~SortBubbleTuple();
-    void _sort();
+    void inline _sort();
     protected:
 
     private:

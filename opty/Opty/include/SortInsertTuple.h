@@ -9,7 +9,7 @@ class SortInsertTuple : public Sort
 public:
     SortInsertTuple(int n, int max);
     ~SortInsertTuple();
-    void _sort() __attribute__ ((pure));;
+    void inline _sort();
 };
 
 #endif // SORTINSERTTUPLE_H
