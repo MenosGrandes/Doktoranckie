@@ -5,7 +5,6 @@ SortSelection::~SortSelection(){}
 
 void SortSelection::_sort()
 {
-    std::cout<<"!!@!@!@!@!@!@"<<std::endl;
     for(VintIter it = m_data.begin(); it != m_data.end()-1; ++it)
     {
         VintIter next=(it);

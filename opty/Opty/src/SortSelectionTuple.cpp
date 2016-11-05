@@ -4,7 +4,7 @@ SortSelectionTuple::SortSelectionTuple(int n, int max):Sort(n,max) {}
 SortSelectionTuple::~SortSelectionTuple() {}
 
 
-void SortSelectionTuple::_sort()
+inline void SortSelectionTuple::_sort()
 {
 #ifdef DOBLE_BURST_SELECTION_SORT
     for(unsigned minIndex = 0, maxIndex = m_n-1; minIndex < maxIndex;)
@@ -67,38 +67,74 @@ void SortSelectionTuple::_sort()
 
 
     */
-/**
-wez 2 skrajne elementy i podpisz je jako element
-min = element1
-max = element2
+    /**
+    wez 2 skrajne elementy i podpisz je jako element
+    min = element1
+    max = element2
 
-1 5 2 6 9 8
-min=1
-max=8
-w zbiorze od element1+1 do element2-1 znajdz najmniejsza i najwieksza
-min = 1 max = 9
-    zamien min z indeksem element1 i max z elementem w element2.
-    1 5 2 6 8 9
+    1 5 2 6 9 8
+    min=1
+    max=8
+    w zbiorze od element1+1 do element2-1 znajdz najmniejsza i najwieksza
+    min = 1 max = 9
+        zamien min z indeksem element1 i max z elementem w element2.
+        1 5 2 6 8 9
 
-min = 5 max = 8
-po przejsciu sprawdzania min max
-min = 2 max =8
-    1 2 5 6 8 9
-    min = 5 max =6
-    1 2 5 6 8 9
-    POSORTOWANE
-
-
+    min = 5 max = 8
+    po przejsciu sprawdzania min max
+    min = 2 max =8
+        1 2 5 6 8 9
+        min = 5 max =6
+        1 2 5 6 8 9
+        POSORTOWANE
 
 
-*/
-//        for(VintIter it = m_data.begin(); it != m_data.end()-1; it-=2)
-//        {
-//
-//            VintIter minElem=std::min_element(next++,(m_data.end()-it));
-//            VintIter maxElem=std::max_element(next++,(m_data.end()-it));
-//
-//            std::iter_swap(),it);
-//        }
+    3 przypadki!
+    Jak najwiekszy znaleziony element jest jednoczesnie elementem poczatkowym przeszukiwanego zbioru
+    8 1 5 3 2 6
+    Jak najmniejszy znaleziony element jest jednoczesnie elementem ostatnim przeszukiwanego zbioru
+    4 7 2 1
+    Oba powyzej w polaczeniu
+    8 2 4 5 5 1
+
+    W pierwszym przypadku:
+    Najpierw zamien element najwiekszy, czyli pierwszy element, z koncem
+    Potem zamien element najmniejszy z poczatkiem
+    W drugim przypadku:
+    Najpierw zamien element najmniejszy, czyli ostatni element, z poczatkiem
+    Potem najwiekszy z koncem
+    W ostatnim:
+    Zamien poczatek z koncem.
+    */
+
+
+    for(int i=0; i<this->m_n/2; i++)
+    {
+        const VintIter _begin = m_data.begin()+i;
+        const VintIter _end   = (m_data.end()-1)-i;
+
+        std::pair<VintIter,VintIter> _minmax=std::minmax_element(_begin,_end+1);
+
+        if(_minmax.first == _end && _minmax.second == _begin)//jezeli najmniejsza jest na koncu a najwieksza na poczatku
+        {
+            std::iter_swap(_begin,(_end));
+        }
+        else
+        {
+
+            if(_minmax.first == _end)//jezeli najmniejsza jest na koncu
+            {
+                std::iter_swap(_begin,_minmax.first);
+                std::iter_swap(_end,_minmax.second);
+            }
+            else
+            {
+                std::iter_swap(_end,_minmax.second);
+                std::iter_swap(_begin,_minmax.first);
+            }
+
+        }
+
+    }
 
 }

@@ -96,14 +96,14 @@
 	"Sort.h"
 	<windows.h>
 
-1478292406 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1478367344 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 
 1478292270 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
 	<Sort.h>
 	<utility>
 
-1478291393 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
+1478295780 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
 	<algorithm>
 	<functional>
 	<vector>
@@ -133,7 +133,7 @@
 1477072515 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\timer.cpp
 	"Timer.h"
 
-1478294029 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
+1478296205 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
 1477155100 c:\users\menos\desktop\doktoranckie\opty\opty\include\randomgen.hpp
@@ -154,14 +154,15 @@
 	"Sort.h"
 	"../typdefs.hpp"
 
-1478289223 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselection.cpp
+1478366403 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselection.cpp
 	"SortSelection.h"
 
-1478290733 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselectiontuple.cpp
+1478366338 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselectiontuple.cpp
 	"SortSelectionTuple.h"
 
-1478292276 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
+1478359430 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
 	"Sort.h"
+	"../typdefs.hpp"
 	<algorithm>
 
 1477897241 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselection.h
