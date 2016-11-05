@@ -51,22 +51,7 @@ inline void SortSelectionTuple::_sort()
         maxIndex = newMaxIndex;
     }
 #endif // DOBLE_BURST_SELECTION_SORT
-    /*
-        for(int j = 0; j < this->m_n - 1; j++)
-        {
-            int pmin = j;
-            for(int i = j + 1; i < this->m_n; i++)
-            {
-                if(m_data[i] < m_data[pmin])
-                {
-                    pmin = i;
-                }
-            }
-            std::swap(m_data[pmin], m_data[j]);
-        }
 
-
-    */
     /**
     wez 2 skrajne elementy i podpisz je jako element
     min = element1
@@ -107,22 +92,19 @@ inline void SortSelectionTuple::_sort()
     Zamien poczatek z koncem.
     */
 
-
-    for(int i=0; i<this->m_n/2; i++)
+         VintIter _begin = m_data.begin();
+         VintIter _end   = (m_data.end()-1);
+    for( int i=0; i<this->m_n/2; i++,_begin++,_end--)
     {
-        const VintIter _begin = m_data.begin()+i;
-        const VintIter _end   = (m_data.end()-1)-i;
+        const std::pair<const VintIter,const VintIter> _minmax=std::minmax_element(_begin,_end+1);
 
-        std::pair<VintIter,VintIter> _minmax=std::minmax_element(_begin,_end+1);
-
-        if(_minmax.first == _end && _minmax.second == _begin)//jezeli najmniejsza jest na koncu a najwieksza na poczatku
+        if(_minmax.first == _end && _minmax.second == _begin)
         {
-            std::iter_swap(_begin,(_end));
+            std::iter_swap(_begin,_end);
         }
         else
         {
-
-            if(_minmax.first == _end)//jezeli najmniejsza jest na koncu
+            if(_minmax.first == _end)
             {
                 std::iter_swap(_begin,_minmax.first);
                 std::iter_swap(_end,_minmax.second);
@@ -132,7 +114,6 @@ inline void SortSelectionTuple::_sort()
                 std::iter_swap(_end,_minmax.second);
                 std::iter_swap(_begin,_minmax.first);
             }
-
         }
 
     }

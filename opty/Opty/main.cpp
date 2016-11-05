@@ -28,6 +28,10 @@ std::cout<<bubbleSortTest.test(100,10000);
 ////sit->print();
 
 TestSort<SortSelection,SortSelectionTuple> selectionSortTest;
-std::cout<<selectionSortTest.test(1,10000,1000);
+std::cout<<selectionSortTest.test(1,30000,1000);
+
+TestSort<SortInsert,SortInsertTuple> insertSortTest;
+std::cout<<insertSortTest.test(1,30000,30000);
+
     return 0;
 }

@@ -22,8 +22,8 @@ protected:
     int m_n;
     void _swap(int x,int y);
 private:
-    Sort(const Sort &a):m_data(a.m_data),compareData(a.compareData) {};
-    Sort(Sort&& o):m_data(std::move(o.m_data)),compareData(std::move(o.compareData)){ }
+    Sort(const Sort &a):m_data(a.m_data),compareData(a.compareData),m_n(a.m_n) {};
+    Sort(Sort&& o):m_data(std::move(o.m_data)),compareData(std::move(o.compareData)),m_n(std::move(m_n)){ }
 
 };
 
