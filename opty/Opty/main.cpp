@@ -4,6 +4,8 @@
 
 int main()
 {
+
+
 srand((time(0)));
 #ifdef TESTS
 TestSort<SortInsert,SortInsertTuple> insertSortTest;
@@ -26,12 +28,26 @@ std::cout<<bubbleSortTest.test(100,10000);
 //sit->_sort();
 //sit->compare();
 ////sit->print();
+//
+//TestSort<SortSelection,SortSelectionTuple> selectionSortTest;
+//std::cout<<selectionSortTest.test(1,30000,1000);
+//
+TestSort<SortNormalBubble,SortTupleBubble> sortBubbleTest;
+TestSort<SortNormalInsert,SortTupleInsert> sortInsertTest;
+TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTest;
 
-TestSort<SortSelection,SortSelectionTuple> selectionSortTest;
-std::cout<<selectionSortTest.test(1,30000,1000);
+std::cout<<sortBubbleTest.test(2,10000,100000)<<std::endl;
+std::cout<<sortInsertTest.test(2,10000,100000)<<std::endl;
+std::cout<<sortSelectionTest.test(2,10000,100000)<<std::endl;
 
-TestSort<SortInsert,SortInsertTuple> insertSortTest;
-std::cout<<insertSortTest.test(1,30000,30000);
+//
+//SortTupleBubble*sb = new SortTupleBubble(10,10);
+//sb->print();
+//sb->_sort();
+//sb->compare();
+//sb->print();
+
+
 
     return 0;
 }

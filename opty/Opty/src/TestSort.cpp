@@ -16,6 +16,7 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int m
     std::cout<<"!~!~!~TESTING~!~!~!"<<std::endl;
    // std::cout<<typeid(BasicSort).name()<<" "<<typeid(TupleSort).name()<<std::endl;
     Timer t;
+
     long long timeTuple = 0;
     long long timeNormal = 0;
 
@@ -25,8 +26,8 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int m
         BasicSort *m_basicSort = new BasicSort(tabSize,max);
         TupleSort *m_tupleSort = new TupleSort(tabSize,max);
 
-        timeNormal+=t.measureWindows(m_basicSort);
-        timeTuple +=t.measureWindows(m_tupleSort);
+        timeNormal+=t.measureWindows<BasicSort>(m_basicSort);
+        timeTuple +=t.measureWindows<TupleSort>(m_tupleSort);
 
 
         m_tupleSort->compare();
@@ -43,7 +44,7 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int m
 
 
 }
-template class TestSort<SortSelection,SortSelectionTuple>;
-template class TestSort<SortInsert,SortInsertTuple>;
-template class TestSort<BubbleSort,SortBubbleTuple>;
+template class TestSort<SortNormalBubble,SortTupleBubble>;
+template class TestSort<SortNormalInsert,SortTupleInsert>;
+template class TestSort<SortNormalSelection,SortTupleSelection>;
 

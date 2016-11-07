@@ -1,19 +1,28 @@
 #ifndef SortInsert_H
 #define SortInsert_H
+#include "../typdefs.hpp"
 
-#include "Sort.h"
-
-
-class SortInsert : public Sort
+class SortInsert
 {
+
 public:
-    SortInsert(int n, int max);
+        SortInsert(){};
+    ~SortInsert(){};
+    void sort(std::vector<int> &toSort)
+    {
+        for(int i=1; i<toSort.size(); i++)
+        {
+            const int pom = toSort[i];
+            int j = i-1;
+            while(j>=0 && toSort[j]>pom)
+            {
+                toSort[j+1] = toSort[j];
+                --j;
+            }
+            toSort[j+1] = pom;
+        }
+    }
 
-    ~SortInsert();
-    void _sort();
-protected:
-
-private:
 };
 
 #endif // SortInsert_H

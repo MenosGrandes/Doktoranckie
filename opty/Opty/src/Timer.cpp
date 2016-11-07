@@ -1,11 +1,11 @@
-#include "Timer.h"
-
-Timer::Timer()
-{
-    //ctor
-}
-
-Timer::~Timer()
-{
-    //dtor
-}
+//#include "Timer.h"
+//
+//Timer::Timer()
+//{
+//    //ctor
+//}
+//
+//Timer::~Timer()
+//{
+//    //dtor
+//}

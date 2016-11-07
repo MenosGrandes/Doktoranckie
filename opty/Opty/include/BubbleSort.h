@@ -1,17 +1,24 @@
 #ifndef BUBBLESORT_H
 #define BUBBLESORT_H
-#include "Sort.h"
-
-class BubbleSort : public Sort
+#include "../typdefs.hpp"
+class BubbleSort
 {
 public:
-    BubbleSort(int n, int max);
-    BubbleSort(int n, int*tab);
-    ~BubbleSort();
-    void _sort();
-protected:
-
-private:
+    void sort(std::vector<int> &toSort)
+    {
+        for (int i = 0; i < (toSort.size() - 1); ++i)
+        {
+            for (int j = (toSort.size() - 1); j > i; --j)
+            {
+                if (toSort[j - 1] > toSort[j])
+                {
+                    std::swap(toSort[j - 1], toSort[j]);
+                }
+            }
+        }
+    }
+    BubbleSort(){};
+    ~BubbleSort(){};
 };
 
 #endif // BUBBLESORT_H

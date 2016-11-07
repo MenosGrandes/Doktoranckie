@@ -82,37 +82,13 @@
 			<Option virtualFolder="Helpers/" />
 		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="src/BubbleSort.cpp">
-			<Option virtualFolder="Sort/NormalSort/" />
-		</Unit>
-		<Unit filename="src/Random.cpp">
-			<Option virtualFolder="Helpers/" />
-		</Unit>
 		<Unit filename="src/Sort.cpp">
-			<Option virtualFolder="Sort/NormalSort/" />
-		</Unit>
-		<Unit filename="src/SortBubbleTuple.cpp">
-			<Option virtualFolder="Sort/TupleSort/" />
-		</Unit>
-		<Unit filename="src/SortInsert.cpp">
 			<Option virtualFolder="Sort/NormalSort/" />
 		</Unit>
 		<Unit filename="src/SortInsertTriple.cpp">
 			<Option virtualFolder="Sort/TripleSort/" />
 		</Unit>
-		<Unit filename="src/SortInsertTuple.cpp">
-			<Option virtualFolder="Sort/TupleSort/" />
-		</Unit>
-		<Unit filename="src/SortSelection.cpp">
-			<Option virtualFolder="Sort/NormalSort/" />
-		</Unit>
-		<Unit filename="src/SortSelectionTuple.cpp">
-			<Option virtualFolder="Sort/TupleSort/" />
-		</Unit>
 		<Unit filename="src/TestSort.cpp">
-			<Option virtualFolder="Helpers/" />
-		</Unit>
-		<Unit filename="src/Timer.cpp">
 			<Option virtualFolder="Helpers/" />
 		</Unit>
 		<Unit filename="typdefs.hpp" />

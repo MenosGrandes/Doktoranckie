@@ -1,6 +1,6 @@
 #include "Sort.h"
-
-Sort::Sort(int n, int max)
+template <class SortMethod>
+Sort<SortMethod>::Sort(int n, int max)
 {
     this->m_n=n;
     m_data.reserve(n);
@@ -10,14 +10,21 @@ Sort::Sort(int n, int max)
         m_data.push_back(Random::getInstance().generate(1,max));
         compareData.push_back(m_data[i]);
     }
+    sortMethod = new SortMethod();
 
 }
-
-Sort::~Sort()
+template <class SortMethod>
+Sort<SortMethod>::~Sort()
 {
-//delete[] m_data;
+    delete sortMethod;
 }
-bool Sort::compare()
+template <class SortMethod>
+void Sort<SortMethod>::_sort()
+{
+    sortMethod->sort(this->m_data);
+}
+template <class SortMethod>
+bool Sort<SortMethod>::compare()
 {
     std::sort(std::begin(compareData),std::end(compareData), std::less<int>());
     for(int i=0; i<m_n; i++)
@@ -32,7 +39,8 @@ bool Sort::compare()
     return true;
 
 }
-void Sort::print() const
+template <class SortMethod>
+void Sort<SortMethod>::print() const
 {
 
     std::cout<<"~~~~~~~~~~~~~~~~~~"<<std::endl;
@@ -42,20 +50,4 @@ void Sort::print() const
     }
     std::cout<<std::endl;
 
-//    std::cout<<"@@@@@@@@@@"<<std::endl;
-//    for(int i=0; i<m_n; i++)
-//    {
-//        std::cout<<compareData[i]<<",";
-//    }
-//    std::cout<<std::endl;
 }
-
-//Sort::Sort(const Sort& a)
-//{
-//    this->m_n=a.m_n;
-//    this->m_data= new int [this->m_n];
-//    for(int i=0;i<this->m_n;i++)
-//    {
-//        this->m_data[i]=a.m_data[i];
-//    }
-//}

@@ -2,13 +2,7 @@
 #define TESTSORT_H
 #include <type_traits>
 
-#include "SortInsertTuple.h"
-#include "SortInsert.h"
-#include "BubbleSort.h"
-#include "SortSelection.h"
-#include "SortSelectionTuple.h"
-#include "BubbleSort.h"
-#include "SortBubbleTuple.h"
+#include "Sort.h"
 #include "Timer.h"
 #include "Random.h"
 template<class BasicSort,class TupleSort>
