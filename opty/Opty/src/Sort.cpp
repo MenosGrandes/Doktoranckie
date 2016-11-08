@@ -31,6 +31,7 @@ bool Sort<SortMethod>::compare()
     {
         if(compareData[i]!=m_data[i])
         {
+
             std::cout<<compareData[i]<<"!="<<m_data[i]<<std::endl;
             return false;
         }

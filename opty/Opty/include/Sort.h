@@ -11,6 +11,7 @@
 #include "SortBubbleTuple.h"
 #include "SortInsertTuple.h"
 #include "Random.h"
+
 template <class SortMethod>
 class Sort
 {

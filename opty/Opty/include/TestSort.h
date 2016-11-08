@@ -3,8 +3,9 @@
 #include <type_traits>
 
 #include "Sort.h"
-#include "Timer.h"
 #include "Random.h"
+#include "Timer.h"
+#include <cassert>
 template<class BasicSort,class TupleSort>
 class TestSort
 {

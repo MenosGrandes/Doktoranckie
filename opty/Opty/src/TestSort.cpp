@@ -13,7 +13,7 @@ TestSort<BasicSort,TupleSort>::~TestSort()
 template<class BasicSort,class TupleSort>
 float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int max )
 {
-    std::cout<<"!~!~!~TESTING~!~!~!"<<std::endl;
+    std::cout<<"\t!~!~!~TESTING~!~!~!"<<std::endl;
    // std::cout<<typeid(BasicSort).name()<<" "<<typeid(TupleSort).name()<<std::endl;
     Timer t;
 
@@ -26,12 +26,17 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int m
         BasicSort *m_basicSort = new BasicSort(tabSize,max);
         TupleSort *m_tupleSort = new TupleSort(tabSize,max);
 
+
+
+
+
+
         timeNormal+=t.measureWindows<BasicSort>(m_basicSort);
         timeTuple +=t.measureWindows<TupleSort>(m_tupleSort);
 
-
-        m_tupleSort->compare();
-        m_basicSort->compare();
+//
+       assert( m_tupleSort->compare());
+        assert(m_basicSort->compare());
         delete m_basicSort;
         delete m_tupleSort;
     }
@@ -39,7 +44,7 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int m
     {
         return 0;
     }
-    std::cout<<std::endl<<typeid(BasicSort).name()<<(timeNormal/testCounts)<<std::endl<<typeid(TupleSort).name()<<(timeTuple/testCounts)<<std::endl;
+    std::cout<<std::endl<<"\t"<<typeid(BasicSort).name()<<"  "<<(timeNormal/testCounts)<<std::endl<<"\t"<<typeid(TupleSort).name()<<"  "<<(timeTuple/testCounts)<<std::endl;
     return ((100.0f)-(float)(((timeTuple/testCounts)*100)/(timeNormal/testCounts))); ;
 
 

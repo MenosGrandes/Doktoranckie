@@ -4,41 +4,55 @@
 
 #include "../typdefs.hpp"
 #include <algorithm>
+#include <iostream>
 class SortSelectionTuple
 {
 public:
-      SortSelectionTuple(){};
-    ~SortSelectionTuple(){};
+    SortSelectionTuple() {};
+    ~SortSelectionTuple() {};
     void sort(std::vector<int> &toSort)
     {
-        VintIter _begin = toSort.begin();
-        VintIter _end   = (toSort.end()-1);
-        for( int i=0; i<toSort.size()/2; i++,_begin++,_end--)
-        {
-            const std::pair<const VintIter,const VintIter> _minmax=std::minmax_element(_begin,_end+1);
+        /**
+        1)Jezeli najmniejszy znaleziony jest na ostatnim miejscu, a najwiekszy na pierwszym miejscu
+        2)Jezeli najmniejszy znaleziony jest na ostatnim miejscu tablicy, tam gdzie powinnismy swap
+        3)Jezeli najwiekszy znaleziony jest na pierwszym miejscu tablicy, tam gdzie powinnismy swap
+        4)Jezeli nic z powyzszych.
 
-            if(_minmax.first == _end && _minmax.second == _begin)
-            {
-                std::iter_swap(_begin,_end);
-            }
-            else
-            {
-                if(_minmax.first == _end)
-                {
-                    std::iter_swap(_begin,_minmax.first);
-                    std::iter_swap(_end,_minmax.second);
-                }
-                else
-                {
-                    std::iter_swap(_end,_minmax.second);
-                    std::iter_swap(_begin,_minmax.first);
-                }
-            }
-
-        }
-
+        Najczesciej wywoluje sie:
+        4
+        3
+        2
+        1
+        */
     }
 
+
+    VintIter _begin = toSort.begin();
+    VintIter _end = toSort.end() - 1;
+    while (_begin < _end)
+    {
+        VintIter it=_begin,min=it,max=it;
+        for (it = _begin; it <= _end; ++it)
+        {
+            if (*it < *min)
+            {
+                min = it;
+            }
+            else if (*it > *max)
+            {
+                max = it;
+            }
+        }
+        std::iter_swap(min,_begin);
+        if(_begin==max)
+        {
+            max=min;
+        }
+        std::iter_swap(max,_end);
+        ++_begin;
+        --_end;
+    }
+}
 
 };
 
