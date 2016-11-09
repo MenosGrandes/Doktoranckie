@@ -14,6 +14,20 @@ Sort<SortMethod>::Sort(int n, int max)
 
 }
 template <class SortMethod>
+Sort<SortMethod>::Sort(std::vector<int>append)
+{
+    this->m_n=append.size();
+    m_data.reserve(append.size());
+    compareData.reserve(append.size());
+    m_data.insert(std::end(m_data), std::begin(append), std::end(append));
+    compareData.insert(std::end(compareData), std::begin(append), std::end(append));
+    sortMethod = new SortMethod();
+
+}
+
+
+
+template <class SortMethod>
 Sort<SortMethod>::~Sort()
 {
     delete sortMethod;

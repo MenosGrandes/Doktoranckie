@@ -14,7 +14,7 @@ srand((time(0)));
 TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTest;
 //
 //std::cout<<"\t\t"<<sortBubbleTest.test(1,10,10)<<std::endl;
-std::cout<<"\t\t"<<sortSelectionTest.test(1,10000,10000)<<std::endl;
+std::cout<<"\t\t"<<sortSelectionTest.test(10,356,10000)<<std::endl;
 ////std::cout<<"\t\t"<<sortInsertTest.test(2,30000,100000)<<std::endl;
 //
 ////

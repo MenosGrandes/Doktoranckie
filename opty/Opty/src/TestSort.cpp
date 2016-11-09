@@ -23,8 +23,9 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int m
     for(int i=0; i<testCounts; i++)
     {
         std::cout<<i+1<<std::endl;
-        BasicSort *m_basicSort = new BasicSort(tabSize,max);
-        TupleSort *m_tupleSort = new TupleSort(tabSize,max);
+        std::vector<int> v= Random::getInstance().generateRandomVector(1,max,tabSize);
+        BasicSort *m_basicSort = new BasicSort(v);
+        TupleSort *m_tupleSort = new TupleSort(v);
 
 
 
@@ -34,8 +35,7 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int m
         timeNormal+=t.measureWindows<BasicSort>(m_basicSort);
         timeTuple +=t.measureWindows<TupleSort>(m_tupleSort);
 
-//
-       assert( m_tupleSort->compare());
+        assert( m_tupleSort->compare());
         assert(m_basicSort->compare());
         delete m_basicSort;
         delete m_tupleSort;

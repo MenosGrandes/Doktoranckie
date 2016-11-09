@@ -17,6 +17,7 @@ class Sort
 {
 public:
     Sort(int n, int max);
+    Sort(std::vector<int> append);
 
     virtual ~Sort();
     void print() const;

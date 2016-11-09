@@ -10,8 +10,7 @@ class SortSelectionTuple
 public:
     SortSelectionTuple() {};
     ~SortSelectionTuple() {};
-    void sort(std::vector<int> &toSort)
-    {
+
         /**
         1)Jezeli najmniejszy znaleziony jest na ostatnim miejscu, a najwiekszy na pierwszym miejscu
         2)Jezeli najmniejszy znaleziony jest na ostatnim miejscu tablicy, tam gdzie powinnismy swap
@@ -24,31 +23,39 @@ public:
         2
         1
         */
-    }
+    void sort(std::vector<int> &toSort)
+    {
 
+    int vectorSize=0;
 
-    VintIter _begin = toSort.begin();
+        if(toSort.size()%2!=0)
+        {
+            vectorSize++;
+            std::iter_swap((std::min_element(toSort.begin(),toSort.end())),toSort.begin());
+        }
+
+    VintIter _begin = toSort.begin()+vectorSize;
     VintIter _end = toSort.end() - 1;
     while (_begin < _end)
     {
-        VintIter it=_begin,min=it,max=it;
+        VintIter it=_begin,_min=it,_max=it;
         for (it = _begin; it <= _end; ++it)
         {
-            if (*it < *min)
+            if ((*it) < (*_min))
             {
-                min = it;
+                _min = it;
             }
-            else if (*it > *max)
+            else if ((*it) > (*_max))
             {
-                max = it;
+                _max = it;
             }
         }
-        std::iter_swap(min,_begin);
-        if(_begin==max)
+        std::iter_swap(_min,_begin);
+        if(_begin==_max)
         {
-            max=min;
+            _max=_min;
         }
-        std::iter_swap(max,_end);
+        std::iter_swap(_max,_end);
         ++_begin;
         --_end;
     }
