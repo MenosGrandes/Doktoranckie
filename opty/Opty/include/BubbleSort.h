@@ -6,13 +6,13 @@ class BubbleSort
 public:
     void sort(std::vector<int> &toSort)
     {
-        for (int i = 0; i < (toSort.size() - 1); ++i)
-        {
-            for (int j = (toSort.size() - 1); j > i; --j)
+        for(VintIter i=toSort.begin();i!=toSort.end();i++)
+       {
+            for (VintIter j =(toSort.end()-1); j != i; --j)
             {
-                if (toSort[j - 1] > toSort[j])
+                if (*(j - 1) > *(j))
                 {
-                    std::swap(toSort[j - 1], toSort[j]);
+                    std::iter_swap(j - 1, j);
                 }
             }
         }

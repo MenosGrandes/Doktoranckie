@@ -18,6 +18,7 @@ private:
 public:
     static Random& getInstance()
     {
+
         static Random instance;
         return instance;
     }

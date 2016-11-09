@@ -96,28 +96,35 @@
 	"Sort.h"
 	<windows.h>
 
-1478371688 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1478728056 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 
-1478292270 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
-	<Sort.h>
-	<utility>
+1478718593 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
+	"../typdefs.hpp"
 
-1478371101 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
+1478713496 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
 	<algorithm>
 	<functional>
 	<vector>
+	"BubbleSort.h"
+	"SortInsert.h"
+	"SortSelection.h"
+	"SortSelectionTuple.h"
+	"SortBubbleTuple.h"
+	"SortInsertTuple.h"
 	"Random.h"
 
-1478291589 c:\users\menos\desktop\doktoranckie\opty\opty\include\random.h
+1478714003 c:\users\menos\desktop\doktoranckie\opty\opty\include\random.h
 	<iostream>
 	<cstdlib>
 	<ctime>
+	<functional>
+	<algorithm>
 
 1477213789 c:\users\menos\desktop\doktoranckie\opty\opty\include\soerinsert.h
 	"Sort.h"
 
-1477672973 c:\users\menos\desktop\doktoranckie\opty\opty\include\timer.h
+1478626235 c:\users\menos\desktop\doktoranckie\opty\opty\include\timer.h
 	"Sort.h"
 	<windows.h>
 
@@ -127,7 +134,7 @@
 1477684564 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\soerinsert.cpp
 	"SoerInsert.h"
 
-1478281849 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sort.cpp
+1478713496 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sort.cpp
 	"Sort.h"
 
 1477072515 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\timer.cpp
@@ -141,17 +148,17 @@
 1478281849 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
 	"BubbleSort.h"
 
-1477210189 c:\users\menos\desktop\doktoranckie\opty\opty\include\bubblesort.h
-	"Sort.h"
+1478719516 c:\users\menos\desktop\doktoranckie\opty\opty\include\bubblesort.h
+	"../typdefs.hpp"
 
 1478524602 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
 
 1478527066 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bubblesort.h
 	"../typdefs.hpp"
 
-1478287890 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselection.h
-	"Sort.h"
+1478626235 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselection.h
 	"../typdefs.hpp"
+	<algorithm>
 
 1478366403 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselection.cpp
 	"SortSelection.h"
@@ -159,10 +166,10 @@
 1478371170 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselectiontuple.cpp
 	"SortSelectionTuple.h"
 
-1478359430 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
-	"Sort.h"
+1478713496 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
 	"../typdefs.hpp"
 	<algorithm>
+	<iostream>
 
 1478527346 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselection.h
 	"../typdefs.hpp"
@@ -197,23 +204,18 @@
 
 1478525265 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
 
-1478281849 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
+1478626235 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
 	<type_traits>
-	"SortInsertTuple.h"
-	"SortInsert.h"
-	"BubbleSort.h"
-	"SortSelection.h"
-	"SortSelectionTuple.h"
-	"BubbleSort.h"
-	"SortBubbleTuple.h"
-	"Timer.h"
-	"Random.h"
-
-1478281849 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinsert.h
 	"Sort.h"
+	"Random.h"
+	"Timer.h"
+	<cassert>
 
-1478292281 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
-	<Sort.h>
+1478713493 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinsert.h
+	"../typdefs.hpp"
+
+1478728134 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
+	"../typdefs.hpp"
 
 1478281849 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
 	"SortBubbleTuple.h"
@@ -221,7 +223,7 @@
 1478281849 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinsert.cpp
 	"SortInsert.h"
 
-1478371549 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\testsort.cpp
+1478713496 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\testsort.cpp
 	"TestSort.h"
 
 1478266452 source:c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\main.cpp
@@ -309,13 +311,12 @@
 1478266684 c:\users\efilryn\desktop\new folder\doktoranckie\opty\opty\include\sortinserttriple.h
 	<Sort.h>
 
-1478284705 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttriple.cpp
-	"SortInsertTriple.h"
+1478626235 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttriple.cpp
 
 1478281849 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
 	<Sort.h>
 
-1478287853 c:\users\menos\desktop\doktoranckie\opty\opty\typdefs.hpp
+1478715408 c:\users\menos\desktop\doktoranckie\opty\opty\typdefs.hpp
 	<vector>
 
 1478296137 source:c:\users\menos\desktop\aa\doktoranckie\opty\opty\main.cpp

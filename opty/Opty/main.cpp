@@ -4,25 +4,27 @@
 
 int main()
 {
+    srand((time(0)));
 
-//
-srand((time(0)));
-//
-//
-//TestSort<SortNormalBubble,SortTupleBubble> sortBubbleTest;
-//TestSort<SortNormalInsert,SortTupleInsert> sortInsertTest;
+TestSort<SortNormalBubble,SortTupleBubble> sortBubbleTest;
+TestSort<SortNormalInsert,SortTupleInsert> sortInsertTest;
 TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTest;
-//
-//std::cout<<"\t\t"<<sortBubbleTest.test(1,10,10)<<std::endl;
-std::cout<<"\t\t"<<sortSelectionTest.test(10,356,10000)<<std::endl;
-////std::cout<<"\t\t"<<sortInsertTest.test(2,30000,100000)<<std::endl;
+
+std::cout<<"\t\t"<<sortBubbleTest.test(1,30000,100000)<<std::endl;
+//std::cout<<"\t\t"<<sortSelectionTest.test(10,3560,10000)<<std::endl;
+//std::cout<<"\t\t"<<sortInsertTest.test(2,pow(2,16),100000)<<std::endl;
 //
 ////
-//SortTupleSelection*sb = new SortTupleSelection(6,10);
+//while(1){
+//SortTupleBubble*sb = new SortTupleBubble(10,10);
+//system("cls");
 //sb->print();
 //sb->_sort();
-//sb->compare();
+//assert(sb->compare());
 //sb->print();
+//delete sb;
+//}
+
 
     return 0;
 }

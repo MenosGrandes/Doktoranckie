@@ -4,66 +4,79 @@
 
 /*
 http://www.dreamincode.net/forums/topic/122481-finding-the-two-lowest-values-in-array/
+
+Albo tak ze robimy pare:
+4 1 6 4 1 4
+1 6
+
+teraz wieksza w lewo a mnbiejsza w prawo
+1<4
+1 4 6 4 1 4
+teraz 6 w lewo
+6>4
+1 4 6 4 1 4
+6>4 itd itd.
+1 4 4 1 4 6
+4 1 -> zamien
+1 4 1 4 4 6
+1<4
+1 1 4 4 4 6
+4 > 4 !
+4 4
+4<4 !
+4>4 !
+4 6
+4<4 !
+6 koncowa wiec nic.
+
+
+Inne:
+4 1 6 4 1 4
+sortowanie par
+1 4 4 6 1 4
+
+para : 4 6
+6 > 4 !-> 1 4 4 6 1 4 -> 1 4 4 1 6 4 -> 1 4 4 1 4 6
+4 < 4 !-> nic nie zmieniam
+para : 1 4
+
 */
+
 class SortBubbleTuple
 {
 public:
 
-    SortBubbleTuple(){};
-    ~SortBubbleTuple(){};
+    SortBubbleTuple() {};
+    ~SortBubbleTuple() {};
     void sort(std::vector<int> &toSort)
     {
-//        const int sortSize=toSort.size();
-//        for (int i = 0; i < (sortSize)/2; ++i)
-//        {
-//            bool change = false;
-//            for (int j = i; j < sortSize - i - 1; j++)   //one way
-//            {
-//                if (toSort[j] > toSort[j+1])
-//                {
-//                    const int tmp = toSort[j];
-//                    toSort[j] = toSort[j+1];
-//                    toSort[j+1] = tmp;
-//                    change = true;
-//                }
-//            }
-//            for (int j = sortSize - 2 - i; j > i; j--)   //and back
-//            {
-//                if (toSort[j] < toSort[j-1])
-//                {
-//                    const int tmp = toSort[j];
-//                    toSort[j] = toSort[j-1];
-//                    toSort[j-1] = tmp;
-//                    change = true;
-//                }
-//            }
-//            if(!change)
-//            {
-//                break;    //block (break if no element was swapped - the m_data is sorted)
-//            }
-//
-//        }
 
+        for(int i= 0; i<(toSort.size()-1); i++)
+        {
+            int minElem=i,maxElem=i+1;
+            if(toSort[minElem]>toSort[maxElem])
+            {
+                std::swap(toSort[minElem],toSort[maxElem]);
+            }
+            int j=i;
+            while(j>0 && toSort[minElem]<toSort[j-1])
+            {
+                std::swap(toSort[j],toSort[j-1]);
+                --j;
 
-for(int i = 0; i < toSort.size(); i++)
-{
-	int j = toSort.size();
-	while(j-- >= i)
-	{
-		if(toSort[j] > toSort[j + 1])
-		{
-            std::swap(toSort[j],toSort[j+1]);
-            std::swap(toSort[j+1],toSort[j]);
-            std::swap(toSort[j],toSort[j+1]);
+                minElem--;
+            }
 
-		}
-	}
-}
+            int j2=i+1;
+            while(j2<(toSort.size()-1) && toSort[maxElem]>toSort[j2+1])
+            {
+                std::swap(toSort[j2],toSort[j2+1]);
+                ++j2;
 
-//std::cout << "Smallest elem " << toSort[0] << " next smallest elem " << toSort[1] << "\n";
+                maxElem++;
+            }
 
-
-
+        }
     }
 
 };

@@ -2,23 +2,30 @@
 #define SORTINSERTTUPLE_H
 
 #include "../typdefs.hpp"
+
+/**
+Bierzemy parami. od 2 indeksu.
+Porownujemy najwieksza z pary z liczba poprzednia, az do momenu w ktorym liczba porownywana jest wieksza od najwiekszej liczby z pary.
+Jezeli liczba bedzie mniejsza, wtedy wstawiamy obie liczby w miejsce ostatniego porownania i porownujemy z liczba mniejsza z pary.
+Robimy porownanie mniejszej liczby z pary dopoki liczba z ktora porownujemy jest wieksza od najmniejszej liczby z pary. Jak znajdziemy mniejsza
+to znaczy ze za nia trzeba wstawic mniejsza liczbe z pary
+
+*/
 class SortInsertTuple
 {
 public:
-     SortInsertTuple(){};
-    ~SortInsertTuple(){};
+    SortInsertTuple() {};
+    ~SortInsertTuple() {};
 
     void sort(std::vector<int> &toSort)
     {
-        const int sizeOfArray=toSort.size()-(toSort.size()&1);
+        const int sizeOfArray=toSort.size()-(toSort.size()%2);
 //
         for(int i=0; i<sizeOfArray; i+=2)
         {
             if(toSort[i] > toSort[i+1])
             {
-                const int tmp=toSort[i];
-                toSort[i]=toSort[i+1];
-                toSort[i+1]=tmp;
+                std::swap(toSort[i],toSort[i+1]);
             }
         }
 
@@ -44,7 +51,7 @@ public:
             }
             toSort[j+1] = pom1;
         }
-        if(toSort.size()&1)
+        if(toSort.size()%2==1)
         {
             const int pom = toSort[toSort.size()-1];
             int k = toSort.size()-2;
