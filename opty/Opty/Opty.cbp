@@ -45,6 +45,7 @@
 			<Add option="-static-libgcc" />
 			<Add option="-static-libstdc++" />
 		</Linker>
+		<Unit filename="Tests.hpp" />
 		<Unit filename="include/BubbleSort.h">
 			<Option virtualFolder="Sort/NormalSort/" />
 		</Unit>

@@ -25,6 +25,10 @@ public:
             VintIter _min1=it;
             VintIter _min2=it;
             VintIter _max=it;
+
+
+
+
             for (it = _begin; it <= _end; ++it)
             {
                 if ((*it) < (*_min1))
@@ -36,7 +40,7 @@ public:
                 {
                     _min2=it;
                 }
-                else if ((*it) > (*_max))
+                if ((*it) > (*_max))
                 {
                     _max = it;
                 }
@@ -45,9 +49,21 @@ public:
             std::cout<<*(_min1)<<" "<<*(_min2)<<" "<<*(_max)<<std::endl;
 
             std::iter_swap(_min1,_begin);
-            std::iter_swap(_min2,_begin+1);
-            std::iter_swap(_max,_end);
+            if(_max!=_end)
+            {
+                std::iter_swap(_max,_end);
+            }
+//            if(_min2!=(_begin+1))
+//            {
+              std::iter_swap(_min2,_begin+1);
 
+//            }
+
+            for(int j : toSort)
+            {
+                std::cout<<j<<" ";
+            }
+            std::cout<<std::endl;
 //            if(_begin==_max)
 //            {
 //                _max=_min;

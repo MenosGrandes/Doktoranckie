@@ -1,6 +1,6 @@
 
 #include "TestSort.h"
-
+#include "Tests.hpp"
 int main()
 {
     srand((time(0)));
@@ -15,7 +15,8 @@ TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTest;
 //
 ////
 //while(1){
-SortTripleSelection * sb= new SortTripleSelection(10,10);
+std::vector<int> a{6,8,2,1,5,8};
+SortTripleSelection * sb= new SortTripleSelection(a);
 system("cls");
 sb->print();
 sb->_sort();
