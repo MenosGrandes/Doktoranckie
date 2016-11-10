@@ -7,10 +7,10 @@
 class Timer
 {
 public:
-    Timer(){};
-    ~Timer(){};
+    Timer() {};
+    ~Timer() {};
     template <class SortMethod>
-     long long measureWindows( SortMethod *s)
+    long long measureWindows( SortMethod *s)
     {
         StartCounter();
         s->_sort();
@@ -42,17 +42,4 @@ private:
 };
 
 
-
-//template class Timer<BubbleSort>;
-//
-//template class Timer<SortInsert>;
-//
-//template class Timer<SortSelection>;
-//
-///*TUPLES*/
-//template class Timer<SortSelectionTuple>;
-//
-//template class Timer<SortBubbleTuple>;
-//
-//template class Timer<SortInsertTuple>;
 #endif // TIMER_H

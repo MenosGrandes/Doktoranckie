@@ -58,12 +58,12 @@ public:
             {
                 std::swap(toSort[minElem],toSort[maxElem]);
             }
+
             int j=i;
             while(j>0 && toSort[minElem]<toSort[j-1])
             {
                 std::swap(toSort[j],toSort[j-1]);
                 --j;
-
                 minElem--;
             }
 
@@ -72,7 +72,6 @@ public:
             {
                 std::swap(toSort[j2],toSort[j2+1]);
                 ++j2;
-
                 maxElem++;
             }
 

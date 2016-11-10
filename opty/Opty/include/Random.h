@@ -12,13 +12,11 @@ private:
 
     Random() {};
     Random(const Random&r);
-
     ~Random() {};
 
 public:
     static Random& getInstance()
     {
-
         static Random instance;
         return instance;
     }
@@ -29,7 +27,7 @@ public:
     std::vector<int> generateRandomVector(int min,int max,int n)
     {
         std::vector<int> v(n);
-        for(int i=0;i<n;i++)
+        for(int i=0; i<n; i++)
         {
             v[i]=generate(min,max);
         }

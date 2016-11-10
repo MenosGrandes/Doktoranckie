@@ -6,8 +6,8 @@ class SortInsert
 {
 
 public:
-        SortInsert(){};
-    ~SortInsert(){};
+    SortInsert() {};
+    ~SortInsert() {};
     void sort(std::vector<int> &toSort)
     {
         for(int i=1; i<toSort.size(); i++)

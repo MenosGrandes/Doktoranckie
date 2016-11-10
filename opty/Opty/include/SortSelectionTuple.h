@@ -26,7 +26,7 @@ public:
     void sort(std::vector<int> &toSort)
     {
 
-    int vectorSize=0;
+        int vectorSize=0;
 
         if(toSort.size()%2!=0)
         {
@@ -34,31 +34,31 @@ public:
             std::iter_swap((std::min_element(toSort.begin(),toSort.end())),toSort.begin());
         }
 
-    VintIter _begin = toSort.begin()+vectorSize;
-    VintIter _end = toSort.end() - 1;
-    while (_begin < _end)
-    {
-        VintIter it=_begin,_min=it,_max=it;
-        for (it = _begin; it <= _end; ++it)
+        VintIter _begin = toSort.begin()+vectorSize;
+        VintIter _end = toSort.end() - 1;
+        while (_begin < _end)
         {
-            if ((*it) < (*_min))
+            VintIter it=_begin,_min=it,_max=it;
+            for (it = _begin; it <= _end; ++it)
             {
-                _min = it;
+                if ((*it) < (*_min))
+                {
+                    _min = it;
+                }
+                else if ((*it) > (*_max))
+                {
+                    _max = it;
+                }
             }
-            else if ((*it) > (*_max))
+            std::iter_swap(_min,_begin);
+            if(_begin==_max)
             {
-                _max = it;
+                _max=_min;
             }
+            std::iter_swap(_max,_end);
+            ++_begin;
+            --_end;
         }
-        std::iter_swap(_min,_begin);
-        if(_begin==_max)
-        {
-            _max=_min;
-        }
-        std::iter_swap(_max,_end);
-        ++_begin;
-        --_end;
-    }
 }
 
 };

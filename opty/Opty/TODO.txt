@@ -1,0 +1,4 @@
+
+SortBubbleTuple    -> 70% faster for odds and event size of array
+SortSelectionTuple -> 40%-50% faster for odds and event size of array
+SortInsertTuple    -> 25% faster for odds and event size of array

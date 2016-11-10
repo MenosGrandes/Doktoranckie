@@ -54,6 +54,9 @@
 		<Unit filename="include/Sort.h">
 			<Option virtualFolder="Sort/NormalSort/" />
 		</Unit>
+		<Unit filename="include/SortBubbleTriple.h">
+			<Option virtualFolder="Sort/TripleSort/" />
+		</Unit>
 		<Unit filename="include/SortBubbleTuple.h">
 			<Option virtualFolder="Sort/TupleSort/" />
 		</Unit>
@@ -69,6 +72,9 @@
 		<Unit filename="include/SortSelection.h">
 			<Option virtualFolder="Sort/NormalSort/" />
 		</Unit>
+		<Unit filename="include/SortSelectionTriple.h">
+			<Option virtualFolder="Sort/TripleSort/" />
+		</Unit>
 		<Unit filename="include/SortSelectionTuple.h">
 			<Option virtualFolder="Sort/TupleSort/" />
 		</Unit>
@@ -81,9 +87,6 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Sort.cpp">
 			<Option virtualFolder="Sort/NormalSort/" />
-		</Unit>
-		<Unit filename="src/SortInsertTriple.cpp">
-			<Option virtualFolder="Sort/TripleSort/" />
 		</Unit>
 		<Unit filename="src/TestSort.cpp">
 			<Option virtualFolder="Helpers/" />

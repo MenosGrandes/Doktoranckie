@@ -14,7 +14,6 @@ template<class BasicSort,class TupleSort>
 float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int max )
 {
     std::cout<<"\t!~!~!~TESTING~!~!~!"<<std::endl;
-   // std::cout<<typeid(BasicSort).name()<<" "<<typeid(TupleSort).name()<<std::endl;
     Timer t;
 
     long long timeTuple = 0;
@@ -26,10 +25,6 @@ float TestSort<BasicSort,TupleSort>::test(int testCounts,const int tabSize,int m
         std::vector<int> v= Random::getInstance().generateRandomVector(1,max,tabSize);
         BasicSort *m_basicSort = new BasicSort(v);
         TupleSort *m_tupleSort = new TupleSort(v);
-
-
-
-
 
 
         timeNormal+=t.measureWindows<BasicSort>(m_basicSort);

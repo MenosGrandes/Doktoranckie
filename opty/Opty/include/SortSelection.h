@@ -5,8 +5,8 @@
 class SortSelection
 {
 public:
-        SortSelection(){};
-    ~SortSelection(){};
+    SortSelection() {};
+    ~SortSelection() {};
     void sort(std::vector<int> &toSort)
     {
         for(VintIter it = toSort.begin(); it != toSort.end()-1; ++it)

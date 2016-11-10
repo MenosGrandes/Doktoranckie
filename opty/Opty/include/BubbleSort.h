@@ -6,8 +6,8 @@ class BubbleSort
 public:
     void sort(std::vector<int> &toSort)
     {
-        for(VintIter i=toSort.begin();i!=toSort.end();i++)
-       {
+        for(VintIter i=toSort.begin(); i!=toSort.end(); i++)
+        {
             for (VintIter j =(toSort.end()-1); j != i; --j)
             {
                 if (*(j - 1) > *(j))
@@ -17,8 +17,8 @@ public:
             }
         }
     }
-    BubbleSort(){};
-    ~BubbleSort(){};
+    BubbleSort() {};
+    ~BubbleSort() {};
 };
 
 #endif // BUBBLESORT_H
