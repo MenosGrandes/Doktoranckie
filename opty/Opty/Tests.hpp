@@ -1,6 +1,6 @@
 #ifndef TESTS_H
 #define TESTS_H
-
+#include "typdefs.hpp"
 struct MinMinMax
 {
     int min1,min2,max;
@@ -23,10 +23,10 @@ void Get2MinMax(std::vector<int>toSort,int &min1,int &min2,int &max)
 //        while (_begin < _end)
 //        {
 //    int it=_begin;
-min1=10000000;
-min2=10000000;
-max=0;
-    for (int it = 0; it <toSort.size();it++)
+    min1=10000000;
+    min2=10000000;
+    max=0;
+    for (int it = 0; it <toSort.size(); it++)
     {
         if (toSort[it] < min1)
         {
@@ -38,7 +38,7 @@ max=0;
             min2=toSort[it];
         }
 
-         if (toSort[it] > max)
+        if (toSort[it] > max)
         {
             max = toSort[it];
         }
@@ -49,11 +49,11 @@ max=0;
 void Get2Min(std::vector<int>toSort,int &first,int &second)
 {
 
-VintIter _first = std::min_element(toSort.begin(),toSort.end());
-first=(*_first);
-toSort.erase(_first);
-VintIter _second = std::min_element(toSort.begin(),toSort.end());
-second=(*_second);
+    VintIter _first = std::min_element(toSort.begin(),toSort.end());
+    first=(*_first);
+    toSort.erase(_first);
+    VintIter _second = std::min_element(toSort.begin(),toSort.end());
+    second=(*_second);
 }
 void Test()
 {
@@ -88,7 +88,7 @@ void Test()
         std::cout<<ans<<std::endl;
 
 
-                assert(compare);
+        assert(compare);
     }
 }
 #endif

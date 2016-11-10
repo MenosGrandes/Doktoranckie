@@ -46,24 +46,46 @@ public:
                 }
             }
 
-            std::cout<<*(_min1)<<" "<<*(_min2)<<" "<<*(_max)<<std::endl;
+//            std::cout<<*(_min1)<<" "<<*(_min2)<<" "<<*(_max)<<std::endl;
 
             std::iter_swap(_min1,_begin);
-            if(_max!=_end)
+            if(_begin==_max)
             {
-                std::iter_swap(_max,_end);
+                _max=_min1;
             }
-//            if(_min2!=(_begin+1))
+            std::iter_swap(_max,_end);
+
+
+            std::iter_swap(_min2,_begin+1);
+
+
+
+
+
+
+
+//            std::iter_swap(_min1,_begin);
+//            for(int j : toSort)
 //            {
-              std::iter_swap(_min2,_begin+1);
-
+//                std::cout<<j<<" ";
 //            }
+//            std::cout<<std::endl;
+//
+//
+//            for(int j : toSort)
+//            {
+//                std::cout<<j<<" ";
+//            }
+//            std::cout<<std::endl;
+//
+//            for(int j : toSort)
+//            {
+//                std::cout<<j<<" ";
+//            }
+//            std::cout<<std::endl;
 
-            for(int j : toSort)
-            {
-                std::cout<<j<<" ";
-            }
-            std::cout<<std::endl;
+
+
 //            if(_begin==_max)
 //            {
 //                _max=_min;

@@ -15,9 +15,9 @@
 				<Compiler>
 					<Add option="-Weffc++" />
 					<Add option="-pedantic" />
-					<Add option="-w" />
 					<Add option="-Wfatal-errors" />
 					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-pg" />
 					<Add option="-g" />
 					<Add directory="include" />
@@ -86,12 +86,6 @@
 			<Option virtualFolder="Helpers/" />
 		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="src/Sort.cpp">
-			<Option virtualFolder="Sort/NormalSort/" />
-		</Unit>
-		<Unit filename="src/TestSort.cpp">
-			<Option virtualFolder="Helpers/" />
-		</Unit>
 		<Unit filename="typdefs.hpp" />
 		<Extensions>
 			<code_completion />

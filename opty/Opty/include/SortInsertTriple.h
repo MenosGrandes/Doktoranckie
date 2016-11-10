@@ -5,10 +5,10 @@
 
 class SortInsertTriple
 {
-    public:
-    SortInsertTriple(){};
-    ~SortInsertTriple(){};
-    void sort(std::vector<int>&toSort){};
+public:
+    SortInsertTriple() {};
+    ~SortInsertTriple() {};
+    void sort(std::vector<int>&toSort) {};
 };
 
 #endif // SORTINSERTTRIPLE_H
