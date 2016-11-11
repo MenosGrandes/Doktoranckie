@@ -2,6 +2,7 @@
 #define SORTSELECTIONTRIPLE_H
 
 #include "../typdefs.hpp"
+#include <limits>
 class SortSelectionTriple
 {
 public:
@@ -17,85 +18,42 @@ public:
 //            std::iter_swap((std::min_element(toSort.begin(),toSort.end())),toSort.begin());
 //        }
 
-        VintIter _begin = toSort.begin()+vectorSize;
-        VintIter _end = toSort.end() - 1;
-        while (_begin < _end)
+        int _begin = vectorSize;
+        int _end = toSort.size();
+         int end = (int)(toSort.size()/3);
+        while (end>0)
         {
-            VintIter it=_begin;
-            VintIter _min1=it;
-            VintIter _min2=it;
-            VintIter _max=it;
 
 
+            int _min1 = std::numeric_limits<int>::max();
+            int _min2 = std::numeric_limits<int>::max();
+            int _max =  std::numeric_limits<int>::min();
 
 
-            for (it = _begin; it <= _end; ++it)
+            for (int i = _begin; i < _end; ++i)
             {
-                if ((*it) < (*_min1))
+                std::cout<<toSort[i]<<" ";
+                if (toSort[i] < _min1)
                 {
                     _min2=_min1;
-                    _min1 = it;
+                    _min1 = toSort[i];
                 }
-                else if((*it)<(*_min2)&&_min2!=_min1)
+                else if(toSort[i]<_min2)
                 {
-                    _min2=it;
+                    _min2=toSort[i];
                 }
-                if ((*it) > (*_max))
+
+                if (toSort[i] > _max)
                 {
-                    _max = it;
+                    _max = toSort[i];
                 }
             }
-
-//            std::cout<<*(_min1)<<" "<<*(_min2)<<" "<<*(_max)<<std::endl;
-
-            std::iter_swap(_min1,_begin);
-            if(_begin==_max)
-            {
-                _max=_min1;
-            }
-            std::iter_swap(_max,_end);
-
-
-            std::iter_swap(_min2,_begin+1);
-
-
-
-
-
-
-
-//            std::iter_swap(_min1,_begin);
-//            for(int j : toSort)
-//            {
-//                std::cout<<j<<" ";
-//            }
-//            std::cout<<std::endl;
-//
-//
-//            for(int j : toSort)
-//            {
-//                std::cout<<j<<" ";
-//            }
-//            std::cout<<std::endl;
-//
-//            for(int j : toSort)
-//            {
-//                std::cout<<j<<" ";
-//            }
-//            std::cout<<std::endl;
-
-
-
-//            if(_begin==_max)
-//            {
-//                _max=_min;
-//            }
-//            std::iter_swap(_max,_end);
+            std::cout<<std::endl<<"min1:"<<_min1<<" min2:"<<_min2<<" max:"<<_max<<std::endl;
             _begin+=2;
             --_end;
+            --end;
         }
     }
-
 };
 
 #endif // SORTSELECTIONTRIPLE_H

@@ -22,9 +22,8 @@ template <class SortMethod>
 class Sort
 {
 public:
-    Sort(int n, int max)
+    Sort(int n, int max):m_n(n)
     {
-        this->m_n=n;
         m_data.reserve(n);
         compareData.reserve(n);
         for(int i=0; i<m_n; i++)
@@ -34,9 +33,9 @@ public:
         }
         sortMethod = new SortMethod();
     }
-    Sort(std::vector<int> append)
+    Sort(std::vector<int> append):m_n(append.size())
     {
-        this->m_n=append.size();
+//        this->m_n=append.size();
         m_data.reserve(append.size());
         compareData.reserve(append.size());
         m_data.insert(std::end(m_data), std::begin(append), std::end(append));
@@ -48,6 +47,21 @@ public:
     {
         delete sortMethod;
     }
+    Sort&operator=(const Sort& other)
+    {
+        if(&other == this)
+        {
+            return *this;
+        }
+        if(m_n!= other.m_n)
+        {
+            m_n=other.m_n;
+        }
+        m_data = other.m_data;
+        compareData = other.compareData;
+
+    }
+
     void print() const
     {
         std::cout<<"~~~~~~~~~~~~~~~~~~"<<std::endl;

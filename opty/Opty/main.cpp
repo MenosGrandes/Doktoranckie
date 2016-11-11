@@ -49,31 +49,37 @@ TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTupleTest;
 TestSort<SortNormalSelection,SortTripleSelection> sortSelectionTripleTest;
 TestSort<SortNormalInsert,SortTripleInsert>sortInsertTripleTest;
 TestSort<SortNormalBubble,SortTripleBubble>sortBubbleTripleTest;
-std::cout<<"\t\t"<<sortBubbleTupleTest.test(1,1111,100000)<<std::endl;
-std::cout<<"\t\t"<<sortInsertTupleTest.test(10,3561,10000)<<std::endl;
-std::cout<<"\t\t"<<sortSelectionTupleTest.test(1,10000,100000)<<std::endl;
+//std::cout<<"\t\t"<<sortBubbleTupleTest.test(1,1111,100000)<<std::endl;
+//std::cout<<"\t\t"<<sortInsertTupleTest.test(10,3561,10000)<<std::endl;
+//std::cout<<"\t\t"<<sortSelectionTupleTest.test(1,10000,100000)<<std::endl;
 //
 ////
 
-//std::cout<<"\t\t"<<sortSelectionTripleTest.test(1,1000,10000);
+//std::cout<<"\t\t"<<sortSelectionTripleTest.test(100,10,10000);
 
 
+for(int i=0;i<20;i++){
+SortTripleSelection * sb= new SortTripleSelection(10,10);
+sb->print();
+sb->_sort();
+//assert(sb->compare());
+    sb->print();
+    delete sb;
 
-//while(1){
-//std::vector<int> a{6,8,2,1,5,8};
-//SortTripleSelection * sb= new SortTripleSelection(10,10);
-//system("cls");
-////sb->print();
-//sb->_sort();
-////assert(sb->compare());
-//    //sb->print();
-//    delete sb;
+    std::cout<<"~~~~~~~~~~~~~~~"<<std::endl;
+}
 
-
-
-//Test();
-
-
+//
+//std::vector<int> v1 {1,2,3,4,5,6,7,8};
+//VintIter _beg = v1.begin();
+//VintIter _beg2 = v1.begin()+4;
+//
+//std::iter_swap(_beg,_beg2+1);
+//for(int i :v1)
+//{
+//    std::cout<<i<<" ";
+//}
+//std::cout<<std::endl;
 
 
 
