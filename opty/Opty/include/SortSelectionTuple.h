@@ -11,18 +11,18 @@ public:
     SortSelectionTuple() {};
     ~SortSelectionTuple() {};
 
-        /**
-        1)Jezeli najmniejszy znaleziony jest na ostatnim miejscu, a najwiekszy na pierwszym miejscu
-        2)Jezeli najmniejszy znaleziony jest na ostatnim miejscu tablicy, tam gdzie powinnismy swap
-        3)Jezeli najwiekszy znaleziony jest na pierwszym miejscu tablicy, tam gdzie powinnismy swap
-        4)Jezeli nic z powyzszych.
+    /**
+    1)Jezeli najmniejszy znaleziony jest na ostatnim miejscu, a najwiekszy na pierwszym miejscu
+    2)Jezeli najmniejszy znaleziony jest na ostatnim miejscu tablicy, tam gdzie powinnismy swap
+    3)Jezeli najwiekszy znaleziony jest na pierwszym miejscu tablicy, tam gdzie powinnismy swap
+    4)Jezeli nic z powyzszych.
 
-        Najczesciej wywoluje sie:
-        4
-        3
-        2
-        1
-        */
+    Najczesciej wywoluje sie:
+    4
+    3
+    2
+    1
+    */
     void sort(std::vector<int> &toSort)
     {
 
@@ -59,7 +59,7 @@ public:
             ++_begin;
             --_end;
         }
-}
+    }
 
 };
 

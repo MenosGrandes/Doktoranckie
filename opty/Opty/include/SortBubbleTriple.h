@@ -7,11 +7,10 @@ class SortBubbleTriple
 public:
     SortBubbleTriple() {};
     ~SortBubbleTriple() {};
-<<<<<<< HEAD
     void sort(std::vector<int>&toSort)
     {
 
-            for(int i= 0; i<(toSort.size()-1); i++)
+        for(int i= 0; i<(toSort.size()-1); i++)
         {
             int minElem=i,maxElem=i+1;
             if(toSort[minElem]>toSort[maxElem])
@@ -39,9 +38,7 @@ public:
 
 
     };
-=======
-    void sort(std::vector<int>&toSort) {};
->>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
+
 };
 
 #endif // SORTBUBBLETRIPLE_H
