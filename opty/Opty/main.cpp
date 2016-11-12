@@ -51,7 +51,7 @@ int main()
     TestSort<SortNormalBubble,SortTripleBubble>sortBubbleTripleTest;
     TestSort<SortTupleBubble,SortTripleBubble>sortBubbleTripleTupleTest;
 
-std::cout<<"\t\t"<<sortBubbleTupleTest.test(1,1111,100000)<<std::endl;
+//std::cout<<"\t\t"<<sortBubbleTupleTest.test(1,1111,100000)<<std::endl;
 //std::cout<<"\t\t"<<sortInsertTupleTest.test(10,3561,10000)<<std::endl;
 //std::cout<<"\t\t"<<sortSelectionTupleTest.test(1,10000,100000)<<std::endl;
 //    for(int i=0; i<100000; i++)
@@ -61,12 +61,14 @@ std::cout<<"\t\t"<<sortBubbleTupleTest.test(1,1111,100000)<<std::endl;
 //        sts->_sort();
 //        delete sts;
 //    }
-//std::cout<<sortBubbleTripleTupleTest.test(1,30000,100000);
+//std::cout<<sortBubbleTripleTupleTest.test(1,6666,100000);
 while(1){
-SortTripleBubble *stb = new SortTripleBubble(10,10);
+SortTripleBubble *stb = new SortTripleBubble(9,10);
 stb->print();
 stb->_sort();
 stb->print();
+assert(stb->compare());
+
 delete  stb;
 }
 
