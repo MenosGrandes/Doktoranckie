@@ -10,12 +10,19 @@ public:
     void sort(std::vector<int>&toSort)
     {
 
-        for(int i= 0; i<(toSort.size()-1); i++)
+        for(int i= 0; i<(toSort.size()-2)/2; i++)
         {
-            int minElem=i,maxElem=i+1;
-            if(toSort[minElem]>toSort[maxElem])
+
+            int minElem=i,max1Elem=i+1,max2Elem=i+2;
+            if(toSort[max1Elem]>toSort[max2Elem])
             {
-                std::swap(toSort[minElem],toSort[maxElem]);
+                std::swap(toSort[max1Elem],toSort[max2Elem]);
+            }
+            if(toSort[minElem]>toSort[max1Elem])
+            {
+
+             std::swap(toSort[minElem],toSort[max1Elem]);
+
             }
 
             int j=i;
@@ -26,14 +33,24 @@ public:
                 minElem--;
             }
 
-            int j2=i+1;
-            while(j2<(toSort.size()-1) && toSort[maxElem]>toSort[j2+1])
+            int j2=i+2;
+            while(j2<(toSort.size()-2) && toSort[max1Elem]>toSort[j2+1])
             {
+                std::swap(toSort[j2+1],toSort[j2+2]);
                 std::swap(toSort[j2],toSort[j2+1]);
-                ++j2;
-                maxElem++;
-            }
 
+                j2+=2;
+                max1Elem+=2;
+                max2Elem++;
+
+            }
+            int j3=j2+1;
+            while(j3<(toSort.size()-1) && toSort[max2Elem]>toSort[j3+1])
+            {
+                std::swap(toSort[j3],toSort[j3+1]);
+                ++j3;
+                max2Elem++;
+            }
         }
 
 

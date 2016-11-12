@@ -26,14 +26,18 @@ public:
             BasicSort *m_basicSort = new BasicSort(v);
             TupleSort *m_tupleSort = new TupleSort(v);
 
+//            m_tupleSort->print();
 
             timeNormal+=t.measureWindows<BasicSort>(m_basicSort);
             timeTuple +=t.measureWindows<TupleSort>(m_tupleSort);
+//            m_tupleSort->print();
 
             assert( m_tupleSort->compare());
             assert(m_basicSort->compare());
+//            m_basicSort->print();
             delete m_basicSort;
             delete m_tupleSort;
+
         }
         if(timeNormal==0 || timeTuple == 0)
         {
