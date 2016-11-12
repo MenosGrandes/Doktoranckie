@@ -99,7 +99,7 @@
 	"Sort.h"
 	<windows.h>
 
-1478884318 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1478964399 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 	"Tests.hpp"
 	"BubbleSort.h"
@@ -515,11 +515,12 @@
 1478764118 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 
-1478885906 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
+1478966373 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
 	"../typdefs.hpp"
 	<limits>
+	<assert.h>
 
-1478799406 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
+1478960324 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 
 1478799406 c:\users\menos\desktop\doktoranckie\opty\opty\tests.hpp
