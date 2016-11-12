@@ -59,6 +59,7 @@ private :
     {
         int largest = i;
 
+<<<<<<< HEAD
         int left  = leftChild(i);
         int right = rightChild(i);
 
@@ -85,6 +86,55 @@ private :
         for(; i>=0; i--)
         {
             heapify(a, i, len);
+=======
+//            std::cout<<*(_min1)<<" "<<*(_min2)<<" "<<*(_max)<<std::endl;
+
+            std::iter_swap(_min1,_begin);
+            if(_begin==_max)
+            {
+                _max=_min1;
+            }
+            std::iter_swap(_max,_end);
+
+
+            std::iter_swap(_min2,_begin+1);
+
+
+
+
+
+
+
+//            std::iter_swap(_min1,_begin);
+//            for(int j : toSort)
+//            {
+//                std::cout<<j<<" ";
+//            }
+//            std::cout<<std::endl;
+//
+//
+//            for(int j : toSort)
+//            {
+//                std::cout<<j<<" ";
+//            }
+//            std::cout<<std::endl;
+//
+//            for(int j : toSort)
+//            {
+//                std::cout<<j<<" ";
+//            }
+//            std::cout<<std::endl;
+
+
+
+//            if(_begin==_max)
+//            {
+//                _max=_min;
+//            }
+//            std::iter_swap(_max,_end);
+            _begin+=2;
+            --_end;
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
         }
     }
 

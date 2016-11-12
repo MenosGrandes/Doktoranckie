@@ -99,7 +99,11 @@
 	"Sort.h"
 	<windows.h>
 
+<<<<<<< HEAD
 1478964399 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+=======
+1478798416 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
 	"TestSort.h"
 	"Tests.hpp"
 	"BubbleSort.h"
@@ -115,7 +119,11 @@
 1478718593 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
 	"../typdefs.hpp"
 
+<<<<<<< HEAD
 1478873064 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
+=======
+1478799245 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
 	<algorithm>
 	<functional>
 	<vector>
@@ -219,7 +227,11 @@
 
 1478525265 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
 
+<<<<<<< HEAD
 1478799406 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
+=======
+1478799391 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
 	<type_traits>
 	"Random.h"
 	"Timer.h"
@@ -515,7 +527,11 @@
 1478764118 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 
+<<<<<<< HEAD
 1478966373 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
+=======
+1478797098 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
 	"../typdefs.hpp"
 	<limits>
 	<assert.h>
@@ -523,7 +539,11 @@
 1478960324 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 
+<<<<<<< HEAD
 1478799406 c:\users\menos\desktop\doktoranckie\opty\opty\tests.hpp
+=======
+1478798135 c:\users\menos\desktop\doktoranckie\opty\opty\tests.hpp
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
 	"typdefs.hpp"
 
 1478798979 c:\users\menos\desktop\doktoranckie\opty\opty\src\sort.cpp

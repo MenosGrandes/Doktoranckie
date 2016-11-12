@@ -22,8 +22,14 @@ template <class SortMethod>
 class Sort
 {
 public:
+<<<<<<< HEAD
     Sort(int n, int max):m_n(n)
     {
+=======
+    Sort(int n, int max)
+    {
+        this->m_n=n;
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
         m_data.reserve(n);
         compareData.reserve(n);
         for(int i=0; i<m_n; i++)
@@ -33,9 +39,15 @@ public:
         }
         sortMethod = new SortMethod();
     }
+<<<<<<< HEAD
     Sort(std::vector<int> append):m_n(append.size())
     {
 //        this->m_n=append.size();
+=======
+    Sort(std::vector<int> append)
+    {
+        this->m_n=append.size();
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
         m_data.reserve(append.size());
         compareData.reserve(append.size());
         m_data.insert(std::end(m_data), std::begin(append), std::end(append));
@@ -47,6 +59,7 @@ public:
     {
         delete sortMethod;
     }
+<<<<<<< HEAD
     Sort&operator=(const Sort& other)
     {
         if(&other == this)
@@ -62,6 +75,8 @@ public:
 
     }
 
+=======
+>>>>>>> 6c2106290186e1a32c35f96edfbd6e5d738b32c5
     void print() const
     {
         std::cout<<"~~~~~~~~~~~~~~~~~~"<<std::endl;
