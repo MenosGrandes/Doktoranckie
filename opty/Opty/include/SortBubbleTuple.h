@@ -60,17 +60,17 @@ public:
             }
 
             int j=i;
-            while(j>0 && toSort[minElem]<toSort[j-1])
+            while(j>0 && toSort[minElem]<toSort[minElem-1])
             {
-                std::swap(toSort[j],toSort[j-1]);
+                std::swap(toSort[minElem],toSort[minElem-1]);
                 --j;
                 minElem--;
             }
 
             int j2=i+1;
-            while(j2<(toSort.size()-1) && toSort[maxElem]>toSort[j2+1])
+            while(j2<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
             {
-                std::swap(toSort[j2],toSort[j2+1]);
+                std::swap(toSort[maxElem],toSort[maxElem+1]);
                 ++j2;
                 maxElem++;
             }

@@ -39,7 +39,7 @@ public:
             }
 
 
-            for (it = (_begin+2); it < _end; ++it)
+            for (it = (_begin+2); it < (_end+1); ++it)
             {
                 std::cout<<*it<<" ";
                 if ((*it) <= (*_min1) && it!=_min2)
@@ -57,7 +57,7 @@ public:
                 }
             }
             std::cout<<std::endl;
-//            std::cout<<*(_min1)<<" "<<*(_min2)<<" "<<*(_max)<<std::endl;
+            std::cout<<*(_min1)<<" "<<*(_min2)<<" "<<*(_max)<<std::endl;
 //            std::cout<<"min1==min2 "<<CompareBool(_min1,_min2)<<std::endl;;
 //            std::cout<<"_min2==_max "<<CompareBool(_min2,_max)<<std::endl;;
 //            std::cout<<"_max==_min1 "<<CompareBool(_max,_min1)<<std::endl;;
@@ -65,10 +65,15 @@ public:
             assert(_min2!=_max);
             assert(_max!=_min1);
 
+            std::iter_swap(_min1,_begin);
+            if(_min2==_end)
+            {
+            _min2=_min1;
+            }
+            std::iter_swap(_min2,(_begin+1));
+            std::iter_swap(_max,_end);
 
-
-
-            _begin+=2;
+                _begin+=2;
             --_end;
         }
     }

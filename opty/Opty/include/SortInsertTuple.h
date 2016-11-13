@@ -20,7 +20,7 @@ public:
     void sort(std::vector<int> &toSort)
     {
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
-//
+
         for(int i=0; i<sizeOfArray; i+=2)
         {
             if(toSort[i] > toSort[i+1])
@@ -38,7 +38,7 @@ public:
 
             while(j>=0 && toSort[j]>pom2)
             {
-                toSort[j+2] = toSort[j+1] = toSort[j];
+                toSort[j+2] =  toSort[j];
                 j--;
             }
             toSort[j+2] = pom2;

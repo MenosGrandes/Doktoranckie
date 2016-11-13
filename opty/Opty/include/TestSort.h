@@ -11,25 +11,31 @@ class TestSort
 public:
     TestSort() {};
     ~TestSort() {};
-    float test(int testCounts,const int tabSize,int max)
+    float test(int testCounts,const int tabSize,int max,long long &normal,long long &_reference,TEST_OPTIONS so=NON)
     {
-        std::cout<<"\t!~!~!~TESTING~!~!~!"<<std::endl;
+//        std::cout<<"\t!~!~!~TESTING~!~!~!"<<std::endl;
         Timer t;
 
-        long long timeTuple = 0;
-        long long timeNormal = 0;
+normal=0;
+_reference=0;
 
         for(int i=0; i<testCounts; i++)
         {
-            std::cout<<i+1<<std::endl;
+//            std::cout<<i+1<<std::endl;
             std::vector<int> v= Random::getInstance().generateRandomVector(1,max,tabSize);
+            switch(so)
+            {
+                case WORST: std::sort(v.begin(),v.end(), std::greater<int>());break;
+                case BEST :std::sort(v.begin(),v.end(), std::less<int>());break;
+            }
+
             BasicSort *m_basicSort = new BasicSort(v);
             TupleSort *m_tupleSort = new TupleSort(v);
 
 //            m_tupleSort->print();
 
-            timeNormal+=t.measureWindows<BasicSort>(m_basicSort);
-            timeTuple +=t.measureWindows<TupleSort>(m_tupleSort);
+            normal+=t.measureWindows<BasicSort>(m_basicSort);
+            _reference +=t.measureWindows<TupleSort>(m_tupleSort);
 //            m_tupleSort->print();
 
             assert( m_tupleSort->compare());
@@ -39,12 +45,19 @@ public:
             delete m_tupleSort;
 
         }
-        if(timeNormal==0 || timeTuple == 0)
+        if(normal==0 || _reference == 0)
         {
+
+
+
+        std::cout<<(normal)<<","<<(_reference)<<std::endl;
+
             return 0;
         }
-        std::cout<<std::endl<<"\t"<<typeid(BasicSort).name()<<"  "<<(timeNormal/testCounts)<<std::endl<<"\t"<<typeid(TupleSort).name()<<"  "<<(timeTuple/testCounts)<<std::endl;
-        return ((100.0f)-(float)(((timeTuple/testCounts)*100)/(timeNormal/testCounts))); ;
+        std::cout<<(normal/testCounts)<<","<<(_reference/testCounts)<<std::endl;
+
+        //std::cout<<std::endl<<"\t"<<typeid(BasicSort).name()<<"  "<<(normal/testCounts)<<std::endl<<"\t"<<typeid(TupleSort).name()<<"  "<<(_reference/testCounts)<<std::endl;
+        return ((100.0f)-(float)(((_reference/testCounts)*100)/(normal/testCounts))); ;
 
     }
 };
