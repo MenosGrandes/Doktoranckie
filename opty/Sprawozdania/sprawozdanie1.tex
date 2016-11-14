@@ -145,7 +145,7 @@ breaklines=true
           grid=major, 
           grid style={dashed,gray!30},
           xlabel=Ilosc elementow w tablicy, % Set the labels
-          ylabel=Cos pomieszane SPRAWDZ ,
+          ylabel=Czas wykonania [ms] ,
           x tick label style={rotate=0,anchor=east,align=right,yshift=-1.5ex},
           scaled y ticks = false,  
           scaled x ticks = false,   
@@ -168,14 +168,16 @@ breaklines=true
       	  },
       	  xmin=0
 }
+\section{Informacje o sprzęcie testowym}
+Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency}z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz  .
 \section{Algorytm sortowania przez wstawianie}
 
 \subsection*{Dla dwóch elementów}
 
 Początkowym krokiem algorytmu jest posortowanie  par $(x,y) $ w zbiorze $V  $, gdzie każda para $(x,y) \in V$,  tak aby pierwsza liczba $x$  była zawsze liczba mniejsza od liczby $y$. Indeksy liczby $x$ jest zawsze o jeden mniejszy od indeksu liczby $y$ w zbiorze.\\
- Pierwszym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Pary wybierane sa poprzez przesuwanie od indeksu 2 zbioru $V$, poniewaz zakladamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Kazde przejscie zaczyna sie od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
-Po wybraniu pary $(x',y')$ nastepuje porownywanie elementu $y'$ z elementem $z$, ktory poprzedza wybrana pare oraz indeks $z \in \lvert V \rvert $. Dopoki  $z > y'$  wykonuje sie przesuniecie calej pary przed liczbe $z$. Za kazdym razem liczba $z$ jest liczba poprzedzajaca liczbe $x'$.
-Jezeli  $z < y'$ algorytm przechodzi do porownania $z > x'$ . Jezeli zostanie spelniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$. 
+ Pierwszym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Pary wybierane są poprzez przesuwanie od indeksu 2 zbioru $V$, ponieważ zakładamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Każde przejście zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
+Po wybraniu pary $(x',y')$ następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.
+Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$. 
 \subsubsection*{Wyniki}
 \newpage
 \subsubsection*{Kod}
@@ -235,18 +237,18 @@ void sort(std::vector<int> &toSort)
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla losowych elementow tablicy}
+    \caption{Wykres dla losowych elementów tablicy}
   \end{center}
 \end{figure}
 \FloatBarrier
 
 \section{Algorytm sortowania bąbelkowego}
 \subsection{Dla dwóch elementów}
-Podstawowa wersja tego algorytmu polega na porownywaniu ze soba dwoch kolejnych elementow $(x,y) \in V$ i zmianie ich kolejnosci, majac tylko jeden babelek ktory wyplywa na poczatek lub na koniec zbioru. \\
-Zakladajac ze mamy porownywac dwie liczby, zostalo przyjete ze sa dwa babelki. Jeden ktory idzie na poczatek zbioru  $V$ oraz drugi ktory idzie na koniec zbioru $V$. \\
-Dla kazdej pary $(x',y') \in V$ skladajacej sie z kolejnych elementow ze zbioru $V$:
+Podstawowa wersja tego algorytmu polega na porównywaniu ze sobą dwóch kolejnych elementów $(x,y) \in V$ i zmianie ich kolejności, mając tylko jeden bąbelek który wypływa na początek lub na koniec zbioru. \\
+Zakładając ze mamy porównywać dwie liczby, zostało przyjęte ze są dwa bąbelki. Jeden który idzie na początek zbioru  $V$ oraz drugi który idzie na koniec zbioru $V$. \\
+Dla każdej pary $(x',y') \in V$ składającej się z kolejnych elementów ze zbioru $V$:
 \begin{itemize} 
-\item Posortuj pare $(x',y)'$ rosnaco
+\item Posortuj parę $(x',y)'$ rosnąco
 \item Dla kazdej liczby $z$ poprzedzajacej $x'$ zamien ze soba te elementy jezeli\begin{equation*}x' < z\end{equation*} 
 \item  Dla kazdej liczby $w$ nastepujacej $y'$ zamien ze soba te elementy jezeli \begin{equation*}y'>w\end{equation*}
  \end{itemize}  
@@ -351,7 +353,7 @@ void sort(std::vector<int> &toSort)
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla losowych elementow tablicy}
+    \caption{Wykres dla losowych elementów tablicy}
   \end{center}
   \end{figure}
 \FloatBarrier
