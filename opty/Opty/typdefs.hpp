@@ -39,16 +39,16 @@ std::string TEST_OPTIONS_TOSTRING(TEST_OPTIONS s)
     switch(s)
     {
     case NON:
-        return "NormalBubbleSort";
+        return "non";
         break;
     case BEST:
-        return "NormalBubbleSort";
+        return "best";
         break;
     case WORST:
-        return "NormalBubbleSort";
+        return "worst";
         break;
     case LENGTH:
-        return "NormalBubbleSort";
+        return "length";
         break;
     }
     return "";

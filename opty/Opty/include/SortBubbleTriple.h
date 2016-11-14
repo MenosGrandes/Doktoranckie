@@ -20,9 +20,7 @@ public:
             }
             if(toSort[minElem]>toSort[max1Elem])
             {
-
              std::swap(toSort[minElem],toSort[max1Elem]);
-
             }
 
             int j=i;

@@ -10,16 +10,14 @@ public:
     Timer() {};
     ~Timer() {};
     template <class SortMethod>
-    long long measureWindows( SortMethod *s)
+    double measureWindows( SortMethod *s)
     {
         StartCounter();
         s->_sort();
-        long long ret=GetCounter();
+        double ret=GetCounter();
         return ret;
     }
-protected:
 
-private:
     double PCFreq = 0.0;
     __int64 CounterStart = 0;
     void StartCounter()

@@ -115,7 +115,7 @@
 
 1478960324 D
 
-1479066323 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1479154684 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 	"Tests.hpp"
 	"BubbleSort.h"
@@ -194,7 +194,7 @@
 1477213789 c:\users\menos\desktop\doktoranckie\opty\opty\include\soerinsert.h
 	"Sort.h"
 
-1478790815 c:\users\menos\desktop\doktoranckie\opty\opty\include\timer.h
+1479145938 c:\users\menos\desktop\doktoranckie\opty\opty\include\timer.h
 	"Sort.h"
 	<windows.h>
 
@@ -272,7 +272,7 @@
 
 1478525265 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
 
-1479064855 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
+1479149619 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
 	<type_traits>
 	"Random.h"
 	"Timer.h"
@@ -281,7 +281,7 @@
 1478790815 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinsert.h
 	"../typdefs.hpp"
 
-1479038906 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
+1479148866 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
 	"../typdefs.hpp"
 
 1478281849 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
@@ -383,7 +383,7 @@
 1478799406 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
 	"../typdefs.hpp"
 
-1479059795 c:\users\menos\desktop\doktoranckie\opty\opty\typdefs.hpp
+1479136040 c:\users\menos\desktop\doktoranckie\opty\opty\typdefs.hpp
 	<vector>
 	<iostream>
 	<string>
@@ -569,11 +569,11 @@
 1479107813 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 
-1479030833 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
+1479135446 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
 	"../typdefs.hpp"
 	<assert.h>
 
-1478987309 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
+1479147823 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 
 1478799406 c:\users\menos\desktop\doktoranckie\opty\opty\tests.hpp

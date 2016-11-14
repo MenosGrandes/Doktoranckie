@@ -24,6 +24,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-pg -lgmon" />
+					<Add option="-S" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -35,6 +36,24 @@
 					<Add option="-std=c++11" />
 					<Add directory="include" />
 				</Compiler>
+			</Target>
+			<Target title="AsmBuild">
+				<Option output="bin/ASM/Opty" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="asm" />
+				<Option object_output="obj/ASM" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-pg" />
+					<Add option="-g" />
+					<Add option="-save-temps" />
+					<Add option="-S" />
+					<Add option="-fverbose-asm" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-pg -lgmon" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
