@@ -112,73 +112,64 @@ long long _reference = 0;
     TestSort<SortNormalBubble,SortTupleBubble> sortBubbleTupleTest;
     TestSort<SortNormalInsert,SortTupleInsert> sortInsertTupleTest;
     TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTupleTest;
-    TestSort<SortTupleSelection,SortTripleSelection> sortSelectionTripleTest;
 
-std::cout<<sortSelectionTripleTest.test(1,10000,10000,normal,_reference);
-//SortTripleSelection * sts = new SortTripleSelection(10,10);
-//sts->print();
-//sts->_sort();
-//sts->compare();
-//sts->print();
-//delete sts;
-//    TestSort<SortNormalSelection,SortTripleSelection> sortSelectionTripleTest;
-//    TestSort<SortNormalInsert,SortTripleInsert>sortInsertTripleTest;
-//    TestSort<SortNormalBubble,SortTripleBubble>sortBubbleTripleTest;
-//    TestSort<SortTupleBubble,SortTripleBubble>sortBubbleTripleTupleTest;
-//
-//
-//std::cout<<"sortSelectionTupleTest"<<std::endl;
-//
-//for(int i=300;i<10000;i+=500)
-//{
-//std::cout<<i<<",";
-//sortSelectionTupleTest.test(1,10,10,normal,_reference,BEST);
-//}
-//for(int i=10000;i<40000;i+=1000)
-//{
-//std::cout<<i<<",";
-//sortSelectionTupleTest.test(1,i,100000,normal,_reference,BEST);
-//}
-//for(int i=40000;i<100000;i+=5000)
-//{
-//std::cout<<i<<",";
-//sortSelectionTupleTest.test(1,i,100000,normal,_reference,BEST);
-//}
-////////////////////////////////////////////
-//std::cout<<"sortBubbleTupleTest"<<std::endl;
-//
-//for(int i=300;i<10000;i+=500)
-//{
-//std::cout<<i<<",";
-//sortBubbleTupleTest.test(1,i,100000,normal,_reference,BEST);
-//}
-//for(int i=10000;i<40000;i+=1000)
-//{
-//std::cout<<i<<",";
-//sortBubbleTupleTest.test(1,i,100000,normal,_reference,BEST);
-//}
-//for(int i=40000;i<100000;i+=5000)
-//{
-//std::cout<<i<<",";
-//sortBubbleTupleTest.test(1,i,100000,normal,_reference,BEST);
-//}
-////////////////////////////////////////////
-//std::cout<<"sortInsertTupleTest"<<std::endl;
-//
-//for(int i=300;i<10000;i+=500)
-//{
-//std::cout<<i<<",";
-//sortInsertTupleTest.test(1,i,100000,normal,_reference,BEST);
-//}
-//for(int i=10000;i<40000;i+=1000)
-//{
-//std::cout<<i<<",";
-//sortInsertTupleTest.test(1,i,100000,normal,_reference,BEST);
-//}
-//for(int i=40000;i<100000;i+=5000)
-//{
-//std::cout<<i<<",";
-//sortInsertTupleTest.test(1,i,100000,normal,_reference,BEST);
-//}
+for(int os=NON;os<LENGTH;os++)
+{
+std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
+
+std::cout<<"sortSelectionTupleTest"<<std::endl;
+
+for(int i=300;i<10000;i+=500)
+{
+std::cout<<i<<",";
+sortSelectionTupleTest.test(1,i,10,normal,_reference,BEST);
+}
+for(int i=10000;i<40000;i+=1000)
+{
+std::cout<<i<<",";
+sortSelectionTupleTest.test(1,i,100000,normal,_reference,BEST);
+}
+for(int i=40000;i<100000;i+=5000)
+{
+std::cout<<i<<",";
+sortSelectionTupleTest.test(1,i,100000,normal,_reference,BEST);
+}
+//////////////////////////////////////////
+std::cout<<"sortBubbleTupleTest"<<std::endl;
+
+for(int i=300;i<10000;i+=500)
+{
+std::cout<<i<<",";
+sortBubbleTupleTest.test(1,i,100000,normal,_reference,BEST);
+}
+for(int i=10000;i<40000;i+=1000)
+{
+std::cout<<i<<",";
+sortBubbleTupleTest.test(1,i,100000,normal,_reference,BEST);
+}
+for(int i=40000;i<100000;i+=5000)
+{
+std::cout<<i<<",";
+sortBubbleTupleTest.test(1,i,100000,normal,_reference,BEST);
+}
+//////////////////////////////////////////
+std::cout<<"sortInsertTupleTest"<<std::endl;
+
+for(int i=300;i<10000;i+=500)
+{
+std::cout<<i<<",";
+sortInsertTupleTest.test(1,i,100000,normal,_reference,BEST);
+}
+for(int i=10000;i<40000;i+=1000)
+{
+std::cout<<i<<",";
+sortInsertTupleTest.test(1,i,100000,normal,_reference,BEST);
+}
+for(int i=40000;i<100000;i+=5000)
+{
+std::cout<<i<<",";
+sortInsertTupleTest.test(1,i,100000,normal,_reference,BEST);
+}
+}
     return 0;
 }

@@ -15,7 +15,7 @@ enum SORTING_OPTIONS
 };
 enum TEST_OPTIONS
 {
-    NON,BEST,WORST
+    NON,BEST,WORST,LENGTH
 };
 
 
@@ -34,6 +34,26 @@ std::string CompareBool(VintIter b1,VintIter b2)
     }
 
 }
+std::string TEST_OPTIONS_TOSTRING(TEST_OPTIONS s)
+{
+    switch(s)
+    {
+    case NON:
+        return "NormalBubbleSort";
+        break;
+    case BEST:
+        return "NormalBubbleSort";
+        break;
+    case WORST:
+        return "NormalBubbleSort";
+        break;
+    case LENGTH:
+        return "NormalBubbleSort";
+        break;
+    }
+    return "";
+}
+
 std::string SortingOptionsToString(SORTING_OPTIONS s)
 {
     switch(s)

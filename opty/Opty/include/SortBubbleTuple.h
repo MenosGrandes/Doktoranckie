@@ -59,19 +59,15 @@ public:
                 std::swap(toSort[minElem],toSort[maxElem]);
             }
 
-            int j=i;
-            while(j>0 && toSort[minElem]<toSort[minElem-1])
+            while(minElem>0 && toSort[minElem]<toSort[minElem-1])
             {
                 std::swap(toSort[minElem],toSort[minElem-1]);
-                --j;
                 minElem--;
             }
 
-            int j2=i+1;
-            while(j2<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
+            while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
             {
                 std::swap(toSort[maxElem],toSort[maxElem+1]);
-                ++j2;
                 maxElem++;
             }
 
