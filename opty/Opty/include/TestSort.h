@@ -38,8 +38,8 @@ _reference=0;
             _reference +=t.measureWindows<TupleSort>(m_tupleSort);
 //            m_tupleSort->print();
 
-            assert( m_tupleSort->compare());
-            assert(m_basicSort->compare());
+//            assert( m_tupleSort->compare());
+//            assert(m_basicSort->compare());
 //            m_basicSort->print();
             delete m_basicSort;
             delete m_tupleSort;

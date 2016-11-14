@@ -242,6 +242,14 @@ void sort(std::vector<int> &toSort)
 
 \section{Algorytm sortowania bąbelkowego}
 \subsection{Dla dwóch elementów}
+Podstawowa wersja tego algorytmu polega na porownywaniu ze soba dwoch kolejnych elementow $(x,y) \in V$ i zmianie ich kolejnosci, majac tylko jeden babelek ktory wyplywa na poczatek lub na koniec zbioru. \\
+Zakladajac ze mamy porownywac dwie liczby, zostalo przyjete ze sa dwa babelki. Jeden ktory idzie na poczatek zbioru  $V$ oraz drugi ktory idzie na koniec zbioru $V$. \\
+Dla kazdej pary $(x',y') \in V$ skladajacej sie z kolejnych elementow ze zbioru $V$:
+\begin{itemize} 
+\item Posortuj pare $(x',y)'$ rosnaco
+\item Dla kazdej liczby $z$ poprzedzajacej $x'$ zamien ze soba te elementy jezeli\begin{equation*}x' < z\end{equation*} 
+\item  Dla kazdej liczby $w$ nastepujacej $y'$ zamien ze soba te elementy jezeli \begin{equation*}y'>w\end{equation*}
+ \end{itemize}  
 \subsubsection*{Kod}
 
 \begin{lstlisting}
