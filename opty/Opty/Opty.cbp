@@ -24,7 +24,6 @@
 				</Compiler>
 				<Linker>
 					<Add option="-pg -lgmon" />
-					<Add option="-S" />
 				</Linker>
 			</Target>
 			<Target title="Release">

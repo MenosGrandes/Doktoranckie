@@ -13,6 +13,11 @@ public:
     ~TestSort() {};
     float test(int testCounts,const int tabSize,int max,TEST_OPTIONS so=NON)
     {
+        if(tabSize==0)
+        {
+            std::cout<<std::endl;
+            return 0;
+        }
         Timer t;
 
    double normal=0;
@@ -55,18 +60,20 @@ public:
         }
         else if(normal==0&&_reference != 0)
         {
-         std::cout<<"\t"<<typeid(BasicSort).name()<<" "<<(normal)<<","<<typeid(TupleSort).name()<<" "<<(_reference)<<std::endl;
+             std::cout<<(normal)<<","<<(_reference)<<std::endl;
+         //std::cout<<"\t"<<typeid(BasicSort).name()<<" "<<(normal)<<","<<typeid(TupleSort).name()<<" "<<(_reference)<<std::endl;
          return -2;
         }
         else if(_reference == 0&&normal!=0)
         {
-         std::cout<<"\t"<<typeid(BasicSort).name()<<" "<<(normal)<<","<<typeid(TupleSort).name()<<" "<<(_reference)<<std::endl;
+             std::cout<<(normal)<<","<<(_reference)<<std::endl;
+         //std::cout<<"\t"<<typeid(BasicSort).name()<<" "<<(normal)<<","<<typeid(TupleSort).name()<<" "<<(_reference)<<std::endl;
          return -1;
         }
         else
         {
-        std::cout<<"\t"<<typeid(BasicSort).name()<<" "<<(normal/testCounts)<<","<<typeid(TupleSort).name()<<" "<<(_reference/testCounts)<<std::endl;
-
+       // std::cout<<"\t"<<typeid(BasicSort).name()<<" "<<(normal/testCounts)<<","<<typeid(TupleSort).name()<<" "<<(_reference/testCounts)<<std::endl;
+            std::cout<<(normal)<<","<<(_reference)<<std::endl;
         return ((100.0f)-(float)(((_reference/testCounts)*100)/(normal/testCounts))); ;
 
         }

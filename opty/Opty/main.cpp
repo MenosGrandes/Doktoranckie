@@ -106,69 +106,39 @@ int main(int argc, char* argv[] )
     TestSort<SortNormalBubble,SortTupleBubble> sortBubbleTupleTest;
     TestSort<SortNormalInsert,SortTupleInsert> sortInsertTupleTest;
     TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTupleTest;
-std::cout<<"BEST "<<sortBubbleTupleTest.test(1,10,10,BEST)<<std::endl;
-//std::cout<<"random "<<sortBubbleTupleTest.test(1,10000,100000,NON)<<std::endl;
-//std::cout<<"worst "<<sortBubbleTupleTest.test(1,10000,100000,WORST)<<std::endl;
 
+    std::vector<int>from{0,10000,40000,100000};
+    std::vector<int>addition{500,1000,5000,10000};
+    for(int os=NON; os<LENGTH; os++)
+    {
+        int add=0;
+        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
+        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
+        {
+            std::cout<<"sortSelectionTupleTest"<<std::endl;
+            for(int i=(*f); i<*(f+1); i+=addition[add])
+            {
+                std::cout<<i<<",";
+                sortSelectionTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
+            }
+            std::cout<<"sortInsertTupleTest"<<std::endl;
 
-//
-//    for(int os=NON; os<LENGTH; os++)
-//    {
-//        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-//
-//        std::cout<<"sortSelectionTupleTest"<<std::endl;
-//
-//        for(int i=0; i<10000; i+=500)
-//        {
-//            std::cout<<i<<",";
-//            sortSelectionTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-//        for(int i=10000; i<40000; i+=1000)
-//        {
-//            std::cout<<i<<",";
-//            sortSelectionTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-//        for(int i=40000; i<80000; i+=5000)
-//        {
-//            std::cout<<i<<",";
-//            sortSelectionTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-//////////////////////////////////////////
-//        std::cout<<"sortBubbleTupleTest"<<std::endl;
-//
-//        for(int i=0; i<10000; i+=500)
-//        {
-//            std::cout<<i<<",";
-//            sortBubbleTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-//        for(int i=10000; i<40000; i+=1000)
-//        {
-//            std::cout<<i<<",";
-//            sortBubbleTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-//        for(int i=40000; i<80000; i+=5000)
-//        {
-//            std::cout<<i<<",";
-//            sortBubbleTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-////////////////////////////////////////////
-//        std::cout<<"sortInsertTupleTest"<<std::endl;
-//
-//        for(int i=0; i<10000; i+=500)
-//        {
-//            std::cout<<i<<",";
-//            sortInsertTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-//        for(int i=10000; i<40000; i+=1000)
-//        {
-//            std::cout<<i<<",";
-//            sortInsertTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-//        for(int i=40000; i<80000; i+=5000)
-//        {
-//            std::cout<<i<<",";
-//            sortInsertTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
-//        }
-//    }
+            for(int i=(*f); i<*(f+1); i+=addition[add])
+            {
+                std::cout<<i<<",";
+                sortInsertTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
+           }
+            std::cout<<"sortBubbleTupleTest"<<std::endl;
+
+            for(int i=(*f); i<*(f+1); i+=addition[add])
+            {
+                std::cout<<i<<",";
+                sortBubbleTupleTest.test(1,i,100000,(TEST_OPTIONS)os);
+
+            }
+            add++;
+        }
+    }
+
     return 0;
 }

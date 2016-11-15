@@ -1,8 +1,8 @@
-# 1 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
-# 1 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty//"
+# 1 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
+# 1 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
+# 1 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
 
 # 1 "include/TestSort.h" 1
 
@@ -96122,12 +96122,12 @@ public:
 
     }
 };
-# 3 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
-# 1 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 1
+# 3 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 1 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 1
 
 
-# 1 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\typdefs.hpp" 1
-# 4 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 2
+# 1 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\typdefs.hpp" 1
+# 4 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 2
 struct MinMinMax
 {
     int min1,min2,max;
@@ -96216,43 +96216,43 @@ void Test()
 
 
         
-# 91 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 3
+# 91 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 3
        ((
-# 91 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp"
+# 91 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp"
        compare
-# 91 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 3
+# 91 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 3
        ) ? (void)0 : _assert(
-# 91 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp"
+# 91 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp"
        "compare"
-# 91 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 3
-       , "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp", 91))
-# 91 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp"
+# 91 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp" 3
+       , "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp", 91))
+# 91 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\Tests.hpp"
                       ;
     }
 }
-# 4 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 4 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 
 
 # 1 "include/BubbleSort.h" 1
-# 7 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 7 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 # 1 "include/SortInsert.h" 1
-# 8 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 8 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 # 1 "include/SortSelection.h" 1
-# 9 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 9 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 
 # 1 "include/SortSelectionTuple.h" 1
-# 11 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 11 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 # 1 "include/SortBubbleTuple.h" 1
-# 12 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 12 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 # 1 "include/SortInsertTuple.h" 1
-# 13 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 13 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 
 # 1 "include/SortSelectionTriple.h" 1
-# 15 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 15 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 # 1 "include/SortInsertTriple.h" 1
-# 16 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 16 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 # 1 "include/SortBubbleTriple.h" 1
-# 17 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 17 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 
 # 1 "c:\\mingw\\include\\unistd.h" 1 3
 # 40 "c:\\mingw\\include\\unistd.h" 3
@@ -96590,12 +96590,12 @@ int __attribute__((__cdecl__)) ftruncate( int, off_t );
 
 
 }
-# 19 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 19 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 # 1 "c:\\mingw\\lib\\gcc\\mingw32\\5.3.0\\include\\c++\\cstdlib" 1 3
 # 39 "c:\\mingw\\lib\\gcc\\mingw32\\5.3.0\\include\\c++\\cstdlib" 3
        
 # 40 "c:\\mingw\\lib\\gcc\\mingw32\\5.3.0\\include\\c++\\cstdlib" 3
-# 20 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 20 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 
 # 1 "c:\\mingw\\lib\\gcc\\mingw32\\5.3.0\\include\\c++\\fstream" 1 3
 # 36 "c:\\mingw\\lib\\gcc\\mingw32\\5.3.0\\include\\c++\\fstream" 3
@@ -99274,10 +99274,10 @@ namespace std
 
 }
 # 1082 "c:\\mingw\\lib\\gcc\\mingw32\\5.3.0\\include\\c++\\fstream" 2 3
-# 22 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
+# 22 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp" 2
 
 
-# 23 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
+# 23 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
 typedef Sort<BubbleSort> SortNormalBubble;
 typedef Sort<SortInsert> SortNormalInsert;
 typedef Sort<SortSelection> SortNormalSelection;
@@ -99290,15 +99290,15 @@ typedef Sort<SortInsertTuple> SortTupleInsert;
 typedef Sort<SortInsertTriple> SortTripleInsert;
 typedef Sort<SortBubbleTriple> SortTripleBubble;
 typedef Sort<SortSelectionTriple> SortTripleSelection;
-# 43 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
+# 43 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
 int main(int argc, char* argv[] )
 {
     srand((time(0)));
-# 106 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
+# 106 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
     TestSort<SortNormalBubble,SortTupleBubble> sortBubbleTupleTest;
     TestSort<SortNormalInsert,SortTupleInsert> sortInsertTupleTest;
     TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTupleTest;
-std::cout<<"BEST "<<sortBubbleTupleTest.test(1,10,10,BEST)<<std::endl;
-# 173 "C:\\Users\\Menos\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
+std::cout<<"BEST "<<sortBubbleTupleTest.test(1,1000,1000,BEST)<<std::endl;
+# 173 "C:\\Users\\efilryn\\Desktop\\Doktoranckie\\opty\\Opty\\main.cpp"
     return 0;
 }
