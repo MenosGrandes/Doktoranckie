@@ -55,6 +55,7 @@ public:
         {
             const int pom = toSort[toSort.size()-1];
             int k = toSort.size()-2;
+            std::cout<<k<<"!!!!!!"<<std::endl;
             while(k>=0 && toSort[k]>pom)
             {
                 toSort[k+1] = toSort[k];

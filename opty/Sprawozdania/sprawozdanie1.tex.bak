@@ -42,8 +42,11 @@
 \usepackage{listings}
 \usepackage{siunitx}
 \usepackage{placeins}
+\usepackage[figurename=Rys.]{caption}
+\usepackage{subcaption}
 \usepackage{listings}
 \usepackage{tikz} % To generate the plot from csv
+\usepackage{mathtools}
 \usepackage{pgfplots}
 \pgfplotsset{
     legend entry/.initial=,
@@ -56,6 +59,13 @@
         \fi
     },
 }
+\captionsetup[subfigure]{skip=30pt} % global setting for subfigure
+\newcommand{\lstlistingnames}{Algorytmie}% Listing -> Algorithm
+\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
+
+
 
 
 \pgfplotsset{compat=newest} % Allows to place the legend below plot
@@ -136,7 +146,9 @@ Filip \textsc{Rynkiewicz}\\[2cm] % Your name
                 stringstyle=\color{red}\ttfamily,
                 commentstyle=\color{green}\ttfamily,
                 morecomment=[l][\color{magenta}]{\#},
-breaklines=true
+				breaklines=true,
+    			numbers=left,
+    			    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
 }
 
 
@@ -151,8 +163,8 @@ breaklines=true
           scaled x ticks = false,   
 		  legend pos=north west,
  		  samples=61,
-    	  width=6in,
-    	  height=4in,
+    	  width=4in,
+    	  height=3in,
           ymin=0,
           try min ticks =6,
           max space between ticks=15000pt,
@@ -169,7 +181,11 @@ breaklines=true
       	  xmin=0
 }
 \section{Informacje o sprzęcie testowym}
-Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency}z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz  .
+Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency}z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie z systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz.
+\section{Przyjęte własność}
+Jako optymistyczny przypadek została przyjęta sytuacja w której algorytm ma za zadanie posortować już posortowaną tablice.\\
+Jako pesymistyczny przypadek przyjmuję się sytuacje w której algorytm ma posortować tablice posortowaną w odwrotnym kierunku niż pożądany.\\
+Jako średni przypadek zostało przyjęta sytuacja w której tablica zawiera w sobie elementy losowe.
 \section{Algorytm sortowania przez wstawianie}
 
 \subsection*{Dla dwóch elementów}
@@ -177,54 +193,106 @@ Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} 
 Początkowym krokiem algorytmu jest posortowanie  par $(x,y) $ w zbiorze $V  $, gdzie każda para $(x,y) \in V$,  tak aby pierwsza liczba $x$  była zawsze liczba mniejsza od liczby $y$. Indeksy liczby $x$ jest zawsze o jeden mniejszy od indeksu liczby $y$ w zbiorze.\\
  Pierwszym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Pary wybierane są poprzez przesuwanie od indeksu 2 zbioru $V$, ponieważ zakładamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Każde przejście zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
 Po wybraniu pary $(x',y')$ następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.
-Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$. 
-\subsubsection*{Wyniki}
-\newpage
+Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$.
+\subsection*{Oszacowanie złożoności}
+\subsubsection*{Optymistyczna}
+W tym przypadku złożoność obliczeniowa będzie wynosiła $O(n)$.
+Wynika to z faktu że :
+\begin{itemize}
+\item   Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $n$ razy.
+\item Druga pętla \textit{for}(11 linijka) zostanie wykonana $\frac{n-2}{2}$ razy.
+\item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $0$ razy.
+\item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $0$ razy.
+\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane$ 0$ iteracji(34 linijka).
+\end{itemize}
+\begin{equation}
+T \approx n + \frac{n-2}{2}
+\end{equation}
+gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\
+Zerowa ilość przejść w przypadku wszystkich pętli \textit{while} wynika z faktu że zawarte w nich instrukcje zawsze będą warunkiem kończącym pętlę, zatem nigdy nie zostaną wykonane.
+
+\subsubsection*{Pesymistyczna}
+Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
+\begin{itemize}
+\item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $n$ razy.
+\item Druga pętla \textit{for}(11 linijka) zostanie wykonana dokładnie $\frac{n-2}{2}$ razy.
+\item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $\approx n$ razy.
+\item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $\approx n$ razy.
+\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n-2$ iteracji(34 linijka).
+\end{itemize}
+\begin{equation*}
+T \approx n + \frac{n-2}{2}\cdot(n+n)+ (n-2)= (n^2-2)
+\end{equation*}
+gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\
+
+\subsubsection*{Średnia}
+Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
+\begin{itemize}
+\item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $n$ razy.
+\item Druga pętla \textit{for}(11 linijka) zostanie wykonana dokładnie $\frac{n-2}{2}$ razy.
+\item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $\approx \frac{2}{n}$ razy.
+\item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $\approx \frac{2}{n}$ razy.
+\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n-2$ iteracji(34 linijka).
+\end{itemize}
+\begin{equation*}
+\begin{multlined}
+T \approx n + \frac{n-2}{2}\cdot(\frac{2}{n} + \frac{2}{n})+ (n-2)=\\
+\frac{1}{2}(n^2 + 2n -4)+ (n-2)
+\end{multlined}
+\end{equation*}
+
+gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\
 \subsubsection*{Kod}
-\begin{lstlisting}
+\begin{lstlisting}[label{lst:wstawianie}]
 void sort(std::vector<int> &toSort)
 {
  const int sizeOfArray=toSort.size()-(toSort.size()%2);
  for(int i=0; i<sizeOfArray; i+=2)
-     {
-      if(toSort[i] > toSort[i+1])
-         {
-          std::swap(toSort[i],toSort[i+1]);
-         }
-     }
- for(int i=2; i<sizeOfArray; i+=2)
+  {
+   if(toSort[i] > toSort[i+1])
     {
-      const int pom1 = toSort[i];
-      const int pom2 = toSort[i+1];
-      int j = i-1;
-	  while(j>=0 && toSort[j]>pom2)
-	   {
-	    toSort[j+2] =  toSort[j];
-	    j--;
-	   }
-	  toSort[j+2] = pom2;
-	  toSort[j+1] = pom1;
-	  while(j>=0 && toSort[j]>pom1)
-	   {
-	    toSort[j+1] = toSort[j];
-	    --j;
-	   }
-	  toSort[j+1] = pom1;
-	}
-	if(toSort.size()%2==1)
-	   {
-	    const int pom = toSort[toSort.size()-1];
-	    int k = toSort.size()-2;
-	    while(k>=0 && toSort[k]>pom)
-	     {
-	      toSort[k+1] = toSort[k];
-	      --k;
-		 }
-	   toSort[k+1] = pom;
-	    }
+     std::swap(toSort[i],toSort[i+1]);
+    }
+  }
+ for(int i=2; i<sizeOfArray; i+=2)
+  {
+   const int pom1 = toSort[i];
+   const int pom2 = toSort[i+1];
+   int j = i-1;
+   while(j>=0 && toSort[j]>pom2)
+    {
+     toSort[j+2] =  toSort[j];
+     j--;
+    }
+   toSort[j+2] = pom2;
+   toSort[j+1] = pom1;
+   while(j>=0 && toSort[j]>pom1)
+    {
+     toSort[j+1] = toSort[j];
+     --j;
+    }
+   toSort[j+1] = pom1;
+ }
+ if(toSort.size()%2==1)
+  {
+   const int pom = toSort[toSort.size()-1];
+   int k = toSort.size()-2;
+   while(k>=0 && toSort[k]>pom)
+    {
+     toSort[k+1] = toSort[k];
+     --k;
+    }
+   toSort[k+1] = pom;
+  }
 }
 \end{lstlisting}
-\begin{figure}[h!]
+
+\subsubsection*{Wyniki}
+\par Rys.~\ref{fig:insertRand} przedstawia wyniki dla tablicy z losowymi elementami. Na wykresie można zauważyć przyspieszenie względem standardowego algorytmu. Przyspieszenie to wynosi $ \approx 34 \% $.Opisana wcześniej złożoność dla tego przypadku jest taka sama jak dla standardowej implementacji. Jednakże fakt że algorytm bierze pod uwagę parę i najpierw sortuje po największym elemencie a potem po najmniejszym zmniejsza znacząco ilość porównań. Doprowadza to do tego że teoretyczne i maksymalne przyspieszenie powinno wynieść $ \approx 50\% $ przy tym pomyśle, uwzględniając idealną implementację.
+\par Rys.~\ref{fig:Insertbest} przedstawia wyniki dla tablicy która została już posortowana. Jak można zauważyć implementacja standardowa jest szybsza niż zaimplementowana tutaj. Jednakże różnica w czasie działania obu funkcji wynosi około $0.1ms$, wiec można uznać że są takie same. Ponieważ jedyną akcją która jest zależna od rozmiaru tablicy jest pętla przestawiająca pary oraz pętla przeszukująca tablice co dwa elementy złożoność obliczeniowa będzie liniowa $O(n)$.
+\par Rys.~\ref{fig:InsertWorst} przedstawia wyniki dla pesymistycznego ułożenia tablicy. W tym wypadku implementacja algorytmu dla par działa o $\approx 50 \% $ szybciej od standardowej implementacji. Wynika to z faktu że, tak samo jak w średnim przypadku, iteracja pętla odpowiedzialna za przestawianie par wynosi $\frac{n}{2}$ przez co faktycznie algorytm przyspiesza do $\approx 150 \% $ szybkości algorytmu podstawowego.
+%\caption{Wyniki dla sortowania przez wstawianie}\label{fig:insert}
+\begin{figure}[!h]
   \begin{center}
     \begin{tikzpicture}
       \begin{axis}
@@ -237,9 +305,43 @@ void sort(std::vector<int> &toSort)
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla losowych elementów tablicy}
+    \caption{Wykres dla tablicy ze elementami losowymi}\label{fig:insertRand}
   \end{center}
-\end{figure}
+\end{figure}\FloatBarrier
+\begin{figure}[!h]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}
+      
+        \addplot[green,mark=x,legend entry=$Normalny$] 
+        table[x=column 1,y=column 2,col sep=comma] {sortInsertTupleTestBest.csv}; 
+    
+        \addplot[red,mark=x,legend entry=$Dla\;par$] 
+        table[x=column 1,y=column 3,col sep=comma] {sortInsertTupleTestBest.csv};
+       
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Wykres dla tablicy z najlepszym rozkładem elementów}\label{fig:Insertbest}
+  \end{center}
+\end{figure}\FloatBarrier
+\begin{figure}[!h]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}
+      
+        \addplot[green,mark=x,legend entry=$Normalny$] 
+        table[x=column 1,y=column 2,col sep=comma] {sortInsertTupleTestWorst.csv}; 
+    
+        \addplot[red,mark=x,legend entry=$Dla\;par$] 
+        table[x=column 1,y=column 3,col sep=comma] {sortInsertTupleTestWorst.csv};
+       
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Wykres dla tablicy z najgorszym rozkładem elementów}\label{fig:InsertWorst}
+  \end{center}
+  \end{figure}\FloatBarrier
+
+%\end{figure}
 \FloatBarrier
 
 \section{Algorytm sortowania bąbelkowego}
@@ -249,12 +351,13 @@ Zakładając ze mamy porównywać dwie liczby, zostało przyjęte ze są dwa bą
 Dla każdej pary $(x',y') \in V$ składającej się z kolejnych elementów ze zbioru $V$:
 \begin{itemize} 
 \item Posortuj parę $(x',y)'$ rosnąco
-\item Dla kazdej liczby $z$ poprzedzajacej $x'$ zamien ze soba te elementy jezeli\begin{equation*}x' < z\end{equation*} 
-\item  Dla kazdej liczby $w$ nastepujacej $y'$ zamien ze soba te elementy jezeli \begin{equation*}y'>w\end{equation*}
+\item Dla każdej liczby $z$ poprzedzającej $x'$ zamień ze sobą te elementy jeżeli \begin{equation*}x' < z\end{equation*} 
+\item  Dla każdej liczby $w$ nastepujacej $y'$ zamień ze sobą te elementy jeżeli  \begin{equation*}y'>w\end{equation*}
  \end{itemize}  
+
 \subsubsection*{Kod}
 
-\begin{lstlisting}
+\begin{lstlisting}[caption={Sortowanie babelkowe dla par},label={lst:babelek}]
 void sort(std::vector<int> &toSort)
 {
  for(int i= 0; i<(toSort.size()-1); i++)
@@ -264,23 +367,33 @@ void sort(std::vector<int> &toSort)
    {
     std::swap(toSort[minElem],toSort[maxElem]);
    }
-  int j=i;
-  while(j>0 && toSort[minElem]<toSort[minElem-1])
+  while(minElem>0 && toSort[minElem]<toSort[minElem-1])
    {
     std::swap(toSort[minElem],toSort[minElem-1]);
-    --j;
     minElem--;
    }
-  int j2=i+1;
-  while(j2<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
+  while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
    {
     std::swap(toSort[maxElem],toSort[maxElem+1]);
-    ++j2;
     maxElem++;
    } 
  }
 }
 \end{lstlisting}
+ \subsection*{Oszacowanie złożoności}
+
+\subsubsection*{Optymistyczna}
+Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$. 
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
+\end{itemize}
+
+
+\subsubsection*{Pesymistyczna}
+
+
+\subsubsection*{Srednia}
+
 \subsubsection*{Wyniki}
 \begin{figure}[h!]
   \begin{center}
@@ -292,6 +405,38 @@ void sort(std::vector<int> &toSort)
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortBubbleTupleTest.csv};
+       
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Wykres dla tablicy ze elementami losowymi}
+  \end{center}
+\end{figure}
+\begin{figure}[h!]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}
+      
+        \addplot[green,mark=x,legend entry=$Normalny$] 
+        table[x=column 1,y=column 2,col sep=comma] {sortBubbleTupleTestBest.csv}; 
+    
+        \addplot[red,mark=x,legend entry=$Dla\;par$] 
+        table[x=column 1,y=column 3,col sep=comma] {sortBubbleTupleTestBest.csv};
+       
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Wykres dla tablicy z najlepszym rozkładem elementów}
+  \end{center}
+\end{figure}
+\begin{figure}[h!]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}
+      
+        \addplot[green,mark=x,legend entry=$Normalny$] 
+        table[x=column 1,y=column 2,col sep=comma] {sortBubbleTupleTestWorst.csv}; 
+    
+        \addplot[red,mark=x,legend entry=$Dla\;par$] 
+        table[x=column 1,y=column 3,col sep=comma] {sortBubbleTupleTestWorst.csv};
        
       \end{axis}
     \end{tikzpicture}
@@ -353,7 +498,39 @@ void sort(std::vector<int> &toSort)
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla losowych elementów tablicy}
+    \caption{Wykres dla tablicy ze elementami losowymi}
+  \end{center}
+  \end{figure}
+  \begin{figure}[h!]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}
+      
+        \addplot[green,mark=x,legend entry=$Normalny$] 
+        table[x=column 1,y=column 2,col sep=comma] {sortSelectionTupleTestBest.csv}; 
+    
+        \addplot[red,mark=x,legend entry=$Dla\;par$] 
+        table[x=column 1,y=column 3,col sep=comma] {sortSelectionTupleTestBest.csv};
+       
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Wykres dla tablicy z najlepszym rozkładem elementów}
+  \end{center}
+  \end{figure}
+  \begin{figure}[h!]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}
+      
+        \addplot[green,mark=x,legend entry=$Normalny$] 
+        table[x=column 1,y=column 2,col sep=comma] {sortSelectionTupleTestWorst.csv}; 
+    
+        \addplot[red,mark=x,legend entry=$Dla\;par$] 
+        table[x=column 1,y=column 3,col sep=comma] {sortSelectionTupleTestWorst.csv};
+       
+      \end{axis}
+    \end{tikzpicture}
+    \caption{Wykres dla tablicy z najgorszym rozkładem elementów}
   \end{center}
   \end{figure}
 \FloatBarrier

@@ -139,6 +139,6 @@ int main(int argc, char* argv[] )
 //            add++;
 //        }
 //    }
-sortBubbleTupleTest.test(1,1000,1000,NON);
+std::cout<<sortInsertTupleTest.test(1,10000,10000,WORST);
     return 0;
 }
