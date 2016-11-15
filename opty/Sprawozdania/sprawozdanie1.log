@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.9)  15 NOV 2016 22:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.9)  16 NOV 2016 00:10
 entering extended mode
 **./sprawozdanie1.tex
 (sprawozdanie1.tex
@@ -1216,44 +1216,49 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 194.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 194.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 194.
+Overfull \hbox (7.37018pt too wide) in paragraph at lines 186--190
+\OT4/cmr/m/n/12 Ka»de porów-nanie al-go-ryt-mów zostaªo przeprowad-zone na tych
+ samych danych
+ []
 
-Overfull \hbox (7.22304pt too wide) in paragraph at lines 193--197
-\OT4/cmr/m/n/12 Pierwszym krok-iem tego sor-towa-nia b¦dzie wybranie pary $(\OM
-L/plm/m/it/12 x[]; y[]\OT4/cmr/m/n/12 )$. Pary wybier-
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10> on input line 195.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <7> on input line 195.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <5> on input line 195.
+
+Overfull \hbox (1.11754pt too wide) in paragraph at lines 194--198
+\OT4/cmr/m/n/12 Kolejnym krok-iem tego sor-towa-nia b¦dzie wybranie pary $(\OML
+/plm/m/it/12 x[]; y[]\OT4/cmr/m/n/12 )$. Pary wybier-
  []
 
 [1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 202.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 203.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 202.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 203.
 
-Overfull \hbox (17.68605pt too wide) in paragraph at lines 206--207
+Overfull \hbox (17.68605pt too wide) in paragraph at lines 207--208
 []\OT4/cmr/m/n/12 Je»eli tablica jest o rozmi-arze nieparzystym do-datkowo zost
 anie wykonane$0$
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
 [3]
-Overfull \hbox (22.71239pt too wide) in paragraph at lines 291--292
+Overfull \hbox (22.71239pt too wide) in paragraph at lines 292--293
 \OT4/cmr/m/n/12 mo»na za-uwa»y¢ przyspiesze-nie wzgl¦-dem stan-dar-d-owego al-g
 o-rytmu. Przyspiesze-
  []
@@ -1275,22 +1280,6 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-PGFPlots: reading {sortInsertTupleTestBest.csv}
-Missing character: There is no . in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-PGFPlots: reading {sortInsertTupleTestBest.csv}
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1301,6 +1290,22 @@ Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
+PGFPlots: reading {sortInsertTupleTestBest.csv}
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+PGFPlots: reading {sortInsertTupleTestBest.csv}
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
 PGFPlots: reading {sortInsertTupleTestWorst.csv}
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
@@ -1312,17 +1317,50 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
- [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 394--396
 
  []
 
 
-Overfull \hbox (3.19244pt too wide) in paragraph at lines 396--397
+Overfull \hbox (3.19244pt too wide) in paragraph at lines 397--398
 \OT4/cmr/m/n/12 Najgorszy przy-padek al-go-rytmu sor-towa-nia b¡-belkowego dla 
 par ma zªo»ono±¢
  []
 
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--418
+
+ []
+
+
+Overfull \hbox (5.90431pt too wide) in paragraph at lines 419--420
+\OT4/cmr/m/n/12 losowymi el-e-men-tami. Z przed-staw-ionego wykresu wyra¹nie wi
+da¢ przyspiesze-
+ []
+
+
+Overfull \hbox (15.98885pt too wide) in paragraph at lines 420--421
+\OT4/cmr/m/n/12 sor-towa-nia b¡-belkowego dla par i nor-mal-nego dla posor-towa
+nej tabl-icy. Poniewa»
+ []
+
+
+Overfull \hbox (29.79288pt too wide) in paragraph at lines 421--422
+[]\OT4/cmr/m/n/12 Rys. 6[] przed-stawia wyniki dla tabl-icy posor-towanej w dru
+ga stron¦. Przyspiesze-
+ []
+
+[9]
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -1339,9 +1377,6 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -1359,8 +1394,10 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[10]
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -1377,10 +1414,7 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8] [9] [10]
+ [11] [12]
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -1397,10 +1431,6 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 Missing character: There is no . in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
@@ -1417,6 +1447,7 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1439,43 +1470,42 @@ Missing character: There is no t in font nullfont!
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11
-
-] [12] [13]
+[13]
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 62.
 See the caption package documentation for explanation.
 
-(sprawozdanie1.aux) ) 
+[14] (sprawozdanie1.aux) ) 
 Here is how much of TeX's memory you used:
- 40740 strings out of 493334
- 959516 string characters out of 3136672
- 1184232 words of memory out of 3000000
- 43674 multiletter control sequences out of 15000+200000
+ 40744 strings out of 493334
+ 959569 string characters out of 3136672
+ 1178046 words of memory out of 3000000
+ 43678 multiletter control sequences out of 15000+200000
  23181 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,20n,120p,10387b,2259s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/pltt
-.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Program
- Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files (x86)/MiK
-TeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/en
-c/dvips/pl/plit.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.
-enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/pl/plmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/pl/plmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/pl/plr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr12.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/pl/plsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/pl/plsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pl
-ti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
-Output written on sprawozdanie1.pdf (14 pages, 277441 bytes).
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl
+/pltt.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files (x86
+)/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/enc/dvips/pl/plit.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/
+plsc.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/pl/plmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/pl/plmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/pl/plr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr
+12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/pl/plsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+pl/plti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pltt10.p
+fb>
+Output written on sprawozdanie1.pdf (15 pages, 283777 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

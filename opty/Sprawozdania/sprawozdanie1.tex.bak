@@ -64,7 +64,7 @@
 \renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
 \renewcommand{\lstlistlistingname}{List of \lstlistingname s}
 \renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
-
+\newcommand{\wyjT}{gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\}
 
 
 
@@ -163,7 +163,7 @@ Filip \textsc{Rynkiewicz}\\[2cm] % Your name
           scaled x ticks = false,   
 		  legend pos=north west,
  		  samples=61,
-    	  width=4in,
+    	  width=5in,
     	  height=3in,
           ymin=0,
           try min ticks =6,
@@ -181,17 +181,18 @@ Filip \textsc{Rynkiewicz}\\[2cm] % Your name
       	  xmin=0
 }
 \section{Informacje o sprzęcie testowym}
-Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency}z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie z systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz.
+Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency} z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie z systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz. Testy zostały przeprowadzone na kompilatorze \textit{mingw32-c++.exe (GCC) 5.3.0} z flagą \textit{-std=gnu++11} zapewniającą wsparcie \textit{C++11}.
 \section{Przyjęte własność}
 Jako optymistyczny przypadek została przyjęta sytuacja w której algorytm ma za zadanie posortować już posortowaną tablice.\\
 Jako pesymistyczny przypadek przyjmuję się sytuacje w której algorytm ma posortować tablice posortowaną w odwrotnym kierunku niż pożądany.\\
-Jako średni przypadek zostało przyjęta sytuacja w której tablica zawiera w sobie elementy losowe.
+Jako średni przypadek zostało przyjęta sytuacja w której tablica zawiera w sobie elementy losowe.\\
+ Każde porównanie algorytmów zostało przeprowadzone na tych samych danych wejściowych. Wszystkie algorytmy, te zmodyfikowane oraz te dla par, zostały napisane przez autora.
 \section{Algorytm sortowania przez wstawianie}
 
 \subsection*{Dla dwóch elementów}
 
 Początkowym krokiem algorytmu jest posortowanie  par $(x,y) $ w zbiorze $V  $, gdzie każda para $(x,y) \in V$,  tak aby pierwsza liczba $x$  była zawsze liczba mniejsza od liczby $y$. Indeksy liczby $x$ jest zawsze o jeden mniejszy od indeksu liczby $y$ w zbiorze.\\
- Pierwszym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Pary wybierane są poprzez przesuwanie od indeksu 2 zbioru $V$, ponieważ zakładamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Każde przejście zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
+ Kolejnym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Pary wybierane są poprzez przesuwanie od indeksu 2 zbioru $V$, ponieważ zakładamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Każde przejście zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
 Po wybraniu pary $(x',y')$ następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.
 Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$.
 \subsection*{Oszacowanie złożoności}
@@ -199,36 +200,37 @@ Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie
 W tym przypadku złożoność obliczeniowa będzie wynosiła $O(n)$.
 Wynika to z faktu że :
 \begin{itemize}
-\item   Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $n$ razy.
+\item   Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
 \item Druga pętla \textit{for}(11 linijka) zostanie wykonana $\frac{n-2}{2}$ razy.
 \item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $0$ razy.
 \item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $0$ razy.
 \item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane$ 0$ iteracji(34 linijka).
 \end{itemize}
 \begin{equation}
-T \approx n + \frac{n-2}{2}
+T \approx \frac{n}{2} + \frac{n-2}{2} = n-1
 \end{equation}
-gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\
+\wyjT
 Zerowa ilość przejść w przypadku wszystkich pętli \textit{while} wynika z faktu że zawarte w nich instrukcje zawsze będą warunkiem kończącym pętlę, zatem nigdy nie zostaną wykonane.
 
 \subsubsection*{Pesymistyczna}
 Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \begin{itemize}
-\item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $n$ razy.
+\item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
 \item Druga pętla \textit{for}(11 linijka) zostanie wykonana dokładnie $\frac{n-2}{2}$ razy.
-\item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $\approx n$ razy.
-\item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $\approx n$ razy.
+\item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $\approx \frac{n}{2}$ razy.
+\item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $\approx \frac{n}{2}$ razy.
 \item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n-2$ iteracji(34 linijka).
 \end{itemize}
 \begin{equation*}
-T \approx n + \frac{n-2}{2}\cdot(n+n)+ (n-2)= (n^2-2)
+T \approx \frac{n}{2} + \frac{n-2}{2}\cdot(n)+ (n-2)= \frac{n^2}{2} + \frac{n}{2} -2
 \end{equation*}
-gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\
+\wyjT
 
+Ponieważ obie pętle \textit{while} korzystają z tego samego iteratora, zostało przyjęte że obie w sumie wykonają się $n$ razy, więc średnio każda wykona się $\frac{n}{2}$.
 \subsubsection*{Średnia}
 Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \begin{itemize}
-\item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $n$ razy.
+\item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
 \item Druga pętla \textit{for}(11 linijka) zostanie wykonana dokładnie $\frac{n-2}{2}$ razy.
 \item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $\approx \frac{2}{n}$ razy.
 \item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $\approx \frac{2}{n}$ razy.
@@ -236,12 +238,12 @@ Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \end{itemize}
 \begin{equation*}
 \begin{multlined}
-T \approx n + \frac{n-2}{2}\cdot(\frac{2}{n} + \frac{2}{n})+ (n-2)=\\
+T \approx \frac{n}{2} + \frac{n-2}{2}\cdot(\frac{2}{n} + \frac{2}{n})+ (n-2)=\\
 \frac{1}{2}(n^2 + 2n -4)+ (n-2)
 \end{multlined}
 \end{equation*}
 
-gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\
+\wyjT
 \subsubsection*{Kod}
 \begin{lstlisting}[label{lst:wstawianie}]
 void sort(std::vector<int> &toSort)
@@ -290,7 +292,7 @@ void sort(std::vector<int> &toSort)
 \subsubsection*{Wyniki}
 \par Rys.~\ref{fig:insertRand} przedstawia wyniki dla tablicy z losowymi elementami. Na wykresie można zauważyć przyspieszenie względem standardowego algorytmu. Przyspieszenie to wynosi $ \approx 34 \% $.Opisana wcześniej złożoność dla tego przypadku jest taka sama jak dla standardowej implementacji. Jednakże fakt że algorytm bierze pod uwagę parę i najpierw sortuje po największym elemencie a potem po najmniejszym zmniejsza znacząco ilość porównań. Doprowadza to do tego że teoretyczne i maksymalne przyspieszenie powinno wynieść $ \approx 50\% $ przy tym pomyśle, uwzględniając idealną implementację.
 \par Rys.~\ref{fig:Insertbest} przedstawia wyniki dla tablicy która została już posortowana. Jak można zauważyć implementacja standardowa jest szybsza niż zaimplementowana tutaj. Jednakże różnica w czasie działania obu funkcji wynosi około $0.1ms$, wiec można uznać że są takie same. Ponieważ jedyną akcją która jest zależna od rozmiaru tablicy jest pętla przestawiająca pary oraz pętla przeszukująca tablice co dwa elementy złożoność obliczeniowa będzie liniowa $O(n)$.
-\par Rys.~\ref{fig:InsertWorst} przedstawia wyniki dla pesymistycznego ułożenia tablicy. W tym wypadku implementacja algorytmu dla par działa o $\approx 50 \% $ szybciej od standardowej implementacji. Wynika to z faktu że, tak samo jak w średnim przypadku, iteracja pętla odpowiedzialna za przestawianie par wynosi $\frac{n}{2}$ przez co faktycznie algorytm przyspiesza do $\approx 150 \% $ szybkości algorytmu podstawowego.
+\par Rys.~\ref{fig:InsertWorst} przedstawia wyniki dla pesymistycznego ułożenia tablicy. W tym wypadku implementacja algorytmu dla par działa o $\approx 50 \% $ szybciej od standardowej implementacji. Wynika to z faktu że, tak samo jak w średnim przypadku, iteracja pętla odpowiedzialna za przestawianie par wynosi $\frac{n-2}{2}$ przez co faktycznie algorytm przyspiesza do $\approx 150 \% $ szybkości algorytmu podstawowego.
 %\caption{Wyniki dla sortowania przez wstawianie}\label{fig:insert}
 \begin{figure}[!h]
   \begin{center}
@@ -345,7 +347,7 @@ void sort(std::vector<int> &toSort)
 \FloatBarrier
 
 \section{Algorytm sortowania bąbelkowego}
-\subsection{Dla dwóch elementów}
+\subsection*{Dla dwóch elementów}
 Podstawowa wersja tego algorytmu polega na porównywaniu ze sobą dwóch kolejnych elementów $(x,y) \in V$ i zmianie ich kolejności, mając tylko jeden bąbelek który wypływa na początek lub na koniec zbioru. \\
 Zakładając ze mamy porównywać dwie liczby, zostało przyjęte ze są dwa bąbelki. Jeden który idzie na początek zbioru  $V$ oraz drugi który idzie na koniec zbioru $V$. \\
 Dla każdej pary $(x',y') \in V$ składającej się z kolejnych elementów ze zbioru $V$:
@@ -388,13 +390,38 @@ Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$.
 \item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
 \end{itemize}
 
-
+\begin{equation*}
+T \approx n -1
+\end{equation*}
+\wyjT
 \subsubsection*{Pesymistyczna}
-
-
-\subsubsection*{Srednia}
-
+Najgorszy przypadek algorytmu sortowania bąbelkowego dla par ma złożoność obliczeniową $O(n^2)$.
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
+\item Pętla \textit{while}(10 linijka)  w najgorszym przypadku wykona się $n$ razy
+\item Pętla \textit{while}(15 linijka)  w najgorszym przypadku wykona się $n$ razy
+\end{itemize}
+\begin{equation*}
+T \approx (n -1) \cdot (2n) 
+\end{equation*}
+\wyjT
+\subsubsection*{Średnia}
+Dla losowych elementów w tablicy sortowanie to ma złożoność obliczeniową $O(n^2)$.
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
+\item Pętla \textit{while}(10 linijka)  w tym przypadku wykona się $\frac{2}{n}$ razy
+\item Pętla \textit{while}(15 linijka)  w tym przypadku wykona się $\frac{2}{n}$ razy
+\end{itemize}
+\begin{equation*}
+T \approx n -1\cdot (2 \cdot \frac{2}{n}) = (n-1) \cdot (2n) 
+\end{equation*}
+\wyjT
 \subsubsection*{Wyniki}
+\par Rys.~\ref{fig:bubbleRand} przedstawia efekt porównania działania obu algorytmów dla tablic z losowymi elementami. Z przedstawionego wykresu wyraźnie widać przyspieszenie. Maksymalne przyspieszenie dla tego algorytmu wynosi $\approx 70\%$. Dzięki zastosowaniu wewnętrznych pętli \textit{while} które sterują zachowaniem bąbelków można bardzo szybko przyspieszyć algorytm. Dzięki temu że średnio każda pętla wykonuję się połowę rozmiaru tablicy. Wiec teoretyczne przyspieszenie powinno być co najmniej $50 \% $.	
+\par Rys.~\ref{fig:bubbleBest} reprezentuje graficznie otrzymane wyniki z porównania algorytmu sortowania bąbelkowego dla par i normalnego dla posortowanej tablicy. Ponieważ widoczna na wykresie czerwona linia, reprezentująca sortowanie dla par, jest zawsze bliska zeru, mozna wyciągnać wniosek. Sortowanie to ma złożoność obliczeniową $O(n)$. Wiec przyspieszenie wynosi $\approx 99\%$
+\par Rys.~\ref{fig:bubbleWorst} przedstawia wyniki dla tablicy posortowanej w druga stronę. Przyspieszenie algorytmu wynosi w tym wypadku $\approx 50\%$. Ponieważ używamy dwóch bąbelków, w porównaniu do użycia jednego , zmniejsza czas wykonania o $50\%$.
+
+
 \begin{figure}[h!]
   \begin{center}
     \begin{tikzpicture}
@@ -408,9 +435,9 @@ Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$.
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla tablicy ze elementami losowymi}
+    \caption{Wykres dla tablicy ze elementami losowymi}\label{fig:bubbleRand}
   \end{center}
-\end{figure}
+\end{figure}\FloatBarrier
 \begin{figure}[h!]
   \begin{center}
     \begin{tikzpicture}
@@ -424,9 +451,9 @@ Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$.
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla tablicy z najlepszym rozkładem elementów}
+    \caption{Wykres dla tablicy z najlepszym rozkładem elementów}\label{fig:bubbleBest}
   \end{center}
-\end{figure}
+\end{figure}\FloatBarrier
 \begin{figure}[h!]
   \begin{center}
     \begin{tikzpicture}
@@ -440,13 +467,14 @@ Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$.
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla losowych elementow tablicy}
+    \caption{Wykres dla tablicy z najgorszym rozkładem elementów}\label{fig:bubbleWorst}
   \end{center}
 \end{figure}
 \FloatBarrier
 
 \section{Algorytm sortowania przez wybieranie}
-\subsection{Dla dwóch elementów}
+\subsection*{Dla dwóch elementów}
+Podstawowa wersja algorytmu zakłada wybieranie najmniejszej lub największej wartośći z zbioru. Ten pomysł wybiera największą oraz najmniejszą wartość.
 \subsubsection*{Kod}
 \begin{lstlisting}
 void sort(std::vector<int> &toSort)
@@ -466,12 +494,12 @@ void sort(std::vector<int> &toSort)
     {
      if ((*it) < (*_min))
       {
-	   _min = it;
-	  }
-	 else if ((*it) > (*_max))
-	  {
-	   _max = it;
-	  }
+       _min = it;
+      }
+     else if ((*it) > (*_max))
+      {
+       _max = it;
+      }
     }
  std::iter_swap(_min,_begin);
  if(_begin==_max)
