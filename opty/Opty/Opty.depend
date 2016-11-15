@@ -51,7 +51,7 @@
 1478296205 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1479200193 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1479213363 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 	"Tests.hpp"
 	"BubbleSort.h"
@@ -222,7 +222,7 @@
 
 1478524602 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
 
-1478763827 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bubblesort.h
+1479207198 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bubblesort.h
 	"../typdefs.hpp"
 
 1478790815 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselection.h
@@ -267,7 +267,7 @@
 1478763827 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinsert.h
 	"../typdefs.hpp"
 
-1479195274 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
+1479214571 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
 	"../typdefs.hpp"
 
 1478525265 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp

@@ -56,7 +56,9 @@
         \fi
     },
 }
-
+\newcommand{\lstlistingnames}{Algorytmie}% Listing -> Algorithm
+\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of List
 
 \pgfplotsset{compat=newest} % Allows to place the legend below plot
 \usepgfplotslibrary{units} % Allows to enter the units nicely
@@ -136,7 +138,8 @@ Filip \textsc{Rynkiewicz}\\[2cm] % Your name
                 stringstyle=\color{red}\ttfamily,
                 commentstyle=\color{green}\ttfamily,
                 morecomment=[l][\color{magenta}]{\#},
-breaklines=true
+				breaklines=true,
+    			numbers=left,
 }
 
 
@@ -169,7 +172,7 @@ breaklines=true
       	  xmin=0
 }
 \section{Informacje o sprzęcie testowym}
-Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency}z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz  .
+Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency}z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie z systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz.
 \section{Algorytm sortowania przez wstawianie}
 
 \subsection*{Dla dwóch elementów}
@@ -177,11 +180,15 @@ Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} 
 Początkowym krokiem algorytmu jest posortowanie  par $(x,y) $ w zbiorze $V  $, gdzie każda para $(x,y) \in V$,  tak aby pierwsza liczba $x$  była zawsze liczba mniejsza od liczby $y$. Indeksy liczby $x$ jest zawsze o jeden mniejszy od indeksu liczby $y$ w zbiorze.\\
  Pierwszym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Pary wybierane są poprzez przesuwanie od indeksu 2 zbioru $V$, ponieważ zakładamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Każde przejście zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
 Po wybraniu pary $(x',y')$ następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.
-Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$. 
-\subsubsection*{Wyniki}
+Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$.
+\subsection*{Oszacowanie zlozonosci}
+\subsubsection*{Optymistyczna}
+
+\subsubsection*{Pesymistyczna}
+\subsubsection*{Srednia}
 \newpage
 \subsubsection*{Kod}
-\begin{lstlisting}
+\begin{lstlisting}[label{lst:wstawianie}]
 void sort(std::vector<int> &toSort)
 {
  const int sizeOfArray=toSort.size()-(toSort.size()%2);
@@ -224,6 +231,8 @@ void sort(std::vector<int> &toSort)
 	    }
 }
 \end{lstlisting}
+
+\subsubsection*{Wyniki}
 \begin{figure}[h!]
   \begin{center}
     \begin{tikzpicture}
@@ -252,35 +261,56 @@ Dla każdej pary $(x',y') \in V$ składającej się z kolejnych elementów ze zb
 \item Dla kazdej liczby $z$ poprzedzajacej $x'$ zamien ze soba te elementy jezeli\begin{equation*}x' < z\end{equation*} 
 \item  Dla kazdej liczby $w$ nastepujacej $y'$ zamien ze soba te elementy jezeli \begin{equation*}y'>w\end{equation*}
  \end{itemize}  
+
 \subsubsection*{Kod}
 
-\begin{lstlisting}
+\begin{lstlisting}[caption={Sortowanie babelkowe dla par},label={lst:babelek}]
 void sort(std::vector<int> &toSort)
 {
- for(int i= 0; i<(toSort.size()-1); i++)
+ for(int i= 0; i<(toSort.size()-1); i++)//(1)
  {
-  int minElem=i,maxElem=i+1;
-  if(toSort[minElem]>toSort[maxElem])
+  int minElem=i,maxElem=i+1;//(2)
+  if(toSort[minElem]>toSort[maxElem])//(3)
    {
-    std::swap(toSort[minElem],toSort[maxElem]);
+    std::swap(toSort[minElem],toSort[maxElem]);//(4)
    }
-  int j=i;
-  while(j>0 && toSort[minElem]<toSort[minElem-1])
+  while(minElem>0 && toSort[minElem]<toSort[minElem-1])//(5)
    {
-    std::swap(toSort[minElem],toSort[minElem-1]);
-    --j;
-    minElem--;
+    std::swap(toSort[minElem],toSort[minElem-1]);//(6)
+    minElem--;//(7)
    }
-  int j2=i+1;
-  while(j2<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
+  while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])//(8)
    {
-    std::swap(toSort[maxElem],toSort[maxElem+1]);
-    ++j2;
-    maxElem++;
+    std::swap(toSort[maxElem],toSort[maxElem+1]);//(9)
+    maxElem++;//(10)
    } 
  }
 }
 \end{lstlisting}
+ \subsection*{Oszacowanie złożoności}
+ Każdy element który wpływa na złożoność algorytmu został zaznaczony za pomocą numeru, zaznaczonego na zielono, na \lstlistingnames ~\ref{lst:babelek}.
+\subsubsection*{Optymistyczna}
+Jako optymistyczny, czyli najlepszy przypadek, zostalo przyjete wtedy kiedy tablica ktora algorytm ma posortowac jest juz posortowana w dobry kierunku.
+\begin{itemize}
+\item[(1)]{
+\begin{equation}
+\sum_{i=0}^{n-1} i
+\end{equation}
+}
+\end{itemize}
+\subsubsection*{Pesymistyczna}
+Najgorszy przypadek dla tego sortowania została przyjęta sytuacji kiedy tablice która mamy posortować jest posortowana w odwrotna stronę, niż ten algorytm ma posortować.
+\begin{itemize}
+\item[(1)] Petla for wykona sie zawsze \textbf{n} razy, wiec zlozonosc wynosi \textbf{n}
+\item[(2)] Inicjalizacja dwoch zmiennych oraz jedno dodanie zajmuje zawsze 3 akcje, zlozonosc wynosi $3$
+\item[(3)] Sprawdzenie dwoch zmiennych oraz dwa operatory indeksowe zajma 3 akcje, zlozonosc wynosi  $3$
+\item[(4)] Zamiana dwoch elementow zajmie 3 akcje, a dwa operatory indeksowania zajma dwie akcje, zlozonosc wynosi $5$
+\item[(5)] petla
+\end{itemize}
+
+
+\subsubsection*{Srednia}
+
 \subsubsection*{Wyniki}
 \begin{figure}[h!]
   \begin{center}

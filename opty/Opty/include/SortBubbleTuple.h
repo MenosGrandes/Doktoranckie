@@ -50,29 +50,33 @@ public:
     ~SortBubbleTuple() {};
     void sort(std::vector<int> &toSort)
     {
-
-        for(int i= 0; i<(toSort.size()-1); i++)
+int counter=0;
+        for(int i= 0; i<(toSort.size()-1); i++)//(1)
         {
-            int minElem=i,maxElem=i+1;
-            if(toSort[minElem]>toSort[maxElem])
+            int minElem=i,maxElem=i+1;//(2)
+            if(toSort[minElem]>toSort[maxElem])//(3)
             {
-                std::swap(toSort[minElem],toSort[maxElem]);
+                std::swap(toSort[minElem],toSort[maxElem]);//(4)
+                counter++;
             }
 
-            while(minElem>0 && toSort[minElem]<toSort[minElem-1])
+            while(minElem>0 && toSort[minElem]<toSort[minElem-1])//(5) //N
             {
-                std::swap(toSort[minElem],toSort[minElem-1]);
-                minElem--;
+                std::swap(toSort[minElem],toSort[minElem-1]);//(6)
+                minElem--;//(7)1
+                counter++;
             }
 
-            while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
+            while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])//(8) // N
             {
-                std::swap(toSort[maxElem],toSort[maxElem+1]);
-                maxElem++;
+                std::swap(toSort[maxElem],toSort[maxElem+1]);//(9)
+                maxElem++;//(10)
+                counter++;
             }
+            counter++;
 
         }
-
+    std::cout<<"Operacje"<<counter<<std::endl;
     }
 
 };
