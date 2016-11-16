@@ -14,17 +14,17 @@ public:
         const int arrayDivider = (toSort.size()%3);
         if(toSort.size()%3!=0)
         {
-        for(int i=1; i<arrayDivider; i++)
-        {
-            const int pom = toSort[i];
-            int j = i-1;
-            while(j>=0 && toSort[j]>pom)
+            for(int i=1; i<arrayDivider; i++)
             {
-                toSort[j+1] = toSort[j];
-                --j;
+                const int pom = toSort[i];
+                int j = i-1;
+                while(j>=0 && toSort[j]>pom)
+                {
+                    toSort[j+1] = toSort[j];
+                    --j;
+                }
+                toSort[j+1] = pom;
             }
-            toSort[j+1] = pom;
-        }
 
         }
 

@@ -2,39 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="Tests.hpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="934" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="include\Random.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="216" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5656" topLine="139" />
-		</Cursor>
-	</File>
-	<File name="include\SortBubbleTuple.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="799" topLine="44" />
-		</Cursor>
-	</File>
-	<File name="include\Sort.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1925" topLine="64" />
-		</Cursor>
-	</File>
 	<File name="include\SortSelection.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="231" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\SortInsertTuple.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="820" topLine="4" />
 		</Cursor>
 	</File>
 	<File name="include\SortSelectionTriple.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -42,19 +12,34 @@
 			<Cursor1 position="464" topLine="45" />
 		</Cursor>
 	</File>
-	<File name="include\SortInsert.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\SortSelectionTuple.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="198" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\BubbleSort.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="173" topLine="0" />
+			<Cursor1 position="969" topLine="24" />
 		</Cursor>
 	</File>
 	<File name="include\TestSort.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="873" topLine="21" />
+			<Cursor1 position="873" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include\Random.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="216" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Tests.hpp" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="934" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="include\Sort.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1925" topLine="64" />
+		</Cursor>
+	</File>
+	<File name="include\SortInsert.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="198" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\Timer.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -62,9 +47,9 @@
 			<Cursor1 position="639" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="include\SortSelectionTuple.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="1" tabpos="15" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="969" topLine="24" />
+			<Cursor1 position="4282" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="typdefs.hpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -72,14 +57,29 @@
 			<Cursor1 position="845" topLine="30" />
 		</Cursor>
 	</File>
+	<File name="include\BubbleSort.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="173" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="include\SortBubbleTriple.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="516" topLine="9" />
+			<Cursor1 position="1507" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="include\SortBubbleTuple.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="799" topLine="44" />
 		</Cursor>
 	</File>
 	<File name="include\SortInsertTriple.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="331" topLine="9" />
+			<Cursor1 position="331" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\SortInsertTuple.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="820" topLine="4" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

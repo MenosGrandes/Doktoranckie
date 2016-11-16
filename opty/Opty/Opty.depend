@@ -115,7 +115,7 @@
 
 1478960324 D
 
-1479317632 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1479320678 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 	"Tests.hpp"
 	"BubbleSort.h"
@@ -273,7 +273,7 @@
 
 1478525265 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
 
-1479204373 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
+1479318722 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
 	<type_traits>
 	"Random.h"
 	"Timer.h"
@@ -381,7 +381,7 @@
 
 1478626235 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttriple.cpp
 
-1479317824 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
+1479318722 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
 	"../typdefs.hpp"
 	"SortInsert.h"
 	"SortInsertTuple.h"
@@ -576,7 +576,7 @@
 	"../typdefs.hpp"
 	<assert.h>
 
-1479147823 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
+1479320611 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 
 1478799406 c:\users\menos\desktop\doktoranckie\opty\opty\tests.hpp
