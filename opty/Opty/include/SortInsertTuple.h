@@ -21,16 +21,17 @@ public:
     {
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
 
+//        for(int i=0; i<sizeOfArray; i+=2)
+//        {
+//
+//        }
+
         for(int i=0; i<sizeOfArray; i+=2)
         {
             if(toSort[i] > toSort[i+1])
             {
                 std::swap(toSort[i],toSort[i+1]);
             }
-        }
-
-        for(int i=2; i<sizeOfArray; i+=2)
-        {
             const int pom1 = toSort[i];
             const int pom2 = toSort[i+1];
 

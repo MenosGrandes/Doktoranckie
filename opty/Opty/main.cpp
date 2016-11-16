@@ -107,6 +107,10 @@ int main(int argc, char* argv[] )
     TestSort<SortNormalInsert,SortTupleInsert> sortInsertTupleTest;
     TestSort<SortNormalSelection,SortTupleSelection> sortSelectionTupleTest;
 
+   TestSort<SortNormalInsert,SortTripleInsert> sortInsertTripleTest;
+   TestSort<SortTupleInsert,SortTripleInsert> sortInsertTripleTupleTest;
+
+
 //    std::vector<int>from{0,10000,40000,100000};
 //    std::vector<int>addition{500,1000,5000,10000};
 //    for(int os=NON; os<LENGTH; os++)
@@ -139,6 +143,35 @@ int main(int argc, char* argv[] )
 //            add++;
 //        }
 //    }
-std::cout<<sortBubbleTupleTest.test(1,10000,10000,NON);
+//std::cout<<sortBubbleTupleTest.test(1000,1000,1000000,NON)<<std::endl;//56
+//std::cout<<sortBubbleTupleTest.test(1000,1000,1000000,BEST)<<std::endl;//45
+//std::cout<<sortBubbleTupleTest.test(100000,100,1000000,WORST)<<std::endl;//65
+
+
+//std::cout<<sortInsertTripleTest.test(100,3333,1000000,NON)<<std::endl;//50
+//std::cout<<sortInsertTripleTest.test(100,3333,1000000,BEST)<<std::endl;//-53
+//std::cout<<sortInsertTripleTest.test(100,3333,1000000,WORST)<<std::endl;//66
+//
+//
+//std::cout<<sortInsertTupleTest.test(100,1000,1000000,NON)<<std::endl;//33
+//std::cout<<sortInsertTupleTest.test(100,1000,1000000,BEST)<<std::endl;//-6
+//std::cout<<sortInsertTupleTest.test(100,1000,1000000,WORST)<<std::endl;//49
+
+
+std::cout<<sortInsertTripleTupleTest.test(100,1800,1000000,NON)<<std::endl;//33
+std::cout<<sortInsertTripleTupleTest.test(100,1800,1000000,BEST)<<std::endl;//-6
+std::cout<<sortInsertTripleTupleTest.test(100,1800,1000000,WORST)<<std::endl;//49
+//while(1){
+////        system("cls");
+//SortTripleInsert *sti = new SortTripleInsert(999,100);
+////sti->print();
+////std::cout<<"PRZED"<<std::endl;
+//sti->_sort();
+////sti->print();
+//assert(sti->compare());
+//delete sti;
+//}
+
+
     return 0;
 }

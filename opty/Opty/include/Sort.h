@@ -81,6 +81,7 @@ public:
         std::sort(std::begin(compareData),std::end(compareData), std::less<int>());
         for(int i=0; i<m_n; i++)
         {
+//            std::cout<<compareData[i]<<" == "<<m_data[i]<<std::endl;
             if(compareData[i]!=m_data[i])
             {
 
