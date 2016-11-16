@@ -115,7 +115,7 @@
 
 1478960324 D
 
-1479248619 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1479256806 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 	"Tests.hpp"
 	"BubbleSort.h"
@@ -217,7 +217,7 @@
 1478281849 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
 	"BubbleSort.h"
 
-1479248638 c:\users\menos\desktop\doktoranckie\opty\opty\include\bubblesort.h
+1479255738 c:\users\menos\desktop\doktoranckie\opty\opty\include\bubblesort.h
 	"../typdefs.hpp"
 
 1478524602 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
@@ -235,7 +235,7 @@
 1478371170 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortselectiontuple.cpp
 	"SortSelectionTuple.h"
 
-1478976706 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
+1479253465 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
 	"../typdefs.hpp"
 	<algorithm>
 	<iostream>

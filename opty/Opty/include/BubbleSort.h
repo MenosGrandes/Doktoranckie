@@ -7,7 +7,6 @@ public:
     void sort(std::vector<int> &toSort)
     {
         int counter=0;
-   bool swapped;
         for(VintIter i=toSort.begin(); i!=toSort.end(); i++)
         {
             for (VintIter j =(toSort.end()-1); j != i; --j)

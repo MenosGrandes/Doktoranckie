@@ -204,7 +204,7 @@ Wynika to z faktu że :
 \item Druga pętla \textit{for}(11 linijka) zostanie wykonana $\frac{n-2}{2}$ razy.
 \item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $0$ razy.
 \item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $0$ razy.
-\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane$ 0$ iteracji(34 linijka).
+\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $0$ iteracji(34 linijka).
 \end{itemize}
 \begin{equation}
 T \approx \frac{n}{2} + \frac{n-2}{2} = n-1
@@ -238,14 +238,13 @@ Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \end{itemize}
 \begin{equation*}
 \begin{multlined}
-T \approx \frac{n}{2} + \frac{n-2}{2}\cdot(\frac{2}{n} + \frac{2}{n})+ (n-2)=\\
-\frac{1}{2}(n^2 + 2n -4)+ (n-2)
+T \approx \frac{n}{2} + \frac{n-2}{2}\cdot(n)+ (n-2)= \frac{n^2}{2} + \frac{n}{2} -2
 \end{multlined}
 \end{equation*}
 
 \wyjT
 \subsubsection*{Kod}
-\begin{lstlisting}[label{lst:wstawianie}]
+\begin{lstlisting}[caption={Sortowanie przez wstawianie dla par},label={lst:wstawianie}]
 void sort(std::vector<int> &toSort)
 {
  const int sizeOfArray=toSort.size()-(toSort.size()%2);
@@ -359,7 +358,7 @@ Dla każdej pary $(x',y') \in V$ składającej się z kolejnych elementów ze zb
 
 \subsubsection*{Kod}
 
-\begin{lstlisting}[caption={Sortowanie babelkowe dla par},label={lst:babelek}]
+\begin{lstlisting}[caption={Sortowanie bąbelkowe dla par},label={lst:babelek}]
 void sort(std::vector<int> &toSort)
 {
  for(int i= 0; i<(toSort.size()-1); i++)
@@ -413,7 +412,7 @@ Dla losowych elementów w tablicy sortowanie to ma złożoność obliczeniową $
 \item Pętla \textit{while}(15 linijka)  w tym przypadku wykona się $\frac{2}{n}$ razy
 \end{itemize}
 \begin{equation*}
-T \approx n -1\cdot (2 \cdot \frac{2}{n}) = (n-1) \cdot (2n) 
+T \approx (n -1)\cdot (  \frac{2}{n} + \frac{2}{n}) = (n-1)n
 \end{equation*}
 \wyjT
 \subsubsection*{Wyniki}
@@ -474,9 +473,16 @@ T \approx n -1\cdot (2 \cdot \frac{2}{n}) = (n-1) \cdot (2n)
 
 \section{Algorytm sortowania przez wybieranie}
 \subsection*{Dla dwóch elementów}
-Podstawowa wersja algorytmu zakłada wybieranie najmniejszej lub największej wartośći z zbioru. Ten pomysł wybiera największą oraz najmniejszą wartość.
+Podstawowa wersja algorytmu zakłada wybieranie najmniejszej lub największej wartości z zbioru. Ten pomysł wybiera największą oraz najmniejszą wartość.
+\begin{itemize}
+\item Pobierz element który znajduję się na początku, $begin$, zbioru $V$.
+\item Pobierz element który znajduję się na końcu, $end$, zbioru $V$.
+\item Zakładając że pobieramy element najmniejszy $min$ oraz element największy $max$ ze zbioru $V$, zamień $min$ z $begin$ a $max$ z $end$.
+\item Ustaw początek zbioru $begin$ na element z indeksem o jeden większy niż $begin$, a koniec na element z indeksem o jeden mniejszym niż $end$.
+\end{itemize}
+ 
 \subsubsection*{Kod}
-\begin{lstlisting}
+\begin{lstlisting}[caption={Sortowanie przez wybieranie dla par},label={lst:wybieranie}]
 void sort(std::vector<int> &toSort)
 {
  int vectorSize=0;
@@ -512,7 +518,45 @@ void sort(std::vector<int> &toSort)
   }
 }
 \end{lstlisting}
+
+\subsubsection*{Optymistyczna}
+Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n^2)$. 
+\begin{itemize}
+\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane są 2 elementy.
+\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje się tyle samo razy co poprzednia.
+\end{itemize}
+
+\begin{equation*}
+T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
+\end{equation*}
+\wyjT
+\subsubsection*{Pesymistyczna}
+Najgorszy przypadek algorytmu sortowania przez wybieranie dla par ma złożoność obliczeniową $O(n^2)$.
+\begin{itemize}
+\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane sa 2 elementy.
+\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje sie tyle samo razy co poprzednia.
+\end{itemize}
+\begin{equation*}
+T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
+\end{equation*}
+\wyjT
+\subsubsection*{Średnia}
+Dla losowych elementów w tablicy sortowanie to ma złożoność obliczeniową $O(n^2)$.
+\begin{itemize}
+\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane są 2 elementy.
+\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje się tyle samo razy co poprzednia.
+\end{itemize}
+
+\begin{equation*}
+T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
+\end{equation*}
+\wyjT
 \subsubsection*{Wyniki}
+Jak widać na powyższych założeniach teoretycznych każdy z przykładów ma taką samą złożoność obliczeniową. Wynika to z faktu że każda pętla musi być wykonana zawsze i wymaganą ilość razy.	
+\par Rys.\ref{fig:wyb} przedstawia porównanie szybkości wykonywania się obliczeń dla tablicy z danymi losowymi. Przyspieszenie wynosi $\approx 40\%$. 
+\par Rys.\ref{fig:wybBest} przedstawia najgorszy z trzech możliwych wynik gdzie przyspieszenie wynosi $\approx 21\%$. 
+\par Rys.\ref{fig:wybWorst} reprezentuje dane pomiarowe na których widać ze przyspieszenie wynosi $\approx 41\%$. \\
+Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczeniową całe przyspieszenie jest zależne od znalezienia wartości maksymalnej i minimalnej. Ponieważ w algorytmie dla par przeszukujemy tablice wejściową i wybieramy od razu obydwie wartości, to teoretyczne przyspieszenie powinno wynieść $\approx 50\%$.
 \begin{figure}[h!]
   \begin{center}
     \begin{tikzpicture}
@@ -526,7 +570,7 @@ void sort(std::vector<int> &toSort)
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla tablicy ze elementami losowymi}
+    \caption{Wykres dla tablicy ze elementami losowymi}\label{fig:wyb}
   \end{center}
   \end{figure}
   \begin{figure}[h!]
@@ -542,7 +586,7 @@ void sort(std::vector<int> &toSort)
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla tablicy z najlepszym rozkładem elementów}
+    \caption{Wykres dla tablicy z najlepszym rozkładem elementów}\label{fig:wybBest}
   \end{center}
   \end{figure}
   \begin{figure}[h!]
@@ -558,10 +602,11 @@ void sort(std::vector<int> &toSort)
        
       \end{axis}
     \end{tikzpicture}
-    \caption{Wykres dla tablicy z najgorszym rozkładem elementów}
+    \caption{Wykres dla tablicy z najgorszym rozkładem elementów}\label{fig:wybWorst}
   \end{center}
   \end{figure}
 \FloatBarrier
-
+\section{Dyskusja}
+Po długich dyskusjach o złożoności obliczeniowej algorytmów, ulepszaniu ich oraz wprowadzania dodatkowych elementów pewien wniosek został potwierdzony. Każdorazowe dokładanie większej ilości sprawdzań, bąbelków czy znajdywania dodatkowych wartości minimalnych spowalnia znacząco algorytm. Kompilatory dzięki zaawansowanej technice są w stanie tak zoptymalizować kod że przyspieszenie jest tak duże że przy włączniu flagi \textit{-O3} podstawowe algorytmy są szybsze od zaimplementowanych w tym zadaniu o $30-60\%$. \\
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.9)  16 NOV 2016 00:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.9)  16 NOV 2016 01:40
 entering extended mode
 **./sprawozdanie1.tex
 (sprawozdanie1.tex
@@ -1241,13 +1241,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 203.
-
-Overfull \hbox (17.68605pt too wide) in paragraph at lines 207--208
-[]\OT4/cmr/m/n/12 Je»eli tablica jest o rozmi-arze nieparzystym do-datkowo zost
-anie wykonane$0$
- []
-
-[2]
+ [2]
 Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
@@ -1415,97 +1409,112 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
  [11] [12]
-Missing character: There is no . in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-PGFPlots: reading {sortSelectionTupleTest.csv}
-Missing character: There is no . in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-PGFPlots: reading {sortSelectionTupleTest.csv}
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-PGFPlots: reading {sortSelectionTupleTestBest.csv}
-Missing character: There is no . in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-PGFPlots: reading {sortSelectionTupleTestBest.csv}
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
+Underfull \hbox (badness 10000) in paragraph at lines 531--533
+
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 541--543
 
-Missing character: There is no . in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-PGFPlots: reading {sortSelectionTupleTestWorst.csv}
-Missing character: There is no . in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-PGFPlots: reading {sortSelectionTupleTestWorst.csv}
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ []
 
 [13]
+Underfull \hbox (badness 10000) in paragraph at lines 552--554
+
+ []
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+PGFPlots: reading {sortSelectionTupleTest.csv}
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+PGFPlots: reading {sortSelectionTupleTest.csv}
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+PGFPlots: reading {sortSelectionTupleTestBest.csv}
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+PGFPlots: reading {sortSelectionTupleTestBest.csv}
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+PGFPlots: reading {sortSelectionTupleTestWorst.csv}
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+PGFPlots: reading {sortSelectionTupleTestWorst.csv}
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14] [15] [16]
 
 Package caption Warning: Unused \captionsetup[subfigure] on input line 62.
 See the caption package documentation for explanation.
 
-[14] (sprawozdanie1.aux) ) 
+(sprawozdanie1.aux) ) 
 Here is how much of TeX's memory you used:
- 40744 strings out of 493334
- 959569 string characters out of 3136672
- 1178046 words of memory out of 3000000
- 43678 multiletter control sequences out of 15000+200000
+ 40749 strings out of 493334
+ 959637 string characters out of 3136672
+ 1179083 words of memory out of 3000000
+ 43683 multiletter control sequences out of 15000+200000
  23181 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,20n,120p,10387b,2259s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl
-/pltt.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files (x86
-)/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/enc/dvips/pl/plit.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/
-plsc.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi10.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/pl/plmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/pl/plmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/pl/plr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr
-12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/pl/plsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-pl/plti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pltt10.p
-fb>
-Output written on sprawozdanie1.pdf (15 pages, 283777 bytes).
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/pltt
+.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files (x86)/MiK
+TeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/en
+c/dvips/pl/plit.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.
+enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plcsc10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/pl/plmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/pl/plmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/pl/plr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr12.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/pl/plsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/pl/plsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pl
+ti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pltt10.pfb>
+Output written on sprawozdanie1.pdf (17 pages, 288762 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
+ 127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
