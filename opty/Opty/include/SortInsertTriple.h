@@ -2,7 +2,8 @@
 #define SORTINSERTTRIPLE_H
 
 #include "../typdefs.hpp"
-
+#include "SortInsert.h"
+#include "SortInsertTuple.h"
 class SortInsertTriple
 {
 public:
@@ -10,7 +11,24 @@ public:
     ~SortInsertTriple() {};
     void sort(std::vector<int>&toSort)
     {
-        for(int i=0; i<toSort.size(); i+=3)
+        const int arrayDivider = (toSort.size()%3);
+        if(toSort.size()%3!=0)
+        {
+        for(int i=1; i<arrayDivider; i++)
+        {
+            const int pom = toSort[i];
+            int j = i-1;
+            while(j>=0 && toSort[j]>pom)
+            {
+                toSort[j+1] = toSort[j];
+                --j;
+            }
+            toSort[j+1] = pom;
+        }
+
+        }
+
+        for(int i=arrayDivider; i<toSort.size(); i+=3)
         {
 
             if(toSort[i] < toSort[i+1])

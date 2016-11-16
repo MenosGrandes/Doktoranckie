@@ -115,7 +115,7 @@
 
 1478960324 D
 
-1479256806 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1479317632 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	"TestSort.h"
 	"Tests.hpp"
 	"BubbleSort.h"
@@ -166,10 +166,11 @@
 	<assert.h>
 	"typdefs.hpp"
 
-1479238250 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
+1479317791 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
 	"../typdefs.hpp"
+	<iostream>
 
-1478976343 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
+1479316435 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
 	<algorithm>
 	<functional>
 	<vector>
@@ -281,7 +282,7 @@
 1478790815 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinsert.h
 	"../typdefs.hpp"
 
-1479232362 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
+1479317430 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
 	"../typdefs.hpp"
 
 1478281849 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
@@ -380,8 +381,10 @@
 
 1478626235 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortinserttriple.cpp
 
-1478799406 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
+1479317824 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
 	"../typdefs.hpp"
+	"SortInsert.h"
+	"SortInsertTuple.h"
 
 1479136040 c:\users\menos\desktop\doktoranckie\opty\opty\typdefs.hpp
 	<vector>
@@ -569,7 +572,7 @@
 1479294543 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 
-1479135446 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
+1479317328 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
 	"../typdefs.hpp"
 	<assert.h>
 

@@ -2,7 +2,7 @@
 #define SORTINSERTTUPLE_H
 
 #include "../typdefs.hpp"
-
+#include <iostream>
 /**
 Bierzemy parami. od 2 indeksu.
 Porownujemy najwieksza z pary z liczba poprzednia, az do momenu w ktorym liczba porownywana jest wieksza od najwiekszej liczby z pary.
@@ -21,11 +21,6 @@ public:
     {
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
 
-//        for(int i=0; i<sizeOfArray; i+=2)
-//        {
-//
-//        }
-
         for(int i=0; i<sizeOfArray; i+=2)
         {
             if(toSort[i] > toSort[i+1])
@@ -36,7 +31,7 @@ public:
             const int pom2 = toSort[i+1];
 
             int j = i-1;
-
+            std::cout<<"j"<<j<<std::endl;
             while(j>=0 && toSort[j]>pom2)
             {
                 toSort[j+2] =  toSort[j];

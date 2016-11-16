@@ -158,19 +158,10 @@ int main(int argc, char* argv[] )
 //std::cout<<sortInsertTupleTest.test(100,1000,1000000,WORST)<<std::endl;//49
 
 
-std::cout<<sortInsertTripleTupleTest.test(100,1800,1000000,NON)<<std::endl;//33
-std::cout<<sortInsertTripleTupleTest.test(100,1800,1000000,BEST)<<std::endl;//-6
-std::cout<<sortInsertTripleTupleTest.test(100,1800,1000000,WORST)<<std::endl;//49
-//while(1){
-////        system("cls");
-//SortTripleInsert *sti = new SortTripleInsert(999,100);
-////sti->print();
-////std::cout<<"PRZED"<<std::endl;
-//sti->_sort();
-////sti->print();
-//assert(sti->compare());
-//delete sti;
-//}
+//std::cout<<sortInsertTupleTest.test(1,3,1000000,NON)<<std::endl;//33
+//std::cout<<sortInsertTripleTupleTest.test(100,1800,1000000,BEST)<<std::endl;//-6
+//std::cout<<sortInsertTripleTupleTest.test(100,1800,1000000,WORST)<<std::endl;//49
+
 
 
     return 0;

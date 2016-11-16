@@ -12,11 +12,11 @@ public:
     {
         int vectorSize=0;
 
-//        if(toSort.size()%2!=0)
-//        {
-//            vectorSize++;
-//            std::iter_swap((std::min_element(toSort.begin(),toSort.end())),toSort.begin());
-//        }
+        if(toSort.size()%2!=0)
+        {
+            vectorSize++;
+            std::iter_swap((std::min_element(toSort.begin(),toSort.end())),toSort.begin());
+        }
 
         VintIter _begin = toSort.begin()+vectorSize;
         VintIter _end = toSort.end() - 1;
