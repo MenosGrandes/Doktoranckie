@@ -33,8 +33,10 @@ typedef Sort<SortInsertTriple> SortTripleInsert;
 typedef Sort<SortBubbleTriple> SortTripleBubble;
 typedef Sort<SortSelectionTriple> SortTripleSelection;
 
-
-
+/*Tests*/
+typedef TestSort<SortNormalBubble,SortTupleBubble,SortTripleBubble> TestBubbleSort;
+typedef TestSort<SortNormalInsert,SortTupleInsert,SortTripleInsert> TestInsertSort;
+typedef TestSort<SortNormalSelection,SortTupleSelection,SortTripleSelection> TestSelectionSort;
 
 
 
@@ -103,19 +105,12 @@ int main(int argc, char* argv[] )
     */
 
 
-    TestSort<SortNormalBubble,SortTupleBubble>  testNormalTupleBubble;
-    TestSort<SortNormalBubble,SortTripleBubble> testNormalTripleBubble;
-    TestSort<SortTupleBubble,SortTripleBubble>  testTupleTripleBubble;
 
-    TestSort<SortNormalInsert,SortTupleInsert>  testNormalTupleInsert;
-    TestSort<SortNormalInsert,SortTripleInsert> testNormalTripleInsert;
-    TestSort<SortTupleInsert,SortTripleInsert>  testTupleTripleInsert;
-
-    TestSort<SortNormalSelection,SortTupleSelection> testNormalTupleSelection;
-    TestSort<SortNormalSelection,SortTripleSelection> testNormalTripleSelection;
-    TestSort<SortTupleSelection,SortTripleSelection> testTupleTripleSelection;
 #define DO_TESTS
 #ifdef DO_TESTS
+    TestBubbleSort tbs;
+    TestInsertSort tis;
+    TestSelectionSort tss;
     std::vector<int>from{0,10000,40000,100000};
     std::vector<int>addition{500,1000,5000,10000};
 
@@ -125,11 +120,11 @@ int main(int argc, char* argv[] )
         std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
         for(VintIter f=from.begin(); f!=(from.end()-1); f++)
         {
-            std::cout<<"testNormalTupleBubble"<<std::endl;
+            std::cout<<"TestBubbleSort"<<std::endl;
             for(int i=(*f); i<*(f+1); i+=addition[add])
             {
                 std::cout<<i<<",";
-                testNormalTupleBubble.test(1,i,100000,(TEST_OPTIONS)os);
+                tbs.test(1,i,100000,(TEST_OPTIONS)os);
             }
             add++;
         }
@@ -141,11 +136,11 @@ int main(int argc, char* argv[] )
         std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
         for(VintIter f=from.begin(); f!=(from.end()-1); f++)
         {
-            std::cout<<"testNormalTripleBubble"<<std::endl;
+            std::cout<<"TestInsertSort"<<std::endl;
             for(int i=(*f); i<*(f+1); i+=addition[add])
             {
                 std::cout<<i<<",";
-                testNormalTripleBubble.test(1,i,100000,(TEST_OPTIONS)os);
+                tis.test(1,i,100000,(TEST_OPTIONS)os);
             }
             add++;
         }
@@ -157,113 +152,18 @@ int main(int argc, char* argv[] )
         std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
         for(VintIter f=from.begin(); f!=(from.end()-1); f++)
         {
-            std::cout<<"testTupleTripleBubble"<<std::endl;
+            std::cout<<"TestSelectionSort"<<std::endl;
             for(int i=(*f); i<*(f+1); i+=addition[add])
             {
                 std::cout<<i<<",";
-                testTupleTripleBubble.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
-
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"testNormalTupleInsert"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                testNormalTupleInsert.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
-
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"testNormalTripleInsert"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                testNormalTripleInsert.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
-
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"testTupleTripleInsert"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                testTupleTripleInsert.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
-
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"testNormalTupleSelection"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                testNormalTupleSelection.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
-
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"testNormalTripleSelection"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                testNormalTripleSelection.test(1,i,100000,(TEST_OPTIONS)os);
+                tss.test(1,i,100000,(TEST_OPTIONS)os);
             }
             add++;
         }
     }
 
 
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"testTupleTripleSelection"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                testTupleTripleSelection.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
 #endif // DO_TESTS
 
- return 0;
-    }
+    return 0;
+}

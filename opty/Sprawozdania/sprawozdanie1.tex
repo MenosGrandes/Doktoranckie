@@ -344,7 +344,11 @@ void sort(std::vector<int> &toSort)
 
 %\end{figure}
 \FloatBarrier
-
+\subsection*{Dla trzech elementow}
+Początkowym krokiem algorytmu jest posortowanie  trojek $(x,y,z) $ w zbiorze $V$, gdzie każda trojka $(x,y,z) \in V$,  tak aby pierwsza liczba $x$  była zawsze liczba mniejsza od liczby $y$ a trzecia liczba była większa od $x$ i $y$. Trojki są wybierane z kolejnych liczb w zbiorze $V$.\\
+ Kolejnym krokiem tego sortowania będzie wybranie  trojki $(x',y',z')$.Wybierane są one poprzez przesuwanie od indeksu 3 zbioru $V$, ponieważ zakładamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Każde przejście zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
+Po wybraniu pary $(x',y')$ następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.
+Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$.
 \section{Algorytm sortowania bąbelkowego}
 \subsection*{Dla dwóch elementów}
 Podstawowa wersja tego algorytmu polega na porównywaniu ze sobą dwóch kolejnych elementów $(x,y) \in V$ i zmianie ich kolejności, mając tylko jeden bąbelek który wypływa na początek lub na koniec zbioru. \\

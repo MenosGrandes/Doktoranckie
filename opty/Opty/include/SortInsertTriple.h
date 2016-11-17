@@ -84,14 +84,6 @@ public:
             }
             toSort[j+1] = pom1;
         }
-
-
-
-
-
-
-
-
     };
 };
 #endif // SORTINSERTTRIPLE_H
