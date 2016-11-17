@@ -103,9 +103,20 @@ int main(int argc, char* argv[] )
     }
     std::cout<<"Test "<<SortingOptionsToString(_reference)<<" with "<<SortingOptionsToString(_test)<<" "<<testCountes<<" times. Where vector will have "<<vectorSize<<" elements, with numbers from "<<minimum<<" to "<<maximum<<std::endl;
     */
-
-
-
+//while(1){
+////        system("cls");
+//SortTripleBubble *stb  = new SortTripleBubble(100000,10000);
+////stb->print();
+//stb->_sort();
+////stb->print();
+//if(stb->compare()==false)
+//{
+//    stb->print();
+//    assert(false);
+//}
+//std::cout<<"DONE"<<std::endl;
+//delete stb;
+//}
 #define DO_TESTS
 #ifdef DO_TESTS
     TestBubbleSort tbs;
@@ -114,53 +125,56 @@ int main(int argc, char* argv[] )
     std::vector<int>from{0,10000,40000,100000};
     std::vector<int>addition{500,1000,5000,10000};
 
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"TestBubbleSort"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                tbs.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
+     tbs.test(1,1000,100000);
 
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"TestInsertSort"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                tis.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
 
-    for(int os=NON; os<LENGTH; os++)
-    {
-        int add=0;
-        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
-        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
-        {
-            std::cout<<"TestSelectionSort"<<std::endl;
-            for(int i=(*f); i<*(f+1); i+=addition[add])
-            {
-                std::cout<<i<<",";
-                tss.test(1,i,100000,(TEST_OPTIONS)os);
-            }
-            add++;
-        }
-    }
+//    for(int os=NON; os<LENGTH; os++)
+//    {
+//        int add=0;
+//        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
+//        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
+//        {
+//            std::cout<<"TestBubbleSort"<<std::endl;
+//            for(int i=(*f); i<*(f+1); i+=addition[add])
+//            {
+//                std::cout<<i<<",";
+//                tbs.test(1,i,100000,(TEST_OPTIONS)os);
+//            }
+//            add++;
+//        }
+//    }
+//
+//    for(int os=NON; os<LENGTH; os++)
+//    {
+//        int add=0;
+//        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
+//        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
+//        {
+//            std::cout<<"TestInsertSort"<<std::endl;
+//            for(int i=(*f); i<*(f+1); i+=addition[add])
+//            {
+//                std::cout<<i<<",";
+//                tis.test(1,i,100000,(TEST_OPTIONS)os);
+//            }
+//            add++;
+//        }
+//    }
+//
+//    for(int os=NON; os<LENGTH; os++)
+//    {
+//        int add=0;
+//        std::cout<<TEST_OPTIONS_TOSTRING((TEST_OPTIONS)os)<<std::endl;
+//        for(VintIter f=from.begin(); f!=(from.end()-1); f++)
+//        {
+//            std::cout<<"TestSelectionSort"<<std::endl;
+//            for(int i=(*f); i<*(f+1); i+=addition[add])
+//            {
+//                std::cout<<i<<",";
+//                tss.test(1,i,100000,(TEST_OPTIONS)os);
+//            }
+//            add++;
+//        }
+//    }
 
 
 #endif // DO_TESTS

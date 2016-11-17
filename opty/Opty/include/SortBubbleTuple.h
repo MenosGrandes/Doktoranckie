@@ -70,8 +70,10 @@ public:
                 maxElem++;//(10)
             }
         }
-    }
 
+
+
+   }
 };
 
 #endif // SORTBUBBLETUPLE_H
