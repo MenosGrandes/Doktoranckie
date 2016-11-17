@@ -73,7 +73,7 @@ public:
 
 
 
-   }
+    }
 };
 
 #endif // SORTBUBBLETUPLE_H

@@ -31,7 +31,6 @@ public:
             const int pom2 = toSort[i+1];
 
             int j = i-1;
-            std::cout<<"j"<<j<<std::endl;
             while(j>=0 && toSort[j]>pom2)
             {
                 toSort[j+2] =  toSort[j];
@@ -51,7 +50,6 @@ public:
         {
             const int pom = toSort[toSort.size()-1];
             int k = toSort.size()-2;
-            std::cout<<k<<"!!!!!!"<<std::endl;
             while(k>=0 && toSort[k]>pom)
             {
                 toSort[k+1] = toSort[k];

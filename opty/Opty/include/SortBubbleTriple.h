@@ -2,6 +2,7 @@
 #define SORTBUBBLETRIPLE_H
 
 #include "../typdefs.hpp"
+#include <windows.h>
 class SortBubbleTriple
 {
 public:
@@ -9,101 +10,8 @@ public:
     ~SortBubbleTriple() {};
     void sort(std::vector<int>&toSort)
     {
-        int temp;
-        for(int s=0; s<((toSort.size()/4)+2); s++)
-        {
-
-            for (int j=0; j<(int)(toSort.size()-3*s+3); j+=2)
-            {
-                if (toSort[j] > toSort[j+1])
-                {
-                    temp = toSort[j+1];
-                    toSort[j+1] = toSort[j];
-                    toSort[j] = temp;
-                }
-                if (j<((toSort.size())-3))
-                {
-                    if (toSort[j+2] > toSort[j+3])
-                    {
-                        temp = toSort[j+3];
-                        toSort[j+3] = toSort[j+2];
-                        toSort[j+2] = temp;
-                    }
-
-                    if (toSort[j] > toSort[j+3])
-                    {
-                        temp = toSort[j+2];
-                        toSort[j+2] = toSort[j];
-                        toSort[j] = temp;
-
-                        temp = toSort[j+3];
-                        toSort[j+3] = toSort[j+1];
-                        toSort[j+1] = temp;
-                    }
-                    else if(toSort[j+1] > toSort[j+2])
-                    {
-                        temp = toSort[j+1];
-                        toSort[j+1] = toSort[j+2];
-                        toSort[j+2] = temp;
-                    }
-                    if (j<((toSort.size())-5))
-                    {
-                        if (toSort[j+4] > toSort[j+5])
-                        {
-                            temp = toSort[j+4];
-                            toSort[j+4] = toSort[j+5];
-                            toSort[j+5] = temp;
-                        }
-
-                        if (toSort[j] > toSort[j+5])
-                        {
-                            temp = toSort[j+5];
-                            toSort[j+5] = toSort[j+3];
-                            toSort[j+3] = toSort[j+1];
-                            toSort[j+1] = temp;
-
-                            temp = toSort[j+4];
-                            toSort[j+4] = toSort[j+2];
-                            toSort[j+2] = toSort[j];
-                            toSort[j] = temp;
-                        }
-                        else if(toSort[j+1] > toSort[j+4])
-                        {
-                            temp = toSort[j+4];
-                            toSort[j+4] = toSort[j+3];
-                            toSort[j+3] = toSort[j+2];
-                            toSort[j+2] = toSort[j+1];
-                            toSort[j+1] = temp;
-                        }
-                        else if (toSort[j+2] > toSort[j+5])
-                        {
-                            temp = toSort[j+2];
-                            toSort[j+2] = toSort[j+5];
-                            toSort[j+5] = temp;
-
-                            temp = toSort[j+3];
-                            toSort[j+3] = toSort[j+4];
-                            toSort[j+4] = temp;
-                        }
-                        else if(toSort[j+3] > toSort[j+4])
-                        {
-                            temp = toSort[j+3];
-                            toSort[j+3] = toSort[j+4];
-                            toSort[j+4] = temp;
-                        }
-                        if (toSort[j] > toSort[j+1])
-                        {
-                            temp = toSort[j+1];
-                            toSort[j+1] = toSort[j];
-                            toSort[j] = temp;
-                        }
-                    }
-
-                }
-
-            }
-
-        }
+Sleep(10);
+    std::sort(toSort.begin(),toSort.end());
 
 
     }

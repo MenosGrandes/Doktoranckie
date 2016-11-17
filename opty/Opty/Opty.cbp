@@ -58,10 +58,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-std=gnu++11" />
+			<Add directory="C:/Boost/boost_1_62_0" />
 		</Compiler>
 		<Linker>
 			<Add option="-static-libgcc" />
 			<Add option="-static-libstdc++" />
+			<Add directory="C:/Boost/boost_1_62_0/stage/lib" />
 		</Linker>
 		<Unit filename="Tests.hpp" />
 		<Unit filename="include/BubbleSort.h">
@@ -104,6 +106,7 @@
 			<Option virtualFolder="Helpers/" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="templatesSpecialisation.hpp" />
 		<Unit filename="typdefs.hpp" />
 		<Extensions>
 			<code_completion />
