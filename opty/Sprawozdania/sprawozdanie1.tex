@@ -47,6 +47,7 @@
 \usepackage{listings}
 \usepackage{tikz} % To generate the plot from csv
 \usepackage{mathtools}
+\usepackage{titlesec}
 \usepackage{pgfplots}
 \pgfplotsset{
     legend entry/.initial=,
@@ -75,6 +76,14 @@
   round-mode          = places,
   round-precision     = 2,
 }
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Spis treści}%
+}
+
 
 \begin{document}
 
@@ -180,6 +189,9 @@ Filip \textsc{Rynkiewicz}\\[2cm] % Your name
       	  },
       	  xmin=0
 }
+
+ \tableofcontents 
+ 
 \section{Informacje o sprzęcie testowym}
 Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency} z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie z systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz. Testy zostały przeprowadzone na kompilatorze \textit{mingw32-c++.exe (GCC) 5.3.0} z flagą \textit{-std=gnu++11} zapewniającą wsparcie \textit{C++11}.
 \section{Przyjęte własność}
@@ -189,14 +201,11 @@ Jako średni przypadek zostało przyjęta sytuacja w której tablica zawiera w s
  Każde porównanie algorytmów zostało przeprowadzone na tych samych danych wejściowych. Wszystkie algorytmy, te zmodyfikowane oraz te dla par, zostały napisane przez autora.
 \section{Algorytm sortowania przez wstawianie}
 
-\subsection*{Dla dwóch elementów}
-
-Początkowym krokiem algorytmu jest posortowanie  par $(x,y) $ w zbiorze $V  $, gdzie każda para $(x,y) \in V$,  tak aby pierwsza liczba $x$  była zawsze liczba mniejsza od liczby $y$. Indeksy liczby $x$ jest zawsze o jeden mniejszy od indeksu liczby $y$ w zbiorze.\\
- Kolejnym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Pary wybierane są poprzez przesuwanie od indeksu 2 zbioru $V$, ponieważ zakładamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Każde przejście zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
-Po wybraniu pary $(x',y')$ następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.
-Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$.
-\subsection*{Oszacowanie złożoności}
-\subsubsection*{Optymistyczna}
+\subsection{Dla dwóch elementów}
+ Każde iteracja zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie $i$ jest kolejna iteracja algorytmu.}.\\
+Pierwszym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Po wybraniu pary $(x',y')$ , jest ona wstępnie sortowana rosnąco, potem następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$.
+\subsubsection{Oszacowanie złożoności}
+\paragraph{Optymistyczna}
 W tym przypadku złożoność obliczeniowa będzie wynosiła $O(n)$.
 Wynika to z faktu że :
 \begin{itemize}
@@ -212,7 +221,7 @@ T \approx \frac{n}{2} + \frac{n-2}{2} = n-1
 \wyjT
 Zerowa ilość przejść w przypadku wszystkich pętli \textit{while} wynika z faktu że zawarte w nich instrukcje zawsze będą warunkiem kończącym pętlę, zatem nigdy nie zostaną wykonane.
 
-\subsubsection*{Pesymistyczna}
+\paragraph{Pesymistyczna}
 Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \begin{itemize}
 \item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
@@ -227,7 +236,7 @@ T \approx \frac{n}{2} + \frac{n-2}{2}\cdot(n)+ (n-2)= \frac{n^2}{2} + \frac{n}{2
 \wyjT
 
 Ponieważ obie pętle \textit{while} korzystają z tego samego iteratora, zostało przyjęte że obie w sumie wykonają się $n$ razy, więc średnio każda wykona się $\frac{n}{2}$.
-\subsubsection*{Średnia}
+\paragraph{Średnia}
 Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \begin{itemize}
 \item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
@@ -243,20 +252,17 @@ T \approx \frac{n}{2} + \frac{n-2}{2}\cdot(n)+ (n-2)= \frac{n^2}{2} + \frac{n}{2
 \end{equation*}
 
 \wyjT
-\subsubsection*{Kod}
+\subsubsection{Kod}
 \begin{lstlisting}[caption={Sortowanie przez wstawianie dla par},label={lst:wstawianie}]
 void sort(std::vector<int> &toSort)
 {
  const int sizeOfArray=toSort.size()-(toSort.size()%2);
  for(int i=0; i<sizeOfArray; i+=2)
   {
-   if(toSort[i] > toSort[i+1])
-    {
-     std::swap(toSort[i],toSort[i+1]);
-    }
-  }
- for(int i=2; i<sizeOfArray; i+=2)
-  {
+    if(toSort[i] > toSort[i+1])
+     {
+      std::swap(toSort[i],toSort[i+1]);
+     }
    const int pom1 = toSort[i];
    const int pom2 = toSort[i+1];
    int j = i-1;
@@ -288,7 +294,23 @@ void sort(std::vector<int> &toSort)
 }
 \end{lstlisting}
 
-\subsubsection*{Wyniki}
+\subsection{Dla trzech elementów}
+ Każde iteracja zaczyna się od elementu $V[i+3]$\footnote{Indeks $i+3$ ze zbioru $V$, gdzie $i$ jest kolejna iteracja algorytmu.}.\\
+Pierwszym krokiem tego sortowania będzie wybranie  trojek $(x',y',z)$. Po wybraniu trojki, jest ona wstępnie sortowana rosnąco.
+Wybierz liczbę $w$ która zawsze jest elementem poprzedzającym najmniejszy element z trojki $(x',y',z')$. Następnie zostaną wykonane następujące akcje :
+\begin{itemize}
+\item Dopóki $w > z'$ przesuń cala trojkę przed $w$, wybierz nowe $w$. Jeżeli warunek zostanie niespełniony przejdź do następnego kroku.
+\item Dopóki $w > y'$ przesuń parę $(x',y')$ przed  $w$, wybierz nowe $w$. Jeżeli warunek zostanie niespełniony przejdź do następnego kroku.
+\item Dopóki $w > x'$ przesuń $x'$ przed $w$, wybierz nowe $w$. Jeżeli warunek zostanie niespełniony przejedz do kolejnej iteracji.
+\end{itemize}
+
+\subsubsection{Oszacowanie złożoności}
+\paragraph{Optymistyczna}
+\paragraph{Pesymistyczna}
+\paragraph{Średnia}
+\subsubsection{Kod}
+\subsection{Wyniki}
+
 \par Rys.~\ref{fig:insertRand} przedstawia wyniki dla tablicy z losowymi elementami. Na wykresie można zauważyć przyspieszenie względem standardowego algorytmu. Przyspieszenie to wynosi $ \approx 34 \% $.Opisana wcześniej złożoność dla tego przypadku jest taka sama jak dla standardowej implementacji. Jednakże fakt że algorytm bierze pod uwagę parę i najpierw sortuje po największym elemencie a potem po najmniejszym zmniejsza znacząco ilość porównań. Doprowadza to do tego że teoretyczne i maksymalne przyspieszenie powinno wynieść $ \approx 50\% $ przy tym pomyśle, uwzględniając idealną implementację.
 \par Rys.~\ref{fig:Insertbest} przedstawia wyniki dla tablicy która została już posortowana. Jak można zauważyć implementacja standardowa jest szybsza niż zaimplementowana tutaj. Jednakże różnica w czasie działania obu funkcji wynosi około $0.1ms$, wiec można uznać że są takie same. Ponieważ jedyną akcją która jest zależna od rozmiaru tablicy jest pętla przestawiająca pary oraz pętla przeszukująca tablice co dwa elementy złożoność obliczeniowa będzie liniowa $O(n)$.
 \par Rys.~\ref{fig:InsertWorst} przedstawia wyniki dla pesymistycznego ułożenia tablicy. W tym wypadku implementacja algorytmu dla par działa o $\approx 50 \% $ szybciej od standardowej implementacji. Wynika to z faktu że, tak samo jak w średnim przypadku, iteracja pętla odpowiedzialna za przestawianie par wynosi $\frac{n-2}{2}$ przez co faktycznie algorytm przyspiesza do $\approx 150 \% $ szybkości algorytmu podstawowego.
@@ -304,6 +326,8 @@ void sort(std::vector<int> &toSort)
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortInsertTupleTest.csv};
        
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortInsertTupleTest.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy ze elementami losowymi}\label{fig:insertRand}
@@ -319,7 +343,9 @@ void sort(std::vector<int> &toSort)
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortInsertTupleTestBest.csv};
-       
+        
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortInsertTupleTestBest.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy z najlepszym rozkładem elementów}\label{fig:Insertbest}
@@ -335,7 +361,8 @@ void sort(std::vector<int> &toSort)
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortInsertTupleTestWorst.csv};
-       
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortInsertTupleTestWorst.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy z najgorszym rozkładem elementów}\label{fig:InsertWorst}
@@ -344,13 +371,9 @@ void sort(std::vector<int> &toSort)
 
 %\end{figure}
 \FloatBarrier
-\subsection*{Dla trzech elementow}
-Początkowym krokiem algorytmu jest posortowanie  trojek $(x,y,z) $ w zbiorze $V$, gdzie każda trojka $(x,y,z) \in V$,  tak aby pierwsza liczba $x$  była zawsze liczba mniejsza od liczby $y$ a trzecia liczba była większa od $x$ i $y$. Trojki są wybierane z kolejnych liczb w zbiorze $V$.\\
- Kolejnym krokiem tego sortowania będzie wybranie  trojki $(x',y',z')$.Wybierane są one poprzez przesuwanie od indeksu 3 zbioru $V$, ponieważ zakładamy ze pierwsza para jest posortowana, zawsze o 2 indeksy. Każde przejście zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie i jest kolejna iteracja algorytmu.}.\\
-Po wybraniu pary $(x',y')$ następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.
-Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$.
+
 \section{Algorytm sortowania bąbelkowego}
-\subsection*{Dla dwóch elementów}
+\subsection{Dla dwóch elementów}
 Podstawowa wersja tego algorytmu polega na porównywaniu ze sobą dwóch kolejnych elementów $(x,y) \in V$ i zmianie ich kolejności, mając tylko jeden bąbelek który wypływa na początek lub na koniec zbioru. \\
 Zakładając ze mamy porównywać dwie liczby, zostało przyjęte ze są dwa bąbelki. Jeden który idzie na początek zbioru  $V$ oraz drugi który idzie na koniec zbioru $V$. \\
 Dla każdej pary $(x',y') \in V$ składającej się z kolejnych elementów ze zbioru $V$:
@@ -360,7 +383,44 @@ Dla każdej pary $(x',y') \in V$ składającej się z kolejnych elementów ze zb
 \item  Dla każdej liczby $w$ nastepujacej $y'$ zamień ze sobą te elementy jeżeli  \begin{equation*}y'>w\end{equation*}
  \end{itemize}  
 
-\subsubsection*{Kod}
+
+ \subsection{Oszacowanie złożoności}
+
+\paragraph{Optymistyczna}
+Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$. 
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
+\end{itemize}
+
+\begin{equation*}
+T \approx n -1
+\end{equation*}
+\wyjT
+\paragraph{Pesymistyczna}
+Najgorszy przypadek algorytmu sortowania bąbelkowego dla par ma złożoność obliczeniową $O(n^2)$.
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
+\item Pętla \textit{while}(10 linijka)  w najgorszym przypadku wykona się $n$ razy
+\item Pętla \textit{while}(15 linijka)  w najgorszym przypadku wykona się $n$ razy
+\end{itemize}
+\begin{equation*}
+T \approx (n -1) \cdot (2n) 
+\end{equation*}
+\wyjT
+\paragraph{Średnia}
+Dla losowych elementów w tablicy sortowanie to ma złożoność obliczeniową $O(n^2)$.
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
+\item Pętla \textit{while}(10 linijka)  w tym przypadku wykona się $\frac{2}{n}$ razy
+\item Pętla \textit{while}(15 linijka)  w tym przypadku wykona się $\frac{2}{n}$ razy
+\end{itemize}
+\begin{equation*}
+T \approx (n -1)\cdot (  \frac{2}{n} + \frac{2}{n}) = (n-1)n
+\end{equation*}
+\wyjT
+
+
+\subsubsection{Kod}
 
 \begin{lstlisting}[caption={Sortowanie bąbelkowe dla par},label={lst:babelek}]
 void sort(std::vector<int> &toSort)
@@ -385,41 +445,13 @@ void sort(std::vector<int> &toSort)
  }
 }
 \end{lstlisting}
- \subsection*{Oszacowanie złożoności}
-
-\subsubsection*{Optymistyczna}
-Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$. 
-\begin{itemize}
-\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
-\end{itemize}
-
-\begin{equation*}
-T \approx n -1
-\end{equation*}
-\wyjT
-\subsubsection*{Pesymistyczna}
-Najgorszy przypadek algorytmu sortowania bąbelkowego dla par ma złożoność obliczeniową $O(n^2)$.
-\begin{itemize}
-\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
-\item Pętla \textit{while}(10 linijka)  w najgorszym przypadku wykona się $n$ razy
-\item Pętla \textit{while}(15 linijka)  w najgorszym przypadku wykona się $n$ razy
-\end{itemize}
-\begin{equation*}
-T \approx (n -1) \cdot (2n) 
-\end{equation*}
-\wyjT
-\subsubsection*{Średnia}
-Dla losowych elementów w tablicy sortowanie to ma złożoność obliczeniową $O(n^2)$.
-\begin{itemize}
-\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
-\item Pętla \textit{while}(10 linijka)  w tym przypadku wykona się $\frac{2}{n}$ razy
-\item Pętla \textit{while}(15 linijka)  w tym przypadku wykona się $\frac{2}{n}$ razy
-\end{itemize}
-\begin{equation*}
-T \approx (n -1)\cdot (  \frac{2}{n} + \frac{2}{n}) = (n-1)n
-\end{equation*}
-\wyjT
-\subsubsection*{Wyniki}
+\subsection{Dla trzech elementów}
+\subsubsection{Oszacowanie złożoności}
+\paragraph{Optymistyczna}
+\paragraph{Pesymistyczna}
+\paragraph{Średnia}
+\subsubsection{Kod}
+\subsection{Wyniki}
 \par Rys.~\ref{fig:bubbleRand} przedstawia efekt porównania działania obu algorytmów dla tablic z losowymi elementami. Z przedstawionego wykresu wyraźnie widać przyspieszenie. Maksymalne przyspieszenie dla tego algorytmu wynosi $\approx 70\%$. Dzięki zastosowaniu wewnętrznych pętli \textit{while} które sterują zachowaniem bąbelków można bardzo szybko przyspieszyć algorytm. Dzięki temu że średnio każda pętla wykonuję się połowę rozmiaru tablicy. Wiec teoretyczne przyspieszenie powinno być co najmniej $50 \% $.	
 \par Rys.~\ref{fig:bubbleBest} reprezentuje graficznie otrzymane wyniki z porównania algorytmu sortowania bąbelkowego dla par i normalnego dla posortowanej tablicy. Ponieważ widoczna na wykresie czerwona linia, reprezentująca sortowanie dla par, jest zawsze bliska zeru, mozna wyciągnać wniosek. Sortowanie to ma złożoność obliczeniową $O(n)$. Wiec przyspieszenie wynosi $\approx 99\%$
 \par Rys.~\ref{fig:bubbleWorst} przedstawia wyniki dla tablicy posortowanej w druga stronę. Przyspieszenie algorytmu wynosi w tym wypadku $\approx 50\%$. Ponieważ używamy dwóch bąbelków, w porównaniu do użycia jednego , zmniejsza czas wykonania o $50\%$.
@@ -435,7 +467,8 @@ T \approx (n -1)\cdot (  \frac{2}{n} + \frac{2}{n}) = (n-1)n
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortBubbleTupleTest.csv};
-       
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortBubbleTupleTest.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy ze elementami losowymi}\label{fig:bubbleRand}
@@ -451,7 +484,8 @@ T \approx (n -1)\cdot (  \frac{2}{n} + \frac{2}{n}) = (n-1)n
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortBubbleTupleTestBest.csv};
-       
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortBubbleTupleTestBest.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy z najlepszym rozkładem elementów}\label{fig:bubbleBest}
@@ -467,7 +501,8 @@ T \approx (n -1)\cdot (  \frac{2}{n} + \frac{2}{n}) = (n-1)n
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortBubbleTupleTestWorst.csv};
-       
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortBubbleTupleTestWorst.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy z najgorszym rozkładem elementów}\label{fig:bubbleWorst}
@@ -476,7 +511,7 @@ T \approx (n -1)\cdot (  \frac{2}{n} + \frac{2}{n}) = (n-1)n
 \FloatBarrier
 
 \section{Algorytm sortowania przez wybieranie}
-\subsection*{Dla dwóch elementów}
+\subsection{Dla dwóch elementów}
 Podstawowa wersja algorytmu zakłada wybieranie najmniejszej lub największej wartości z zbioru. Ten pomysł wybiera największą oraz najmniejszą wartość.
 \begin{itemize}
 \item Pobierz element który znajduję się na początku, $begin$, zbioru $V$.
@@ -485,7 +520,42 @@ Podstawowa wersja algorytmu zakłada wybieranie najmniejszej lub największej wa
 \item Ustaw początek zbioru $begin$ na element z indeksem o jeden większy niż $begin$, a koniec na element z indeksem o jeden mniejszym niż $end$.
 \end{itemize}
  
-\subsubsection*{Kod}
+\subsubsection{Oszacowanie złożoności}
+\paragraph{Optymistyczna}
+Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n^2)$. 
+\begin{itemize}
+\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane są 2 elementy.
+\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje się tyle samo razy co poprzednia.
+\end{itemize}
+
+\begin{equation*}
+T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
+\end{equation*}
+\wyjT
+\paragraph{Pesymistyczna}
+Najgorszy przypadek algorytmu sortowania przez wybieranie dla par ma złożoność obliczeniową $O(n^2)$.
+\begin{itemize}
+\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane sa 2 elementy.
+\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje sie tyle samo razy co poprzednia.
+\end{itemize}
+\begin{equation*}
+T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
+\end{equation*}
+\wyjT
+\paragraph{Średnia}
+Dla losowych elementów w tablicy sortowanie to ma złożoność obliczeniową $O(n^2)$.
+\begin{itemize}
+\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane są 2 elementy.
+\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje się tyle samo razy co poprzednia.
+\end{itemize}
+
+\begin{equation*}
+T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
+\end{equation*}
+\wyjT
+
+
+\subsubsection{Kod}
 \begin{lstlisting}[caption={Sortowanie przez wybieranie dla par},label={lst:wybieranie}]
 void sort(std::vector<int> &toSort)
 {
@@ -522,40 +592,26 @@ void sort(std::vector<int> &toSort)
   }
 }
 \end{lstlisting}
+\subsection{Dla trzech elementów}
 
-\subsubsection*{Optymistyczna}
-Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n^2)$. 
-\begin{itemize}
-\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane są 2 elementy.
-\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje się tyle samo razy co poprzednia.
-\end{itemize}
+\subsubsection{Oszacowanie złożoności}
+\paragraph{Optymistyczna}
 
-\begin{equation*}
-T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
-\end{equation*}
-\wyjT
-\subsubsection*{Pesymistyczna}
-Najgorszy przypadek algorytmu sortowania przez wybieranie dla par ma złożoność obliczeniową $O(n^2)$.
-\begin{itemize}
-\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane sa 2 elementy.
-\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje sie tyle samo razy co poprzednia.
-\end{itemize}
-\begin{equation*}
-T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
-\end{equation*}
-\wyjT
-\subsubsection*{Średnia}
-Dla losowych elementów w tablicy sortowanie to ma złożoność obliczeniową $O(n^2)$.
-\begin{itemize}
-\item Pętla \textit{while}(11 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ przy każdej iteracji usuwane są 2 elementy.
-\item Pętla \textit{for}(14 linijka) wykonuje się zawsze $\frac{n}{2}$, ponieważ zawsze wykonuje się tyle samo razy co poprzednia.
-\end{itemize}
+\paragraph{Pesymistyczna}
 
-\begin{equation*}
-T \approx \frac{n}{2} \cdot \frac{n}{2} = \frac{n^2}{4}
-\end{equation*}
-\wyjT
-\subsubsection*{Wyniki}
+\paragraph{Średnia}
+
+
+
+\subsubsection{Kod}
+\begin{lstlisting}[caption={Sortowanie przez wybieranie dla par},label={lst:wybieranie}]
+void sort(std::vector<int> &toSort)
+{
+
+}
+\end{lstlisting}
+
+\subsection{Wyniki}
 Jak widać na powyższych założeniach teoretycznych każdy z przykładów ma taką samą złożoność obliczeniową. Wynika to z faktu że każda pętla musi być wykonana zawsze i wymaganą ilość razy.	
 \par Rys.\ref{fig:wyb} przedstawia porównanie szybkości wykonywania się obliczeń dla tablicy z danymi losowymi. Przyspieszenie wynosi $\approx 40\%$. 
 \par Rys.\ref{fig:wybBest} przedstawia najgorszy z trzech możliwych wynik gdzie przyspieszenie wynosi $\approx 21\%$. 
@@ -571,7 +627,8 @@ Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczenio
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortSelectionTupleTest.csv};
-       
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortSelectionTupleTest.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy ze elementami losowymi}\label{fig:wyb}
@@ -587,7 +644,8 @@ Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczenio
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortSelectionTupleTestBest.csv};
-       
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortSelectionTupleTestBest.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy z najlepszym rozkładem elementów}\label{fig:wybBest}
@@ -603,7 +661,8 @@ Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczenio
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortSelectionTupleTestWorst.csv};
-       
+        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
+        table[x=column 1,y=column 4,col sep=comma] {sortSelectionTupleTestWorst.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy z najgorszym rozkładem elementów}\label{fig:wybWorst}
