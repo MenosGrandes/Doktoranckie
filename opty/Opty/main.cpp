@@ -6,17 +6,19 @@
 int main(int argc, char* argv[] )
 {
     srand((time(0)));
-////
+//
 //        int i=9;
 //        while(1)
 //        {
-//
-//            SortTripleBubble *stb= new SortTripleBubble(9,9);
+//            std::vector<int>v;
+//            v==Random::getInstance().generateRandomVector(1,10,3001);
+//            std::sort(v.begin(),v.end(),std::greater<int>());
+//            SortTripleBubble *stb= new SortTripleBubble(v);
 //
 //            system("cls");
 //                        stb->print();
 //
-//             std::cout<<i<<std::endl;;
+////             std::cout<<i<<std::endl;;
 //            stb->_sort();
 //            if(!stb->compare())
 //            {
@@ -27,13 +29,20 @@ int main(int argc, char* argv[] )
 //            }
 //
 //            delete stb;
-//            i+=111;
-//            if(i>100000)
-//            {
-//                break;
-//            }
+////            i+=111;
+////            if(i>100000)
+////            {
+////                break;
+////            }
 //        }
-#define DO_TESTS
+    VectorOfTests tests;
+    tests.push_back(TestBubbleSort() );
+    tests.push_back(TestInsertSort() );
+    tests.push_back(TestSelectionSort() );
+    std::vector<std::string> namesOfTests{"TestBubbleSort","TestInsertSort","TestSelectionSort"};
+                    boost::apply_visitor(TestVisitor(1,3001,9,WORST),tests[0]);
+
+//#define DO_TESTS
 #ifdef DO_TESTS
     VectorOfTests tests;
     tests.push_back(TestBubbleSort() );
@@ -57,7 +66,7 @@ int main(int argc, char* argv[] )
                 for(int i=(*f); i<*(f+1); i+=addition[add])
                 {
                     std::cout<<i<<",";
-                    boost::apply_visitor(TestVisitor(1,i,100000,(TEST_OPTIONS)os),tests[_test]);
+                    boost::apply_visitor(TestVisitor(1,3001,100000,(TEST_OPTIONS)os),tests[_test]);
                 }
             }
         }

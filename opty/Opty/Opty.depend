@@ -116,7 +116,7 @@
 
 1478960324 D
 
-1479575749 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1479591393 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	<iostream>
 	"../templatesSpecialisation.hpp"
 
@@ -158,7 +158,7 @@
 	"../typdefs.hpp"
 	<iostream>
 
-1479492690 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
+1479591360 c:\users\menos\desktop\doktoranckie\opty\opty\include\sort.h
 	<algorithm>
 	<functional>
 	<vector>
@@ -261,7 +261,7 @@
 
 1478525265 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
 
-1479564758 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
+1479591362 c:\users\menos\desktop\doktoranckie\opty\opty\include\testsort.h
 	<type_traits>
 	"Random.h"
 	"Timer.h"
@@ -270,7 +270,7 @@
 1479492690 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortinsert.h
 	"../typdefs.hpp"
 
-1479562236 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
+1479591612 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
 	"../typdefs.hpp"
 
 1478281849 source:c:\users\menos\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
@@ -566,7 +566,7 @@
 	"../typdefs.hpp"
 	<assert.h>
 
-1479575812 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
+1479591579 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 	<windows.h>
 	<iostream>

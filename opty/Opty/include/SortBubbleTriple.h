@@ -11,77 +11,55 @@ public:
     ~SortBubbleTriple() {};
     void sort(std::vector<int>&toSort)
     {
-    for(VintIter i=toSort.begin(); i!=toSort.end(); i++)
+
+        for(int _size=0 ; _size<toSort.size()/3; _size++)
         {
-            for (VintIter j =(toSort.end()-1); j != i; --j)
+            for(int i=0; i<toSort.size()-3; i+=3)
             {
-                if (*(j - 1) > *(j))
+                //POSORTUJ TROJKI
+                if(toSort[i] < toSort[i+1])
                 {
-                    std::iter_swap(j - 1, j);
+                    if(toSort[i+2]<toSort[i])
+                    {
+                        std::swap(toSort[i],toSort[i+2]);
+                    }
+                }
+                else
+                {
+                    if(toSort[i+1]<toSort[i+2])
+                    {
+                        std::swap(toSort[i],toSort[i+1]);
+                    }
+                    else
+                    {
+                        std::swap(toSort[i],toSort[i+2]);
+                    }
+
+                }
+                if(toSort[i+2]<toSort[i+1])
+                {
+                    std::swap(toSort[i+1],toSort[i+2]);
+                }
+
+                if(toSort[i]>toSort[i+3])
+                {
+                    std::swap(toSort[i+2],toSort[i+3]);
+                    std::swap(toSort[i+1],toSort[i+2]);
+                    std::swap(toSort[i],toSort[i+1]);
+
+                }
+                else if(toSort[i+1]>toSort[i+3])
+                {
+                    std::swap(toSort[i+2],toSort[i+3]);
+                    std::swap(toSort[i+1],toSort[i+2]);
+                }
+                else if(toSort[i+2]>toSort[i+3])
+                {
+                    std::swap(toSort[i+2],toSort[i+3]);
 
                 }
             }
-
         }
-//        for(int _size=0 ; _size<toSort.size(); _size++)
-//        {
-//            for(int i=0; i<toSort.size()-3; i++)
-//            {
-//                //POSORTUJ TROJKI
-//                if(toSort[i] < toSort[i+1])
-//                {
-//                    if(toSort[i+2]<toSort[i])
-//                    {
-//                        std::swap(toSort[i],toSort[i+2]);
-//                    }
-//                }
-//                else
-//                {
-//                    if(toSort[i+1]<toSort[i+2])
-//                    {
-//                        std::swap(toSort[i],toSort[i+1]);
-//                    }
-//                    else
-//                    {
-//                        std::swap(toSort[i],toSort[i+2]);
-//                    }
-//
-//                }
-//                if(toSort[i+2]<toSort[i+1])
-//                {
-//                    std::swap(toSort[i+1],toSort[i+2]);
-//                }
-//
-//                int min1=i;
-//                int min2=i+1;
-//                int min3=i+2;
-//
-//                //zamien wsztstkie 3
-////                std::cout<<toSort[min3]<<" "<<toSort[min3+1]<<std::endl;
-//                if(toSort[min1]>toSort[min3+1])
-//                {
-//                    std::swap(toSort[min3],toSort[min3+1]);
-//                    std::swap(toSort[min2],toSort[min2+1]);
-//                    std::swap(toSort[min1],toSort[min1+1]);
-//
-//                }
-//                else if(toSort[min2]>toSort[min3+1]) // cost tu nie tak
-//                {
-//                    std::swap(toSort[min3],toSort[min3+1]);
-//                    std::swap(toSort[min2],toSort[min2+1]);
-//                }
-//                else if(toSort[min3]>toSort[min3+1])
-//                {
-//                    std::swap(toSort[min3],toSort[min3+1]);
-//
-//                }
-//
-//
-//
-//
-//            }
-//
-//        }
     }
 
 
