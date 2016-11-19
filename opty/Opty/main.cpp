@@ -5,10 +5,34 @@
 
 int main(int argc, char* argv[] )
 {
-
-
-
-        srand((time(0)));
+    srand((time(0)));
+////
+//        int i=9;
+//        while(1)
+//        {
+//
+//            SortTripleBubble *stb= new SortTripleBubble(9,9);
+//
+//            system("cls");
+//                        stb->print();
+//
+//             std::cout<<i<<std::endl;;
+//            stb->_sort();
+//            if(!stb->compare())
+//            {
+//                stb->print();
+//
+//                assert(stb->compare() && "Array wrongly sorted");
+//
+//            }
+//
+//            delete stb;
+//            i+=111;
+//            if(i>100000)
+//            {
+//                break;
+//            }
+//        }
 #define DO_TESTS
 #ifdef DO_TESTS
     VectorOfTests tests;
@@ -20,8 +44,9 @@ int main(int argc, char* argv[] )
     std::vector<int>addition{500,1000,5000,10000};
 
 
-    for(int _test=0; _test<tests.size(); _test++)
+    for(int _test=0; _test<1; _test++)
     {
+
         std::cout<<namesOfTests[_test]<<std::endl;
         for(int os=NON; os<LENGTH; os++)
         {

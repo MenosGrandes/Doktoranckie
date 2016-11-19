@@ -58,4 +58,5 @@ public:
     int m_testCounts;int m_tabSize;int m_max;TEST_OPTIONS m_to;
 };
 
+
 #endif // TEMPLATES_SPECIALISATION_HPP
