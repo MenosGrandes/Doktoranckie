@@ -66,7 +66,7 @@ int main(int argc, char* argv[] )
                 for(int i=(*f); i<*(f+1); i+=addition[add])
                 {
                     std::cout<<i<<",";
-                    boost::apply_visitor(TestVisitor(1,i,100000,(TEST_OPTIONS)os),tests[_test]);
+                    boost::apply_visitor(TestVisitor(1,1000,100000,(TEST_OPTIONS)os),tests[_test]);
                 }
             }
         }

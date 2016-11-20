@@ -256,3 +256,67 @@ public:
 
     }
 */
+
+
+/*
+
+for(int k=0;k<toSort.size();k+=3){
+        for(int i= 0; i<toSort.size()-2; i+=3)//(1)
+        {
+
+            if(toSort[i] < toSort[i+1])
+            {
+                if(toSort[i+2]<toSort[i])
+                {
+                    std::swap(toSort[i],toSort[i+2]);
+                }
+            }
+            else
+            {
+                if(toSort[i+1]<toSort[i+2])
+                {
+                    std::swap(toSort[i],toSort[i+1]);
+                }
+                else
+                {
+                    std::swap(toSort[i],toSort[i+2]);
+                }
+
+            }
+            if(toSort[i+2]<toSort[i+1])
+            {
+                std::swap(toSort[i+1],toSort[i+2]);
+            }
+
+            int minElem=i,minElem2=i+1,maxElem=i+2;//(2)
+
+            if(minElem2>1 && toSort[minElem2]<toSort[minElem-1])//(5) //N
+            {
+                std::swap(toSort[minElem],toSort[minElem-1]);//(6)
+                std::swap(toSort[minElem2],toSort[minElem2-1]);//(6)
+                minElem--;//(7)1
+                minElem2--;//(7)1
+
+            }
+            else if(minElem>0 && toSort[minElem]<toSort[minElem-1])//(8) // N
+            {
+                std::swap(toSort[minElem],toSort[minElem-1]);//(6)
+                minElem--;//(10)
+
+            }
+            if(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])//(8) // N
+            {
+                std::swap(toSort[maxElem],toSort[maxElem+1]);//(9)
+                maxElem++;//(10)
+
+            }
+        }
+
+
+    }
+    }
+
+
+
+
+*/

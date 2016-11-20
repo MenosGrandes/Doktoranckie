@@ -116,7 +116,7 @@
 
 1478960324 D
 
-1479642060 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
+1479644885 source:c:\users\menos\desktop\doktoranckie\opty\opty\main.cpp
 	<iostream>
 	"../templatesSpecialisation.hpp"
 
@@ -566,7 +566,7 @@
 	"../typdefs.hpp"
 	<assert.h>
 
-1479641925 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
+1479645009 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"../typdefs.hpp"
 	<windows.h>
 	<iostream>
