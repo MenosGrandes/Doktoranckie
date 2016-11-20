@@ -50,7 +50,6 @@ public:
     ~SortBubbleTuple() {};
     void sort(std::vector<int> &toSort)
     {
-#ifdef BUBBLE_ROCK
         //const int _end=ceil(toSort.size()-(toSort.size()*0.1));
         for(int i= 0; i<toSort.size()-1; i++)//(1)
         {
@@ -72,31 +71,30 @@ public:
                 maxElem++;//(10)
             }
         }
-#endif // BUBBLE_ROCK
 
-        for(int _size=0 ; _size<toSort.size(); _size+=2)
-        {
-            for(int i=0; i<toSort.size()-2; i+=2)
-            {
-                if(toSort[i] > toSort[i+1])
-                {
-                    std::swap(toSort[i],toSort[i+1]);
-                }
-
-                if(toSort[i]>toSort[i+2]) // cost tu nie tak
-                {
-                    std::swap(toSort[i+1],toSort[i+2]);
-                    std::swap(toSort[i],toSort[i+1]);
-                }
-                else if(toSort[i+1]>toSort[i+2])
-                {
-                    std::swap(toSort[i+1],toSort[i+2]);
-
-                }
-
-            }
-
-        }
+//        for(int _size=0 ; _size<toSort.size(); _size+=2)
+//        {
+//            for(int i=0; i<toSort.size()-2; i+=2)
+//            {
+//                if(toSort[i] > toSort[i+1])
+//                {
+//                    std::swap(toSort[i],toSort[i+1]);
+//                }
+//
+//                if(toSort[i]>toSort[i+2]) // cost tu nie tak
+//                {
+//                    std::swap(toSort[i+1],toSort[i+2]);
+//                    std::swap(toSort[i],toSort[i+1]);
+//                }
+//                else if(toSort[i+1]>toSort[i+2])
+//                {
+//                    std::swap(toSort[i+1],toSort[i+2]);
+//
+//                }
+//
+//            }
+//
+//        }
 
 
     }

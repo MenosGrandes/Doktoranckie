@@ -35,14 +35,14 @@ int main(int argc, char* argv[] )
 ////                break;
 ////            }
 //        }
-    VectorOfTests tests;
-    tests.push_back(TestBubbleSort() );
-    tests.push_back(TestInsertSort() );
-    tests.push_back(TestSelectionSort() );
-    std::vector<std::string> namesOfTests{"TestBubbleSort","TestInsertSort","TestSelectionSort"};
-                    boost::apply_visitor(TestVisitor(1,3001,9,WORST),tests[0]);
+//    VectorOfTests tests;
+//    tests.push_back(TestBubbleSort() );
+//    tests.push_back(TestInsertSort() );
+//    tests.push_back(TestSelectionSort() );
+//    std::vector<std::string> namesOfTests{"TestBubbleSort","TestInsertSort","TestSelectionSort"};
+//                    boost::apply_visitor(TestVisitor(1,10,9),tests[0]);
 
-//#define DO_TESTS
+#define DO_TESTS
 #ifdef DO_TESTS
     VectorOfTests tests;
     tests.push_back(TestBubbleSort() );
@@ -53,7 +53,7 @@ int main(int argc, char* argv[] )
     std::vector<int>addition{500,1000,5000,10000};
 
 
-    for(int _test=0; _test<1; _test++)
+    for(int _test=0; _test<2; _test++)
     {
 
         std::cout<<namesOfTests[_test]<<std::endl;
@@ -66,7 +66,7 @@ int main(int argc, char* argv[] )
                 for(int i=(*f); i<*(f+1); i+=addition[add])
                 {
                     std::cout<<i<<",";
-                    boost::apply_visitor(TestVisitor(1,3001,100000,(TEST_OPTIONS)os),tests[_test]);
+                    boost::apply_visitor(TestVisitor(1,i,100000,(TEST_OPTIONS)os),tests[_test]);
                 }
             }
         }
