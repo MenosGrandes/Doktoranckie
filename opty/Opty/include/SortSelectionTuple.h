@@ -33,28 +33,28 @@ public:
             vectorSize++;
             std::iter_swap((std::min_element(toSort.begin(),toSort.end())),toSort.begin());
         }
-        VintIter _begin = toSort.begin()+vectorSize;
-        VintIter _end = toSort.end() - 1;
-        while (_begin < _end)
+        int _begin = vectorSize;
+        int _end = toSort.size()-1;
+        while (vectorSize < _end)
         {
-            VintIter it=_begin,_min=it,_max=it;
-            for (it = _begin; it <= _end; ++it)
+            int _min=_begin,_max=_end;
+            for (int i = _begin; i < _end; ++i)
             {
-                if ((*it) < (*_min))
+                if (toSort[i] < toSort[_min])
                 {
-                    _min = it;
+                    _min = i;
                 }
-                else if ((*it) > (*_max))
+                else if (toSort[i]> toSort[_max])
                 {
-                    _max = it;
+                    _max = i;
                 }
             }
-            std::iter_swap(_min,_begin);
+            std::swap(toSort[_min],toSort[_begin]);
             if(_begin==_max)
             {
                 _max=_min;
             }
-            std::iter_swap(_max,_end);
+            std::swap(toSort[_max],toSort[_end]);
             ++_begin;
             --_end;
         }

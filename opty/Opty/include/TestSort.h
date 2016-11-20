@@ -54,9 +54,9 @@ public:
 //std::cout<<std::endl<<"PRAWIDLOWY"<<std::endl;;
 //            m_tripleSort->print();
 
-            assert( m_tupleSort->compare());
-            assert(m_basicSort->compare());
-            assert(m_tripleSort->compare());
+//            assert( m_tupleSort->compare());
+//            assert(m_basicSort->compare());
+//            assert(m_tripleSort->compare());
 
             delete m_basicSort;
             delete m_tupleSort;
