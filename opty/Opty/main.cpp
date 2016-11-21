@@ -2,24 +2,25 @@
 #include <iostream>
 #include "../templatesSpecialisation.hpp"
 
+#include "../Tests.hpp"
 
 int main(int argc, char* argv[] )
 {
     srand((time(0)));
 //    while(1){
-//            system("cls");
-//SortTupleSelection * sst= new SortTupleSelection(1000,9);
-//sst->print();
-//sst->_sort();
-//sst->print();
-//delete sst;
-//}
 
-#define DO_TESTS
+
+            system("cls");
+SortTupleSelection * sst= new SortTupleSelection(6,20);
+sst->print();
+sst->_sort();
+sst->print();
+delete sst;
+//}
 #ifdef DO_TESTS
     VectorOfTests tests;
 //    tests.push_back(TestBubbleSort() );
-//    tests.push_back(TestInsertSort() );
+//    tests.push_back(TestInsertSort() );5
     tests.push_back(TestSelectionSort() );
     std::vector<std::string> namesOfTests{"TestBubbleSort","TestInsertSort","TestSelectionSort"};
     std::vector<int>from{0,10000,40000,100000};

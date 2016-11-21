@@ -61,5 +61,81 @@ public:
     }
 
 };
+/*
+Robimy z wszystkiego pary.
+Sortujemy wszystkie w kolejnosci rosnacej,
+z pierwszych liczb kazdej pary wybieramy najmniejsza a z drugich najwieksza.
+zamieniamy miejscami najmniejsza z poczatkiem a najwieksza z koncem
 
+
+
+
+
+[3 45] [67 91] [13 82]
+ |______|_______|
+     3      13
+     |______|
+        3
+
+[3 45] [67 91] [13 82]
+    |______|_______|
+        91      91
+        |______|
+           91
+
+
+[3 45] [67 82] [13 91] -> 3 [45 67] [82 13] 91 -> 3 [45 67] [13 82] 91
+
+[45 67] [13 82]
+ |_______|
+     13
+
+
+[45 67] [13 82]
+    |_______|
+     82
+
+
+3 [13 67] [45 82] 91
+3 13 [67 45] 82 91 -> 3 13 45 69 82 91
+
+
+    void sort(std::vector<int> &toSort)
+    {
+
+    int _begin=0;
+    int _end = toSort.size()-1;
+    while(_begin<_end)
+        {
+
+        for(int i=_begin;i<=_end;i+=2)
+        {
+           if(toSort[i]>toSort[i+1])
+           {
+               std::swap(toSort[i],toSort[i+1]);
+           }
+        }
+        int _min=_begin;
+        int _max=_begin;
+
+        for(int i=_begin;i<_end;i++)
+        {
+            if(toSort[_min]>=toSort[i])
+            {
+                _min=i;
+            }else if(toSort[_min]<=toSort[i])
+            {
+                _max=i;
+            }
+        }
+        std::swap(toSort[_begin],toSort[_min]);
+        std::swap(toSort[_end],toSort[_max]);
+
+        _begin++;
+        _end--;
+    }
+    }
+};
+
+*/
 #endif // SORTSELECTIONTUPLE_H
