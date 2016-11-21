@@ -205,49 +205,53 @@ Jako średni przypadek zostało przyjęta sytuacja w której tablica zawiera w s
  Każde iteracja zaczyna się od elementu $V[i+2]$\footnote{Indeks $i+2$ ze zbioru $V$, gdzie $i$ jest kolejna iteracja algorytmu.}.\\
 Pierwszym krokiem tego sortowania będzie wybranie  pary $(x',y')$. Po wybraniu pary $(x',y')$ , jest ona wstępnie sortowana rosnąco, potem następuje porównywanie elementu $y'$ z elementem $z$, który poprzedza wybrana parę oraz indeks $z \in \lvert V \rvert $. Dopóki  $z > y'$  wykonuje się przesuniecie całej pary przed liczbę $z$. Za każdym razem liczba $z$ jest liczba poprzedzająca liczbę $x'$.Jeżeli  $z < y'$ algorytm przechodzi do porównania $z > x'$ . Jeżeli zostanie spełniony ten warunek liczba mniejsza z pary zostaje przestawiona przed liczba $z$.
 \subsubsection{Oszacowanie złożoności}
-\paragraph{Optymistyczna}
+\paragraph{Optymistyczna}\mbox{}\\
 W tym przypadku złożoność obliczeniowa będzie wynosiła $O(n)$.
 Wynika to z faktu że :
 \begin{itemize}
-\item   Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
-\item Druga pętla \textit{for}(11 linijka) zostanie wykonana $\frac{n-2}{2}$ razy.
-\item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $0$ razy.
-\item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $0$ razy.
-\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $0$ iteracji(34 linijka).
+\item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
+\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $\frac{n}{2}$ porównań.
+\item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $0$ razy.
+\item Druga zagnieżdżona pętla \textit{while}(20 linijka) zostanie wykonana $0$ razy.
+\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $0$ iteracji(31 linijka).
 \end{itemize}
 \begin{equation}
-T \approx \frac{n}{2} + \frac{n-2}{2} = n-1
+T \approx \frac{n}{2}
 \end{equation}
-\wyjT
+\wyjT \\
 Zerowa ilość przejść w przypadku wszystkich pętli \textit{while} wynika z faktu że zawarte w nich instrukcje zawsze będą warunkiem kończącym pętlę, zatem nigdy nie zostaną wykonane.
 
-\paragraph{Pesymistyczna}
+\paragraph{Pesymistyczna}\mbox{}\\
 Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \begin{itemize}
 \item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
-\item Druga pętla \textit{for}(11 linijka) zostanie wykonana dokładnie $\frac{n-2}{2}$ razy.
-\item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $\approx \frac{n}{2}$ razy.
-\item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $\approx \frac{n}{2}$ razy.
-\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n-2$ iteracji(34 linijka).
+\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $\frac{n}{2}$ porównań.
+\item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $2n$ razy.
+\item Druga zagnieżdżona pętla \textit{while}(20 linijka) zostanie wykonana $0$ razy.
+\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n$ iteracji(31 linijka).
 \end{itemize}
 \begin{equation*}
-T \approx \frac{n}{2} + \frac{n-2}{2}\cdot(n)+ (n-2)= \frac{n^2}{2} + \frac{n}{2} -2
+T \approx \frac{n}{2} \cdot(\frac{n}{2} +2n + 0)+ n \approx \frac{5n^2}{4}
 \end{equation*}
 \wyjT
 
 Ponieważ obie pętle \textit{while} korzystają z tego samego iteratora, zostało przyjęte że obie w sumie wykonają się $n$ razy, więc średnio każda wykona się $\frac{n}{2}$.
-\paragraph{Średnia}
+\paragraph{Średnia}\mbox{}\\
 Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
+
+\begin{Huge}
+SPRAWDZ ZLOZONOSC PETLI WHILE!
+\end{Huge}
 \begin{itemize}
 \item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
-\item Druga pętla \textit{for}(11 linijka) zostanie wykonana dokładnie $\frac{n-2}{2}$ razy.
-\item Pierwsza zagnieżdżona pętla \textit{while}(16 linijka) zostanie wykonana $\approx \frac{2}{n}$ razy.
-\item Druga zagnieżdżona pętla \textit{while}(23 linijka) zostanie wykonana $\approx \frac{2}{n}$ razy.
-\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n-2$ iteracji(34 linijka).
+\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $\frac{n}{2}$ porównań.
+\item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $\approx \frac{n\cdot(n-1)}{2}$ razy.
+\item Druga zagnieżdżona pętla \textit{while}(20 linijka) zostanie wykonana $\approx \frac{n\cdot(n-1)}{2}$ razy.
+\item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n$ iteracji(31 linijka).
 \end{itemize}
 \begin{equation*}
 \begin{multlined}
-T \approx \frac{n}{2} + \frac{n-2}{2}\cdot(n)+ (n-2)= \frac{n^2}{2} + \frac{n}{2} -2
+T \approx \frac{n}{2} \cdot(n)+ (n-2)
 \end{multlined}
 \end{equation*}
 
@@ -309,6 +313,77 @@ Wybierz liczbę $w$ która zawsze jest elementem poprzedzającym najmniejszy ele
 \paragraph{Pesymistyczna}
 \paragraph{Średnia}
 \subsubsection{Kod}
+\begin{lstlisting}[caption={Sortowanie przez wstawianie dla trójek},label={lst:wstawianie}]
+void sort(std::vector<int>&toSort)
+{
+ const int arrayDivider = (toSort.size()%3);
+ if(toSort.size()%3!=0)
+ {
+  for(int i=1; i<arrayDivider; i++)
+  {
+   const int pom = toSort[i];
+   int j = i-1;
+   while(j>=0 && toSort[j]>pom)
+   {
+    toSort[j+1] = toSort[j];
+    --j;
+   }
+   toSort[j+1] = pom;
+  }
+ }
+ for(int i=arrayDivider; i<toSort.size(); i+=3)
+ {
+  if(toSort[i] < toSort[i+1])
+  {
+   if(toSort[i+2]<toSort[i])
+   {
+    std::swap(toSort[i],toSort[i+2]);
+   }
+  }
+  else
+  {
+   if(toSort[i+1]<toSort[i+2])
+   {
+    std::swap(toSort[i],toSort[i+1]);
+   }
+   else
+   {
+    std::swap(toSort[i],toSort[i+2]);
+   }
+  }
+  if(toSort[i+2]<toSort[i+1])
+  {
+   std::swap(toSort[i+1],toSort[i+2]);
+  }
+  const int pom1 = toSort[i];
+  const int pom2 = toSort[i+1];
+  const int pom3 = toSort[i+2];
+  int j = i-1;
+  while(j>=0 && toSort[j]>pom3)
+  {
+   toSort[j+3] =  toSort[j];
+   j--;
+  }
+  toSort[j+3] = pom3;
+  toSort[j+2] = pom2;
+  toSort[j+1] = pom1;
+  while(j>=0 && toSort[j]>pom2)
+  {
+   toSort[j+2] =  toSort[j];
+   j--;
+  }
+  toSort[j+2] = pom2;
+  toSort[j+1] = pom1;
+  while(j>=0 && toSort[j]>pom1)
+  {
+   toSort[j+1] = toSort[j];
+   --j;
+  }
+  toSort[j+1] = pom1;
+ }
+};
+\end{lstlisting}
+
 \subsection{Wyniki}
 
 \par Rys.~\ref{fig:insertRand} przedstawia wyniki dla tablicy z losowymi elementami. Na wykresie można zauważyć przyspieszenie względem standardowego algorytmu. Przyspieszenie to wynosi $ \approx 34 \% $.Opisana wcześniej złożoność dla tego przypadku jest taka sama jak dla standardowej implementacji. Jednakże fakt że algorytm bierze pod uwagę parę i najpierw sortuje po największym elemencie a potem po najmniejszym zmniejsza znacząco ilość porównań. Doprowadza to do tego że teoretyczne i maksymalne przyspieszenie powinno wynieść $ \approx 50\% $ przy tym pomyśle, uwzględniając idealną implementację.

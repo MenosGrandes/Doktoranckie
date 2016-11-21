@@ -19,7 +19,9 @@ public:
 
     void sort(std::vector<int> &toSort)
     {
+
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
+
 
         for(int i=0; i<sizeOfArray; i+=2)
         {
@@ -35,6 +37,7 @@ public:
             {
                 toSort[j+2] =  toSort[j];
                 j--;
+                counter1++;
             }
             toSort[j+2] = pom2;
             toSort[j+1] = pom1;
@@ -43,6 +46,7 @@ public:
             {
                 toSort[j+1] = toSort[j];
                 --j;
+                counter2++;
             }
             toSort[j+1] = pom1;
         }
@@ -54,10 +58,10 @@ public:
             {
                 toSort[k+1] = toSort[k];
                 --k;
+                counter3++;
             }
             toSort[k+1] = pom;
         }
-
     }
 };
 

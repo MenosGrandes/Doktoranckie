@@ -11,10 +11,11 @@ int main(int argc, char* argv[] )
 
 
             system("cls");
-SortTupleSelection * sst= new SortTupleSelection(6,20);
-sst->print();
+//            Random::getInstance().generateRandomVector()
+SortTupleInsert * sst= new SortTupleInsert(10,20);
+//sst->print();
 sst->_sort();
-sst->print();
+//sst->print();
 delete sst;
 //}
 #ifdef DO_TESTS
