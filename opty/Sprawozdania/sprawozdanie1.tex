@@ -165,7 +165,7 @@ Filip \textsc{Rynkiewicz}\\[2cm] % Your name
           width=\linewidth, % Scale the plot to \linewidth
           grid=major, 
           grid style={dashed,gray!30},
-          xlabel=Ilosc elementow w tablicy, % Set the labels
+          xlabel=Ilość elementów w tablicy, % Set the labels
           ylabel=Czas wykonania [ms] ,
           x tick label style={rotate=0,anchor=east,align=right,yshift=-1.5ex},
           scaled y ticks = false,  
@@ -210,13 +210,13 @@ W tym przypadku złożoność obliczeniowa będzie wynosiła $O(n)$.
 Wynika to z faktu że :
 \begin{itemize}
 \item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
-\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $\frac{n}{2}$ porównań.
+\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $1$ porównanie.
 \item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $0$ razy.
 \item Druga zagnieżdżona pętla \textit{while}(20 linijka) zostanie wykonana $0$ razy.
 \item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $0$ iteracji(31 linijka).
 \end{itemize}
 \begin{equation}
-T \approx \frac{n}{2}
+T \approx \frac{n}{2} 
 \end{equation}
 \wyjT \\
 Zerowa ilość przejść w przypadku wszystkich pętli \textit{while} wynika z faktu że zawarte w nich instrukcje zawsze będą warunkiem kończącym pętlę, zatem nigdy nie zostaną wykonane.
@@ -225,33 +225,27 @@ Zerowa ilość przejść w przypadku wszystkich pętli \textit{while} wynika z f
 Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \begin{itemize}
 \item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
-\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $\frac{n}{2}$ porównań.
-\item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $2n$ razy.
-\item Druga zagnieżdżona pętla \textit{while}(20 linijka) zostanie wykonana $0$ razy.
+\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $1$ porównania.
+\item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $\frac{n}{2}$ razy.
 \item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n$ iteracji(31 linijka).
 \end{itemize}
 \begin{equation*}
-T \approx \frac{n}{2} \cdot(\frac{n}{2} +2n + 0)+ n \approx \frac{5n^2}{4}
+T \approx \frac{n^2}{4} + \frac{3n}{2} 
 \end{equation*}
-\wyjT
-
-Ponieważ obie pętle \textit{while} korzystają z tego samego iteratora, zostało przyjęte że obie w sumie wykonają się $n$ razy, więc średnio każda wykona się $\frac{n}{2}$.
+\wyjT\\
+Ponieważ obie pętle \textit{while} korzystają z tego samego iteratora zawsze zostanie wywołana tylko pierwsza pętla, w tym przypadku.
 \paragraph{Średnia}\mbox{}\\
 Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 
-\begin{Huge}
-SPRAWDZ ZLOZONOSC PETLI WHILE!
-\end{Huge}
 \begin{itemize}
 \item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
-\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $\frac{n}{2}$ porównań.
-\item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $\approx \frac{n\cdot(n-1)}{2}$ razy.
-\item Druga zagnieżdżona pętla \textit{while}(20 linijka) zostanie wykonana $\approx \frac{n\cdot(n-1)}{2}$ razy.
+\item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $1$ porównania.
+\item Pierwsza oraz druga  pętla \textit{while}(13 i 20 linijka) zostaną wykonane łącznie $\approx \frac{n-1}{2}$ razy, ponieważ zależne są od tego samego iteratora.
 \item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n$ iteracji(31 linijka).
 \end{itemize}
 \begin{equation*}
 \begin{multlined}
-T \approx \frac{n}{2} \cdot(n)+ (n-2)
+T \approx \frac{n}{2} (1+ \frac{n-1}{2})+ n
 \end{multlined}
 \end{equation*}
 
@@ -309,9 +303,47 @@ Wybierz liczbę $w$ która zawsze jest elementem poprzedzającym najmniejszy ele
 \end{itemize}
 
 \subsubsection{Oszacowanie złożoności}
-\paragraph{Optymistyczna}
-\paragraph{Pesymistyczna}
-\paragraph{Średnia}
+\paragraph{Optymistyczna}\mbox{}\\
+
+Złożoność obliczeniowa będzie wynosiła $O(n)$.
+
+\begin{itemize}
+\item Jeżeli tablica będzie o rozmiarze nieparzystym to dodatkowo pętla \textit{for}(6 linijka) wykona się $n\%3$ razy.
+\item Pierwszy \textit{for} zostanie wykonany $\frac{n-(n\%3)}{3} $ razy.
+\end{itemize}
+\begin{equation*}
+T \approx n\%3+\frac{n-(n\%3)}{3}
+\end{equation*}
+\wyjT\\
+\paragraph{Pesymistyczna}\mbox{}\\
+Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
+
+\begin{itemize}
+
+\item Jeżeli tablica będzie o rozmiarze nieparzystym to dodatkowo pętla \textit{for}(6 linijka) wykona się $n\%3$ razy.
+\item Pierwszy \textit{for} zostanie wykonany $\frac{n-n\%3}{3}$ razy.
+\item Instrukcja warunkowa \textit{else}(27 linijka) zostanie wykonana \textit{1} raz.
+\item Pętla \textit{while}(linijka 46) zostanie wykonana $\frac{n-n\%3}{3} +1$  razy.
+\end{itemize}
+\begin{equation*}
+T \approx n\%3 + \frac{n-(n\%3)}{3} \cdot(\frac{n-n\%3}{3} +1)
+\end{equation*}
+\wyjT\\
+
+
+\paragraph{Średnia}\mbox{}\\
+Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
+\begin{itemize}
+
+\item Jeżeli tablica będzie o rozmiarze nieparzystym to dodatkowo pętla \textit{for}(6 linijka) wykona się $n\%3$ razy.
+\item Pierwszy \textit{for} zostanie wykonany $\frac{n-n\%3}{3}$ razy.
+\item Średnio wszystkie instrukcje wykonają się $3$ razy
+\item Wszystkie pętle \textit{while} wykonają się $\frac{n-n\%3}{3}$ razy, ponieważ operują na tym samym iteratorze.
+\end{itemize}
+\begin{equation*}
+T \approx n\%3 + \frac{n-(n\%3)}{3} \cdot(\frac{n-n\%3}{3} +1)
+\end{equation*}
+\wyjT\\
 \subsubsection{Kod}
 \begin{lstlisting}[caption={Sortowanie przez wstawianie dla trójek},label={lst:wstawianie}]
 void sort(std::vector<int>&toSort)
@@ -461,7 +493,7 @@ Dla każdej pary $(x',y') \in V$ składającej się z kolejnych elementów ze zb
 
  \subsection{Oszacowanie złożoności}
 
-\paragraph{Optymistyczna}
+\paragraph{Optymistyczna}\mbox{}\\
 Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$. 
 \begin{itemize}
 \item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
@@ -471,7 +503,7 @@ Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$.
 T \approx n -1
 \end{equation*}
 \wyjT
-\paragraph{Pesymistyczna}
+\paragraph{Pesymistyczna}\mbox{}\\
 Najgorszy przypadek algorytmu sortowania bąbelkowego dla par ma złożoność obliczeniową $O(n^2)$.
 \begin{itemize}
 \item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
@@ -482,7 +514,7 @@ Najgorszy przypadek algorytmu sortowania bąbelkowego dla par ma złożoność o
 T \approx (n -1) \cdot (2n) 
 \end{equation*}
 \wyjT
-\paragraph{Średnia}
+\paragraph{Średnia}\mbox{}\\
 Dla losowych elementów w tablicy sortowanie to ma złożoność obliczeniową $O(n^2)$.
 \begin{itemize}
 \item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-1$
@@ -521,11 +553,82 @@ void sort(std::vector<int> &toSort)
 }
 \end{lstlisting}
 \subsection{Dla trzech elementów}
+Pierwszym krokiem tego algorytmu jest pobranie trzech sąsiednich elementów $(x,y,z) \in V$ i posortowanie ich w kolejności rosnącej tworząc trojkę $(x',y',z')$. Liczba $w$ jest zawsze liczba poprzedzająca liczbę $x'$, a liczba $g$ jest liczba poprzedzająca $z'$.
+\begin{itemize}
+\item Dopóki $y'<w$ przed liczbę $w$ wstaw parę $(x',y')$
+\item Dopóki $x'<w$ przed liczbę $w$ wstaw $x'$
+\item Dopóki $z'>g$ przed liczbę $g$ wstaw $z'$
+\end{itemize}
 \subsubsection{Oszacowanie złożoności}
-\paragraph{Optymistyczna}
-\paragraph{Pesymistyczna}
-\paragraph{Średnia}
+\paragraph{Optymistyczna}\mbox{}\\
+Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n)$. 
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-2$
+\end{itemize}
+
+\begin{equation*}
+T \approx n - 2
+\end{equation*}
+\wyjT
+\paragraph{Pesymistyczna}\mbox{}\\
+\paragraph{Średnia}\mbox{}\\
 \subsubsection{Kod}
+\begin{lstlisting}[caption={Sortowanie bąbelkowe dla trzech elementow},label={lst:babelek}]
+void sort(std::vector<int>&toSort)
+{
+ for(int i= 0; i<toSort.size()-2; i++)
+ {
+  if(toSort[i] < toSort[i+1])
+   {
+    if(toSort[i+2]<toSort[i])
+     {
+      std::swap(toSort[i],toSort[i+2]);
+     }
+   }
+  else
+   {
+    if(toSort[i+1]<toSort[i+2])
+     {
+      std::swap(toSort[i],toSort[i+1]);
+     }
+    else
+     {
+      std::swap(toSort[i],toSort[i+2]);
+     }
+   }
+ if(toSort[i+2]<toSort[i+1])
+  {
+   std::swap(toSort[i+1],toSort[i+2]);
+  }
+ int minElem=i,minElem2=i+1,maxElem=i+2;
+ while(minElem2>1 && toSort[minElem2]<toSort[minElem-1])
+  {
+   std::swap(toSort[minElem],toSort[minElem-1]);
+   std::swap(toSort[minElem2],toSort[minElem2-1]);
+   minElem--;
+   minElem2--;
+  }
+ while(minElem>0 && toSort[minElem]<toSort[minElem-1])
+  {
+   std::swap(toSort[minElem],toSort[minElem-1]);
+   minElem--;
+  }
+ while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
+  {
+   std::swap(toSort[maxElem],toSort[maxElem+1]);
+   maxElem++;
+  }
+ }
+}
+\end{lstlisting}
+
+
+
+
+
+
+
+
 \subsection{Wyniki}
 \par Rys.~\ref{fig:bubbleRand} przedstawia efekt porównania działania obu algorytmów dla tablic z losowymi elementami. Z przedstawionego wykresu wyraźnie widać przyspieszenie. Maksymalne przyspieszenie dla tego algorytmu wynosi $\approx 70\%$. Dzięki zastosowaniu wewnętrznych pętli \textit{while} które sterują zachowaniem bąbelków można bardzo szybko przyspieszyć algorytm. Dzięki temu że średnio każda pętla wykonuję się połowę rozmiaru tablicy. Wiec teoretyczne przyspieszenie powinno być co najmniej $50 \% $.	
 \par Rys.~\ref{fig:bubbleBest} reprezentuje graficznie otrzymane wyniki z porównania algorytmu sortowania bąbelkowego dla par i normalnego dla posortowanej tablicy. Ponieważ widoczna na wykresie czerwona linia, reprezentująca sortowanie dla par, jest zawsze bliska zeru, mozna wyciągnać wniosek. Sortowanie to ma złożoność obliczeniową $O(n)$. Wiec przyspieszenie wynosi $\approx 99\%$

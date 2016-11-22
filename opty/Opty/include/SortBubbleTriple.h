@@ -11,8 +11,7 @@ public:
     ~SortBubbleTriple() {};
     void sort(std::vector<int>&toSort)
     {
-
-//for(int k=0;k<toSort.size();k++){
+int c1=0,c2=0,c3=0,c4=0,c5=0,c6=0;
         for(int i= 0; i<toSort.size()-2; i++)//(1)
         {
 
@@ -48,21 +47,25 @@ public:
                 std::swap(toSort[minElem2],toSort[minElem2-1]);//(6)
                 minElem--;//(7)1
                 minElem2--;//(7)1
+                c1++;
 
             }
             while(minElem>0 && toSort[minElem]<toSort[minElem-1])//(8) // N
             {
                 std::swap(toSort[minElem],toSort[minElem-1]);//(6)
                 minElem--;//(10)
+                 c2++;
 
             }
             while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])//(8) // N
             {
                 std::swap(toSort[maxElem],toSort[maxElem+1]);//(9)
                 maxElem++;//(10)
+                 c3++;
 
             }
         }
+        std::cout<<c1<<" "<<c2<<" "<<c3<<std::endl;
 
 
     }

@@ -22,12 +22,14 @@ public:
 
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
 
-
+int counterAll=0, counter1=0, counter2 =0,counter3=0, counter4=0;
         for(int i=0; i<sizeOfArray; i+=2)
         {
+            counterAll++;
             if(toSort[i] > toSort[i+1])
             {
                 std::swap(toSort[i],toSort[i+1]);
+                counter1++;
             }
             const int pom1 = toSort[i];
             const int pom2 = toSort[i+1];
@@ -37,7 +39,7 @@ public:
             {
                 toSort[j+2] =  toSort[j];
                 j--;
-                counter1++;
+                counter2++;
             }
             toSort[j+2] = pom2;
             toSort[j+1] = pom1;
@@ -46,7 +48,7 @@ public:
             {
                 toSort[j+1] = toSort[j];
                 --j;
-                counter2++;
+                counter3++;
             }
             toSort[j+1] = pom1;
         }
@@ -58,10 +60,13 @@ public:
             {
                 toSort[k+1] = toSort[k];
                 --k;
-                counter3++;
+                counter4++;
             }
             toSort[k+1] = pom;
         }
+
+        std::cout<< counterAll<<" "<<counter1<<" "<<counter2<<" "<<counter3<<" "<<counter4<<std::endl;
+
     }
 };
 

@@ -11,18 +11,21 @@ int main(int argc, char* argv[] )
 
 
             system("cls");
+SortTripleBubble * sst= new SortTripleBubble(std::vector<int>{8,7,6,5,4,3,2,1});
+
 //            Random::getInstance().generateRandomVector()
-SortTupleInsert * sst= new SortTupleInsert(10,20);
 //sst->print();
 sst->_sort();
 //sst->print();
+
+sst->compare();
 delete sst;
 //}
 #ifdef DO_TESTS
     VectorOfTests tests;
-//    tests.push_back(TestBubbleSort() );
-//    tests.push_back(TestInsertSort() );5
-    tests.push_back(TestSelectionSort() );
+    tests.push_back(TestBubbleSort() );
+//    tests.push_back(TestInsertSort() );
+//    tests.push_back(TestSelectionSort() );
     std::vector<std::string> namesOfTests{"TestBubbleSort","TestInsertSort","TestSelectionSort"};
     std::vector<int>from{0,10000,40000,100000};
     std::vector<int>addition{500,1000,5000,10000};
