@@ -65,7 +65,7 @@ int counterAll=0, counter1=0, counter2 =0,counter3=0, counter4=0;
             toSort[k+1] = pom;
         }
 
-        std::cout<< counterAll<<" "<<counter1<<" "<<counter2<<" "<<counter3<<" "<<counter4<<std::endl;
+//        std::cout<< counterAll<<" "<<counter1<<" "<<counter2<<" "<<counter3<<" "<<counter4<<std::endl;
 
     }
 };

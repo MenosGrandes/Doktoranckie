@@ -571,6 +571,25 @@ T \approx n - 2
 \end{equation*}
 \wyjT
 \paragraph{Pesymistyczna}\mbox{}\\
+Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n^2)$. 
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-2$
+\item Jeżeli rozmiar tablicy jest liczbą parzystą to :
+\begin{itemize}
+\item Pierwsza pętla \textit{while}(28 linijka) wykona się $\frac{(\frac{n}{2}-1)^2+(\frac{n}{2}-1)}{2}$ razy
+\item Druga pętla \textit{while}(35 linijka) wykona się $\frac{n}{2}$ razy
+\item Trzecia pętla \textit{while}(40 linijka) wykona się $(\frac{n}{2})^2$ razy
+
+\end{itemize}
+\item Jeżeli rozmiar tablicy jest liczbą nieparzystą to :
+\begin{itemize}
+\item Pierwsza pętla \textit{while}(28 linijka) wykona się  $\approx (\frac{n}{2})^{2}$, z zaokrągleniem w dół
+\item Druga pętla \textit{while}(35	 linijka) wykona się $0$ razy
+\item Trzecia pętla \textit{while}(40 linijka) wykona się $(\frac{n}{2})^2$ razy, z zaokrągleniem w dół
+
+\end{itemize}
+\end{itemize}
+
 \paragraph{Średnia}\mbox{}\\
 \subsubsection{Kod}
 \begin{lstlisting}[caption={Sortowanie bąbelkowe dla trzech elementow},label={lst:babelek}]

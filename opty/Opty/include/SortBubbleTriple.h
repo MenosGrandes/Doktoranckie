@@ -14,7 +14,7 @@ public:
 int c1=0,c2=0,c3=0,c4=0,c5=0,c6=0;
         for(int i= 0; i<toSort.size()-2; i++)//(1)
         {
-
+c6++;
             if(toSort[i] < toSort[i+1])
             {
                 if(toSort[i+2]<toSort[i])
@@ -65,7 +65,7 @@ int c1=0,c2=0,c3=0,c4=0,c5=0,c6=0;
 
             }
         }
-        std::cout<<c1<<" "<<c2<<" "<<c3<<std::endl;
+        std::cout<<c1<<" "<<c2<<" "<<c3<<" "<<c6<<std::endl;
 
 
     }

@@ -57,41 +57,52 @@ public:
 
 
 
-int j, s, temp;
-	int minInd1, minInd2, minInd3;
-         //   cout<<endl;
-        // for(int j=0; j<n; j++)
-       //     {cout<<table[j]<<" ";}
-   for(s=0; s<(toSort.size()-1); s++)
+
+    int j, s, temp;
+    int minInd1, minInd2, minInd3;
+
+   for(s=0; s<(toSort.size()-1); s+=2)
    {
        minInd1=s;
        minInd2=s+1;
        minInd3=s+2;
 
-		for (j=s; j<toSort.size(); j++)
-		{
+
+        for (j=s; j<toSort.size(); j++)
+        {
 
 
             if(toSort[minInd1]>toSort[j])
             {
+                minInd3 = minInd2;
+                minInd2 = minInd1;
                 minInd1=j;
+
             }
             else if(toSort[minInd2]>toSort[j] && j!=minInd1)
             {
+                minInd3 = minInd2;
                 minInd2=j;
             }
-            else if(toSort[minInd3]>toSort[j]&& j!=minInd1 && j!=minInd1)
+            else if(toSort[minInd3]>toSort[j]&& j!=minInd2 && j!=minInd1)
             {
                 minInd3=j;
             }
         }
 
         std::swap(toSort[s], toSort[minInd1]);
+        if(minInd2!=s)
         std::swap(toSort[s+1], toSort[minInd2]);
+        if(minInd3!=s+1 && minInd3!=s)
         std::swap(toSort[s+2], toSort[minInd3]);
 
 
     }
+    //    if(temp==-1)
+      //     {
+        //       s=n;
+          // }
+
 
 
     }
