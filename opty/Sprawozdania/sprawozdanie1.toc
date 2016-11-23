@@ -31,15 +31,9 @@
 \contentsline {subsection}{\numberline {4.4}Wyniki}{16}
 \contentsline {section}{\numberline {5}Algorytm sortowania przez wybieranie}{18}
 \contentsline {subsection}{\numberline {5.1}Dla dw\IeC {\'o}ch element\IeC {\'o}w}{18}
-\contentsline {subsubsection}{\numberline {5.1.1}Oszacowanie z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci}{18}
-\contentsline {paragraph}{\numberline {5.1.1.1}Optymistyczna}{18}
-\contentsline {paragraph}{\numberline {5.1.1.2}Pesymistyczna}{18}
+\contentsline {subsubsection}{\numberline {5.1.1}Oszacowanie z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci}{19}
+\contentsline {paragraph}{\numberline {5.1.1.1}Optymistyczna}{19}
+\contentsline {paragraph}{\numberline {5.1.1.2}Pesymistyczna}{19}
 \contentsline {paragraph}{\numberline {5.1.1.3}\IeC {\'S}rednia}{19}
-\contentsline {subsubsection}{\numberline {5.1.2}Kod}{19}
-\contentsline {subsection}{\numberline {5.2}Dla trzech element\IeC {\'o}w}{20}
-\contentsline {subsubsection}{\numberline {5.2.1}Oszacowanie z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}ci}{20}
-\contentsline {paragraph}{\numberline {5.2.1.1}Optymistyczna}{20}
-\contentsline {paragraph}{\numberline {5.2.1.2}Pesymistyczna}{20}
-\contentsline {paragraph}{\numberline {5.2.1.3}\IeC {\'S}rednia}{20}
-\contentsline {subsubsection}{\numberline {5.2.2}Kod}{20}
-\contentsline {subsection}{\numberline {5.3}Wyniki}{21}
+\contentsline {subsubsection}{\numberline {5.1.2}Kod}{20}
+\contentsline {subsection}{\numberline {5.2}Wyniki}{21}

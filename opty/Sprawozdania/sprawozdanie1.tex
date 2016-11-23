@@ -337,7 +337,7 @@ Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 
 \item Jeżeli tablica będzie o rozmiarze nieparzystym to dodatkowo pętla \textit{for}(6 linijka) wykona się $n\%3$ razy.
 \item Pierwszy \textit{for} zostanie wykonany $\frac{n-n\%3}{3}$ razy.
-\item Średnio wszystkie instrukcje wykonają się $3$ razy
+\item Średnio wszystkie instrukcje warunkowe wykonają się $3$ razy
 \item Wszystkie pętle \textit{while} wykonają się $\frac{n-n\%3}{3}$ razy, ponieważ operują na tym samym iteratorze.
 \end{itemize}
 \begin{equation*}
@@ -421,7 +421,6 @@ void sort(std::vector<int>&toSort)
 \par Rys.~\ref{fig:insertRand} przedstawia wyniki dla tablicy z losowymi elementami. Na wykresie można zauważyć przyspieszenie względem standardowego algorytmu. Przyspieszenie to wynosi $ \approx 34 \% $.Opisana wcześniej złożoność dla tego przypadku jest taka sama jak dla standardowej implementacji. Jednakże fakt że algorytm bierze pod uwagę parę i najpierw sortuje po największym elemencie a potem po najmniejszym zmniejsza znacząco ilość porównań. Doprowadza to do tego że teoretyczne i maksymalne przyspieszenie powinno wynieść $ \approx 50\% $ przy tym pomyśle, uwzględniając idealną implementację.
 \par Rys.~\ref{fig:Insertbest} przedstawia wyniki dla tablicy która została już posortowana. Jak można zauważyć implementacja standardowa jest szybsza niż zaimplementowana tutaj. Jednakże różnica w czasie działania obu funkcji wynosi około $0.1ms$, wiec można uznać że są takie same. Ponieważ jedyną akcją która jest zależna od rozmiaru tablicy jest pętla przestawiająca pary oraz pętla przeszukująca tablice co dwa elementy złożoność obliczeniowa będzie liniowa $O(n)$.
 \par Rys.~\ref{fig:InsertWorst} przedstawia wyniki dla pesymistycznego ułożenia tablicy. W tym wypadku implementacja algorytmu dla par działa o $\approx 50 \% $ szybciej od standardowej implementacji. Wynika to z faktu że, tak samo jak w średnim przypadku, iteracja pętla odpowiedzialna za przestawianie par wynosi $\frac{n-2}{2}$ przez co faktycznie algorytm przyspiesza do $\approx 150 \% $ szybkości algorytmu podstawowego.
-%\caption{Wyniki dla sortowania przez wstawianie}\label{fig:insert}
 \begin{figure}[!h]
   \begin{center}
     \begin{tikzpicture}
@@ -649,7 +648,7 @@ void sort(std::vector<int>&toSort)
 
 
 \subsection{Wyniki}
-\par Rys.~\ref{fig:bubbleRand} przedstawia efekt porównania działania obu algorytmów dla tablic z losowymi elementami. Z przedstawionego wykresu wyraźnie widać przyspieszenie. Maksymalne przyspieszenie dla tego algorytmu wynosi $\approx 70\%$. Dzięki zastosowaniu wewnętrznych pętli \textit{while} które sterują zachowaniem bąbelków można bardzo szybko przyspieszyć algorytm. Dzięki temu że średnio każda pętla wykonuję się połowę rozmiaru tablicy. Wiec teoretyczne przyspieszenie powinno być co najmniej $50 \% $.	
+\par Rys.~\ref{fig:bubbleRand} przedstawia efekt porównania działania obu algorytmów dla tablic z losowymi elementami. Z przedstawionego wykresu wyraźnie widać przyspieszenie. Maksymalne przyspieszenie dla tego algorytmu wynosi $\approx 64\%$. Dzięki zastosowaniu wewnętrznych pętli \textit{while} które sterują zachowaniem bąbelków można bardzo szybko przyspieszyć algorytm. Dzięki temu że średnio każda pętla wykonuję się połowę rozmiaru tablicy. Wiec teoretyczne przyspieszenie powinno być co najmniej $50 \% $.Dla trojek przyspieszenie wynosi średnio $74\%$, ponieważ przesuwanie całej pary skutkuje usunięciem jednego porównania. Dodatkowo przyspieszenie zależne jest od tego czy rozmiar tablicy jest liczba parzysta czy nieparzysta, ponieważ w przypadku parzystych zostaje wykonane mniej porównań.
 \par Rys.~\ref{fig:bubbleBest} reprezentuje graficznie otrzymane wyniki z porównania algorytmu sortowania bąbelkowego dla par i normalnego dla posortowanej tablicy. Ponieważ widoczna na wykresie czerwona linia, reprezentująca sortowanie dla par, jest zawsze bliska zeru, mozna wyciągnać wniosek. Sortowanie to ma złożoność obliczeniową $O(n)$. Wiec przyspieszenie wynosi $\approx 99\%$
 \par Rys.~\ref{fig:bubbleWorst} przedstawia wyniki dla tablicy posortowanej w druga stronę. Przyspieszenie algorytmu wynosi w tym wypadku $\approx 50\%$. Ponieważ używamy dwóch bąbelków, w porównaniu do użycia jednego , zmniejsza czas wykonania o $50\%$.
 
@@ -789,24 +788,7 @@ void sort(std::vector<int> &toSort)
   }
 }
 \end{lstlisting}
-\subsection{Dla trzech elementów}
 
-\subsubsection{Oszacowanie złożoności}
-\paragraph{Optymistyczna}
-
-\paragraph{Pesymistyczna}
-
-\paragraph{Średnia}
-
-
-
-\subsubsection{Kod}
-\begin{lstlisting}[caption={Sortowanie przez wybieranie dla par},label={lst:wybieranie}]
-void sort(std::vector<int> &toSort)
-{
-
-}
-\end{lstlisting}
 
 \subsection{Wyniki}
 Jak widać na powyższych założeniach teoretycznych każdy z przykładów ma taką samą złożoność obliczeniową. Wynika to z faktu że każda pętla musi być wykonana zawsze i wymaganą ilość razy.	
@@ -824,8 +806,7 @@ Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczenio
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortSelectionTupleTest.csv};
-        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
-        table[x=column 1,y=column 4,col sep=comma] {sortSelectionTupleTest.csv};
+
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy ze elementami losowymi}\label{fig:wyb}
@@ -841,8 +822,7 @@ Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczenio
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortSelectionTupleTestBest.csv};
-        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
-        table[x=column 1,y=column 4,col sep=comma] {sortSelectionTupleTestBest.csv};
+
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy z najlepszym rozkładem elementów}\label{fig:wybBest}
@@ -858,8 +838,7 @@ Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczenio
     
         \addplot[red,mark=x,legend entry=$Dla\;par$] 
         table[x=column 1,y=column 3,col sep=comma] {sortSelectionTupleTestWorst.csv};
-        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
-        table[x=column 1,y=column 4,col sep=comma] {sortSelectionTupleTestWorst.csv};
+
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy z najgorszym rozkładem elementów}\label{fig:wybWorst}
