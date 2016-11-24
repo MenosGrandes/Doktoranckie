@@ -51,12 +51,12 @@
 1478296205 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1479887038 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1479983530 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	<iostream>
 	"../templatesSpecialisation.hpp"
 	"../Tests.hpp"
 
-1479885562 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
+1479976802 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
 	"../typdefs.hpp"
 	<iostream>
 
@@ -545,7 +545,7 @@
 	"../typdefs.hpp"
 	<assert.h>
 
-1479885562 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
+1479983738 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
 	"../typdefs.hpp"
 	"SortInsert.h"
 	"SortInsertTuple.h"

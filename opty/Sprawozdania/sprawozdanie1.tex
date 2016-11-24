@@ -226,11 +226,11 @@ Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \begin{itemize}
 \item Pierwsza pętla \textit{for}(4 linijka) zostanie wykonana dokładnie $\frac{n}{2}$ razy.
 \item Porównanie elementów w parze(6 linijka), i posortowanie jej zawsze zajmie $1$ porównania.
-\item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $\frac{n}{2}$ razy.
+\item Pierwsza zagnieżdżona pętla \textit{while}(13 linijka) zostanie wykonana $\frac{n}{2} -1$ razy.
 \item Jeżeli tablica jest o rozmiarze nieparzystym dodatkowo zostanie wykonane $n$ iteracji(31 linijka).
 \end{itemize}
 \begin{equation*}
-T \approx \frac{n^2}{4} + \frac{3n}{2} 
+T \approx \frac{n^2}{4} 
 \end{equation*}
 \wyjT\\
 Ponieważ obie pętle \textit{while} korzystają z tego samego iteratora zawsze zostanie wywołana tylko pierwsza pętla, w tym przypadku.
@@ -326,7 +326,7 @@ Złożoność obliczeniowa będzie wynosiła $O(n^2)$.
 \item Pętla \textit{while}(linijka 46) zostanie wykonana $\frac{n-n\%3}{3} +1$  razy.
 \end{itemize}
 \begin{equation*}
-T \approx n\%3 + \frac{n-(n\%3)}{3} \cdot(\frac{n-n\%3}{3} +1)
+T \approx n\%3 + \frac{n-(n\%3)}{3} \cdot(\frac{n-n\%3}{3} +2)
 \end{equation*}
 \wyjT\\
 
@@ -417,10 +417,10 @@ void sort(std::vector<int>&toSort)
 \end{lstlisting}
 
 \subsection{Wyniki}
+\par Rys.~\ref{fig:insertRand} przedstawia wyniki dla tablicy z losowymi elementami. Na wykresie można zauważyć przyspieszenie względem standardowego algorytmu. Przyspieszenie to wynosi $ \approx 34 \% $.Opisana wcześniej złożoność dla tego przypadku jest taka sama jak dla standardowej implementacji. Jednakże fakt że algorytm bierze pod uwagę parę i najpierw sortuje po największym elemencie a potem po najmniejszym zmniejsza znacząco ilość porównań. Doprowadza to do tego że teoretyczne i maksymalne przyspieszenie powinno wynieść $ \approx 50\% $ przy tym pomyśle, uwzględniając idealną implementację. Dla trojek przyspieszenie wynosi $\approx 50\%$. Ponieważ nałożone są dodatkowe instrukcje warunkowe do posortowania trzech elementów , oraz jedna dodatkowa pętla, oszacowanie teoretyczne jest o wiele większe niż wyniki praktyczne.\\
+ Rys. ~\ref{fig:Insertbest} przedstawia wyniki dla tablicy która została już posortowana. Jak można zauważyć implementacja standardowa jest szybsza niż zaimplementowana tutaj. Ponieważ ilość porównań została zwiększona, lecz te porównania zostają tylko wykonane raz i ominięte, algorytmy dla dwójki i trojki są znacznie wolniejsze w tym przypadku. Jednakże biorąc pod uwagę liniowość wszystkich trzech funkcji różnica może być pominięta.\\
+ Rys.~\ref{fig:InsertWorst} przedstawia wyniki dla pesymistycznego ułożenia tablicy. W tym wypadku implementacja algorytmu dla par działa o $\approx 50 \% $ szybciej od standardowej implementacji. Wynika to z faktu że, tak samo jak w średnim przypadku, iteracja pętla odpowiedzialna za przestawianie par wynosi $\frac{n-2}{2}$ przez co faktycznie algorytm przyspiesza do $\approx 150 \% $ szybkości algorytmu podstawowego. Wersja dla trzech elementów jest szybsza o $68\%$ względem wersji podstawowej. Jednakże teoretycznie algorytm powinien znacznie bardziej przyspieszyć, nie dzieje się tak ponieważ zostały nałożone dodatkowe instrukcje warunkowe oraz dodatkowe zmienne przez co procesor musi wykonać kilkanaście dodatkowych operacji.
 
-\par Rys.~\ref{fig:insertRand} przedstawia wyniki dla tablicy z losowymi elementami. Na wykresie można zauważyć przyspieszenie względem standardowego algorytmu. Przyspieszenie to wynosi $ \approx 34 \% $.Opisana wcześniej złożoność dla tego przypadku jest taka sama jak dla standardowej implementacji. Jednakże fakt że algorytm bierze pod uwagę parę i najpierw sortuje po największym elemencie a potem po najmniejszym zmniejsza znacząco ilość porównań. Doprowadza to do tego że teoretyczne i maksymalne przyspieszenie powinno wynieść $ \approx 50\% $ przy tym pomyśle, uwzględniając idealną implementację.
-\par Rys.~\ref{fig:Insertbest} przedstawia wyniki dla tablicy która została już posortowana. Jak można zauważyć implementacja standardowa jest szybsza niż zaimplementowana tutaj. Jednakże różnica w czasie działania obu funkcji wynosi około $0.1ms$, wiec można uznać że są takie same. Ponieważ jedyną akcją która jest zależna od rozmiaru tablicy jest pętla przestawiająca pary oraz pętla przeszukująca tablice co dwa elementy złożoność obliczeniowa będzie liniowa $O(n)$.
-\par Rys.~\ref{fig:InsertWorst} przedstawia wyniki dla pesymistycznego ułożenia tablicy. W tym wypadku implementacja algorytmu dla par działa o $\approx 50 \% $ szybciej od standardowej implementacji. Wynika to z faktu że, tak samo jak w średnim przypadku, iteracja pętla odpowiedzialna za przestawianie par wynosi $\frac{n-2}{2}$ przez co faktycznie algorytm przyspiesza do $\approx 150 \% $ szybkości algorytmu podstawowego.
 \begin{figure}[!h]
   \begin{center}
     \begin{tikzpicture}
@@ -588,8 +588,21 @@ Najlepszy przypadek tego algorytmu ma złożoność obliczeniową $O(n^2)$.
 
 \end{itemize}
 \end{itemize}
-
+\begin{equation*}
+T_{1} \approx \frac{(\frac{n}{2}-1)^2+(\frac{n}{2}-1)}{2} + \frac{n}{2} +(\frac{n}{2})^2
+\end{equation*}
+\begin{equation*}
+T_{2}  \approx (\frac{n}{2})^{2} + (\frac{n}{2})^2
+\end{equation*}
+\wyjT
 \paragraph{Średnia}\mbox{}\\
+\begin{itemize}
+\item Pierwsza pętla(3 linijka) \textit{for} jest zależna od rozmiaru tablicy i zostanie wykonana dokładnie $n-2$
+\item Ponieważ wszystkie pętle \textit{while} posiadają dwa warunki a jeden z nich jest dla nich wspólny to średnio polowa wartości dla najgorszego przypadku.
+\end{itemize}
+\begin{equation*}
+T_{1} \approx  \frac{1}{2}\cdot(\frac{(\frac{n}{2}-1)^2+(\frac{n}{2}-1)}{2} + \frac{n}{2} +(\frac{n}{2})^2)
+\end{equation*}
 \subsubsection{Kod}
 \begin{lstlisting}[caption={Sortowanie bąbelkowe dla trzech elementow},label={lst:babelek}]
 void sort(std::vector<int>&toSort)
@@ -648,9 +661,9 @@ void sort(std::vector<int>&toSort)
 
 
 \subsection{Wyniki}
-\par Rys.~\ref{fig:bubbleRand} przedstawia efekt porównania działania obu algorytmów dla tablic z losowymi elementami. Z przedstawionego wykresu wyraźnie widać przyspieszenie. Maksymalne przyspieszenie dla tego algorytmu wynosi $\approx 64\%$. Dzięki zastosowaniu wewnętrznych pętli \textit{while} które sterują zachowaniem bąbelków można bardzo szybko przyspieszyć algorytm. Dzięki temu że średnio każda pętla wykonuję się połowę rozmiaru tablicy. Wiec teoretyczne przyspieszenie powinno być co najmniej $50 \% $.Dla trojek przyspieszenie wynosi średnio $74\%$, ponieważ przesuwanie całej pary skutkuje usunięciem jednego porównania. Dodatkowo przyspieszenie zależne jest od tego czy rozmiar tablicy jest liczba parzysta czy nieparzysta, ponieważ w przypadku parzystych zostaje wykonane mniej porównań.
-\par Rys.~\ref{fig:bubbleBest} reprezentuje graficznie otrzymane wyniki z porównania algorytmu sortowania bąbelkowego dla par i normalnego dla posortowanej tablicy. Ponieważ widoczna na wykresie czerwona linia, reprezentująca sortowanie dla par, jest zawsze bliska zeru, mozna wyciągnać wniosek. Sortowanie to ma złożoność obliczeniową $O(n)$. Wiec przyspieszenie wynosi $\approx 99\%$
-\par Rys.~\ref{fig:bubbleWorst} przedstawia wyniki dla tablicy posortowanej w druga stronę. Przyspieszenie algorytmu wynosi w tym wypadku $\approx 50\%$. Ponieważ używamy dwóch bąbelków, w porównaniu do użycia jednego , zmniejsza czas wykonania o $50\%$.
+\par Rys.~\ref{fig:bubbleRand} przedstawia efekt porównania działania obu algorytmów dla tablic z losowymi elementami. Z przedstawionego wykresu wyraźnie widać przyspieszenie. Maksymalne przyspieszenie dla tego algorytmu wynosi $\approx 69\%$. Dzięki zastosowaniu wewnętrznych pętli \textit{while} które sterują zachowaniem bąbelków można bardzo szybko przyspieszyć algorytm. Dzięki temu że średnio każda pętla wykonuję się połowę rozmiaru tablicy. Wiec teoretyczne przyspieszenie powinno być co najmniej $50 \% $.Dla trojek przyspieszenie wynosi średnio $74\%$, ponieważ przesuwanie całej pary skutkuje usunięciem jednego porównania. Dodatkowo przyspieszenie zależne jest od tego czy rozmiar tablicy jest liczba parzysta czy nieparzysta, ponieważ w przypadku parzystych zostaje wykonane mniej porównań.
+\par Rys.~\ref{fig:bubbleBest} reprezentuje graficznie otrzymane wyniki z porównania algorytmu sortowania bąbelkowego. Ponieważ każda z funkcji ma złożoność bliska $O(n)$, wiec przyspieszenie wynosi $\approx 99\%$.
+\par Rys.~\ref{fig:bubbleWorst} przedstawia wyniki dla tablicy posortowanej w druga stronę. Przyspieszenie algorytmu wynosi w tym wypadku $\approx 52\%$. Ponieważ używamy dwóch bąbelków, w porównaniu do użycia jednego , zmniejsza czas wykonania o $50\%$. Dla trojek przyspieszenie wynosi $\approx 55\%$. Ponieważ dodatkowa para bąbelków w dol jednocześnie przenosi parę powstaje kilka porównań mniej.
 
 
 \begin{figure}[h!]
@@ -792,10 +805,12 @@ void sort(std::vector<int> &toSort)
 
 \subsection{Wyniki}
 Jak widać na powyższych założeniach teoretycznych każdy z przykładów ma taką samą złożoność obliczeniową. Wynika to z faktu że każda pętla musi być wykonana zawsze i wymaganą ilość razy.	
-\par Rys.\ref{fig:wyb} przedstawia porównanie szybkości wykonywania się obliczeń dla tablicy z danymi losowymi. Przyspieszenie wynosi $\approx 40\%$. 
-\par Rys.\ref{fig:wybBest} przedstawia najgorszy z trzech możliwych wynik gdzie przyspieszenie wynosi $\approx 21\%$. 
-\par Rys.\ref{fig:wybWorst} reprezentuje dane pomiarowe na których widać ze przyspieszenie wynosi $\approx 41\%$. \\
-Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczeniową całe przyspieszenie jest zależne od znalezienia wartości maksymalnej i minimalnej. Ponieważ w algorytmie dla par przeszukujemy tablice wejściową i wybieramy od razu obydwie wartości, to teoretyczne przyspieszenie powinno wynieść $\approx 50\%$.
+\par Rys.\ref{fig:wyb} przedstawia porównanie szybkości wykonywania się obliczeń dla tablicy z danymi losowymi. Przyspieszenie wynosi $\approx 40\%$. Ponieważ średnie teoretyczne przyspieszenie powinno wynosi $\approx 50$, widać ze nie zgadza się to z wynikami. Dzieje się tak ponieważ wykorzystuje jedna dodatkowa instrukcje warunkowa która spowalnia algorytm.
+\par Rys.\ref{fig:wybBest} przedstawia najgorszy z trzech możliwych wynik gdzie przyspieszenie wynosi $\approx 35\%$. Jest to najgorszy wynik ponieważ tablica jest posortowana odwrotnie, przez co w poszukiwaniu najmniejszej i największej liczby występuje dużo więcej porównań niż w sytuacji z losowymi elementami.
+\par Rys.\ref{fig:wybWorst} reprezentuje dane pomiarowe na których widać ze przyspieszenie wynosi $\approx 43\%$. \\
+
+Ponieważ każde z przypadków sortowań ma taką samą złożoność obliczeniową całe przyspieszenie jest zależne od znalezienia wartości maksymalnej i minimalnej. Ponieważ w algorytmie dla par przeszukujemy tablice wejściową i wybieramy od razu obydwie wartości, to teoretyczne przyspieszenie powinno wynieść $\approx 50\%$.\\
+\par Ponieważ algorytm dla trojek w tym podejściu, wybierania dwóch najmniejszych oraz największej liczby ze zbioru, jest wolniejszy od podstawowego nie zostały przedstawione dla niego wyniki. Ponieważ dodatkowo musimy sprawdzać trzy wartości za każdym razem przeszukując tablice od \textit{begin} to \textit{end} dorzuca to dodatkowo jedna instrukcje warunkowa. Dodatkowo gdy miejsca minimalne oraz maksymalne zostanie znalezione trzeba zrobić dodatkowa zamianę co daje $3n$ dodatkowych operacji. 
 \begin{figure}[h!]
   \begin{center}
     \begin{tikzpicture}
