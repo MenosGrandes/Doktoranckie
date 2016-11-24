@@ -14,7 +14,7 @@
 #include "SortSelectionTriple.h"
 #include "SortInsertTriple.h"
 #include "SortBubbleTriple.h"
-
+#include "QuickSort.h"
 #include <unistd.h>
 #include <cstdlib>
 #include <iostream>
@@ -35,7 +35,8 @@ typedef Sort<SortInsertTuple> SortTupleInsert;
 typedef Sort<SortInsertTriple> SortTripleInsert;
 typedef Sort<SortBubbleTriple> SortTripleBubble;
 typedef Sort<SortSelectionTriple> SortTripleSelection;
-
+/*FAST*/
+typedef Sort<QuickSort> SortQuickSort;
 /*Tests*/
 typedef TestSort<SortNormalBubble,SortTupleBubble,SortTripleBubble> TestBubbleSort;
 typedef TestSort<SortNormalInsert,SortTupleInsert,SortTripleInsert> TestInsertSort;

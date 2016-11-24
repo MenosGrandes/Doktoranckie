@@ -51,7 +51,7 @@
 1478296205 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1479983530 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1479997625 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	<iostream>
 	"../templatesSpecialisation.hpp"
 	"../Tests.hpp"
@@ -234,7 +234,7 @@
 1478763827 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\testsort.cpp
 	"TestSort.h"
 
-1479887955 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\testsort.h
+1479997478 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\testsort.h
 	<type_traits>
 	"Random.h"
 	"Timer.h"
@@ -3770,7 +3770,7 @@
 1474464815 c:\boost\boost_1_62_0\boost\type_traits\add_pointer.hpp
 	<boost/type_traits/remove_reference.hpp>
 
-1479719049 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
+1479997509 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
 	"TestSort.h"
 	"BubbleSort.h"
 	"SortInsert.h"
@@ -3781,6 +3781,7 @@
 	"SortSelectionTriple.h"
 	"SortInsertTriple.h"
 	"SortBubbleTriple.h"
+	"QuickSort.h"
 	<unistd.h>
 	<cstdlib>
 	<iostream>
@@ -3788,4 +3789,7 @@
 	<vector>
 	<boost/variant/variant.hpp>
 	<boost/variant/get.hpp>
+
+1479997669 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\quicksort.h
+	"../typdefs.hpp"
 

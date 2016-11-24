@@ -46,7 +46,8 @@
 *.fot
 *.cb
 *.cb2
-
+*.gnuplot
+*.pdf
 ## Intermediate documents:
 *.dvi
 *-converted-to.*

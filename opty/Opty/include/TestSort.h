@@ -37,10 +37,6 @@ public:
                 std::sort(v.begin(),v.end(), std::less<int>());
                 break;
             }
-//            for(int g : v)
-//            {
-//                std::cout<<g<<" ";
-//            }
 
             BasicSort *m_basicSort   = new BasicSort(v);
             TupleSort *m_tupleSort   = new TupleSort(v);
@@ -49,14 +45,12 @@ public:
 
             t_normal+=t.measureWindows<BasicSort>(m_basicSort);
             t_tuple +=t.measureWindows<TupleSort>(m_tupleSort);
-//            t_triple+=t.measureWindows<TripleSort>(m_tripleSort);
+            t_triple+=t.measureWindows<TripleSort>(m_tripleSort);
 
-//std::cout<<std::endl<<"PRAWIDLOWY"<<std::endl;;
-//            m_tripleSort->print();
 
             assert( m_tupleSort->compare());
             assert(m_basicSort->compare());
-//            assert(m_tripleSort->compare());
+            assert(m_tripleSort->compare());
 
             delete m_basicSort;
             delete m_tupleSort;
