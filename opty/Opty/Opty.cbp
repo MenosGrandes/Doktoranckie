@@ -69,6 +69,12 @@
 		<Unit filename="include/BubbleSort.h">
 			<Option virtualFolder="Sort/NormalSort/" />
 		</Unit>
+		<Unit filename="include/HeapSort.h">
+			<Option virtualFolder="Sort/FastSort/" />
+		</Unit>
+		<Unit filename="include/MergeSort.h">
+			<Option virtualFolder="Sort/FastSort/" />
+		</Unit>
 		<Unit filename="include/QuickSort.h">
 			<Option virtualFolder="Sort/FastSort/" />
 		</Unit>

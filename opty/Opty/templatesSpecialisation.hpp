@@ -15,6 +15,9 @@
 #include "SortInsertTriple.h"
 #include "SortBubbleTriple.h"
 #include "QuickSort.h"
+#include "MergeSort.h"
+#include "HeapSort.h"
+
 #include <unistd.h>
 #include <cstdlib>
 #include <iostream>
@@ -22,6 +25,8 @@
 #include <vector>
 #include <boost/variant/variant.hpp>
 #include <boost/variant/get.hpp>
+#include<tuple>
+#include <typeinfo>
 /*NORMAL*/
 typedef Sort<BubbleSort> SortNormalBubble;
 typedef Sort<SortInsert> SortNormalInsert;
@@ -37,26 +42,52 @@ typedef Sort<SortBubbleTriple> SortTripleBubble;
 typedef Sort<SortSelectionTriple> SortTripleSelection;
 /*FAST*/
 typedef Sort<QuickSort> SortQuickSort;
+typedef Sort<MergeSort> SortMergeSort;
+typedef Sort<HeapSort>  SortHeapSort;
+
 /*Tests*/
 typedef TestSort<SortNormalBubble,SortTupleBubble,SortTripleBubble> TestBubbleSort;
 typedef TestSort<SortNormalInsert,SortTupleInsert,SortTripleInsert> TestInsertSort;
 typedef TestSort<SortNormalSelection,SortTupleSelection,SortTripleSelection> TestSelectionSort;
-typedef std::vector<boost::variant<TestBubbleSort,TestInsertSort,TestSelectionSort> >VectorOfTests;
+typedef TestSort<SortQuickSort> TestQuickSort;
+typedef TestSort<SortMergeSort> TestMergeSort;
+typedef TestSort<SortQuickSort,SortMergeSort,SortHeapSort> TestFastSort;
 
-class TestVisitor : public boost::static_visitor<> {
+typedef std::vector<boost::variant<TestBubbleSort,TestInsertSort,TestSelectionSort,TestQuickSort,TestMergeSort,TestFastSort> >VectorOfTests;
+
+class TestVisitor : public boost::static_visitor<>
+{
 public:
-    void operator()( TestBubbleSort& _t) const {
-       _t.test(m_testCounts,m_tabSize,m_max,m_to);
-    }
-    void operator()( TestInsertSort& _t) const {
-       _t.test(m_testCounts,m_tabSize,m_max,m_to);
-    }
-        void operator()( TestSelectionSort& _t) const {
+    void operator()( TestBubbleSort& _t) const
+    {
         _t.test(m_testCounts,m_tabSize,m_max,m_to);
     }
-    TestVisitor(int _testCounts,int _tabSize,int _max,TEST_OPTIONS _so=NON):m_testCounts(_testCounts), m_tabSize(_tabSize), m_max(_max),m_to(_so){}
-    private:
-    int m_testCounts;int m_tabSize;int m_max;TEST_OPTIONS m_to;
+    void operator()( TestInsertSort& _t) const
+    {
+        _t.test(m_testCounts,m_tabSize,m_max,m_to);
+    }
+    void operator()( TestSelectionSort& _t) const
+    {
+        _t.test(m_testCounts,m_tabSize,m_max,m_to);
+    }
+    void operator()( TestQuickSort& _t) const
+    {
+        _t.test(m_testCounts,m_tabSize,m_max,m_to);
+    }
+    void operator()( TestMergeSort& _t) const
+    {
+        _t.test(m_testCounts,m_tabSize,m_max,m_to);
+    }
+        void operator()( TestFastSort& _t) const
+    {
+        _t.test(m_testCounts,m_tabSize,m_max,m_to);
+    }
+    TestVisitor(int _testCounts,int _tabSize,int _max,TEST_OPTIONS _so=NON):m_testCounts(_testCounts), m_tabSize(_tabSize), m_max(_max),m_to(_so) {}
+private:
+    int m_testCounts;
+    int m_tabSize;
+    int m_max;
+    TEST_OPTIONS m_to;
 };
 
 

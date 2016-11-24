@@ -9,6 +9,7 @@ public:
     void sort(std::vector<int> &toSort)
     {
         quicksort(&toSort[0],0,toSort.size()-1,toSort.size());
+//        std::sort(toSort)
     };
 private :
     int partition(int *arr, const int left, const int right)
@@ -42,16 +43,14 @@ private :
 
     void quicksort(int *arr, const int left, const int right, const int sz)
     {
-
         if (left >= right)
         {
             return;
-
         }
-             int part = partition(arr, left, right);
-            quicksort(arr, left, part - 1, sz);
-            quicksort(arr, part + 1, right, sz);
-        }
+        int part = partition(arr, left, right);
+        quicksort(arr, left, part - 1, sz);
+        quicksort(arr, part + 1, right, sz);
+    }
 
 };
 

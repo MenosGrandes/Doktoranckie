@@ -11,10 +11,14 @@ public:
     ~SortBubbleTriple() {};
     void sort(std::vector<int>&toSort)
     {
-int c1=0,c2=0,c3=0,c4=0,c5=0,c6=0;
+#ifdef COUNT_COMPRASION
+        int c1=0,c2=0,c3=0,c4=0,c5=0,c6=0;
+#endif // COUNT_COMPRASION
         for(int i= 0; i<toSort.size()-2; i++)//(1)
         {
-c6++;
+#ifdef COUNT_COMPRASION
+            c6++;
+#endif // COUNT_COMPRASION
             if(toSort[i] < toSort[i+1])
             {
                 if(toSort[i+2]<toSort[i])
@@ -47,26 +51,30 @@ c6++;
                 std::swap(toSort[minElem2],toSort[minElem2-1]);//(6)
                 minElem--;//(7)1
                 minElem2--;//(7)1
+#ifdef COUNT_COMPRASION
                 c1++;
-
+#endif // COUNT_COMPRASION
             }
             while(minElem>0 && toSort[minElem]<toSort[minElem-1])//(8) // N
             {
                 std::swap(toSort[minElem],toSort[minElem-1]);//(6)
                 minElem--;//(10)
-                 c2++;
-
+#ifdef COUNT_COMPRASION
+                c2++;
+#endif // COUNT_COMPRASION
             }
             while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])//(8) // N
             {
                 std::swap(toSort[maxElem],toSort[maxElem+1]);//(9)
                 maxElem++;//(10)
-                 c3++;
-
+#ifdef COUNT_COMPRASION
+                c3++;
+#endif // COUNT_COMPRASION
             }
         }
+#ifdef COUNT_COMPRASION
         std::cout<<c1<<" "<<c2<<" "<<c3<<" "<<c6<<std::endl;
-
+#endif // COUNT_COMPRASION
 
     }
 //    }

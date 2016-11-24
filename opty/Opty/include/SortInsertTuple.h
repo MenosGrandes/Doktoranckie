@@ -22,7 +22,7 @@ public:
 
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
 
-int counterAll=0, counter1=0, counter2 =0,counter3=0, counter4=0;
+        int counterAll=0, counter1=0, counter2 =0,counter3=0, counter4=0;
         for(int i=0; i<sizeOfArray; i+=2)
         {
             counterAll++;
