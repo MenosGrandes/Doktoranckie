@@ -1,12 +1,12 @@
 #ifndef SORTINSERTTRIPLE_H
 #define SORTINSERTTRIPLE_H
 
-#include "../typdefs.hpp"
-#include "SortInsert.h"
-#include "SortInsertTuple.h"
-class SortInsertTriple
+#include "SortBehaviour.h"
+class SortInsertTriple: public SortBehaviour
 {
 public:
+                static const SortType m_sortType=TRIPLE_INSERT;
+
     SortInsertTriple() {};
     ~SortInsertTriple() {};
     void sort(std::vector<int>&toSort)
@@ -34,7 +34,6 @@ public:
             }
 
         }
-        std::cout<<toSort.size()-arrayDivider<<" ASDASDASDASDASD"<<std::endl;
         for(unsigned int i=arrayDivider; i<toSort.size(); i+=3)
         {
 #ifdef COUNT_COMPRASION

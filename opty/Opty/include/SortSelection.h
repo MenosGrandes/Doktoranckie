@@ -1,10 +1,12 @@
 #ifndef SORTSELECTION_H
 #define SORTSELECTION_H
-#include "../typdefs.hpp"
 #include <algorithm>
-class SortSelection
+#include "SortBehaviour.h"
+class SortSelection : public SortBehaviour
 {
 public:
+                        static const SortType m_sortType=NORMAL_SELECTION;
+
     SortSelection() {};
     ~SortSelection() {};
     void sort(std::vector<int> &toSort)

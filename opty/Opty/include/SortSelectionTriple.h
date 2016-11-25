@@ -1,11 +1,12 @@
 #ifndef SORTSELECTIONTRIPLE_H
 #define SORTSELECTIONTRIPLE_H
 
-#include "../typdefs.hpp"
-#include <assert.h>
-class SortSelectionTriple
+#include "SortBehaviour.h"
+class SortSelectionTriple : public SortBehaviour
 {
 public:
+            static const SortType m_sortType=TRIPLE_SELECTION;
+
     SortSelectionTriple() {};
     ~SortSelectionTriple() {};
     void sort(std::vector<int>&toSort)

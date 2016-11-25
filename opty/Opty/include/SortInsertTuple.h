@@ -1,8 +1,6 @@
 #ifndef SORTINSERTTUPLE_H
 #define SORTINSERTTUPLE_H
-
-#include "../typdefs.hpp"
-#include <iostream>
+#include "SortBehaviour.h"
 /**
 Bierzemy parami. od 2 indeksu.
 Porownujemy najwieksza z pary z liczba poprzednia, az do momenu w ktorym liczba porownywana jest wieksza od najwiekszej liczby z pary.
@@ -11,9 +9,11 @@ Robimy porownanie mniejszej liczby z pary dopoki liczba z ktora porownujemy jest
 to znaczy ze za nia trzeba wstawic mniejsza liczbe z pary
 
 */
-class SortInsertTuple
+class SortInsertTuple : public SortBehaviour
 {
 public:
+        static const SortType m_sortType=TUPLE_INSERT;
+
     SortInsertTuple() {};
     ~SortInsertTuple() {};
 
@@ -22,14 +22,14 @@ public:
 
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
 
-        int counterAll=0, counter1=0, counter2 =0,counter3=0, counter4=0;
+//        int counterAll=0, counter1=0, counter2 =0,counter3=0, counter4=0;
         for(int i=0; i<sizeOfArray; i+=2)
         {
-            counterAll++;
+//            counterAll++;
             if(toSort[i] > toSort[i+1])
             {
                 std::swap(toSort[i],toSort[i+1]);
-                counter1++;
+//                counter1++;
             }
             const int pom1 = toSort[i];
             const int pom2 = toSort[i+1];
@@ -39,7 +39,7 @@ public:
             {
                 toSort[j+2] =  toSort[j];
                 j--;
-                counter2++;
+//                counter2++;
             }
             toSort[j+2] = pom2;
             toSort[j+1] = pom1;
@@ -48,7 +48,7 @@ public:
             {
                 toSort[j+1] = toSort[j];
                 --j;
-                counter3++;
+//                counter3++;
             }
             toSort[j+1] = pom1;
         }
@@ -60,12 +60,12 @@ public:
             {
                 toSort[k+1] = toSort[k];
                 --k;
-                counter4++;
+//                counter4++;
             }
             toSort[k+1] = pom;
         }
 
-        std::cout<< counterAll<<" "<<counter1<<" "<<counter2<<" "<<counter3<<" "<<counter4<<std::endl;
+//        std::cout<< counterAll<<" "<<counter1<<" "<<counter2<<" "<<counter3<<" "<<counter4<<std::endl;
 
     }
 };

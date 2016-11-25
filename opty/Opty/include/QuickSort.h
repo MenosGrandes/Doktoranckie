@@ -1,11 +1,14 @@
 #ifndef QUICKSORT_H
 #define QUICKSORT_H
 
-#include "../typdefs.hpp"
+#include "SortBehaviour.h"
 
-class QuickSort
+class QuickSort :public SortBehaviour
 {
 public:
+                                        static const SortType m_sortType=QUICK;
+
+    QuickSort(){}
     void sort(std::vector<int> &toSort)
     {
         quicksort(&toSort[0],0,toSort.size()-1,toSort.size());

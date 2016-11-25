@@ -1,9 +1,13 @@
 #ifndef BUBBLESORT_H
 #define BUBBLESORT_H
-#include "../typdefs.hpp"
-class BubbleSort
+#include "SortBehaviour.h"
+class BubbleSort : public SortBehaviour
 {
 public:
+                                static const SortType m_sortType=NORMAL_BUBBLE;
+
+     BubbleSort() {};
+    ~BubbleSort() {};
     void sort(std::vector<int> &toSort)
     {
 //        int compare=0;
@@ -24,8 +28,7 @@ public:
 //        std::cout<<"Normal"<<compare<<std::endl;
 
     }
-    BubbleSort() {};
-    ~BubbleSort() {};
+
 };
 
 #endif // BUBBLESORT_H

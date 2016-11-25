@@ -1,12 +1,12 @@
 #ifndef SORTBUBBLETRIPLE_H
 #define SORTBUBBLETRIPLE_H
 
-#include "../typdefs.hpp"
-#include <windows.h>
-#include <iostream>
-class SortBubbleTriple
+#include "SortBehaviour.h"
+class SortBubbleTriple : public SortBehaviour
 {
 public:
+                    static const SortType m_sortType=TRIPLE_BUBBLE;
+
     SortBubbleTriple() {};
     ~SortBubbleTriple() {};
     void sort(std::vector<int>&toSort)

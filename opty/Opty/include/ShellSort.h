@@ -1,10 +1,12 @@
 #ifndef SHELLSORT_H
 #define SHELLSORT_H
 
-
-class ShellSort
+#include "SortBehaviour.h"
+class ShellSort : public SortBehaviour
 {
 public:
+                                    static const SortType m_sortType=SHELL;
+
     ShellSort()
     {
         m_gap[0] = 1750;
@@ -16,6 +18,7 @@ public:
         m_gap[6] = 10;
         m_gap[7] = 4;
         m_gap[8] = 1;
+
     }
     void sort( std::vector<int>&toSort)
     {

@@ -1,13 +1,12 @@
 #ifndef SORTSELECTIONTUPLE_H
 #define SORTSELECTIONTUPLE_H
-
-
-#include "../typdefs.hpp"
 #include <algorithm>
 #include <iostream>
-class SortSelectionTuple
+#include "SortBehaviour.h"
+class SortSelectionTuple : public SortBehaviour
 {
 public:
+    static const SortType m_sortType=TUPLE_SELECTION;
     SortSelectionTuple() {};
     ~SortSelectionTuple() {};
 
@@ -69,6 +68,7 @@ public:
 
 
 };
+
 /*
 Robimy z wszystkiego pary.
 Sortujemy wszystkie w kolejnosci rosnacej,

@@ -57,8 +57,7 @@ public:
             delete m_tripleSort;
 
         }
-
-        std::cout<<(t_normal)<<","<<(t_tuple)<<","<<t_triple<<std::endl;
+        std::cout<<BasicSort::GetType()<<" "<<(t_normal)<<std::endl<<TupleSort::GetType()<<" "<<t_tuple<<std::endl<<TripleSort::GetType()<<" "<<t_triple<<std::endl;;
     }
 };
 //template<class BasicSort,class TupleSort>
@@ -125,6 +124,7 @@ public:
 
         double t_normal=0;
         double t_tuple=0;
+            std::cout<<BasicSort::GetType()<<" ";
 
         for(int i=0; i<testCounts; i++)
         {
@@ -141,7 +141,6 @@ public:
             }
 
             BasicSort *m_basicSort   = new BasicSort(toSort);
-
             t_normal+=t.measureWindows<BasicSort>(m_basicSort);
 
             assert(m_basicSort->compare());

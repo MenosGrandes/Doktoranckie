@@ -1,6 +1,6 @@
 #ifndef SORTBUBBLETUPLE_H
 #define SORTBUBBLETUPLE_H
-#include "../typdefs.hpp"
+#include "SortBehaviour.h"
 
 /*
 http://www.dreamincode.net/forums/topic/122481-finding-the-two-lowest-values-in-array/
@@ -42,9 +42,10 @@ para : 1 4
 
 */
 
-class SortBubbleTuple
+class SortBubbleTuple : public SortBehaviour
 {
 public:
+        static const SortType m_sortType=TUPLE_BUBBLE;
 
     SortBubbleTuple() {};
     ~SortBubbleTuple() {};

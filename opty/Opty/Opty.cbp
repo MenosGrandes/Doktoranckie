@@ -89,6 +89,9 @@
 		<Unit filename="include/Sort.h">
 			<Option virtualFolder="Sort/NormalSort/" />
 		</Unit>
+		<Unit filename="include/SortBehaviour.h">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
 		<Unit filename="include/SortBubbleTriple.h">
 			<Option virtualFolder="Sort/TripleSort/" />
 		</Unit>

@@ -64,7 +64,10 @@ public:
         compareData = other.compareData;
 
     }
-
+    static std::string GetType()
+    {
+        return ToString(SortMethod::m_sortType);
+    }
     void print() const
     {
         std::cout<<"~~~~~~~~~~~~~~~~~~"<<std::endl;

@@ -1,11 +1,13 @@
 #ifndef MERGESORT_H
 #define MERGESORT_H
 
-#include "../typdefs.hpp"
-
-class MergeSort
+#include "SortBehaviour.h"
+class MergeSort : public SortBehaviour
 {
     public:
+                                                static const SortType m_sortType=MERGE;
+
+        MergeSort(){}
     void sort(std::vector<int> &toSort)
     {
         merge_sort(toSort.begin(),toSort.end());

@@ -1,11 +1,13 @@
 #ifndef HEAPSORT_H
 #define HEAPSORT_H
 
-#include "../typdefs.hpp"
-
-class HeapSort
+#include "SortBehaviour.h"
+class HeapSort : public SortBehaviour
 {
 public:
+                                                    static const SortType m_sortType=HEAP;
+
+    HeapSort(){}
     void sort(std::vector<int>& toSort)
     {
         heap_sort(toSort);

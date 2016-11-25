@@ -1,11 +1,12 @@
 #ifndef SortInsert_H
 #define SortInsert_H
-#include "../typdefs.hpp"
-
-class SortInsert
+#include "SortBehaviour.h"
+class SortInsert : public SortBehaviour
 {
 
 public:
+                            static const SortType m_sortType=NORMAL_INSERT;
+
     SortInsert() {};
     ~SortInsert() {};
     void sort(std::vector<int> &toSort)
