@@ -9,10 +9,12 @@ int main(int argc, char* argv[] )
     srand((time(0)));
 
     VectorOfTests tests;
-    tests.push_back(TestFastSort());
+//    tests.push_back(TestQuickSort());
 //    tests.push_back(TestMergeSort());
-for(int i=0;i<tests.size();i++)
-    boost::apply_visitor(TestVisitor(1,330000,100000,(TEST_OPTIONS)2),tests[i]);
+    tests.push_back(TestBubbleSort());
+
+for(unsigned int i=0;i<tests.size();i++)
+    boost::apply_visitor(TestVisitor(1,1000,100000,(TEST_OPTIONS)2),tests[i]);
 
 #ifdef DO_TESTS
     VectorOfTests tests;

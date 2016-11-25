@@ -52,33 +52,13 @@ typedef TestSort<SortNormalSelection,SortTupleSelection,SortTripleSelection> Tes
 typedef TestSort<SortQuickSort> TestQuickSort;
 typedef TestSort<SortMergeSort> TestMergeSort;
 typedef TestSort<SortQuickSort,SortMergeSort,SortHeapSort> TestFastSort;
-
-typedef std::vector<boost::variant<TestBubbleSort,TestInsertSort,TestSelectionSort,TestQuickSort,TestMergeSort,TestFastSort> >VectorOfTests;
+typedef boost::variant<TestBubbleSort,TestInsertSort,TestSelectionSort,TestQuickSort,TestMergeSort,TestFastSort>  AnyTest;
+typedef std::vector<AnyTest>VectorOfTests;
 
 class TestVisitor : public boost::static_visitor<>
 {
 public:
-    void operator()( TestBubbleSort& _t) const
-    {
-        _t.test(m_testCounts,m_tabSize,m_max,m_to);
-    }
-    void operator()( TestInsertSort& _t) const
-    {
-        _t.test(m_testCounts,m_tabSize,m_max,m_to);
-    }
-    void operator()( TestSelectionSort& _t) const
-    {
-        _t.test(m_testCounts,m_tabSize,m_max,m_to);
-    }
-    void operator()( TestQuickSort& _t) const
-    {
-        _t.test(m_testCounts,m_tabSize,m_max,m_to);
-    }
-    void operator()( TestMergeSort& _t) const
-    {
-        _t.test(m_testCounts,m_tabSize,m_max,m_to);
-    }
-        void operator()( TestFastSort& _t) const
+    template <typename T> void operator()( T & _t)const
     {
         _t.test(m_testCounts,m_tabSize,m_max,m_to);
     }

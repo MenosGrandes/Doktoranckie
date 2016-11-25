@@ -10,7 +10,7 @@ public:
     ~SortInsert() {};
     void sort(std::vector<int> &toSort)
     {
-        for(int i=1; i<toSort.size(); i++)
+        for(unsigned int i=1; i<toSort.size(); i++)
         {
             const int pom = toSort[i];
             int j = i-1;

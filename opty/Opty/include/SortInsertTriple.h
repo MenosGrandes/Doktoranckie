@@ -35,7 +35,7 @@ public:
 
         }
         std::cout<<toSort.size()-arrayDivider<<" ASDASDASDASDASD"<<std::endl;
-        for(int i=arrayDivider; i<toSort.size(); i+=3)
+        for(unsigned int i=arrayDivider; i<toSort.size(); i+=3)
         {
 #ifdef COUNT_COMPRASION
             all++;

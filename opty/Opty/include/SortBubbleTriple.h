@@ -14,7 +14,7 @@ public:
 #ifdef COUNT_COMPRASION
         int c1=0,c2=0,c3=0,c4=0,c5=0,c6=0;
 #endif // COUNT_COMPRASION
-        for(int i= 0; i<toSort.size()-2; i++)//(1)
+        for(unsigned int i= 0; i<toSort.size()-2; i++)//(1)
         {
 #ifdef COUNT_COMPRASION
             c6++;

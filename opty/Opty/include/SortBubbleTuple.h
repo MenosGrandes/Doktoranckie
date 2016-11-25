@@ -51,7 +51,7 @@ public:
     void sort(std::vector<int> &toSort)
     {
         //const int _end=ceil(toSort.size()-(toSort.size()*0.1));
-        for(int i= 0; i<toSort.size()-1; i++)//(1)
+        for(unsigned int i= 0; i<toSort.size()-1; i++)//(1)
         {
             int minElem=i,maxElem=i+1;//(2)
             if(toSort[minElem]>toSort[maxElem])//(3)

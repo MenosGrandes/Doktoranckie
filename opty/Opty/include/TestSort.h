@@ -1,9 +1,9 @@
 #ifndef TESTSORT_H
 #define TESTSORT_H
-#include <type_traits>
 
 #include "Random.h"
 #include "Timer.h"
+#include "../typdefs.hpp"
 #include <cassert>
 template<typename ... Dummy> class TestSort {};
 

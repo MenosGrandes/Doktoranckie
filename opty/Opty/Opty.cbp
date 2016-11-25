@@ -58,6 +58,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-std=gnu++11" />
+			<Add option="-std=gnu++14" />
 			<Add directory="C:/Boost/boost_1_62_0" />
 		</Compiler>
 		<Linker>
