@@ -17,7 +17,8 @@
 #include "QuickSort.h"
 #include "MergeSort.h"
 #include "HeapSort.h"
-
+#include "ShellSort.h"
+#include "BitonicSort.h"
 #include <unistd.h>
 #include <cstdlib>
 #include <iostream>
@@ -44,15 +45,21 @@ typedef Sort<SortSelectionTriple> SortTripleSelection;
 typedef Sort<QuickSort> SortQuickSort;
 typedef Sort<MergeSort> SortMergeSort;
 typedef Sort<HeapSort>  SortHeapSort;
+typedef Sort<ShellSort>  SortShellSort;
+typedef Sort<BitonicSort>  SortBitonicSort;
 
 /*Tests*/
 typedef TestSort<SortNormalBubble,SortTupleBubble,SortTripleBubble> TestBubbleSort;
 typedef TestSort<SortNormalInsert,SortTupleInsert,SortTripleInsert> TestInsertSort;
 typedef TestSort<SortNormalSelection,SortTupleSelection,SortTripleSelection> TestSelectionSort;
+
 typedef TestSort<SortQuickSort> TestQuickSort;
 typedef TestSort<SortMergeSort> TestMergeSort;
-typedef TestSort<SortQuickSort,SortMergeSort,SortHeapSort> TestFastSort;
-typedef boost::variant<TestBubbleSort,TestInsertSort,TestSelectionSort,TestQuickSort,TestMergeSort,TestFastSort>  AnyTest;
+typedef TestSort<SortHeapSort> TestHeapSort;
+typedef TestSort<SortShellSort> TestShellSort;
+typedef TestSort<SortBitonicSort> TestBitonicSort;
+
+typedef boost::variant<TestBubbleSort,TestInsertSort,TestSelectionSort,TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort>  AnyTest;
 typedef std::vector<AnyTest>VectorOfTests;
 
 class TestVisitor : public boost::static_visitor<>
@@ -60,13 +67,12 @@ class TestVisitor : public boost::static_visitor<>
 public:
     template <typename T> void operator()( T & _t)const
     {
-        _t.test(m_testCounts,m_tabSize,m_max,m_to);
+        _t.test(m_testCounts,m_toSort,m_to);
     }
-    TestVisitor(int _testCounts,int _tabSize,int _max,TEST_OPTIONS _so=NON):m_testCounts(_testCounts), m_tabSize(_tabSize), m_max(_max),m_to(_so) {}
+    TestVisitor(int _testCounts,std::vector<int> _toSort,TEST_OPTIONS _so=NON):m_testCounts(_testCounts),m_to(_so),m_toSort(_toSort) {}
 private:
     int m_testCounts;
-    int m_tabSize;
-    int m_max;
+    std::vector<int> m_toSort;
     TEST_OPTIONS m_to;
 };
 

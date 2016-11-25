@@ -48,7 +48,7 @@ public:
     {
         delete sortMethod;
     }
-        Sort(const Sort &a):m_data(a.m_data),compareData(a.compareData),m_n(a.m_n) {};
+    Sort(const Sort &a):m_data(a.m_data),compareData(a.compareData),m_n(a.m_n) {};
     Sort(Sort&& o):m_data(std::move(o.m_data)),compareData(std::move(o.compareData)),m_n(std::move(m_n)) { }
     Sort&operator=(const Sort& other)
     {

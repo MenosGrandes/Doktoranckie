@@ -1,56 +1,56 @@
 #ifndef HEAPSORT_H
 #define HEAPSORT_H
 
+#include "../typdefs.hpp"
 
 class HeapSort
 {
-    public:
-void sort(std::vector<int>& toSort)
-{
-//    build_maxheap(&toSort[0],toSort.size()-1);
-//    heapsort(&toSort[0],toSort.size()-1);
-}
-
-    private:
-void max_heapify(int *a, int i, int n)
-{
-
-    int temp = a[i];
-    int j = 2*i;
-    while (j <= n)
+public:
+    void sort(std::vector<int>& toSort)
     {
-        if (j < n && a[j+1] > a[j])
-            j = j+1;
-        if (temp > a[j])
-            break;
-        else if (temp <= a[j])
+        heap_sort(toSort);
+    }
+
+private:
+    void shift_down(std::vector<int>& heap,int i, int max)
+    {
+        int i_big, c1, c2;
+        while(i < max)
         {
-            a[j/2] = a[j];
-            j = 2*j;
+            i_big = i;
+            c1 = (2*i) + 1;
+            c2 = c1 + 1;
+            if( c1<max && heap[c1]>heap[i_big] )
+                i_big = c1;
+            if( c2<max && heap[c2]>heap[i_big] )
+                i_big = c2;
+            if(i_big == i) return;
+            std::swap(heap[i],heap[i_big]);
+            i = i_big;
         }
     }
-    a[j/2] = temp;
-    return;
-}
-void heapsort(int *a, int n)
-{
-    int i, temp;
-    for (i = n; i >= 2; i--)
+
+    void to_heap(std::vector<int>& arr)
     {
-        temp = a[i];
-        a[i] = a[1];
-        a[1] = temp;
-        max_heapify(a, 1, i - 1);
+        int i = (arr.size()/2) - 1;
+        while(i >= 0)
+        {
+            shift_down(arr, i, arr.size());
+            --i;
+        }
     }
-}
-void build_maxheap(int *a, int n)
-{
-    int i;
-    for(i = n/2; i >= 1; i--)
+
+    void heap_sort(std::vector<int>& arr)
     {
-        max_heapify(a, i, n);
+        to_heap(arr);
+        int end = arr.size() - 1;
+        while (end > 0)
+        {
+            std::swap(arr[0], arr[end]);
+            shift_down(arr, 0, end);
+            --end;
+        }
     }
-}
 
 };
 
