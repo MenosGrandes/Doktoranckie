@@ -5,7 +5,7 @@
 class SortBubbleTriple : public SortBehaviour
 {
 public:
-                    static const SortType m_sortType=TRIPLE_BUBBLE;
+    static const SortType m_sortType=TRIPLE_BUBBLE;
 
     SortBubbleTriple() {};
     ~SortBubbleTriple() {};

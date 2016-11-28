@@ -72,8 +72,8 @@ public:
     TestVisitor(int _testCounts,std::vector<int> _toSort,TEST_OPTIONS _so=NON):m_testCounts(_testCounts),m_to(_so),m_toSort(_toSort) {}
 private:
     int m_testCounts;
-    std::vector<int> m_toSort;
     TEST_OPTIONS m_to;
+    std::vector<int> m_toSort;
 };
 
 

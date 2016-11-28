@@ -5,9 +5,9 @@
 class HeapSort : public SortBehaviour
 {
 public:
-                                                    static const SortType m_sortType=HEAP;
+    static const SortType m_sortType=HEAP;
 
-    HeapSort(){}
+    HeapSort() {}
     void sort(std::vector<int>& toSort)
     {
         heap_sort(toSort);
@@ -23,10 +23,17 @@ private:
             c1 = (2*i) + 1;
             c2 = c1 + 1;
             if( c1<max && heap[c1]>heap[i_big] )
+            {
                 i_big = c1;
+            }
             if( c2<max && heap[c2]>heap[i_big] )
+            {
                 i_big = c2;
-            if(i_big == i) return;
+            }
+            if(i_big == i)
+            {
+                return;
+            }
             std::swap(heap[i],heap[i_big]);
             i = i_big;
         }

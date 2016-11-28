@@ -5,7 +5,7 @@
 class SortSelectionTriple : public SortBehaviour
 {
 public:
-            static const SortType m_sortType=TRIPLE_SELECTION;
+    static const SortType m_sortType=TRIPLE_SELECTION;
 
     SortSelectionTriple() {};
     ~SortSelectionTriple() {};

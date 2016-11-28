@@ -5,7 +5,7 @@ class SortInsert : public SortBehaviour
 {
 
 public:
-                            static const SortType m_sortType=NORMAL_INSERT;
+    static const SortType m_sortType=NORMAL_INSERT;
 
     SortInsert() {};
     ~SortInsert() {};

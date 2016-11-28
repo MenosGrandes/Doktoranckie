@@ -45,7 +45,7 @@ para : 1 4
 class SortBubbleTuple : public SortBehaviour
 {
 public:
-        static const SortType m_sortType=TUPLE_BUBBLE;
+    static const SortType m_sortType=TUPLE_BUBBLE;
 
     SortBubbleTuple() {};
     ~SortBubbleTuple() {};

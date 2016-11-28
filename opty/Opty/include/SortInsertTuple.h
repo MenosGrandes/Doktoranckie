@@ -12,7 +12,7 @@ to znaczy ze za nia trzeba wstawic mniejsza liczbe z pary
 class SortInsertTuple : public SortBehaviour
 {
 public:
-        static const SortType m_sortType=TUPLE_INSERT;
+    static const SortType m_sortType=TUPLE_INSERT;
 
     SortInsertTuple() {};
     ~SortInsertTuple() {};

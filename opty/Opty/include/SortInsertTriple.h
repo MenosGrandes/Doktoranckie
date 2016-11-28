@@ -5,7 +5,7 @@
 class SortInsertTriple: public SortBehaviour
 {
 public:
-                static const SortType m_sortType=TRIPLE_INSERT;
+    static const SortType m_sortType=TRIPLE_INSERT;
 
     SortInsertTriple() {};
     ~SortInsertTriple() {};

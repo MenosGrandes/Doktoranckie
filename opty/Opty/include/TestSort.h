@@ -36,6 +36,8 @@ public:
             case BEST :
                 std::sort(toSort.begin(),toSort.end(), std::less<int>());
                 break;
+            default:
+                break;
             }
 
             BasicSort *m_basicSort   = new BasicSort(toSort);
@@ -123,8 +125,7 @@ public:
         Timer t;
 
         double t_normal=0;
-        double t_tuple=0;
-            std::cout<<BasicSort::GetType()<<" ";
+        std::cout<<BasicSort::GetType()<<" ";
 
         for(int i=0; i<testCounts; i++)
         {
@@ -137,6 +138,8 @@ public:
                 break;
             case BEST :
                 std::sort(toSort.begin(),toSort.end(), std::less<int>());
+                break;
+            default:
                 break;
             }
 

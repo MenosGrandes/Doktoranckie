@@ -4,9 +4,9 @@
 class BubbleSort : public SortBehaviour
 {
 public:
-                                static const SortType m_sortType=NORMAL_BUBBLE;
+    static const SortType m_sortType=NORMAL_BUBBLE;
 
-     BubbleSort() {};
+    BubbleSort() {};
     ~BubbleSort() {};
     void sort(std::vector<int> &toSort)
     {

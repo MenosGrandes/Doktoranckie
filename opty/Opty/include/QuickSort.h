@@ -6,9 +6,9 @@
 class QuickSort :public SortBehaviour
 {
 public:
-                                        static const SortType m_sortType=QUICK;
+    static const SortType m_sortType=QUICK;
 
-    QuickSort(){}
+    QuickSort() {}
     void sort(std::vector<int> &toSort)
     {
         quicksort(&toSort[0],0,toSort.size()-1,toSort.size());

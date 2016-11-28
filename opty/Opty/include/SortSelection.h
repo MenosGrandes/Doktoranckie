@@ -5,7 +5,7 @@
 class SortSelection : public SortBehaviour
 {
 public:
-                        static const SortType m_sortType=NORMAL_SELECTION;
+    static const SortType m_sortType=NORMAL_SELECTION;
 
     SortSelection() {};
     ~SortSelection() {};
