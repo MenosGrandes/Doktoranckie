@@ -50,22 +50,36 @@ typedef Sort<SortSelectionTriple> SortTripleSelection;
 /*FAST*/
 typedef Sort<QuickSort> SortQuickSort;
 typedef Sort<MergeSort> SortMergeSort;
-typedef Sort<HeapSort,WorstCaseHeapSort>  SortHeapSort;
+typedef Sort<HeapSort>  SortHeapSort;
 typedef Sort<ShellSort>  SortShellSort;
 typedef Sort<BitonicSort>  SortBitonicSort;
 
 /*Tests*/
-typedef TestSort<SortNormalBubble,SortTupleBubble,SortTripleBubble> TestBubbleSort;
-typedef TestSort<SortNormalInsert,SortTupleInsert,SortTripleInsert> TestInsertSort;
-typedef TestSort<SortNormalSelection,SortTupleSelection,SortTripleSelection> TestSelectionSort;
+typedef TestSort<SortNormalBubble> TestNormalBubble;
+typedef TestSort<SortNormalInsert>TestNormalInsert;
+typedef TestSort<SortNormalSelection>TestNormalSelection;
+typedef TestSort<SortTupleSelection>TestTupleSelection;
+typedef TestSort<SortTupleBubble>TestTupleBubble;
+typedef TestSort<SortTupleInsert>TestTupleInsert;
+typedef TestSort<SortTripleInsert>TestTripleInsert;
+typedef TestSort<SortTripleBubble>TestTripleBubble;
+typedef TestSort<SortTripleSelection>TestTripleSelection;
+
+//typedef TestSort<SortNormalBubble,SortTupleBubble,SortTripleBubble> TestBubbleSort;
+//typedef TestSort<SortNormalInsert,SortTupleInsert,SortTripleInsert> TestInsertSort;
+//typedef TestSort<SortNormalSelection,SortTupleSelection,SortTripleSelection> TestSelectionSort;
 
 typedef TestSort<SortQuickSort> TestQuickSort;
 typedef TestSort<SortMergeSort> TestMergeSort;
-typedef TestSort<SortHeapSort> TestHeapSort;
+typedef TestSort<SortHeapSort,WorstCaseHeapSort,BestCase> TestHeapSort;
 typedef TestSort<SortShellSort> TestShellSort;
 typedef TestSort<SortBitonicSort> TestBitonicSort;
 
-typedef boost::variant<TestBubbleSort,TestInsertSort,TestSelectionSort,TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort>  AnyTest;
+typedef boost::variant<
+TestNormalBubble,TestNormalInsert,TestNormalSelection,
+TestTupleSelection,TestTupleBubble,TestTupleInsert,
+TestTripleInsert,TestTripleBubble,TestTripleSelection,
+TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort>  AnyTest;
 typedef std::vector<AnyTest>VectorOfTests;
 
 class TestVisitor : public boost::static_visitor<>

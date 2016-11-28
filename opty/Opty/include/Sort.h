@@ -4,9 +4,8 @@
 #include "../typdefs.hpp"
 
 #include "Random.h"
-#include "WorstCase.h"
-#include "BestCase.h"
-template <class SortMethod,class WorstCaseMethod=WorstCase,class BestCaseMethod=BestCase>
+
+template <class SortMethod>
 class Sort
 {
 public:
@@ -21,18 +20,15 @@ public:
             m_compareData.push_back(m_data[i]);
         }
         m_sortMethod = new SortMethod();
-        m_bestCase = new BestCaseMethod();
-        m_worstCase = new WorstCaseMethod();
 
     }
-    Sort(std::vector<int> append):m_n(append.size()),m_data(append),m_compareData(append),m_sortMethod(new SortMethod()),m_worstCase(new WorstCaseMethod()),m_bestCase(new BestCaseMethod())
+    Sort(std::vector<int> append):m_n(append.size()),m_data(append),m_compareData(append),m_sortMethod(new SortMethod())
     {}
 
     ~Sort()
     {
         delete m_sortMethod;
-        delete m_bestCase;
-        delete m_worstCase;
+
     }
     Sort(const Sort &a):m_data(a.m_data),m_compareData(a.m_compareData),m_n(a.m_n) {};
     Sort(Sort&& o):m_data(std::move(o.m_data)),m_compareData(std::move(o.m_compareData)),m_n(std::move(m_n)) { }
@@ -83,21 +79,13 @@ public:
 
         return true;
     }
-    void generateBest()
-    {
-     m_bestCase->generate(this->m_data);
-    }
-    void generateWorst()
-    {
-        m_worstCase->generate(this->m_data);
-    }
+
 protected:
     int m_n;
     std::vector<int> m_data;
     std::vector<int> m_compareData;
     SortMethod* m_sortMethod;
-    WorstCaseMethod* m_worstCase;
-    BestCaseMethod* m_bestCase;
+
 
 };
 

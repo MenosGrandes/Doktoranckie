@@ -3,7 +3,6 @@
 #include "../templatesSpecialisation.hpp"
 
 #include "../Tests.hpp"
-#include "WorstCaseMergeSort.h"
 int main(int argc, char* argv[] )
 {
 //WorstCaseMergeSort w_Merge;
@@ -21,8 +20,6 @@ int main(int argc, char* argv[] )
 
     VectorOfTests tests;
     std::vector<int> toSort = Random::getInstance().generateRandomVector(1,10000000,pow(2,10));
-    tests.push_back(TestInsertSort());
-    tests.push_back(TestBubbleSort());
     tests.push_back(TestQuickSort());
     tests.push_back(TestQuickSort());
     tests.push_back(TestMergeSort());
@@ -32,7 +29,7 @@ int main(int argc, char* argv[] )
     tests.push_back(TestBitonicSort());
     for(unsigned int i=0; i<tests.size(); i++)
     {
-        boost::apply_visitor(TestVisitor(1,toSort,WORST),tests[i]);
+        boost::apply_visitor(TestVisitor(1,toSort,BEST),tests[i]);
 
     }
     return 0;
