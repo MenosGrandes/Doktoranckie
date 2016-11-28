@@ -11,7 +11,7 @@ public:
     QuickSort() {}
     void sort(std::vector<int> &toSort)
     {
-        quicksort(&toSort[0],0,toSort.size()-1,toSort.size());
+        quicksort(&toSort[0],0,toSort.size()-1,0);
 //        std::sort(toSort)
     };
 private :

@@ -28,21 +28,29 @@ public:
         {
 //            std::cout<<i+1<<std::endl;
 //            std::vector<int> v= Random::getInstance().generateRandomVector(1,max,tabSize);
+
+
+            BasicSort *m_basicSort   = new BasicSort(toSort);
+            TupleSort *m_tupleSort   = new TupleSort(toSort);
+            TripleSort *m_tripleSort = new TripleSort(toSort);
             switch(so)
             {
             case WORST:
-                std::sort(toSort.begin(),toSort.end(), std::greater<int>());
+                m_basicSort->generateWorst();
+                m_tupleSort->generateWorst();
+                m_tripleSort->generateWorst();
+                // std::sort(toSort.begin(),toSort.end(), std::greater<int>());
                 break;
             case BEST :
-                std::sort(toSort.begin(),toSort.end(), std::less<int>());
+                m_basicSort->generateBest();
+                m_tupleSort->generateBest();
+                m_tripleSort->generateBest();
                 break;
             default:
                 break;
             }
 
-            BasicSort *m_basicSort   = new BasicSort(toSort);
-            TupleSort *m_tupleSort   = new TupleSort(toSort);
-            TripleSort *m_tripleSort = new TripleSort(toSort);
+
 
 
             t_normal+=t.measureWindows<BasicSort>(m_basicSort);
@@ -131,19 +139,20 @@ public:
         {
 //            std::cout<<i+1<<std::endl;
 //            std::vector<int> v= Random::getInstance().generateRandomVector(1,max,tabSize);
+            BasicSort *m_basicSort   = new BasicSort(toSort);
+
             switch(so)
             {
             case WORST:
-                std::sort(toSort.begin(),toSort.end(), std::greater<int>());
+                m_basicSort->generateWorst();
                 break;
             case BEST :
-                std::sort(toSort.begin(),toSort.end(), std::less<int>());
+                m_basicSort->generateBest();
                 break;
             default:
                 break;
             }
 
-            BasicSort *m_basicSort   = new BasicSort(toSort);
             t_normal+=t.measureWindows<BasicSort>(m_basicSort);
 
             assert(m_basicSort->compare());

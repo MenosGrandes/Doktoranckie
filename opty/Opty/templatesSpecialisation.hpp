@@ -19,6 +19,12 @@
 #include "HeapSort.h"
 #include "ShellSort.h"
 #include "BitonicSort.h"
+
+
+#include "WorstCaseHeapSort.h"
+#include "WorstCaseMergeSort.h"
+
+
 #include <unistd.h>
 #include <cstdlib>
 #include <iostream>
@@ -44,7 +50,7 @@ typedef Sort<SortSelectionTriple> SortTripleSelection;
 /*FAST*/
 typedef Sort<QuickSort> SortQuickSort;
 typedef Sort<MergeSort> SortMergeSort;
-typedef Sort<HeapSort>  SortHeapSort;
+typedef Sort<HeapSort,WorstCaseHeapSort>  SortHeapSort;
 typedef Sort<ShellSort>  SortShellSort;
 typedef Sort<BitonicSort>  SortBitonicSort;
 

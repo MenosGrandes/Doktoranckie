@@ -7,6 +7,8 @@
 #include <string>
 #include <boost/assert.hpp>
 #include <boost/preprocessor.hpp>
+#include <algorithm>
+#include <functional>
 
 #define X_DEFINE_ENUM_WITH_STRING_CONVERSIONS_TOSTRING_CASE(r, data, elem)    \
     case elem : return BOOST_PP_STRINGIZE(elem);
@@ -45,37 +47,8 @@ enum TEST_OPTIONS
 
 typedef std::vector<int>::iterator VintIter;
 typedef std::pair<VintIter,VintIter> VintIterPair;
-std::string CompareBool(VintIter b1,VintIter b2)
-{
-    if(b1==b2)
-    {
-        return "true";
-    }
-    else
-    {
-        return "false";
-    }
 
-}
-std::string TEST_OPTIONS_TOSTRING(TEST_OPTIONS s)
-{
-    switch(s)
-    {
-    case NON:
-        return "non";
-        break;
-    case BEST:
-        return "best";
-        break;
-    case WORST:
-        return "worst";
-        break;
-    case LENGTH:
-        return "length";
-        break;
-    }
-    return "";
-}
+
 
 
 //

@@ -1,13 +1,12 @@
 #ifndef SORT_H
 #define SORT_H
 
-#include <algorithm>
-#include <functional>
-#include <vector>
+#include "../typdefs.hpp"
 
 #include "Random.h"
-
-template <class SortMethod>
+#include "WorstCase.h"
+#include "BestCase.h"
+template <class SortMethod,class WorstCaseMethod=WorstCase,class BestCaseMethod=BestCase>
 class Sort
 {
 public:
@@ -15,23 +14,28 @@ public:
     {
 
         m_data.reserve(n);
-        compareData.reserve(n);
+        m_compareData.reserve(n);
         for(int i=0; i<m_n; i++)
         {
             m_data.push_back(Random::getInstance().generate(1,max));
-            compareData.push_back(m_data[i]);
+            m_compareData.push_back(m_data[i]);
         }
-        sortMethod = new SortMethod();
+        m_sortMethod = new SortMethod();
+        m_bestCase = new BestCaseMethod();
+        m_worstCase = new WorstCaseMethod();
+
     }
-    Sort(std::vector<int> append):m_n(append.size()),m_data(append),compareData(append),sortMethod(new SortMethod())
+    Sort(std::vector<int> append):m_n(append.size()),m_data(append),m_compareData(append),m_sortMethod(new SortMethod()),m_worstCase(new WorstCaseMethod()),m_bestCase(new BestCaseMethod())
     {}
 
     ~Sort()
     {
-        delete sortMethod;
+        delete m_sortMethod;
+        delete m_bestCase;
+        delete m_worstCase;
     }
-    Sort(const Sort &a):m_data(a.m_data),compareData(a.compareData),m_n(a.m_n) {};
-    Sort(Sort&& o):m_data(std::move(o.m_data)),compareData(std::move(o.compareData)),m_n(std::move(m_n)) { }
+    Sort(const Sort &a):m_data(a.m_data),m_compareData(a.m_compareData),m_n(a.m_n) {};
+    Sort(Sort&& o):m_data(std::move(o.m_data)),m_compareData(std::move(o.m_compareData)),m_n(std::move(m_n)) { }
     Sort&operator=(const Sort& other)
     {
         if(&other == this)
@@ -43,7 +47,7 @@ public:
             m_n=other.m_n;
         }
         m_data = other.m_data;
-        compareData = other.compareData;
+       m_compareData = other.m_compareData;
 
     }
     static std::string GetType()
@@ -61,30 +65,40 @@ public:
     }
     void _sort()
     {
-        sortMethod->sort(this->m_data);
+        m_sortMethod->sort(this->m_data);
     }
     bool compare()
     {
-        std::sort(std::begin(compareData),std::end(compareData), std::less<int>());
+        std::sort(std::begin(m_compareData),std::end(m_compareData), std::less<int>());
         for(int i=0; i<m_n; i++)
         {
 //            std::cout<<compareData[i]<<" == "<<m_data[i]<<std::endl;
-            if(compareData[i]!=m_data[i])
+            if(m_compareData[i]!=m_data[i])
             {
 
-                std::cout<<compareData[i]<<"!="<<m_data[i]<<std::endl;
+                std::cout<<m_compareData[i]<<"!="<<m_data[i]<<std::endl;
                 return false;
             }
         }
 
         return true;
     }
-
+    void generateBest()
+    {
+     m_bestCase->generate(this->m_data);
+    }
+    void generateWorst()
+    {
+        m_worstCase->generate(this->m_data);
+    }
 protected:
     int m_n;
     std::vector<int> m_data;
-    std::vector<int> compareData;
-    SortMethod* sortMethod;
+    std::vector<int> m_compareData;
+    SortMethod* m_sortMethod;
+    WorstCaseMethod* m_worstCase;
+    BestCaseMethod* m_bestCase;
+
 };
 
 
