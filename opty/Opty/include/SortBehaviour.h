@@ -2,6 +2,7 @@
 #define SORTBEHAVIOUR_H
 
 #include "../typdefs.hpp"
+
 class SortBehaviour
 {
 public :

@@ -4,14 +4,12 @@
 #include "../typdefs.hpp"
 
 #include "Random.h"
-
 template <class SortMethod>
 class Sort
 {
 public:
     Sort(int n, int max):m_n(n)
     {
-
         m_data.reserve(n);
         m_compareData.reserve(n);
         for(int i=0; i<m_n; i++)
@@ -20,12 +18,11 @@ public:
             m_compareData.push_back(m_data[i]);
         }
         m_sortMethod = new SortMethod();
-
     }
     Sort(std::vector<int> append):m_n(append.size()),m_data(append),m_compareData(append),m_sortMethod(new SortMethod())
     {}
 
-    ~Sort()
+    virtual ~Sort()
     {
         delete m_sortMethod;
 
@@ -43,13 +40,10 @@ public:
             m_n=other.m_n;
         }
         m_data = other.m_data;
-       m_compareData = other.m_compareData;
+        m_compareData = other.m_compareData;
 
     }
-    static std::string GetType()
-    {
-        return ToString(SortMethod::m_sortType);
-    }
+
     void print() const
     {
         std::cout<<"~~~~~~~~~~~~~~~~~~"<<std::endl;
@@ -68,10 +62,8 @@ public:
         std::sort(std::begin(m_compareData),std::end(m_compareData), std::less<int>());
         for(int i=0; i<m_n; i++)
         {
-//            std::cout<<compareData[i]<<" == "<<m_data[i]<<std::endl;
             if(m_compareData[i]!=m_data[i])
             {
-
                 std::cout<<m_compareData[i]<<"!="<<m_data[i]<<std::endl;
                 return false;
             }
@@ -79,7 +71,10 @@ public:
 
         return true;
     }
-
+    static std::string GetType()
+    {
+        return ToString(SortMethod::m_sortType);
+    }
 protected:
     int m_n;
     std::vector<int> m_data;

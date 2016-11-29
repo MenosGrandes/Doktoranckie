@@ -82,12 +82,35 @@ TestTripleInsert,TestTripleBubble,TestTripleSelection,
 TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort>  AnyTest;
 typedef std::vector<AnyTest>VectorOfTests;
 
+
+
+
+
+//template<typename T>
+//struct is_sortable{
+//static const bool value = false
+//};
+//
+//template<>
+//struct is_sortable<BubbleSort>{
+//static const bool value = true;
+//};
+//template<>
+//struct is_sortable<SortInsert>{
+//static const bool value = true;
+//};
+//template<>
+//struct is_sortable<SortSelection>{
+//static const bool value = true;
+//};
+
+
 class TestVisitor : public boost::static_visitor<>
 {
 public:
     template <typename T> void operator()( T & _t)const
     {
-        _t.test(m_testCounts,m_toSort,m_to);
+        std::cout<<_t.getType()<<" "<<_t.test(m_testCounts,m_toSort,m_to)<<std::endl;
     }
     TestVisitor(int _testCounts,std::vector<int> _toSort,TEST_OPTIONS _so=NON):m_testCounts(_testCounts),m_to(_so),m_toSort(_toSort) {}
 private:
