@@ -8,19 +8,11 @@ int main(int argc, char* argv[] )
 
     srand((time(0)));
 
-    VectorOfTests tests;
-    std::vector<int> toSort = Random::getInstance().generateRandomVector(1,10000000,pow(2,15));
-    tests.push_back(TestQuickSort());
-    tests.push_back(TestQuickSort());
-    tests.push_back(TestMergeSort());
-    tests.push_back(TestHeapSort());
-    tests.push_back(TestShellSort());
-    tests.push_back(TestQuickSort());
-    tests.push_back(TestBitonicSort());
-    for(unsigned int i=0; i<tests.size(); i++)
-    {
-        boost::apply_visitor(TestVisitor(1,toSort,WORST),tests[i]);
+Tester tester;
+//tester.addTest(TestVisitor(10,10000,NON),TestNormalSelection());
+//tester.addTest(TestVisitor(10,10000,NON),TestTupleSelection());
+tester.addTest(TestVisitor(1000,1000,NON),TestTripleSelection());
 
-    }
+tester.performTests();
     return 0;
 }

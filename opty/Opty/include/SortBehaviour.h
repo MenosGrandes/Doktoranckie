@@ -10,8 +10,6 @@ public :
     virtual ~SortBehaviour() {};
     virtual void sort(std::vector<int>&toSort)=0;
     static SortType m_sortType;
-
-
 };
 
 #endif // SORTBEHAVIOUR_H

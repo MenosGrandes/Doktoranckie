@@ -64,7 +64,9 @@
 			<Add option="-static-libstdc++" />
 			<Add directory="C:/Boost/boost_1_62_0/stage/lib" />
 		</Linker>
-		<Unit filename="Tests.hpp" />
+		<Unit filename="Tests.hpp">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
 		<Unit filename="include/BestCase.h">
 			<Option virtualFolder="Sort/Cases/" />
 		</Unit>
@@ -147,8 +149,12 @@
 		<Unit filename="src/WorstCaseMergeSort.cpp">
 			<Option virtualFolder="Sort/Cases/" />
 		</Unit>
-		<Unit filename="templatesSpecialisation.hpp" />
-		<Unit filename="typdefs.hpp" />
+		<Unit filename="templatesSpecialisation.hpp">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
+		<Unit filename="typdefs.hpp">
+			<Option virtualFolder="Helpers/" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

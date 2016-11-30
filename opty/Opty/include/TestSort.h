@@ -18,19 +18,16 @@ public:
     {
         return BasicSort::GetType();
     }
-    double test(int testCounts,std::vector<int> toSort,TEST_OPTIONS so=NON)
+    double test(int testCounts,int sizeOfVector,TEST_OPTIONS so=NON)
     {
-        if(toSort.size()==0)
-        {
 
-            return 0;
-        }
         Timer t;
 
         double t_normal=0;
 
         for(int i=0; i<testCounts; i++)
         {
+            std::vector<int> toSort = Random::getInstance().generateRandomVector(0,1000000,sizeOfVector);
 
             switch(so)
             {
@@ -58,10 +55,9 @@ public:
             assert(m_basicSort->compare());
 
             delete m_basicSort;
-
         }
 
-        return (t_normal);
+        return (t_normal/testCounts);
     }
 };
 #endif // TESTSORT_H

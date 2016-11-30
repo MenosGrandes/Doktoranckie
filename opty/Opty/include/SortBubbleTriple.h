@@ -11,14 +11,8 @@ public:
     ~SortBubbleTriple() {};
     void sort(std::vector<int>&toSort)
     {
-#ifdef COUNT_COMPRASION
-        int c1=0,c2=0,c3=0,c4=0,c5=0,c6=0;
-#endif // COUNT_COMPRASION
         for(unsigned int i= 0; i<toSort.size()-2; i++)//(1)
         {
-#ifdef COUNT_COMPRASION
-            c6++;
-#endif // COUNT_COMPRASION
             if(toSort[i] < toSort[i+1])
             {
                 if(toSort[i+2]<toSort[i])
@@ -36,52 +30,33 @@ public:
                 {
                     std::swap(toSort[i],toSort[i+2]);
                 }
-
             }
             if(toSort[i+2]<toSort[i+1])
             {
                 std::swap(toSort[i+1],toSort[i+2]);
             }
 
-            int minElem=i,minElem2=i+1,maxElem=i+2;//(2)
+            int minElem=i,minElem2=i+1,maxElem=i+2;
 
-            while(minElem2>1 && toSort[minElem2]<toSort[minElem-1])//(5) //N
+            while(minElem2>1 && toSort[minElem2]<toSort[minElem-1])
             {
-                std::swap(toSort[minElem],toSort[minElem-1]);//(6)
-                std::swap(toSort[minElem2],toSort[minElem2-1]);//(6)
-                minElem--;//(7)1
-                minElem2--;//(7)1
-#ifdef COUNT_COMPRASION
-                c1++;
-#endif // COUNT_COMPRASION
+                std::swap(toSort[minElem],toSort[minElem-1]);
+                std::swap(toSort[minElem2],toSort[minElem2-1]);
+                minElem--;
+                minElem2--;
             }
-            while(minElem>0 && toSort[minElem]<toSort[minElem-1])//(8) // N
+            while(minElem>0 && toSort[minElem]<toSort[minElem-1])
             {
-                std::swap(toSort[minElem],toSort[minElem-1]);//(6)
-                minElem--;//(10)
-#ifdef COUNT_COMPRASION
-                c2++;
-#endif // COUNT_COMPRASION
+                std::swap(toSort[minElem],toSort[minElem-1]);
+                minElem--;
             }
-            while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])//(8) // N
+            while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
             {
-                std::swap(toSort[maxElem],toSort[maxElem+1]);//(9)
-                maxElem++;//(10)
-#ifdef COUNT_COMPRASION
-                c3++;
-#endif // COUNT_COMPRASION
+                std::swap(toSort[maxElem],toSort[maxElem+1]);
+                maxElem++;
             }
         }
-#ifdef COUNT_COMPRASION
-        std::cout<<c1<<" "<<c2<<" "<<c3<<" "<<c6<<std::endl;
-#endif // COUNT_COMPRASION
-
     }
-//    }
-
-
-
-
 };
 
 #endif

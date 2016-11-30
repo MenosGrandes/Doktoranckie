@@ -65,10 +65,6 @@ typedef TestSort<SortTripleInsert>TestTripleInsert;
 typedef TestSort<SortTripleBubble>TestTripleBubble;
 typedef TestSort<SortTripleSelection>TestTripleSelection;
 
-//typedef TestSort<SortNormalBubble,SortTupleBubble,SortTripleBubble> TestBubbleSort;
-//typedef TestSort<SortNormalInsert,SortTupleInsert,SortTripleInsert> TestInsertSort;
-//typedef TestSort<SortNormalSelection,SortTupleSelection,SortTripleSelection> TestSelectionSort;
-
 typedef TestSort<SortQuickSort> TestQuickSort;
 typedef TestSort<SortMergeSort> TestMergeSort;
 typedef TestSort<SortHeapSort,WorstCaseHeapSort,BestCase> TestHeapSort;
@@ -76,33 +72,13 @@ typedef TestSort<SortShellSort> TestShellSort;
 typedef TestSort<SortBitonicSort> TestBitonicSort;
 
 typedef boost::variant<
-TestNormalBubble,TestNormalInsert,TestNormalSelection,
-TestTupleSelection,TestTupleBubble,TestTupleInsert,
-TestTripleInsert,TestTripleBubble,TestTripleSelection,
-TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort>  AnyTest;
+                        TestNormalBubble,TestNormalInsert,TestNormalSelection,
+                        TestTupleSelection,TestTupleBubble,TestTupleInsert,
+                        TestTripleInsert,TestTripleBubble,TestTripleSelection,
+                        TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort
+                        >  AnyTest;
+
 typedef std::vector<AnyTest>VectorOfTests;
-
-
-
-
-
-//template<typename T>
-//struct is_sortable{
-//static const bool value = false
-//};
-//
-//template<>
-//struct is_sortable<BubbleSort>{
-//static const bool value = true;
-//};
-//template<>
-//struct is_sortable<SortInsert>{
-//static const bool value = true;
-//};
-//template<>
-//struct is_sortable<SortSelection>{
-//static const bool value = true;
-//};
 
 
 class TestVisitor : public boost::static_visitor<>
@@ -110,13 +86,13 @@ class TestVisitor : public boost::static_visitor<>
 public:
     template <typename T> void operator()( T & _t)const
     {
-        std::cout<<_t.getType()<<" "<<_t.test(m_testCounts,m_toSort,m_to)<<std::endl;
+        std::cout<<_t.getType()<<" "<<_t.test(m_testCounts,m_sortSizeVector,m_to)<<std::endl;
     }
-    TestVisitor(int _testCounts,std::vector<int> _toSort,TEST_OPTIONS _so=NON):m_testCounts(_testCounts),m_to(_so),m_toSort(_toSort) {}
+    TestVisitor(int _testCounts,int _sortSizeVector,TEST_OPTIONS _so=NON):m_testCounts(_testCounts),m_to(_so),m_sortSizeVector(_sortSizeVector) {}
 private:
     int m_testCounts;
     TEST_OPTIONS m_to;
-    std::vector<int> m_toSort;
+    int m_sortSizeVector;
 };
 
 
