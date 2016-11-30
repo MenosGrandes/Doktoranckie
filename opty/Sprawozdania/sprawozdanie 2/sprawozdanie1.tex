@@ -1,0 +1,290 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University Assignment Title Page 
+% LaTeX Template
+% Version 1.0 (27/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (http://en.wikibooks.org/wiki/LaTeX/Title_Creation)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+% Instructions for using this template:
+% This title page is capable of being compiled as is. This is not useful for 
+% including it in another document. To do this, you have two options: 
+%
+% 1) Copy/paste everything between \begin{document} and \end{document} 
+% starting at \begin{titlepage} and paste this into another LaTeX file where you 
+% want your title page.
+% OR
+% 2) Remove everything outside the \begin{titlepage} and \end{titlepage} and 
+% move this file to the same directory as the LaTeX file you wish to add it to. 
+% Then add \input{./title_page_1.tex} to your LaTeX file where you want your
+% title page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{Title page with logo}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{polski}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[calc]{datetime2}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{placeins}
+\usepackage[figurename=Rys.]{caption}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{tikz} % To generate the plot from csv
+\usepackage{mathtools}
+\usepackage{titlesec}
+\usepackage{hyperref}
+ \usepackage{url}
+\usepackage{pgfplots}
+\pgfplotsset{
+    legend entry/.initial=,
+    every axis plot post/.code={%
+        \pgfkeysgetvalue{/pgfplots/legend entry}\tempValue
+        \ifx\tempValue\empty
+            \pgfkeysalso{/pgfplots/forget plot}%
+        \else
+            \expandafter\addlegendentry\expandafter{\tempValue}%
+        \fi
+    },
+}
+\captionsetup[subfigure]{skip=30pt} % global setting for subfigure
+\newcommand{\lstlistingnames}{Algorytmie}% Listing -> Algorithm
+\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
+\newcommand{\wyjT}{gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\}
+
+
+
+\pgfplotsset{compat=newest} % Allows to place the legend below plot
+\usepgfplotslibrary{units} % Allows to enter the units nicely
+
+\sisetup{
+  round-mode          = places,
+  round-precision     = 2,
+}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Spis treści}%
+}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Politechnika Łódzka}\\[1.5cm] % Name of your university/college
+\textsc{\Large Szybkie algorytmy}\\[0.5cm] % Major heading such as course name
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Badanie efektywności szybkich algorytmów sortowania  }\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+\begin{flushleft}\large
+
+\begin{center} \emph{Prowadzący zajęcia:} \end{center}
+\begin{center}
+prof. dr hab. Mykhaylo \textsc{Yatsymirskyy}
+\end{center} % Supervisor's Name
+\end{flushleft}
+
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+\Large \emph{Autor:}\\
+Filip \textsc{Rynkiewicz}\\[2cm] % Your name
+
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale=0.36]{logo.png}\\[1.3cm]
+ 
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[5cm] % Date, change the \today to a set date if you want to be precise
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+
+
+
+\lstset{language=C++,
+                 basicstyle=\ttfamily\footnotesize,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#},
+				breaklines=true,
+    			numbers=left,
+    			    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
+
+
+\pgfplotsset{
+          width=\linewidth, % Scale the plot to \linewidth
+          grid=major, 
+          grid style={dashed,gray!30},
+          xlabel=Ilość elementów w tablicy, % Set the labels
+          ylabel=Czas wykonania [ms] ,
+          x tick label style={rotate=0,anchor=east,align=right,yshift=-1.5ex},
+          scaled y ticks = false,  
+          scaled x ticks = false,   
+		  legend pos=north west,
+ 		  samples=61,
+    	  width=5in,
+    	  height=3in,
+          ymin=0,
+          try min ticks =6,
+          max space between ticks=15000pt,
+          x tick label style=
+          {
+          /pgf/number format/fixed,
+     	 /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
+      	  },
+      	  y tick label style=
+          {
+          /pgf/number format/fixed,
+     	 /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
+      	  },
+      	  xmin=0
+}
+
+ \tableofcontents 
+ \section{Repozytorium}
+ Cały kod oraz sprawozdanie jest dostępne na repozytorium:
+ \url{https://github.com/MenosGrandes/Doktoranckie}
+\section{Informacje o sprzęcie testowym}
+Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency} z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie z systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz. Testy zostały przeprowadzone na kompilatorze \textit{mingw32-c++.exe (GCC) 5.3.0} z flagą \textit{-std=gnu++11} zapewniającą wsparcie \textit{C++11}.
+\section{Quicksort}
+Sortowanie to polega na wybraniu jednego elementu $p$, który może być środkowym, skrajnie lewym, skrajnie prawym lub losowym elementem zbioru. W następnym kroku elementy nie większe niż $p$ zostają ustawione na lewo tej wartości, a nie mniejsze na prawo. W ten sposób powstaną nam dwie części tablicy (niekoniecznie równe), gdzie w pierwszej części znajdują się elementy nie większe od drugiej. Następnie każdą z tych pod tablic sortujemy osobno według tego samego schematu. 
+\subsection{Klasyfikacja}
+
+\subsection{Oceny zlozonosci}
+j
+\subsubsection{Optymistyczna}
+Jeżeli funkcja dzieląca zbiory o rozmiarze $n$ będzie dzieliła je zawsze na prawie równe części o rozmiarze $\frac{n}{2}$, można ustalić ze jest to najlepszy przypadek dla tego sortowania. Dzielenie takie następuje gdy wartość $p$ będzie mediana zbioru \cite{quicksort}
+\begin{equation*}
+T(n) = 2T(\frac{n}{2}) +\alpha n
+\end{equation*}
+Zakładając ze powyższa funkcja jest funkcja rekurencyjna następują zmiany dla kolejnej iteracji
+\begin{align*}
+ T(n) &= 2(2T(\frac{n}{4}) + \alpha \frac{n}{2}) + \alpha n \\
+      &= 2^{2}T( \frac{n}{4}) + 2 \alpha n \\
+      &= 2^{3}T( \frac{n}{8}) + 3 \alpha n
+ \end{align*}
+Rekurencyjne iteracje będą wykonywane do momentu $n = 2^{k}$, gdzie $\alpha$ jest  stalą, $k$ ilością iteracji, a $n$ rozmiarem zbioru początkowego. Czyli przyjmując ze $k = \log n$ :
+\begin{equation*}
+T(n) =nT(1) +\alpha n \log n
+\end{equation*}
+W notacji duze O bedzie to zatem:
+\begin{equation*}
+O(n \log n)
+\end{equation*}
+\subsubsection{Pesymistyczna}
+Najgorszy przypadek w tym algorytmie występuje w sytuacji kiedy algorytm będzie dzielił tablice na pod tablice w sytuacji kiedy jedna z nich będzie zawierała 1 element.
+\begin{equation*}
+T(n) =T(1) +T(n−1) + \alpha n
+\end{equation*}
+Dla każdej iteracji rekurencji wyrażenie to będzie przedstawione jako 
+\begin{align*}
+T(n) &=T(n−1) +T(1) + \alpha n \\
+	 &= T(n−2) +T(1) +\alpha(n−1)] +T(1) + \alpha n \\
+	 &= T(n−3) + 3T(1) +\alpha(n−2 +n−1 +n) \\
+	 &= T(n−i) +iT(1) +\alpha(n−i+ 1 + \cdot + n−2 +n−1 +n) \\
+	 &= T(n−i) +iT(1) +\alpha \sum_{j=0}^{n-2}(n-j) \\ 
+	 &= nT(1) +\alpha(n(n−2)−\frac{(n−2)(n−1)}{2})
+ \end{align*}
+Rekurencja wykonuje się dopóki $i=n-1$, ponieważ nie możne być sytuacji gdzie $n-i <0$.
+Zlozonosc obliczeniowa wychodzi wiec :
+\begin{equation*}
+O(n^2)
+\end{equation*}
+\subsubsection{Średnia}
+j
+
+\section{Mergesort}
+j
+\subsection{Oceny zlozonosci}
+j
+\subsubsection{Optymistyczna}
+j
+\subsubsection{Pesymistyczna}
+i
+\subsubsection{Średnia}
+h
+\section{Heapsort}
+j
+\subsection{Oceny zlozonosci}
+l
+\subsubsection{Optymistyczna}
+h
+\subsubsection{Pesymistyczna}
+o
+\subsubsection{Średnia}
+u
+\section{ShellSort}
+f
+\subsection{Oceny zlozonosci}
+ui
+\subsubsection{Optymistyczna}
+d'
+\subsubsection{Pesymistyczna}
+\subsubsection{Średnia}
+\section{Bitonic sort}
+\subsection{Oceny zlozonosci}
+\subsubsection{Optymistyczna}
+\subsubsection{Pesymistyczna}
+\subsubsection{Średnia}
+\section{Autorski algorytm}
+\subsection{Oceny zlozonosci}
+\subsubsection{Optymistyczna}
+\subsubsection{Pesymistyczna}
+\subsubsection{Średnia}
+
+\begin{thebibliography}{99}
+\bibitem{quicksort} \url{https://www.cise.ufl.edu/class/cot3100fa07/quicksort_analysis.pdf}
+\end{thebibliography}
+\end{document}
