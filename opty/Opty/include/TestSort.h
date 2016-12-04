@@ -18,7 +18,7 @@ public:
     {
         return BasicSort::GetType();
     }
-    double test(int testCounts,int sizeOfVector,TEST_OPTIONS so=NON)
+    double test(int testCounts,int sizeOfVector,TEST_OPTIONS so)
     {
 
         Timer t;
@@ -27,7 +27,7 @@ public:
 
         for(int i=0; i<testCounts; i++)
         {
-            std::vector<int> toSort = Random::getInstance().generateRandomVector(0,1000000,sizeOfVector);
+            std::vector<int> toSort = Random::getInstance().generateRandomVector(1,1000000,sizeOfVector);
 
             switch(so)
             {
@@ -36,14 +36,12 @@ public:
                 WorstCaseMethod _wcm;
                 _wcm.generate(toSort);
             }
-
             break;
             case BEST:
             {
                 BestCaseMethod _bcm;
                 _bcm.generate(toSort);
             }
-
             break;
             default:
                 break;

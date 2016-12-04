@@ -10,7 +10,9 @@ class WorstCaseHeapSort : public WorstCase
 public:
     WorstCaseHeapSort();
     ~WorstCaseHeapSort();
-    void generate(std::vector<int> &generator);
+    void generate(std::vector<int> &generator) const;
+
+
 };
 
 #endif // WORSTCASEHEAPSORT_H

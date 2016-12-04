@@ -9,7 +9,7 @@ class WorstCaseMergeSort : public WorstCase
 public:
     WorstCaseMergeSort();
     ~WorstCaseMergeSort();
-    generate(std::vector<int> &generator);
+    void generate(std::vector<int> &generator);
 private:
     int join(int arr[], int left[], int right[],int l, int m, int r);
     int split(int arr[], int left[], int right[],int l, int m, int r);

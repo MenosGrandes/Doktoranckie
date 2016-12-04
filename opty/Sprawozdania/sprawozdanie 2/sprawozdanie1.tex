@@ -86,7 +86,7 @@
     {Spis treści}%
 }
 
-
+\newcommand{\norm}[1]{\lvert #1 \rvert}
 \begin{document}
 
 \begin{titlepage}
@@ -203,7 +203,6 @@ Sortowanie to polega na wybraniu jednego elementu $p$, który może być środko
 \subsection{Klasyfikacja}
 
 \subsection{Oceny zlozonosci}
-j
 \subsubsection{Optymistyczna}
 Jeżeli funkcja dzieląca zbiory o rozmiarze $n$ będzie dzieliła je zawsze na prawie równe części o rozmiarze $\frac{n}{2}$, można ustalić ze jest to najlepszy przypadek dla tego sortowania. Dzielenie takie następuje gdy wartość $p$ będzie mediana zbioru \cite{quicksort}
 \begin{equation*}
@@ -243,8 +242,56 @@ Zlozonosc obliczeniowa wychodzi wiec :
 O(n^2)
 \end{equation*}
 \subsubsection{Średnia}
-j
+Zakładając że piwot $p$ będzie wybierany tak aby partycjonowanie zbioru $V $ dzieliło go na zbiory $V_1$ i $V_2$ to zawsze prawdą będzie że długość tych podzbiorów będzie zawierała się w zbiorze od $0$ do $ \norm{V}-1$ \cite{quicksortAVG}.
 
+Aby posortować \textit{n} elementów potrzeba \textit{T} czasu :
+\begin{equation*}
+T(n)=T(i)+T(n-i)+c \cdot n
+\end{equation*}
+Ponieważ $i$ jest wartośćią z przedziału $0$ do $n-1$, średnia wartość $T$ to :
+\begin{equation*}
+T(i)=\frac{1}{n}\sum_{j=0}^{n-1}T(j)
+\end{equation*}
+Skoro $n-i$ może mieć taką samą wartosć jak $i$:
+\begin{equation*}
+T(n-1) = T(i)
+\end{equation*}
+Zatem :
+\begin{equation*}
+T(n)=\frac{2}{n} \Bigg( \sum_{j=0}^{n-1}T(j)\Bigg) + c \cdot n
+\end{equation*}
+Usuwając $n$ z ułamka  :
+\begin{equation*}
+n \cdot T(n)=2 \cdot \Bigg( \sum_{j=0}^{n-1}T(j)\Bigg) + c \cdot n^{2}
+\end{equation*}
+Ponieważ równanie musi być prawdziwe dla każdej liczby trzeba zamienić $n$ na przykład na $n-1$ :
+\begin{equation*}
+(n-1) \cdot T(n-1)=2 \cdot \Bigg( \sum_{j=0}^{n-2}T(j)\Bigg) + c \cdot (n-1)^{2}
+\end{equation*}
+Wiec prawdą będzie :
+\begin{align*}
+n \cdot T(n)&=2 \cdot \Bigg( \sum_{j=0}^{n-1}T(j)\Bigg) + c \cdot n^{2}\\
+(n-1) \cdot T(n-1)&=2 \cdot \Bigg( \sum_{j=0}^{n-2}T(j)\Bigg) + c \cdot (n-1)^{2}
+ \end{align*}
+ Odejmując drugie równanie od pierwszego, usuwając $c$ i grupując równanie otrzymamy :
+ \begin{equation*}
+ nT(n)=(n+1)T(n-1)+2cn
+ \end{equation*}
+Rozwiązując równanie rekurencyjne i grupując je otrzymamy :
+\begin{equation*}
+ \frac{T(n)}{(n+1)} = \frac{T(1)}{2} + 2 c \sum_{j=3}^{n+1} \frac{1}{j}
+\end{equation*}
+Ponieważ $n$ staję się bardzo duże, $\sum_{j=3}^{n+1} \frac{1}{j}$ dochodzi do $\ln(n) +\gamma $, gdzie $\gamma$ jest stałą Eulera.\\
+Zatem :
+\begin{equation*}
+ \frac{T(n)}{n+1} = \frac{T(1)}{2} + 2 c \cdot \ln(n) + 2 c \gamma = \ln(n) + c_2 = O \ln(n) 
+\end{equation*}
+Złozoność wynosi zatem:
+\begin{equation*}
+ T(n)=O (n \cdot \ln(n)) 
+ \end{equation*}
+\subsection{Historia}
+Algorytm Quicksort działa na zasadzie \textit{dziel i rządź}.
 \section{Mergesort}
 j
 \subsection{Oceny zlozonosci}
@@ -286,5 +333,6 @@ d'
 
 \begin{thebibliography}{99}
 \bibitem{quicksort} \url{https://www.cise.ufl.edu/class/cot3100fa07/quicksort_analysis.pdf}
+\bibitem{quicksortAVG}\url{https://secweb.cs.odu.edu/~zeil/cs361/web/website/Lectures/quick/pages/ar01s05.html}
 \end{thebibliography}
 \end{document}

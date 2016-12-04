@@ -8,7 +8,7 @@ class WorstCase
 public:
     WorstCase();
     virtual ~WorstCase();
-    void generate(std::vector<int> &toSort);
+    void generate(std::vector<int> &toSort) const;
 };
 
 #endif // WORSTCASE_H

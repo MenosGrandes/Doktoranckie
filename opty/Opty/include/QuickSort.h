@@ -11,8 +11,8 @@ public:
     QuickSort() {}
     void sort(std::vector<int> &toSort)
     {
-        quicksort(&toSort[0],0,toSort.size()-1,0);
-//        std::sort(toSort)
+        quicksort(&toSort[0],0,toSort.size()-1);
+        std::cout<<compare<<" !compare"<<std::endl;
     };
 private :
     int partition(int *arr, const int left, const int right)
@@ -23,18 +23,21 @@ private :
         std::swap(arr[mid],arr[left]);
         int i = left + 1;
         int j = right;
+        compare++;
         while (i <= j)
         {
             while(i <= j && arr[i] <= pivot)
             {
+                compare+=2;
                 i++;
             }
 
             while(i <= j && arr[j] > pivot)
             {
+                compare+=2;
                 j--;
             }
-
+            compare++;
             if (i < j)
             {
                 std::swap(arr[i], arr[j]);
@@ -44,17 +47,19 @@ private :
         return i - 1;
     }
 
-    void quicksort(int *arr, const int left, const int right, const int sz)
+    void quicksort(int *arr, const int left, const int right)
     {
         if (left >= right)
         {
             return;
         }
         int part = partition(arr, left, right);
-        quicksort(arr, left, part - 1, sz);
-        quicksort(arr, part + 1, right, sz);
+        quicksort(arr, left, part - 1);
+        quicksort(arr, part + 1, right);
+//        std::cout<<left<<" "<<right<<" "<<part<<" "<<std::endl;
     }
 
+    int compare=0;
 };
 
 #endif // QUICKSORT_H

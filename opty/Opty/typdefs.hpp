@@ -39,10 +39,10 @@ DEFINE_ENUM_WITH_STRING_CONVERSIONS(SortType,
                                     (QUICK)(MERGE)(SHELL)(HEAP)(BITONIC)
                                    )
 
-enum TEST_OPTIONS
-{
-    NON,BEST,WORST,LENGTH
-};
+DEFINE_ENUM_WITH_STRING_CONVERSIONS (TEST_OPTIONS,
+
+    (RANDOM)(BEST)(WORST)(LENGTH)
+)
 
 
 typedef std::vector<int>::iterator VintIter;

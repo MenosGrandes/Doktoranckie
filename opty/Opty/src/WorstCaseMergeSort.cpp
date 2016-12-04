@@ -12,7 +12,7 @@ Should be:
 */
 WorstCaseMergeSort::WorstCaseMergeSort() {}
 WorstCaseMergeSort::~WorstCaseMergeSort() {}
-WorstCaseMergeSort::generate(std::vector<int> &generator)
+void WorstCaseMergeSort::generate(std::vector<int> &generator)
 {
     generateWorstCase(&generator[0], 0, generator.size() - 1);
 
