@@ -11,7 +11,7 @@ public:
     void sort(std::vector<int>& toSort)
     {
         heap_sort(toSort);
-        std::cout<<compare<<" compare!"<<std::endl;
+//        LOG(INFO)<<compare<<" COMPARE";
     }
 
 private:
@@ -19,13 +19,13 @@ private:
     void shift_down(std::vector<int>& heap,int i, int max)
     {
         int i_big, c1, c2;
-        compare++;
+//        compare++;
         while(i < max)
         {
             i_big = i;
             c1 = (2*i) + 1;
             c2 = c1 + 1;
-            compare+=4;
+//            compare+=4;
             if( c1<max && heap[c1]>heap[i_big] )
             {
                 i_big = c1;
@@ -48,7 +48,7 @@ private:
         int i = (arr.size()/2) - 1;
         while(i >= 0)
         {
-            compare++;
+//            compare++;
             shift_down(arr, i, arr.size());
             --i;
         }
@@ -60,7 +60,7 @@ private:
         int end = arr.size() - 1;
         while (end > 0)
         {
-            compare++;
+//            compare++;
             std::swap(arr[0], arr[end]);
             shift_down(arr, 0, end);
             --end;

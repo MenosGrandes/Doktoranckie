@@ -2,6 +2,7 @@
 #define SORT_H
 
 #include "../typdefs.hpp"
+#include "../conf/easylogging++.h"
 
 #include "Random.h"
 template <class SortMethod>
@@ -64,7 +65,7 @@ public:
         {
             if(m_compareData[i]!=m_data[i])
             {
-                std::cout<<m_compareData[i]<<"!="<<m_data[i]<<std::endl;
+                LOG(DEBUG)<<GetType()<<" "<<m_compareData[i]<<"!="<<m_data[i];
                 return false;
             }
         }

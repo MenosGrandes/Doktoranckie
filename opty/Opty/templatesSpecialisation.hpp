@@ -87,7 +87,7 @@ class TestVisitor : public boost::static_visitor<>
 public:
     template <typename T> void operator()( T & _t)const
     {
-        std::cout<<_t.getType()<<" "<<ToString(m_to)<<" "<<_t.test(m_testCounts,m_sortSizeVector,m_to)<<std::endl;
+        LOG(INFO)<<_t.getType()<<" "<<ToString(m_to)<<" "<<m_sortSizeVector<<" "<<_t.test(m_testCounts,m_sortSizeVector,m_to);
     }
     TestVisitor(int _testCounts,int _sortSizeVector,TEST_OPTIONS _so):m_testCounts(_testCounts),m_to(_so),m_sortSizeVector(_sortSizeVector) {}
 private:

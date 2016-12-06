@@ -3,6 +3,8 @@
 #include "WorstCase.h"
 /*
 http://www.geeksforgeeks.org/find-a-permutation-that-causes-worst-case-of-merge-sort/
+albo
+http://stackoverflow.com/questions/24594112/when-will-the-worst-case-of-merge-sort-occur
 */
 class WorstCaseMergeSort : public WorstCase
 {

@@ -67,6 +67,8 @@
 		<Unit filename="Tests.hpp">
 			<Option virtualFolder="Helpers/" />
 		</Unit>
+		<Unit filename="conf/easylogging++.h" />
+		<Unit filename="conf/logconf.conf" />
 		<Unit filename="include/BestCase.h">
 			<Option virtualFolder="Sort/Cases/Best/" />
 		</Unit>

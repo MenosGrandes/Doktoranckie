@@ -3,33 +3,79 @@
 #include "../templatesSpecialisation.hpp"
 
 #include "../Tests.hpp"
+
+
 int main(int argc, char* argv[] )
 {
 
-    srand((time(0)));
-//std::vector<int> v{1,2,3,4,5,6,7,8,9,10};
-//WorstCaseHeapSort wchs;
-//wchs.generate(v);
-//for(int i: v)
-//{
-//    std::cout<< i<<" ";
-//}
-//std::vector<int> v2{1,2,3,4,5,6,7,8,9,10};
-//BestCaseHeapSort wchs2;
-//wchs2.generate(v2);
-//for(int i: v2)
-//{
-//    std::cout<< i<<" ";
-//}
-Tester tester;
-//tester.addTest(TestVisitor(1,100000,WORST),TestHeapSort());
-//tester.addTest(TestVisitor(1,100000,BEST),TestHeapSort());
-tester.addTest(TestVisitor(1,230,WORST),TestQuickSort());
-//tester.addTest(TestVisitor(1,100000,WORST),TestQuickSort());
-//tester.addTest(TestVisitor(10,10000,NON),TestNormalSelection());
-//tester.addTest(TestVisitor(10,10000,NON),TestTupleSelection());
-//tester.addTest(TestVisitor(1000,1000,NON),TestTripleSelection());
 
-tester.performTests();
+    el::Logger* businessLogger = el::Loggers::getLogger("business");
+    el::Configurations conf("conf/logconf.conf");
+    el::Loggers::reconfigureLogger("default", conf);
+    // Actually reconfigure all loggers instead
+    el::Loggers::reconfigureAllLoggers(conf);
+
+
+    srand((time(0)));
+
+    Tester tester;
+
+
+
+
+    for(int option=0; option<LENGTH; option++)
+    {
+        for(int i=5; i<17; i++)
+        {
+            const int size = pow(2,i);
+
+            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestBitonicSort());
+
+        }
+    }
+    for(int option=0; option<LENGTH; option++)
+    {
+        for(int i=5; i<17; i++)
+        {
+            const int size = pow(2,i);
+
+            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestHeapSort());
+
+        }
+    }
+    for(int option=0; option<LENGTH; option++)
+    {
+        for(int i=5; i<17; i++)
+        {
+            const int size = pow(2,i);
+
+            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestQuickSort());
+
+        }
+    }
+    for(int option=0; option<LENGTH; option++)
+    {
+        for(int i=5; i<17; i++)
+        {
+            const int size = pow(2,i);
+
+            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestShellSort());
+
+        }
+    }
+    for(int option=0; option<LENGTH; option++)
+    {
+        for(int i=5; i<17; i++)
+        {
+            const int size = pow(2,i);
+
+            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestMergeSort());
+
+        }
+    }
+
+
+    tester.performTests();
     return 0;
 }
+

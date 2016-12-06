@@ -12,7 +12,7 @@ public:
     void sort(std::vector<int> &toSort)
     {
         quicksort(&toSort[0],0,toSort.size()-1);
-        std::cout<<compare<<" !compare"<<std::endl;
+//        std::cout<<compare<<" !compare"<<std::endl;
     };
 private :
     int partition(int *arr, const int left, const int right)
@@ -23,21 +23,21 @@ private :
         std::swap(arr[mid],arr[left]);
         int i = left + 1;
         int j = right;
-        compare++;
+//        compare++;
         while (i <= j)
         {
             while(i <= j && arr[i] <= pivot)
             {
-                compare+=2;
+//                compare+=2;
                 i++;
             }
 
             while(i <= j && arr[j] > pivot)
             {
-                compare+=2;
+//                compare+=2;
                 j--;
             }
-            compare++;
+//            compare++;
             if (i < j)
             {
                 std::swap(arr[i], arr[j]);
@@ -59,7 +59,7 @@ private :
 //        std::cout<<left<<" "<<right<<" "<<part<<" "<<std::endl;
     }
 
-    int compare=0;
+//    int compare=0;
 };
 
 #endif // QUICKSORT_H

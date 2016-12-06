@@ -8,7 +8,9 @@
 #include "../typdefs.hpp"
 #include <cassert>
 
+#include "../conf/easylogging++.h"
 
+INITIALIZE_EASYLOGGINGPP
 
 template<class BasicSort,class WorstCaseMethod=WorstCase,class BestCaseMethod=BestCase>
 class TestSort
@@ -18,7 +20,7 @@ public:
     {
         return BasicSort::GetType();
     }
-    double test(int testCounts,int sizeOfVector,TEST_OPTIONS so)
+    double test(const int testCounts,const int sizeOfVector,const TEST_OPTIONS so)
     {
 
         Timer t;
@@ -50,7 +52,7 @@ public:
 
             t_normal+=t.measureWindows<BasicSort>(m_basicSort);
 
-            assert(m_basicSort->compare());
+            assert( m_basicSort->compare());
 
             delete m_basicSort;
         }

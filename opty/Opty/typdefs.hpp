@@ -10,6 +10,10 @@
 #include <algorithm>
 #include <functional>
 
+
+
+
+
 #define X_DEFINE_ENUM_WITH_STRING_CONVERSIONS_TOSTRING_CASE(r, data, elem)    \
     case elem : return BOOST_PP_STRINGIZE(elem);
 
@@ -49,6 +53,7 @@ typedef std::vector<int>::iterator VintIter;
 typedef std::pair<VintIter,VintIter> VintIterPair;
 
 
+const int MAX_VECTOR=8000;
 
 
 //
