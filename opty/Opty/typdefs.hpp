@@ -45,8 +45,8 @@ DEFINE_ENUM_WITH_STRING_CONVERSIONS(SortType,
 
 DEFINE_ENUM_WITH_STRING_CONVERSIONS (TEST_OPTIONS,
 
-    (RANDOM)(BEST)(WORST)(LENGTH)
-)
+                                     (RANDOM)(BEST)(WORST)(LENGTH)
+                                    )
 
 
 typedef std::vector<int>::iterator VintIter;
@@ -54,7 +54,27 @@ typedef std::pair<VintIter,VintIter> VintIterPair;
 
 
 const int MAX_VECTOR=8000;
+class TimeComprasions
+{
+public:
 
+
+    TimeComprasions& operator+=(const TimeComprasions& rhs)
+    {
+        this->comprasions=this->comprasions+rhs.comprasions;
+        this->time=this->time+rhs.time;
+        return *this;
+    }
+    TimeComprasions& operator/=(int value)
+    {
+        this->comprasions=this->comprasions/value;
+        this->time=this->time/value;
+        return *this;
+    }
+    TimeComprasions(double t,int c):time(t),comprasions(c) {};
+    double time;
+    int comprasions;
+};
 
 //
 //

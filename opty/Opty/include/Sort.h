@@ -54,9 +54,9 @@ public:
         }
         std::cout<<std::endl;
     }
-    void _sort()
+    int _sort()
     {
-        m_sortMethod->sort(this->m_data);
+        return m_sortMethod->sort(this->m_data);
     }
     bool compare()
     {

@@ -1,0 +1,101 @@
+\ProvidesPackage{documentation}
+\usepackage[english]{babel}
+\usepackage{polski}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[calc]{datetime2}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{placeins}
+\usepackage[figurename=Rys.]{caption}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{tikz} % To generate the plot from csv
+\usepackage{mathtools}
+\usepackage{titlesec}
+\usepackage{hyperref}
+ \usepackage{url}
+ \usepackage{verbatim}
+\usepackage{pgfplots}
+\pgfplotsset{
+    legend entry/.initial=,
+    every axis plot post/.code={%
+        \pgfkeysgetvalue{/pgfplots/legend entry}\tempValue
+        \ifx\tempValue\empty
+            \pgfkeysalso{/pgfplots/forget plot}%
+        \else
+            \expandafter\addlegendentry\expandafter{\tempValue}%
+        \fi
+    },
+}
+\captionsetup[subfigure]{skip=30pt} % global setting for subfigure
+\newcommand{\lstlistingnames}{Algorytmie}% Listing -> Algorithm
+\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
+\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
+\newcommand{\wyjT}{gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\}
+
+
+
+\pgfplotsset{compat=newest} % Allows to place the legend below plot
+\usepgfplotslibrary{units} % Allows to enter the units nicely
+
+\sisetup{
+  round-mode          = places,
+  round-precision     = 2,
+}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Spis treści}%
+}
+
+\newcommand{\norm}[1]{\lvert #1 \rvert}
+
+
+
+
+\lstset{language=C++,
+                 basicstyle=\ttfamily\footnotesize,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#},
+				breaklines=true,
+    			numbers=left,
+    			    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
+
+
+\pgfplotsset{
+          width=\linewidth, % Scale the plot to \linewidth
+          grid=major, 
+          grid style={dashed,gray!30},
+          xlabel=Ilość elementów w tablicy, % Set the labels
+          ylabel=Czas wykonania [ms] ,
+          x tick label style={rotate=0,anchor=east,align=right,yshift=-1.5ex},
+          scaled y ticks = false,  
+          scaled x ticks = false,   
+		  legend pos=north west,
+ 		  samples=61,
+    	  width=5in,
+    	  height=3in,
+          ymin=0,
+          try min ticks =6,
+          max space between ticks=15000pt,
+          x tick label style=
+          {
+          /pgf/number format/fixed,
+     	 /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
+      	  },
+      	  y tick label style=
+          {
+          /pgf/number format/fixed,
+     	 /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
+      	  },
+      	  xmin=0
+}

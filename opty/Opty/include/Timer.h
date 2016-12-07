@@ -10,12 +10,12 @@ public:
     Timer() {};
     ~Timer() {};
     template <class SortMethod>
-    double measureWindows( SortMethod *s)
+    TimeComprasions measureWindows( SortMethod *s)
     {
         StartCounter();
-        s->_sort();
+        int comprasions= s->_sort();
         double ret=GetCounter();
-        return ret;
+        return TimeComprasions(ret,comprasions);
     }
 
     double PCFreq = 0.0;

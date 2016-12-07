@@ -12,7 +12,7 @@ public:
 
 
     }
-    void sort( std::vector<int>&toSort)
+    int sort( std::vector<int>&toSort)
     {
         m_cnt = toSort.size();
         for( int x = 0; x < 9; x++ )
@@ -23,6 +23,8 @@ public:
             }
 
         sortIt( &toSort[0] );
+
+        return 0;
     }
 protected:
 

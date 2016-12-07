@@ -9,12 +9,15 @@ public:
 
     SortBubbleTriple() {};
     ~SortBubbleTriple() {};
-    void sort(std::vector<int>&toSort)
+    int sort(std::vector<int>&toSort)
     {
+        int comprasions=0;
         for(unsigned int i= 0; i<toSort.size()-2; i++)//(1)
         {
+            comprasions++;
             if(toSort[i] < toSort[i+1])
             {
+                comprasions++;
                 if(toSort[i+2]<toSort[i])
                 {
                     std::swap(toSort[i],toSort[i+2]);
@@ -22,6 +25,7 @@ public:
             }
             else
             {
+                comprasions++;
                 if(toSort[i+1]<toSort[i+2])
                 {
                     std::swap(toSort[i],toSort[i+1]);
@@ -31,31 +35,38 @@ public:
                     std::swap(toSort[i],toSort[i+2]);
                 }
             }
+            comprasions++;
             if(toSort[i+2]<toSort[i+1])
             {
                 std::swap(toSort[i+1],toSort[i+2]);
             }
 
             int minElem=i,minElem2=i+1,maxElem=i+2;
-
+            comprasions+=2;
             while(minElem2>1 && toSort[minElem2]<toSort[minElem-1])
             {
+                comprasions+=2;
                 std::swap(toSort[minElem],toSort[minElem-1]);
                 std::swap(toSort[minElem2],toSort[minElem2-1]);
                 minElem--;
                 minElem2--;
             }
+            comprasions+=2;
             while(minElem>0 && toSort[minElem]<toSort[minElem-1])
             {
+                comprasions+=2;
                 std::swap(toSort[minElem],toSort[minElem-1]);
                 minElem--;
             }
+            comprasions+=2;
             while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])
             {
+                comprasions+=2;
                 std::swap(toSort[maxElem],toSort[maxElem+1]);
                 maxElem++;
             }
         }
+        return comprasions;
     }
 };
 

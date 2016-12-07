@@ -51,15 +51,15 @@
 1478296205 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1481110567 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1481119487 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	<iostream>
 	"../templatesSpecialisation.hpp"
 	"../Tests.hpp"
 
-1480335382 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
+1481120708 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
 	"SortBehaviour.h"
 
-1481035404 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sort.h
+1481119707 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sort.h
 	"../typdefs.hpp"
 	"../conf/easylogging++.h"
 	"Random.h"
@@ -87,7 +87,7 @@
 
 1478523083 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\timer.cpp
 
-1479195274 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\timer.h
+1481121038 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\timer.h
 	"Sort.h"
 	<windows.h>
 
@@ -177,7 +177,7 @@
 
 1478524602 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\bubblesort.cpp
 
-1480507335 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bubblesort.h
+1481121082 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bubblesort.h
 	"SortBehaviour.h"
 
 1480437896 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselection.h
@@ -195,11 +195,11 @@
 	<iostream>
 	"SortBehaviour.h"
 
-1480335382 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselection.h
+1481119845 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselection.h
 	<algorithm>
 	"SortBehaviour.h"
 
-1480318314 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
+1481120770 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselectiontuple.h
 	<algorithm>
 	<iostream>
 	"SortBehaviour.h"
@@ -211,7 +211,7 @@
 1478763827 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\testsort.cpp
 	"TestSort.h"
 
-1481035396 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\testsort.h
+1481121323 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\testsort.h
 	"Random.h"
 	"Timer.h"
 	"WorstCase.h"
@@ -222,10 +222,10 @@
 
 1478524739 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinsert.cpp
 
-1480335382 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinsert.h
+1481119793 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinsert.h
 	"SortBehaviour.h"
 
-1480335382 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
+1481120625 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletuple.h
 	"SortBehaviour.h"
 
 1478525265 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortbubbletuple.cpp
@@ -516,7 +516,7 @@
 
 1478759372 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinserttriple.cpp
 
-1481035391 c:\users\efilryn\desktop\doktoranckie\opty\opty\typdefs.hpp
+1481121906 c:\users\efilryn\desktop\doktoranckie\opty\opty\typdefs.hpp
 	<vector>
 	<iostream>
 	<string>
@@ -527,15 +527,15 @@
 
 1478762546 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\todo.c
 
-1480507358 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
+1481120570 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
 	"SortBehaviour.h"
 	"../typdefs.hpp"
 	<assert.h>
 
-1480507335 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
+1481121271 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttriple.h
 	"SortBehaviour.h"
 
-1480507335 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
+1481119973 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbubbletriple.h
 	"SortBehaviour.h"
 
 1480532619 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortselectiontriple.h
@@ -552,7 +552,7 @@
 1478798979 c:\users\menos\desktop\doktoranckie\opty\opty\src\sort.cpp
 	"Sort.h"
 
-1481110291 c:\users\efilryn\desktop\doktoranckie\opty\opty\tests.hpp
+1481111114 c:\users\efilryn\desktop\doktoranckie\opty\opty\tests.hpp
 	"typdefs.hpp"
 
 1480538669 c:\users\menos\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
@@ -3760,7 +3760,7 @@
 1474464815 c:\boost\boost_1_62_0\boost\type_traits\add_pointer.hpp
 	<boost/type_traits/remove_reference.hpp>
 
-1481036050 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
+1481123255 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
 	"TestSort.h"
 	"BubbleSort.h"
 	"SortInsert.h"
@@ -3789,7 +3789,7 @@
 	<tuple>
 	<typeinfo>
 
-1481030930 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\quicksort.h
+1481120818 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\quicksort.h
 	"SortBehaviour.h"
 
 1480539156 c:\users\menos\desktop\doktoranckie\opty\opty\include\quicksort.h
@@ -3801,10 +3801,10 @@
 1480536313 c:\users\menos\desktop\doktoranckie\opty\opty\include\heapsort.h
 	"SortBehaviour.h"
 
-1480335382 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\mergesort.h
+1481120808 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\mergesort.h
 	"SortBehaviour.h"
 
-1481030914 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\heapsort.h
+1481120800 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\heapsort.h
 	"SortBehaviour.h"
 
 1474468408 c:\boost\boost_1_62_0\boost\any.hpp
@@ -3840,10 +3840,10 @@
 	<boost/detail/workaround.hpp>
 	<cstddef>
 
-1481110841 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\shellsort.h
+1481120833 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\shellsort.h
 	"SortBehaviour.h"
 
-1481110227 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bitonicsort.h
+1481120789 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bitonicsort.h
 	<bits/stdc++.h>
 	"SortBehaviour.h"
 
@@ -4701,13 +4701,13 @@
 1480532619 c:\users\menos\desktop\doktoranckie\opty\opty\include\sortbehaviour.h
 	"../typdefs.hpp"
 
-1480507335 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbehaviour.h
+1481121864 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortbehaviour.h
 	"../typdefs.hpp"
 
-1480939841 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\worstcasemergesort.h
+1481119113 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\worstcasemergesort.h
 	"WorstCase.h"
 
-1480925194 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\worstcasemergesort.cpp
+1481119209 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\worstcasemergesort.cpp
 	"WorstCaseMergeSort.h"
 
 1480925194 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\worstcaseheapsort.cpp

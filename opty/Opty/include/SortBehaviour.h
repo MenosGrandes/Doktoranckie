@@ -8,7 +8,7 @@ class SortBehaviour
 public :
     SortBehaviour() {};
     virtual ~SortBehaviour() {};
-    virtual void sort(std::vector<int>&toSort)=0;
+    int sort(std::vector<int>&toSort){};
     static SortType m_sortType;
 };
 

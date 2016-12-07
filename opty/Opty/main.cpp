@@ -14,6 +14,7 @@ int main(int argc, char* argv[] )
     el::Loggers::reconfigureLogger("default", conf);
     el::Loggers::reconfigureAllLoggers(conf);
 
+    std::vector<int> v{0,1,2,3,4,5,6,7};
 
 
     Tester tester;
@@ -22,12 +23,12 @@ int main(int argc, char* argv[] )
 
     std::vector<int> size1{100,1000,5000,20000,60000,110000};
     std::vector<int> appendSize{203,511,2031,8031,11020};
-    tester.createTests<TestBitonicSort>(1,size1,appendSize);
-    tester.createTests<TestHeapSort>(1,size1,appendSize);
-    tester.createTests<TestMergeSort>(1,size1,appendSize);
-    tester.createTests<TestShellSort>(1,size1,appendSize);
-    tester.createTests<TestQuickSort>(1,size1,appendSize);
-
+    tester.createTests<TestBitonicSort>(5,size1,appendSize);
+    tester.createTests<TestHeapSort>(5,size1,appendSize);
+    tester.createTests<TestMergeSort>(5,size1,appendSize);
+    tester.createTests<TestShellSort>(5,size1,appendSize);
+    tester.createTests<TestQuickSort>(5,size1,appendSize);
+//
     tester.performTests();
     return 0;
 }

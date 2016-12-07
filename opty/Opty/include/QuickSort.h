@@ -9,9 +9,10 @@ public:
     static const SortType m_sortType=QUICK;
 
     QuickSort() {}
-    void sort(std::vector<int> &toSort)
+    int sort(std::vector<int> &toSort)
     {
         quicksort(&toSort[0],0,toSort.size()-1);
+        return 0;
 //        std::cout<<compare<<" !compare"<<std::endl;
     };
 private :

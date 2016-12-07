@@ -22,12 +22,12 @@ public:
     2
     1
     */
-    void sort(std::vector<int> &toSort)
+    int sort(std::vector<int> &toSort)
     {
-
+        int comprasions=0;
 
         int vectorSize=0;
-
+        comprasions+=2;
         if(toSort.size()%2!=0)
         {
             vectorSize++;
@@ -41,16 +41,19 @@ public:
             VintIter it=_begin,_min=it,_max=it;
             for (it = _begin; it <= _end; ++it)
             {
+                comprasions++;
                 if ((*it) < (*_min))
                 {
                     _min = it;
                 }
                 else if ((*it) > (*_max))
                 {
+                    comprasions++;
                     _max = it;
                 }
             }
             std::iter_swap(_min,_begin);
+            comprasions+=2;
             if(_begin==_max)
             {
                 _max=_min;
@@ -59,6 +62,7 @@ public:
             ++_begin;
             --_end;
         }
+        return comprasions;
     }
 
 

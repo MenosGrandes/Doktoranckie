@@ -8,9 +8,10 @@ public:
     static const SortType m_sortType=HEAP;
 
     HeapSort() {}
-    void sort(std::vector<int>& toSort)
+    int sort(std::vector<int>& toSort)
     {
         heap_sort(toSort);
+        return 0;
 //        LOG(INFO)<<compare<<" COMPARE";
     }
 

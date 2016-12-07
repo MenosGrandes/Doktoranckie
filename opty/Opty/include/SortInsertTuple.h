@@ -17,55 +17,54 @@ public:
     SortInsertTuple() {};
     ~SortInsertTuple() {};
 
-    void sort(std::vector<int> &toSort)
+    int sort(std::vector<int> &toSort)
     {
 
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
-
-//        int counterAll=0, counter1=0, counter2 =0,counter3=0, counter4=0;
+        int comprasions=0;
         for(int i=0; i<sizeOfArray; i+=2)
         {
-//            counterAll++;
+            comprasions++;
             if(toSort[i] > toSort[i+1])
             {
                 std::swap(toSort[i],toSort[i+1]);
-//                counter1++;
             }
             const int pom1 = toSort[i];
             const int pom2 = toSort[i+1];
 
             int j = i-1;
+            comprasions+=2;
             while(j>=0 && toSort[j]>pom2)
             {
+                comprasions+=2;
                 toSort[j+2] =  toSort[j];
                 j--;
-//                counter2++;
             }
             toSort[j+2] = pom2;
             toSort[j+1] = pom1;
-
+            comprasions+=2;
             while(j>=0 && toSort[j]>pom1)
             {
+                comprasions+=2;
                 toSort[j+1] = toSort[j];
                 --j;
-//                counter3++;
             }
             toSort[j+1] = pom1;
         }
+        comprasions++;
         if(toSort.size()%2==1)
         {
             const int pom = toSort[toSort.size()-1];
             int k = toSort.size()-2;
             while(k>=0 && toSort[k]>pom)
             {
+                comprasions+=2;
                 toSort[k+1] = toSort[k];
                 --k;
-//                counter4++;
             }
             toSort[k+1] = pom;
         }
-
-//        std::cout<< counterAll<<" "<<counter1<<" "<<counter2<<" "<<counter3<<" "<<counter4<<std::endl;
+        return comprasions;
 
     }
 };

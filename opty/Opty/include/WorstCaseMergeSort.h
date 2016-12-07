@@ -13,9 +13,9 @@ public:
     ~WorstCaseMergeSort();
     void generate(std::vector<int> &generator);
 private:
-    int join(int arr[], int left[], int right[],int l, int m, int r);
-    int split(int arr[], int left[], int right[],int l, int m, int r);
-    int generateWorstCase(int arr[], int l, int r);
+void seperate(std::vector<int> &arr);
+void merge(std::vector<int> &arr , std::vector<int> & left, std::vector<int> & right);
+
 };
 
 #endif // WORSTCASEMERGESORT_H

@@ -675,12 +675,8 @@ void sort(std::vector<int>&toSort)
       \begin{axis}
       
         \addplot[green,mark=x,legend entry=$Normalny$] 
-        table[x=column 1,y=column 2,col sep=comma] {sortBubbleTupleTest.csv}; 
+        table[x=column 8,y=column 10,col sep=comma] {sortBubbleTupleTest.csv}; 
     
-        \addplot[red,mark=x,legend entry=$Dla\;par$] 
-        table[x=column 1,y=column 3,col sep=comma] {sortBubbleTupleTest.csv};
-        \addplot[blue,mark=x,legend entry=$Dla\;trojek$] 
-        table[x=column 1,y=column 4,col sep=comma] {sortBubbleTupleTest.csv};
       \end{axis}
     \end{tikzpicture}
     \caption{Wykres dla tablicy ze elementami losowymi}\label{fig:bubbleRand}

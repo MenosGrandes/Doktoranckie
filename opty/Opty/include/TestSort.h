@@ -20,13 +20,13 @@ public:
     {
         return BasicSort::GetType();
     }
-    double test(const int testCounts,const int sizeOfVector,const TEST_OPTIONS so)
+    TimeComprasions test(const int testCounts,const int sizeOfVector,const TEST_OPTIONS so)
     {
 
         Timer t;
-
+        TimeComprasions tc(0,0);
         double t_normal=0;
-
+        int comprasions = 0;
         for(int i=0; i<testCounts; i++)
         {
             std::vector<int> toSort = Random::getInstance().generateRandomVector(1,1000000,sizeOfVector);
@@ -50,14 +50,14 @@ public:
             }
             BasicSort *m_basicSort   = new BasicSort(toSort);
 
-            t_normal+=t.measureWindows<BasicSort>(m_basicSort);
+            tc+=t.measureWindows<BasicSort>(m_basicSort);
 
             assert( m_basicSort->compare());
 
             delete m_basicSort;
         }
-
-        return (t_normal/testCounts);
+        tc/=testCounts;
+        return tc;
     }
 };
 #endif // TESTSORT_H

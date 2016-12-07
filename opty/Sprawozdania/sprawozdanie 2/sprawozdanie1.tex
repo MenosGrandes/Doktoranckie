@@ -32,61 +32,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[12pt]{article}
-\usepackage[english]{babel}
-\usepackage{polski}
-\usepackage[utf8x]{inputenc}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage[calc]{datetime2}
-\usepackage{listings}
-\usepackage{siunitx}
-\usepackage{placeins}
-\usepackage[figurename=Rys.]{caption}
-\usepackage{subcaption}
-\usepackage{listings}
-\usepackage{tikz} % To generate the plot from csv
-\usepackage{mathtools}
-\usepackage{titlesec}
-\usepackage{hyperref}
- \usepackage{url}
-\usepackage{pgfplots}
-\pgfplotsset{
-    legend entry/.initial=,
-    every axis plot post/.code={%
-        \pgfkeysgetvalue{/pgfplots/legend entry}\tempValue
-        \ifx\tempValue\empty
-            \pgfkeysalso{/pgfplots/forget plot}%
-        \else
-            \expandafter\addlegendentry\expandafter{\tempValue}%
-        \fi
-    },
-}
-\captionsetup[subfigure]{skip=30pt} % global setting for subfigure
-\newcommand{\lstlistingnames}{Algorytmie}% Listing -> Algorithm
-\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
-\renewcommand{\lstlistlistingname}{List of \lstlistingname s}
-\renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
-\newcommand{\wyjT}{gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\}
-
-
-
-\pgfplotsset{compat=newest} % Allows to place the legend below plot
-\usepgfplotslibrary{units} % Allows to enter the units nicely
-
-\sisetup{
-  round-mode          = places,
-  round-precision     = 2,
-}
-
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-\addto\captionsenglish{% Replace "english" with the language you use
-  \renewcommand{\contentsname}%
-    {Spis treści}%
-}
-
-\newcommand{\norm}[1]{\lvert #1 \rvert}
+\usepackage{documentation}
 \begin{document}
 
 \begin{titlepage}
@@ -151,46 +97,6 @@ Filip \textsc{Rynkiewicz}\\[2cm] % Your name
 
 
 
-\lstset{language=C++,
-                 basicstyle=\ttfamily\footnotesize,
-                keywordstyle=\color{blue}\ttfamily,
-                stringstyle=\color{red}\ttfamily,
-                commentstyle=\color{green}\ttfamily,
-                morecomment=[l][\color{magenta}]{\#},
-				breaklines=true,
-    			numbers=left,
-    			    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
-}
-
-
-\pgfplotsset{
-          width=\linewidth, % Scale the plot to \linewidth
-          grid=major, 
-          grid style={dashed,gray!30},
-          xlabel=Ilość elementów w tablicy, % Set the labels
-          ylabel=Czas wykonania [ms] ,
-          x tick label style={rotate=0,anchor=east,align=right,yshift=-1.5ex},
-          scaled y ticks = false,  
-          scaled x ticks = false,   
-		  legend pos=north west,
- 		  samples=61,
-    	  width=5in,
-    	  height=3in,
-          ymin=0,
-          try min ticks =6,
-          max space between ticks=15000pt,
-          x tick label style=
-          {
-          /pgf/number format/fixed,
-     	 /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
-      	  },
-      	  y tick label style=
-          {
-          /pgf/number format/fixed,
-     	 /pgf/number format/1000 sep = \thinspace % Optional if you want to replace comma as the 1000 separator 
-      	  },
-      	  xmin=0
-}
 
  \tableofcontents 
  \section{Repozytorium}
@@ -198,138 +104,13 @@ Filip \textsc{Rynkiewicz}\\[2cm] % Your name
  \url{https://github.com/MenosGrandes/Doktoranckie}
 \section{Informacje o sprzęcie testowym}
 Do pomiaru czasu zostały wykorzystane funkcje \textit{QueryPerformanceCounter} oraz \textit{QueryPerformanceFrequency} z biblioteki \textbf{windows.h}. Wszystkie testy zostały wykonane na maszynie z systemem Windows 8.1Pro 64, z procesorem Intel(R) Core(TM) i7-5700HQ CPU @ 2.70GHz. Testy zostały przeprowadzone na kompilatorze \textit{mingw32-c++.exe (GCC) 5.3.0} z flagą \textit{-std=gnu++11} zapewniającą wsparcie \textit{C++11}.
-\section{Quicksort}
-Sortowanie to polega na wybraniu jednego elementu $p$, który może być środkowym, skrajnie lewym, skrajnie prawym lub losowym elementem zbioru. W następnym kroku elementy nie większe niż $p$ zostają ustawione na lewo tej wartości, a nie mniejsze na prawo. W ten sposób powstaną nam dwie części tablicy (niekoniecznie równe), gdzie w pierwszej części znajdują się elementy nie większe od drugiej. Następnie każdą z tych pod tablic sortujemy osobno według tego samego schematu. 
-\subsection{Klasyfikacja}
+\include{quickSort}                % omit the '.tex' extension
+\include{mergeSort}                % omit the '.tex' extension
+\include{heapSort}                % omit the '.tex' extension
+\include{shellSort}                % omit the '.tex' extension
+\include{bitonicSort}                % omit the '.tex' extension
+\include{autorski}                % omit the '.tex' extension
 
-\subsection{Oceny zlozonosci}
-\subsubsection{Optymistyczna}
-Jeżeli funkcja dzieląca zbiory o rozmiarze $n$ będzie dzieliła je zawsze na prawie równe części o rozmiarze $\frac{n}{2}$, można ustalić ze jest to najlepszy przypadek dla tego sortowania. Dzielenie takie następuje gdy wartość $p$ będzie mediana zbioru \cite{quicksort}
-\begin{equation*}
-T(n) = 2T(\frac{n}{2}) +\alpha n
-\end{equation*}
-Zakładając ze powyższa funkcja jest funkcja rekurencyjna następują zmiany dla kolejnej iteracji
-\begin{align*}
- T(n) &= 2(2T(\frac{n}{4}) + \alpha \frac{n}{2}) + \alpha n \\
-      &= 2^{2}T( \frac{n}{4}) + 2 \alpha n \\
-      &= 2^{3}T( \frac{n}{8}) + 3 \alpha n
- \end{align*}
-Rekurencyjne iteracje będą wykonywane do momentu $n = 2^{k}$, gdzie $\alpha$ jest  stalą, $k$ ilością iteracji, a $n$ rozmiarem zbioru początkowego. Czyli przyjmując ze $k = \log n$ :
-\begin{equation*}
-T(n) =nT(1) +\alpha n \log n
-\end{equation*}
-W notacji duze O bedzie to zatem:
-\begin{equation*}
-O(n \log n)
-\end{equation*}
-\subsubsection{Pesymistyczna}
-Najgorszy przypadek w tym algorytmie występuje w sytuacji kiedy algorytm będzie dzielił tablice na pod tablice w sytuacji kiedy jedna z nich będzie zawierała 1 element.
-\begin{equation*}
-T(n) =T(1) +T(n−1) + \alpha n
-\end{equation*}
-Dla każdej iteracji rekurencji wyrażenie to będzie przedstawione jako 
-\begin{align*}
-T(n) &=T(n−1) +T(1) + \alpha n \\
-	 &= T(n−2) +T(1) +\alpha(n−1)] +T(1) + \alpha n \\
-	 &= T(n−3) + 3T(1) +\alpha(n−2 +n−1 +n) \\
-	 &= T(n−i) +iT(1) +\alpha(n−i+ 1 + \cdot + n−2 +n−1 +n) \\
-	 &= T(n−i) +iT(1) +\alpha \sum_{j=0}^{n-2}(n-j) \\ 
-	 &= nT(1) +\alpha(n(n−2)−\frac{(n−2)(n−1)}{2})
- \end{align*}
-Rekurencja wykonuje się dopóki $i=n-1$, ponieważ nie możne być sytuacji gdzie $n-i <0$.
-Zlozonosc obliczeniowa wychodzi wiec :
-\begin{equation*}
-O(n^2)
-\end{equation*}
-\subsubsection{Średnia}
-Zakładając że piwot $p$ będzie wybierany tak aby partycjonowanie zbioru $V $ dzieliło go na zbiory $V_1$ i $V_2$ to zawsze prawdą będzie że długość tych podzbiorów będzie zawierała się w zbiorze od $0$ do $ \norm{V}-1$ \cite{quicksortAVG}.
-
-Aby posortować \textit{n} elementów potrzeba \textit{T} czasu :
-\begin{equation*}
-T(n)=T(i)+T(n-i)+c \cdot n
-\end{equation*}
-Ponieważ $i$ jest wartośćią z przedziału $0$ do $n-1$, średnia wartość $T$ to :
-\begin{equation*}
-T(i)=\frac{1}{n}\sum_{j=0}^{n-1}T(j)
-\end{equation*}
-Skoro $n-i$ może mieć taką samą wartosć jak $i$:
-\begin{equation*}
-T(n-1) = T(i)
-\end{equation*}
-Zatem :
-\begin{equation*}
-T(n)=\frac{2}{n} \Bigg( \sum_{j=0}^{n-1}T(j)\Bigg) + c \cdot n
-\end{equation*}
-Usuwając $n$ z ułamka  :
-\begin{equation*}
-n \cdot T(n)=2 \cdot \Bigg( \sum_{j=0}^{n-1}T(j)\Bigg) + c \cdot n^{2}
-\end{equation*}
-Ponieważ równanie musi być prawdziwe dla każdej liczby trzeba zamienić $n$ na przykład na $n-1$ :
-\begin{equation*}
-(n-1) \cdot T(n-1)=2 \cdot \Bigg( \sum_{j=0}^{n-2}T(j)\Bigg) + c \cdot (n-1)^{2}
-\end{equation*}
-Wiec prawdą będzie :
-\begin{align*}
-n \cdot T(n)&=2 \cdot \Bigg( \sum_{j=0}^{n-1}T(j)\Bigg) + c \cdot n^{2}\\
-(n-1) \cdot T(n-1)&=2 \cdot \Bigg( \sum_{j=0}^{n-2}T(j)\Bigg) + c \cdot (n-1)^{2}
- \end{align*}
- Odejmując drugie równanie od pierwszego, usuwając $c$ i grupując równanie otrzymamy :
- \begin{equation*}
- nT(n)=(n+1)T(n-1)+2cn
- \end{equation*}
-Rozwiązując równanie rekurencyjne i grupując je otrzymamy :
-\begin{equation*}
- \frac{T(n)}{(n+1)} = \frac{T(1)}{2} + 2 c \sum_{j=3}^{n+1} \frac{1}{j}
-\end{equation*}
-Ponieważ $n$ staję się bardzo duże, $\sum_{j=3}^{n+1} \frac{1}{j}$ dochodzi do $\ln(n) +\gamma $, gdzie $\gamma$ jest stałą Eulera.\\
-Zatem :
-\begin{equation*}
- \frac{T(n)}{n+1} = \frac{T(1)}{2} + 2 c \cdot \ln(n) + 2 c \gamma = \ln(n) + c_2 = O \ln(n) 
-\end{equation*}
-Złozoność wynosi zatem:
-\begin{equation*}
- T(n)=O (n \cdot \ln(n)) 
- \end{equation*}
-\subsection{Historia}
-Algorytm Quicksort działa na zasadzie \textit{dziel i rządź}.
-\section{Mergesort}
-j
-\subsection{Oceny zlozonosci}
-j
-\subsubsection{Optymistyczna}
-j
-\subsubsection{Pesymistyczna}
-i
-\subsubsection{Średnia}
-h
-\section{Heapsort}
-j
-\subsection{Oceny zlozonosci}
-l
-\subsubsection{Optymistyczna}
-h
-\subsubsection{Pesymistyczna}
-o
-\subsubsection{Średnia}
-u
-\section{ShellSort}
-f
-\subsection{Oceny zlozonosci}
-ui
-\subsubsection{Optymistyczna}
-d'
-\subsubsection{Pesymistyczna}
-\subsubsection{Średnia}
-\section{Bitonic sort}
-\subsection{Oceny zlozonosci}
-\subsubsection{Optymistyczna}
-\subsubsection{Pesymistyczna}
-\subsubsection{Średnia}
-\section{Autorski algorytm}
-\subsection{Oceny zlozonosci}
-\subsubsection{Optymistyczna}
-\subsubsection{Pesymistyczna}
-\subsubsection{Średnia}
 
 \begin{thebibliography}{99}
 \bibitem{quicksort} \url{https://www.cise.ufl.edu/class/cot3100fa07/quicksort_analysis.pdf}

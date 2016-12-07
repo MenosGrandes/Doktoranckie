@@ -67,7 +67,7 @@ typedef TestSort<SortTripleSelection>TestTripleSelection;
 
 typedef TestSort<SortQuickSort,BestCase,WorstCase> TestQuickSort;
 
-typedef TestSort<SortMergeSort,BestCase,WorstCase> TestMergeSort;
+typedef TestSort<SortMergeSort,WorstCaseMergeSort,BestCase> TestMergeSort;
 typedef TestSort<SortHeapSort,WorstCaseHeapSort,BestCase> TestHeapSort;
 typedef TestSort<SortShellSort> TestShellSort;
 typedef TestSort<SortBitonicSort> TestBitonicSort;
@@ -87,7 +87,9 @@ class TestVisitor : public boost::static_visitor<>
 public:
     template <typename T> void operator()( T & _t)const
     {
-        LOG(INFO)<<_t.getType()<<" "<<ToString(m_to)<<" "<<m_sortSizeVector<<" "<<_t.test(m_testCounts,m_sortSizeVector,m_to);
+        const TimeComprasions tc= _t.test(m_testCounts,m_sortSizeVector,m_to);
+
+        LOG(INFO)<<",TYPE>>,"<<_t.getType()<<",OPTION>>,"<<ToString(m_to)<<",V_SIZE>>,"<<m_sortSizeVector<<",TIME>>,"<<tc.time<<",COMPRASIONS>>,"<<tc.comprasions;
     }
     TestVisitor(int _testCounts,int _sortSizeVector,TEST_OPTIONS _so):m_testCounts(_testCounts),m_to(_so),m_sortSizeVector(_sortSizeVector) {}
 private:

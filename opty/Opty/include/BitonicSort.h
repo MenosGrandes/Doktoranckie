@@ -17,11 +17,12 @@ public :
       std::vector<int>a;
      bool ASCENDING=true;    // sorting direction
 
-   void sort(std::vector<int>& toSort)
+   int sort(std::vector<int>& toSort)
     {
         this->a= toSort;
         bitonicSort(0, toSort.size(), ASCENDING);
         toSort = this->a;
+        return 0;
     }
 
      void bitonicSort(int lo, int n, boolean dir)
