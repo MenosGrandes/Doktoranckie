@@ -51,7 +51,7 @@
 1478296205 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1481035490 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1481110567 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	<iostream>
 	"../templatesSpecialisation.hpp"
 	"../Tests.hpp"
@@ -552,7 +552,7 @@
 1478798979 c:\users\menos\desktop\doktoranckie\opty\opty\src\sort.cpp
 	"Sort.h"
 
-1480506026 c:\users\efilryn\desktop\doktoranckie\opty\opty\tests.hpp
+1481110291 c:\users\efilryn\desktop\doktoranckie\opty\opty\tests.hpp
 	"typdefs.hpp"
 
 1480538669 c:\users\menos\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
@@ -3760,7 +3760,7 @@
 1474464815 c:\boost\boost_1_62_0\boost\type_traits\add_pointer.hpp
 	<boost/type_traits/remove_reference.hpp>
 
-1481031726 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
+1481036050 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
 	"TestSort.h"
 	"BubbleSort.h"
 	"SortInsert.h"
@@ -3840,10 +3840,10 @@
 	<boost/detail/workaround.hpp>
 	<cstddef>
 
-1480335589 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\shellsort.h
+1481110841 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\shellsort.h
 	"SortBehaviour.h"
 
-1480335382 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bitonicsort.h
+1481110227 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\bitonicsort.h
 	<bits/stdc++.h>
 	"SortBehaviour.h"
 

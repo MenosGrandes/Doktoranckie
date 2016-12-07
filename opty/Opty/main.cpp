@@ -7,73 +7,26 @@
 
 int main(int argc, char* argv[] )
 {
+    srand((time(0)));
 
 
-    el::Logger* businessLogger = el::Loggers::getLogger("business");
     el::Configurations conf("conf/logconf.conf");
     el::Loggers::reconfigureLogger("default", conf);
-    // Actually reconfigure all loggers instead
     el::Loggers::reconfigureAllLoggers(conf);
 
 
-    srand((time(0)));
 
     Tester tester;
 
 
 
-
-    for(int option=0; option<LENGTH; option++)
-    {
-        for(int i=5; i<17; i++)
-        {
-            const int size = pow(2,i);
-
-            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestBitonicSort());
-
-        }
-    }
-    for(int option=0; option<LENGTH; option++)
-    {
-        for(int i=5; i<17; i++)
-        {
-            const int size = pow(2,i);
-
-            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestHeapSort());
-
-        }
-    }
-    for(int option=0; option<LENGTH; option++)
-    {
-        for(int i=5; i<17; i++)
-        {
-            const int size = pow(2,i);
-
-            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestQuickSort());
-
-        }
-    }
-    for(int option=0; option<LENGTH; option++)
-    {
-        for(int i=5; i<17; i++)
-        {
-            const int size = pow(2,i);
-
-            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestShellSort());
-
-        }
-    }
-    for(int option=0; option<LENGTH; option++)
-    {
-        for(int i=5; i<17; i++)
-        {
-            const int size = pow(2,i);
-
-            tester.addTest(TestVisitor(10,size,static_cast<TEST_OPTIONS>(option)),TestMergeSort());
-
-        }
-    }
-
+    std::vector<int> size1{100,1000,5000,20000,60000,110000};
+    std::vector<int> appendSize{203,511,2031,8031,11020};
+    tester.createTests<TestBitonicSort>(1,size1,appendSize);
+    tester.createTests<TestHeapSort>(1,size1,appendSize);
+    tester.createTests<TestMergeSort>(1,size1,appendSize);
+    tester.createTests<TestShellSort>(1,size1,appendSize);
+    tester.createTests<TestQuickSort>(1,size1,appendSize);
 
     tester.performTests();
     return 0;

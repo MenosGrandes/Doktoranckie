@@ -7,11 +7,11 @@ class ShellSort : public SortBehaviour
 public:
     static const SortType m_sortType=SHELL;
 
-    ShellSort():m_gap(
+    ShellSort():m_idx(0),m_cnt(0)
     {
-        1750,701,3010,132,57,23,10,4,1
-    }),m_idx(0),m_cnt(0)
-    {}
+
+
+    }
     void sort( std::vector<int>&toSort)
     {
         m_cnt = toSort.size();
@@ -53,7 +53,7 @@ private:
             }
         }
     }
-    int m_gap[9], m_idx, m_cnt;
+    int m_gap[9]={1750,701,3010,132,57,23,10,4,1}, m_idx, m_cnt;
 };
 
 #endif // SHELLSORT_H
