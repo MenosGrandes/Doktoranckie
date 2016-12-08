@@ -19,6 +19,7 @@
 #include "HeapSort.h"
 #include "ShellSort.h"
 #include "BitonicSort.h"
+#include "QuickSortOPTY.h"
 
 
 #include "WorstCaseHeapSort.h"
@@ -53,6 +54,8 @@ typedef Sort<MergeSort> SortMergeSort;
 typedef Sort<HeapSort>  SortHeapSort;
 typedef Sort<ShellSort>  SortShellSort;
 typedef Sort<BitonicSort>  SortBitonicSort;
+/*Optimised*/
+typedef Sort<QuickSortOPTY> SortQuickSortOPTY;
 
 /*Tests*/
 typedef TestSort<SortNormalBubble> TestNormalBubble;
@@ -72,11 +75,15 @@ typedef TestSort<SortHeapSort,WorstCaseHeapSort,BestCase> TestHeapSort;
 typedef TestSort<SortShellSort> TestShellSort;
 typedef TestSort<SortBitonicSort> TestBitonicSort;
 
+
+typedef TestSort<SortQuickSortOPTY,BestCase,WorstCase> TestQuickSortOPTY;
+
 typedef boost::variant<
                         TestNormalBubble,TestNormalInsert,TestNormalSelection,
                         TestTupleSelection,TestTupleBubble,TestTupleInsert,
                         TestTripleInsert,TestTripleBubble,TestTripleSelection,
-                        TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort
+                        TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort,
+                        TestQuickSortOPTY
                         >  AnyTest;
 
 typedef std::vector<AnyTest>VectorOfTests;
@@ -89,7 +96,7 @@ public:
     {
         const TimeComprasions tc= _t.test(m_testCounts,m_sortSizeVector,m_to);
 
-        LOG(INFO)<<",TYPE>>,"<<_t.getType()<<",OPTION>>,"<<ToString(m_to)<<",V_SIZE>>,"<<m_sortSizeVector<<",TIME>>,"<<tc.time<<",COMPRASIONS>>,"<<tc.comprasions;
+        LOG(INFO)<<_t.getType()<<","<<ToString(m_to)<<","<<m_sortSizeVector<<","<<tc.time<<","<<tc.comprasions;
     }
     TestVisitor(int _testCounts,int _sortSizeVector,TEST_OPTIONS _so):m_testCounts(_testCounts),m_to(_so),m_sortSizeVector(_sortSizeVector) {}
 private:

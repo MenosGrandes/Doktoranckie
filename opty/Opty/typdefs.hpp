@@ -41,6 +41,7 @@ DEFINE_ENUM_WITH_STRING_CONVERSIONS(SortType,
                                     (TUPLE_BUBBLE)(TUPLE_INSERT)(TUPLE_SELECTION)
                                     (TRIPLE_BUBBLE)(TRIPLE_INSERT)(TRIPLE_SELECTION)
                                     (QUICK)(MERGE)(SHELL)(HEAP)(BITONIC)
+                                    (QUICK_OPTY)
                                    )
 
 DEFINE_ENUM_WITH_STRING_CONVERSIONS (TEST_OPTIONS,

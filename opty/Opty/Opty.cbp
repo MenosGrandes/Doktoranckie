@@ -90,6 +90,9 @@
 		<Unit filename="include/QuickSort.h">
 			<Option virtualFolder="Sort/FastSort/" />
 		</Unit>
+		<Unit filename="include/QuickSortOPTY.h">
+			<Option virtualFolder="Sort/FastSort/" />
+		</Unit>
 		<Unit filename="include/Random.h">
 			<Option virtualFolder="Helpers/" />
 		</Unit>

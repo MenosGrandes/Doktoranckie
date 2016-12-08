@@ -28,6 +28,22 @@ public :
             }
         }
     }
+   template<class Test>
+    void createTests(int testCounts,const std::vector<int> size1,const std::vector<int> appendSize,TEST_OPTIONS option)
+    {
+
+            int counter=0;
+            for(std::vector<int>::const_iterator i = std::begin(size1); i!=std::end(size1)-1; i++)
+            {
+                int size = *i;
+                while(size<*(i+1))
+                {
+                    addTest(TestVisitor(testCounts,size,option),Test());
+                    size+=appendSize[counter];
+                }
+                counter++;
+            }
+    }
     void performTests()
     {
         for(unsigned int i=0; i<m_testVector.size(); i++)

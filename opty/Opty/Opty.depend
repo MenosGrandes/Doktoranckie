@@ -51,7 +51,7 @@
 1478296205 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1481119487 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1481206369 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	<iostream>
 	"../templatesSpecialisation.hpp"
 	"../Tests.hpp"
@@ -516,7 +516,7 @@
 
 1478759372 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\sortinserttriple.cpp
 
-1481121906 c:\users\efilryn\desktop\doktoranckie\opty\opty\typdefs.hpp
+1481206123 c:\users\efilryn\desktop\doktoranckie\opty\opty\typdefs.hpp
 	<vector>
 	<iostream>
 	<string>
@@ -3760,7 +3760,7 @@
 1474464815 c:\boost\boost_1_62_0\boost\type_traits\add_pointer.hpp
 	<boost/type_traits/remove_reference.hpp>
 
-1481123255 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
+1481206430 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
 	"TestSort.h"
 	"BubbleSort.h"
 	"SortInsert.h"
@@ -3776,6 +3776,7 @@
 	"HeapSort.h"
 	"ShellSort.h"
 	"BitonicSort.h"
+	"QuickSortOPTY.h"
 	"WorstCaseHeapSort.h"
 	"WorstCaseMergeSort.h"
 	"BestCaseHeapSort.h"
@@ -6049,4 +6050,7 @@
 	<boost/intrusive/detail/minimal_less_equal_header.hpp>
 	<initializer_list>
 	<boost/container/detail/config_end.hpp>
+
+1481206150 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\quicksortopty.h
+	"SortBehaviour.h"
 
