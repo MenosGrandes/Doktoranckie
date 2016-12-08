@@ -1,9 +1,27 @@
 \section{HeapSort}
-Sortowanie przez kopcowanie polega na wykorzystaniu kolejni priorytetowej. Podstawowymi akcjami wykonywanymi przez algorytm jest:
+Sortowanie przez kopcowanie polega na wykorzystaniu kopca.\\
+ Podstawowymi akcjami wykonywanymi przez algorytm jest:
 \begin{itemize}
 \item Tworzenie kopca,
 \item sortowanie.
 \end{itemize}
+
+\subsubsection{Kopiec}
+Jest to kontener danych podobny do drzewa binarnego\cite{heapsort}. Każdy element w kopcu posiada 3 inne elementu : swojego przodka oraz dwójkę dzieci, element \textit{root} nie posiada przodka ponieważ jest pierwszym elementem. 
+Element \textit{przodek} zawsze posiada wartość większa od wartości swoich dzieci.	\\
+Ogolny wzor prowadzacy do obliczenia zlozonosci czasowej tego algorytmu to:
+\begin{equation}
+T(N) = T_{buildheap}(N) +\sum_{k=1}^{n-1} T_{heapify}k + O(n-1)
+\end{equation}
+
+Aby zawsze na pierwszym miejscu znajdował się maksymalny element zbioru kopiec posiada metodę o nazwie $Heapify$. Jest ona odpowiedzialna za stworzenie takiego kopca którego każdy element jest uporządkowany tak aby wartość rodzica była wartością większa niż wartości jego dzieci.\\
+Złożoność obliczeniowa takiej funkcji to :
+\begin{align*}
+T(N) &= T(\frac{2n}{3}) + O(1) \\
+T(N) &=O(\log n)
+\end{align*} 
+\par Kolejna funkcja wykorzystywana w tym sortowaniu jest tworzenie kopca $BuildHeap$.
+J
 \subsection{Klasyfikacja}
 \subsubsection{Optymistyczna}
 
