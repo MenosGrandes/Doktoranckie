@@ -55,7 +55,7 @@ private:
             }
         }
     }
-    int m_gap[9]={1750,701,3010,132,57,23,10,4,1}, m_idx, m_cnt;
+    int m_gap[9]= {1750,701,3010,132,57,23,10,4,1}, m_idx, m_cnt;
 };
 
 #endif // SHELLSORT_H

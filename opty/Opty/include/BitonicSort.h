@@ -12,12 +12,11 @@ http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/bitonic/oddn.htm
 class BitonicSort : public SortBehaviour
 {
 public :
-        static const SortType m_sortType=BITONIC;
+    static const SortType m_sortType=BITONIC;
 
-      std::vector<int>a;
-     bool ASCENDING=true;    // sorting direction
 
-   int sort(std::vector<int>& toSort)
+
+    int sort(std::vector<int>& toSort)
     {
         this->a= toSort;
         bitonicSort(0, toSort.size(), ASCENDING);
@@ -25,7 +24,7 @@ public :
         return 0;
     }
 
-     void bitonicSort(int lo, int n, boolean dir)
+    void bitonicSort(int lo, int n, boolean dir)
     {
         if (n>1)
         {
@@ -36,7 +35,7 @@ public :
         }
     }
 
-     void bitonicMerge(int lo, int n, boolean dir)
+    void bitonicMerge(int lo, int n, boolean dir)
     {
         if (n>1)
         {
@@ -48,27 +47,29 @@ public :
         }
     }
 
-     void compare(int i, int j, boolean dir)
+    void compare(int i, int j, boolean dir)
     {
         if (dir==(a[i]>a[j]))
             exchange(i, j);
     }
 
-     void exchange(int i, int j)
+    void exchange(int i, int j)
     {
         int t=a[i];
         a[i]=a[j];
         a[j]=t;
     }
 
-     int greatestPowerOfTwoLessThan(int n)
+    int greatestPowerOfTwoLessThan(int n)
     {
         int k=1;
         while (k<n)
             k=k<<1;
         return k>>1;
     }
-
+private :
+    std::vector<int>a;
+    bool ASCENDING=true;    // sorting direction
 };
 
 #endif // BITONICSORT_H

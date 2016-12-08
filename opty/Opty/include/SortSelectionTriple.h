@@ -76,7 +76,8 @@ public:
                 indexOfMax_Mid = indexOfMax_Max;
             }
             else if (i - 1 == indexOfMax_Min)
-            {   comprasions++;
+            {
+                comprasions++;
                 indexOfMax_Min = indexOfMax_Max;
             }
 
@@ -94,7 +95,7 @@ public:
             toSort[indexOfMax_Min] = toSort[i - 3];
             toSort[i - 3] = tmp1;
         }
-return comprasions;
+        return comprasions;
     }
 
 };

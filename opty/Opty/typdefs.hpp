@@ -1,14 +1,11 @@
 
+
 #ifndef TYPEDEFS_H
 #define TYPEDEFS_H
 
 #include <vector>
-#include <iostream>
-#include <string>
-#include <boost/assert.hpp>
 #include <boost/preprocessor.hpp>
-#include <algorithm>
-#include <functional>
+
 
 
 
@@ -51,7 +48,7 @@ DEFINE_ENUM_WITH_STRING_CONVERSIONS (TEST_OPTIONS,
 
 
 typedef std::vector<int>::iterator VintIter;
-typedef std::pair<VintIter,VintIter> VintIterPair;
+//typedef std::pair<VintIter,VintIter> VintIterPair;
 
 
 const int MAX_VECTOR=8000;

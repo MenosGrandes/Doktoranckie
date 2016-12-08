@@ -16,6 +16,12 @@ template<class BasicSort,class WorstCaseMethod=WorstCase,class BestCaseMethod=Be
 class TestSort
 {
 public:
+        TestSort() =default;
+       ~TestSort()=default;
+        TestSort(TestSort&& o)=default;
+        TestSort& operator=(const TestSort& other)=default;
+        TestSort& operator=(TestSort&& other)=default;
+        TestSort(const TestSort& a)=default;
     std::string getType()
     {
         return BasicSort::GetType();

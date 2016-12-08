@@ -9,12 +9,12 @@ http://stackoverflow.com/questions/24594112/when-will-the-worst-case-of-merge-so
 class WorstCaseMergeSort : public WorstCase
 {
 public:
-    WorstCaseMergeSort();
-    ~WorstCaseMergeSort();
+    WorstCaseMergeSort() = default;
+    ~WorstCaseMergeSort() = default;
     void generate(std::vector<int> &generator);
 private:
-void seperate(std::vector<int> &arr);
-void merge(std::vector<int> &arr , std::vector<int> & left, std::vector<int> & right);
+    void seperate(std::vector<int> &arr);
+    void merge(std::vector<int> &arr, std::vector<int> & left, std::vector<int> & right);
 
 };
 

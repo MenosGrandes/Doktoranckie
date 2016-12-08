@@ -7,8 +7,8 @@
 class Timer
 {
 public:
-    Timer() {};
-    ~Timer() {};
+    Timer() =default;
+    ~Timer() =default;
     template <class SortMethod>
     TimeComprasions measureWindows( SortMethod *s)
     {

@@ -10,16 +10,15 @@ Should be:
 {1, 9, 5, 13, 3, 11, 7, 15, 2, 10, 6,
  14, 4, 12, 8, 16}
 */
-WorstCaseMergeSort::WorstCaseMergeSort() {}
-WorstCaseMergeSort::~WorstCaseMergeSort() {}
+
 void WorstCaseMergeSort::generate(std::vector<int> &generator)
 {
     //generateWorstCase(&generator[0], 0, generator.size() - 1);
-seperate(generator);
+    seperate(generator);
 }
 
 
-void WorstCaseMergeSort::merge(std::vector<int> &arr , std::vector<int> & left, std::vector<int> & right)
+void WorstCaseMergeSort::merge(std::vector<int> &arr, std::vector<int> & left, std::vector<int> & right)
 {
     int i,j;
     for(i=0; i<left.size(); i++)

@@ -5,15 +5,17 @@
 class QuickSortOPTY:public SortBehaviour
 {
 public:
-        static const SortType m_sortType=QUICK_OPTY;
+    static const SortType m_sortType=QUICK_OPTY;
 
-    QuickSortOPTY(){};
-    ~QuickSortOPTY(){};
+    QuickSortOPTY() {};
+    ~QuickSortOPTY() {};
     int sort(std::vector<int> &toSort)
     {
         quickSort(&toSort[0],0,toSort.size()-1);
+        return 0;
     }
 private :
+    int compare=compare;
     void quickSort(int *arr, int low, int high)
     {
         while (low < high)
@@ -36,21 +38,22 @@ private :
         std::swap(arr[mid],arr[left]);
         int i = left + 1;
         int j = right;
-//        compare++;
+        this->compare++;
         while (i <= j)
         {
+            this->compare+=2;
             while(i <= j && arr[i] <= pivot)
             {
-//                compare+=2;
+                this->compare+=2;
                 i++;
             }
-
+            this->compare+=2;
             while(i <= j && arr[j] > pivot)
             {
-//                compare+=2;
+                compare+=2;
                 j--;
             }
-//            compare++;
+            compare++;
             if (i < j)
             {
                 std::swap(arr[i], arr[j]);

@@ -1,3 +1,4 @@
+
 #ifndef TEMPLATES_SPECIALISATION_HPP
 #define TEMPLATES_SPECIALISATION_HPP
 
@@ -79,12 +80,12 @@ typedef TestSort<SortBitonicSort> TestBitonicSort;
 typedef TestSort<SortQuickSortOPTY,BestCase,WorstCase> TestQuickSortOPTY;
 
 typedef boost::variant<
-                        TestNormalBubble,TestNormalInsert,TestNormalSelection,
-                        TestTupleSelection,TestTupleBubble,TestTupleInsert,
-                        TestTripleInsert,TestTripleBubble,TestTripleSelection,
-                        TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort,
-                        TestQuickSortOPTY
-                        >  AnyTest;
+TestNormalBubble,TestNormalInsert,TestNormalSelection,
+                 TestTupleSelection,TestTupleBubble,TestTupleInsert,
+                 TestTripleInsert,TestTripleBubble,TestTripleSelection,
+                 TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort,
+                 TestQuickSortOPTY
+                 >  AnyTest;
 
 typedef std::vector<AnyTest>VectorOfTests;
 
@@ -92,6 +93,12 @@ typedef std::vector<AnyTest>VectorOfTests;
 class TestVisitor : public boost::static_visitor<>
 {
 public:
+            TestVisitor() =default;
+       ~TestVisitor()=default;
+        TestVisitor(TestVisitor&& o)=default;
+        TestVisitor& operator=(const TestVisitor& other)=default;
+        TestVisitor& operator=(TestVisitor&& other)=default;
+        TestVisitor(const TestVisitor& a)=default;
     template <typename T> void operator()( T & _t)const
     {
         const TimeComprasions tc= _t.test(m_testCounts,m_sortSizeVector,m_to);

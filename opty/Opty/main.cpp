@@ -1,3 +1,6 @@
+// *** ADDED BY HEADER FIXUP ***
+#include <istream>
+// *** END ***
 
 #include <iostream>
 #include "../templatesSpecialisation.hpp"
@@ -19,7 +22,7 @@ int main(int argc, char* argv[] )
 
     Tester tester;
 
-LOG(DEBUG)<<" ";
+    LOG(DEBUG)<<" ";
 
     std::vector<int> size1{100,1000,5000,20000,60000,110000};
     std::vector<int> appendSize{203,511,2031,8031,11020};
@@ -27,11 +30,13 @@ LOG(DEBUG)<<" ";
 //    tester.createTests<TestHeapSort>(5,size1,appendSize);
 //    tester.createTests<TestMergeSort>(5,size1,appendSize);
 //    tester.createTests<TestShellSort>(5,size1,appendSize);
-    tester.createTests<TestQuickSort>(20,size1,appendSize,WORST);
+    tester.createTests<TestQuickSort>(100,size1,appendSize,WORST);
 //
-    tester.createTests<TestQuickSortOPTY>(20,size1,appendSize,WORST);
+    tester.createTests<TestQuickSortOPTY>(30,size1,appendSize,WORST);
 
     tester.performTests();
+
+
     return 0;
 }
 

@@ -34,6 +34,9 @@
 				<Compiler>
 					<Add directory="include" />
 				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
 			</Target>
 			<Target title="AsmBuild">
 				<Option output="bin/ASM/Opty" prefix_auto="1" extension_auto="1" />
@@ -60,8 +63,6 @@
 			<Add directory="C:/Boost/boost_1_62_0" />
 		</Compiler>
 		<Linker>
-			<Add option="-static-libgcc" />
-			<Add option="-static-libstdc++" />
 			<Add directory="C:/Boost/boost_1_62_0/stage/lib" />
 		</Linker>
 		<Unit filename="Tests.hpp">
@@ -145,15 +146,6 @@
 			<Option virtualFolder="Sort/Cases/Worst/" />
 		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="src/BestCase.cpp">
-			<Option virtualFolder="Sort/Cases/Best/" />
-		</Unit>
-		<Unit filename="src/WorstCase.cpp">
-			<Option virtualFolder="Sort/Cases/Worst/" />
-		</Unit>
-		<Unit filename="src/WorstCaseHeapSort.cpp">
-			<Option virtualFolder="Sort/Cases/Worst/" />
-		</Unit>
 		<Unit filename="src/WorstCaseMergeSort.cpp">
 			<Option virtualFolder="Sort/Cases/Worst/" />
 		</Unit>

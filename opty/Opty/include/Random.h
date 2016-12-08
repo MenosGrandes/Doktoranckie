@@ -1,3 +1,6 @@
+// *** ADDED BY HEADER FIXUP ***
+#include <istream>
+// *** END ***
 #ifndef RANDOM_H
 #define RANDOM_H
 

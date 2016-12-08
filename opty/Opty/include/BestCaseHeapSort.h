@@ -8,9 +8,9 @@ http://cboard.cprogramming.com/cplusplus-programming/116807-sorting-algorithms-w
 */
 class BestCaseHeapSort : public BestCase
 {
-    public:
-        BestCaseHeapSort(){};
-        ~BestCaseHeapSort(){};
+public:
+    BestCaseHeapSort() = default;
+    ~BestCaseHeapSort() = default;
 
     void generate(std::vector<int>& toSort) const
     {

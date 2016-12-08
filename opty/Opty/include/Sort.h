@@ -9,6 +9,12 @@ template <class SortMethod>
 class Sort
 {
 public:
+    Sort() =default;
+     ~Sort()
+    {
+        delete m_sortMethod;
+
+    }
     Sort(int n, int max):m_n(n)
     {
         m_data.reserve(n);
@@ -23,11 +29,7 @@ public:
     Sort(std::vector<int> append):m_n(append.size()),m_data(append),m_compareData(append),m_sortMethod(new SortMethod())
     {}
 
-    virtual ~Sort()
-    {
-        delete m_sortMethod;
 
-    }
     Sort(const Sort &a):m_data(a.m_data),m_compareData(a.m_compareData),m_n(a.m_n) {};
     Sort(Sort&& o):m_data(std::move(o.m_data)),m_compareData(std::move(o.m_compareData)),m_n(std::move(m_n)) { }
     Sort&operator=(const Sort& other)
