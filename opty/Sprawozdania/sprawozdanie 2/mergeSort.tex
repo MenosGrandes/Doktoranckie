@@ -1,8 +1,51 @@
 \section{MergeSort}
-Polega ona na podziałach sortowanego zbioru $V$ na równe części, i rekurencyjnych dalszych podziałów  do momentu w którym nie będzie można dzielić dalej podtablic, czyli do momentu w którym dzielona tablica będzie miała rozmiar większy niż 3.
+Polega ona na podziałach sortowanego zbioru $V$ na równe części, i rekurencyjnych dalszych podziałów  do momentu w którym nie będzie można dzielić dalej pod tablic, czyli do momentu w którym dzielona tablica będzie miała rozmiar większy niż 3 \cite{mergesort}.
 \subsection{Klasyfikacja}
 \subsubsection{Optymistyczna}
-Najlepszy przypadek następuje gdy tablica która algorytm ma posortować jest już posortowana.
+Najlepszy przypadek następuje gdy zbiór który algorytm ma posortować jest już posortowany.
+Ponieważ tylko jeden element z list jest porównywany, ilość porównań zmniejsza się o $\frac{N}{2}$.
+
+\begin{align*}
+T(N) &= 2T(\frac{N}{2}) +\frac{N}{2}  \\
+ &= 2\Big(2T(\frac{N}{4})+ \frac{N}{4} \Big) + \frac{N}{2} \\
+ &= 4\Big(2T(\frac{N}{8})+ \frac{N}{8} \Big) + N \\
+ &= 8T(\frac{N}{8})+ \frac{3N}{2}
+\end{align*}
+Co daje przy przeliczeniu na ogólny przypadek :
+\begin{align*}
+T(N) &= 2^k T\Big(\frac{N}{2^k} \Big) + \frac{kN}{2} \\
+&=\frac{N}{2}log_2 N
+\end{align*}
+Z powyższych równań wynika ze złożoność obliczeniowa dla najlepszego przypadku wynosi :
+\begin{equation*}
+O(N \cdot \log(N))
+\end{equation*}
 \subsubsection{Pesymistyczna}
+Sytuacja w której podczas każdego kroku dzielenia zbiory podzielone są tak ze dwie największe wartości znajdują się w oddzielnych pod tablicach
+Ponieważ jest to algorytm, przeważnie, rekurencyjny jego złożoność można przedstawić za pomocą takich wzorów:
+\begin{align*}
+T(N) &= 2T(\frac{N}{2}) + N -1 \\
+ &= 2\Big(2T(\frac{N}{4})+ \frac{N}{2} -1 \Big) + N -1 \\
+ &= 4\Big(2T(\frac{N}{8})+ \frac{N}{4} -1 \Big) + 2N -3 \\
+ &= 8T(\frac{N}{8})+ N + + N+ N -4 - 2 - 1 
+\end{align*}
+$N-1$ oznacza sytuacje w której unika się tylko jednego porównania.\\
+
+Z powyższego wyprowadzenia można wysnuć wniosek ze :
+\begin{equation*}
+T(N) = 2^k T\Big(\frac{N}{2^k} \Big) +kN -(2^k -1)
+\end{equation*}
+gdzie $k$ jest ilością wykonań rekurencji.\\
+\par Zakładając ze $T(1) = 0$ wynika ze :
+\begin{align*}
+2^k &= N \\
+k &= \log_2 N \\
+T(N) &= N log_2 N -N -1
+\end{align*}
+Z powyższych równań wynika ze złożoność obliczeniowa dla najgorszego przypadku wynosi :
+\begin{equation*}
+O(N \cdot \log(N))
+\end{equation*}
 
 \subsubsection{Średnia}
+Poniewaz w tym algorytmie nie ma wybierania zadnych losowych elementow po ktorych dzieli sie podtablice, zlozonosc obliczeniowa dla przypadku sredniego jest taka sama jak dla przypadku najgorszego\cite{mergesortAVG}.
