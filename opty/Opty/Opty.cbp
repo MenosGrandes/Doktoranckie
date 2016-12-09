@@ -5,7 +5,7 @@
 		<Option title="Opty" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Sort\TripleSort\;Sort\;Sort\TupleSort\;Helpers\;Sort\NormalSort\;Sort\FastSort\;Sort\Cases\;Sort\Cases\Best\;Sort\Cases\Worst\;" />
+		<Option virtualFolders="Sort\TripleSort\;Sort\;Sort\TupleSort\;Helpers\;Sort\NormalSort\;Sort\FastSort\;Sort\Cases\;Sort\Cases\Best\;Sort\Cases\Worst\;Sort\FastSort\OPTY\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/Opty" prefix_auto="1" extension_auto="1" />
@@ -88,11 +88,14 @@
 		<Unit filename="include/MergeSort.h">
 			<Option virtualFolder="Sort/FastSort/" />
 		</Unit>
+		<Unit filename="include/MergeSortOPTY.h">
+			<Option virtualFolder="Sort/FastSort/OPTY/" />
+		</Unit>
 		<Unit filename="include/QuickSort.h">
 			<Option virtualFolder="Sort/FastSort/" />
 		</Unit>
 		<Unit filename="include/QuickSortOPTY.h">
-			<Option virtualFolder="Sort/FastSort/" />
+			<Option virtualFolder="Sort/FastSort/OPTY/" />
 		</Unit>
 		<Unit filename="include/Random.h">
 			<Option virtualFolder="Helpers/" />
@@ -146,6 +149,9 @@
 			<Option virtualFolder="Sort/Cases/Worst/" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="src/MergeSortOPTY.cpp">
+			<Option virtualFolder="Sort/FastSort/OPTY/" />
+		</Unit>
 		<Unit filename="src/WorstCaseMergeSort.cpp">
 			<Option virtualFolder="Sort/Cases/Worst/" />
 		</Unit>

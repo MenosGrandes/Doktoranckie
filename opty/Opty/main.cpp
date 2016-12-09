@@ -24,15 +24,20 @@ int main(int argc, char* argv[] )
 
     LOG(DEBUG)<<" ";
 
-    std::vector<int> size1{100,1000,5000,20000,60000,110000};
-    std::vector<int> appendSize{203,511,2031,8031,11020};
+//    std::vector<int> size1{100,1000,5000,20000,60000,110000};
+//    std::vector<int> appendSize{203,511,2031,8031,11020};
+
+
+    std::vector<int> size1{10,12};
+    std::vector<int> appendSize{1};
 //    tester.createTests<TestBitonicSort>(5,size1,appendSize);
 //    tester.createTests<TestHeapSort>(5,size1,appendSize);
 //    tester.createTests<TestMergeSort>(5,size1,appendSize);
+    tester.createTests<TestMergeSortOPTY>(5,size1,appendSize);
+
 //    tester.createTests<TestShellSort>(5,size1,appendSize);
-    tester.createTests<TestQuickSort>(100,size1,appendSize,WORST);
-//
-    tester.createTests<TestQuickSortOPTY>(30,size1,appendSize,WORST);
+//    tester.createTests<TestQuickSort>(50,size1,appendSize,WORST);
+//    tester.createTests<TestQuickSortOPTY>(50,size1,appendSize,WORST);
 
     tester.performTests();
 

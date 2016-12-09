@@ -21,7 +21,7 @@
 #include "ShellSort.h"
 #include "BitonicSort.h"
 #include "QuickSortOPTY.h"
-
+#include "MergeSortOPTY.h"
 
 #include "WorstCaseHeapSort.h"
 #include "WorstCaseMergeSort.h"
@@ -57,6 +57,7 @@ typedef Sort<ShellSort>  SortShellSort;
 typedef Sort<BitonicSort>  SortBitonicSort;
 /*Optimised*/
 typedef Sort<QuickSortOPTY> SortQuickSortOPTY;
+typedef Sort<MergeSortOPTY> SortMergeSortOPTY;
 
 /*Tests*/
 typedef TestSort<SortNormalBubble> TestNormalBubble;
@@ -78,13 +79,14 @@ typedef TestSort<SortBitonicSort> TestBitonicSort;
 
 
 typedef TestSort<SortQuickSortOPTY,BestCase,WorstCase> TestQuickSortOPTY;
+typedef TestSort<SortMergeSortOPTY,WorstCaseMergeSort,BestCase> TestMergeSortOPTY;
 
 typedef boost::variant<
 TestNormalBubble,TestNormalInsert,TestNormalSelection,
                  TestTupleSelection,TestTupleBubble,TestTupleInsert,
                  TestTripleInsert,TestTripleBubble,TestTripleSelection,
                  TestQuickSort,TestMergeSort,TestHeapSort,TestShellSort,TestBitonicSort,
-                 TestQuickSortOPTY
+                 TestQuickSortOPTY,TestMergeSortOPTY
                  >  AnyTest;
 
 typedef std::vector<AnyTest>VectorOfTests;
