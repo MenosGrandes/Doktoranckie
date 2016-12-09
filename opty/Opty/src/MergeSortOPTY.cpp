@@ -5,7 +5,7 @@ int MergeSortOPTY::comparatorINT(const int a,const int b)
 }
 int MergeSortOPTY::sort(std::vector<int> &toSort)
 {
-    LOG(DEBUG)<<"NIE DZIALA!!!!!!!!!!!!!!!!!!!!!";
+//    LOG(DEBUG)<<"NIE DZIALA!!!!!!!!!!!!!!!!!!!!!";
     int *a =new int[toSort.size()];
     for(int i=0;i<toSort.size();i++)
     {

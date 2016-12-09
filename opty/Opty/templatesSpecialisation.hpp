@@ -36,6 +36,7 @@
 #include <boost/variant/get.hpp>
 #include<tuple>
 #include <typeinfo>
+
 /*NORMAL*/
 typedef Sort<BubbleSort> SortNormalBubble;
 typedef Sort<SortInsert> SortNormalInsert;

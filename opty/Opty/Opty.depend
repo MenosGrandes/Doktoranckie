@@ -51,7 +51,7 @@
 1478296205 source:c:\users\menos\desktop\opty\opty\src\sortinserttuple.cpp
 	"SortInsertTuple.h"
 
-1481272358 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
+1481293750 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\main.cpp
 	<istream>
 	<iostream>
 	"../templatesSpecialisation.hpp"
@@ -60,9 +60,10 @@
 1481120708 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sortinserttuple.h
 	"SortBehaviour.h"
 
-1481263956 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sort.h
+1481293921 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\sort.h
 	"../typdefs.hpp"
 	"../conf/easylogging++.h"
+	"SortBehaviour.h"
 	"Random.h"
 
 1481263956 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\random.h
@@ -3757,7 +3758,7 @@
 1474464815 c:\boost\boost_1_62_0\boost\type_traits\add_pointer.hpp
 	<boost/type_traits/remove_reference.hpp>
 
-1481272123 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
+1481293792 c:\users\efilryn\desktop\doktoranckie\opty\opty\templatesspecialisation.hpp
 	"TestSort.h"
 	"BubbleSort.h"
 	"SortInsert.h"
@@ -6131,11 +6132,10 @@
 1481228947 c:\users\menos\desktop\doktoranckie\opty\opty\include\quicksortopty.h
 	"SortBehaviour.h"
 
-1481272470 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\mergesortopty.cpp
+1481293735 source:c:\users\efilryn\desktop\doktoranckie\opty\opty\src\mergesortopty.cpp
 	"MergeSortOPTY.h"
-	<iostream>
 
-1481272236 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\mergesortopty.h
+1481272785 c:\users\efilryn\desktop\doktoranckie\opty\opty\include\mergesortopty.h
 	"SortBehaviour.h"
 	<cstdlib>
 	<errno.h>

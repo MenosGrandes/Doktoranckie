@@ -4,9 +4,17 @@
 #include "../typdefs.hpp"
 #include "../conf/easylogging++.h"
 
+#include "SortBehaviour.h"
+
 #include "Random.h"
-template <class SortMethod>
-class Sort
+template <typename SortMethod,
+          typename=typename std::enable_if<std::is_base_of<SortBehaviour,SortMethod>::value,bool>::type >
+class Sort;
+
+
+
+template <typename SortMethod>
+class Sort<SortMethod>
 {
 public:
     Sort() =default;

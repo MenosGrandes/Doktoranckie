@@ -8,6 +8,7 @@
 #include "../Tests.hpp"
 
 
+
 int main(int argc, char* argv[] )
 {
     srand((time(0)));
@@ -30,10 +31,10 @@ int main(int argc, char* argv[] )
 
     std::vector<int> size1{10,12};
     std::vector<int> appendSize{1};
-//    tester.createTests<TestBitonicSort>(5,size1,appendSize);
-//    tester.createTests<TestHeapSort>(5,size1,appendSize);
-//    tester.createTests<TestMergeSort>(5,size1,appendSize);
-    tester.createTests<TestMergeSortOPTY>(5,size1,appendSize);
+    tester.createTests<TestBitonicSort>(5,size1,appendSize);
+    tester.createTests<TestHeapSort>(5,size1,appendSize);
+    tester.createTests<TestMergeSort>(5,size1,appendSize);
+//    tester.createTests<TestMergeSortOPTY>(5,size1,appendSize);
 
 //    tester.createTests<TestShellSort>(5,size1,appendSize);
 //    tester.createTests<TestQuickSort>(50,size1,appendSize,WORST);
