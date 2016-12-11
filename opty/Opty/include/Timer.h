@@ -2,6 +2,8 @@
 #define TIMER_H
 
 #include "Sort.h"
+
+#ifdef _WIN32
 #include <windows.h>
 
 class Timer
@@ -10,7 +12,7 @@ public:
     Timer() =default;
     ~Timer() =default;
     template <class SortMethod>
-    TimeComprasions measureWindows( SortMethod *s)
+    TimeComprasions measureTimeAndComprasions( SortMethod *s)
     {
         StartCounter();
         int comprasions= s->_sort();
@@ -38,6 +40,26 @@ public:
         return double(li.QuadPart-CounterStart)/PCFreq;
     }
 };
+#elif __linux__
+#define BILLION 1000000000L
+class Timer
+{
+public:
+    Timer() =default;
+    ~Timer() =default;
+    template <class SortMethod>
+    TimeComprasions measureTimeAndComprasions( SortMethod *s)
+    {
+    constexpr double NANOSECONDS_TO_MILLISECONDS = 1.0 / 1000000.0;
+        timespec start, end;
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start);
+        int comprasions= s->_sort();
+        clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
 
 
+        return TimeComprasions((BILLION * (end.tv_sec - start.tv_sec) + end.tv_nsec - start.tv_nsec) * NANOSECONDS_TO_MILLISECONDS,comprasions);
+    }
+
+};
+#endif // _WIN32
 #endif // TIMER_H

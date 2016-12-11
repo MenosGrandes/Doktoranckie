@@ -55,7 +55,7 @@ public:
         //const int _end=ceil(toSort.size()-(toSort.size()*0.1));
         for(unsigned int i= 0; i<toSort.size()-1; i++)//(1)
         {
-            int minElem=i,maxElem=i+1;//(2)
+            unsigned int minElem=i,maxElem=i+1;//(2)
             comprasions++;
             if(toSort[minElem]>toSort[maxElem])//(3)
             {

@@ -12,7 +12,7 @@ public:
     int sort(std::vector<int>&toSort)
     {
         int comprasions=0;
-        for (int k = 0; k < toSort.size(); k += 3)
+        for (unsigned int k = 0; k < toSort.size(); k += 3)
         {
             //Sort first 3 indexes
             int indexOfMax_Min = 0;
@@ -38,7 +38,7 @@ public:
                 indexOfMax_Max = indexOfMax_Mid;
                 indexOfMax_Mid = 2;
             }
-            int i=0;
+            unsigned int i=0;
             for ( i = 3; i < toSort.size() - k; i++)
             {
                 comprasions++;

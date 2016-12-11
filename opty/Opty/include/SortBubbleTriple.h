@@ -41,7 +41,7 @@ public:
                 std::swap(toSort[i+1],toSort[i+2]);
             }
 
-            int minElem=i,minElem2=i+1,maxElem=i+2;
+            unsigned int minElem=i,minElem2=i+1,maxElem=i+2;
             comprasions+=2;
             while(minElem2>1 && toSort[minElem2]<toSort[minElem-1])
             {

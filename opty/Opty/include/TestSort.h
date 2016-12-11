@@ -29,8 +29,6 @@ public:
 
         Timer t;
         TimeComprasions tc(0,0);
-        double t_normal=0;
-        int comprasions = 0;
         for(int i=0; i<testCounts; i++)
         {
             std::vector<int> toSort = Random::getInstance().generateRandomVector(1,1000000,sizeOfVector);
@@ -54,7 +52,7 @@ public:
             }
             BasicSort *m_basicSort   = new BasicSort(toSort);
 
-            tc+=t.measureWindows<BasicSort>(m_basicSort);
+            tc+=t.measureTimeAndComprasions<BasicSort>(m_basicSort);
 
             assert( m_basicSort->compare());
 
@@ -69,8 +67,6 @@ TimeComprasions test(const int testCounts,std::vector<int> &toSort,const TEST_OP
 
         Timer t;
         TimeComprasions tc(0,0);
-        double t_normal=0;
-        int comprasions = 0;
         for(int i=0; i<testCounts; i++)
         {
 //            std::vector<int> toSort = Random::getInstance().generateRandomVector(1,1000000,sizeOfVector);
@@ -94,7 +90,7 @@ TimeComprasions test(const int testCounts,std::vector<int> &toSort,const TEST_OP
             }
             BasicSort *m_basicSort   = new BasicSort(toSort);
 
-            tc+=t.measureWindows<BasicSort>(m_basicSort);
+            tc+=t.measureTimeAndComprasions<BasicSort>(m_basicSort);
 
             assert( m_basicSort->compare());
 

@@ -87,7 +87,7 @@ private :
             // dequeue the next [start, end] range of the array to sort
             s--;
             int startI = s->start, endI = s->end;
-            int count = endI - startI + 1;
+//            int count = endI - startI + 1;
             // small array optimisation
 //            if(count <= 55)
 //            {

@@ -24,7 +24,7 @@ public :
         return 0;
     }
 
-    void bitonicSort(int lo, int n, boolean dir)
+    void bitonicSort(int lo, int n, bool dir)
     {
         if (n>1)
         {
@@ -35,7 +35,7 @@ public :
         }
     }
 
-    void bitonicMerge(int lo, int n, boolean dir)
+    void bitonicMerge(int lo, int n, bool dir)
     {
         if (n>1)
         {
@@ -47,7 +47,7 @@ public :
         }
     }
 
-    void compare(int i, int j, boolean dir)
+    void compare(int i, int j, bool dir)
     {
         if (dir==(a[i]>a[j]))
             exchange(i, j);

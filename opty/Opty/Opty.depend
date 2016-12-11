@@ -6159,3 +6159,229 @@
 1481453988 c:\users\menos\desktop\doktoranckie\opty\opty\include\variadictests.h
 	<iostream>
 
+1481483425 source:/home/fr/Desktop/Doktoranckie/opty/Opty/main.cpp
+	<istream>
+	<iostream>
+	"../templatesSpecialisation.hpp"
+	"../Tests.hpp"
+	"../conf/easylogging++.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/templatesSpecialisation.hpp
+	"TestSort.h"
+	"BubbleSort.h"
+	"SortInsert.h"
+	"SortSelection.h"
+	"SortSelectionTuple.h"
+	"SortBubbleTuple.h"
+	"SortInsertTuple.h"
+	"SortSelectionTriple.h"
+	"SortInsertTriple.h"
+	"SortBubbleTriple.h"
+	"QuickSort.h"
+	"MergeSort.h"
+	"HeapSort.h"
+	"ShellSort.h"
+	"BitonicSort.h"
+	"QuickSortOPTY.h"
+	"MergeSortOPTY.h"
+	"WorstCaseHeapSort.h"
+	"WorstCaseMergeSort.h"
+	"BestCaseHeapSort.h"
+	<unistd.h>
+	<cstdlib>
+	<iostream>
+	<fstream>
+	<vector>
+	<boost/variant/variant.hpp>
+	<boost/variant/get.hpp>
+	<tuple>
+	<typeinfo>
+
+1481482814 /home/fr/Desktop/Doktoranckie/opty/Opty/include/TestSort.h
+	"Random.h"
+	"Timer.h"
+	"WorstCase.h"
+	"BestCase.h"
+	"../typdefs.hpp"
+	<cassert>
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/Random.h
+	<istream>
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<functional>
+	<algorithm>
+
+1481483081 /home/fr/Desktop/Doktoranckie/opty/Opty/include/Timer.h
+	"Sort.h"
+	<windows.h>
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/Sort.h
+	"../typdefs.hpp"
+	"../conf/easylogging++.h"
+	"SortBehaviour.h"
+	"Random.h"
+
+1481468852 /home/fr/Desktop/Doktoranckie/opty/Opty/typdefs.hpp
+	<vector>
+	<boost/preprocessor.hpp>
+	<iostream>
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/conf/easylogging++.h
+	<istream>
+	<syslog.h>
+	<ctime>
+	<cstring>
+	<cstdlib>
+	<cctype>
+	<cwchar>
+	<csignal>
+	<cerrno>
+	<cstdarg>
+	<locale>
+	<codecvt>
+	<cxxabi.h>
+	<execinfo.h>
+	<sys/system_properties.h>
+	<sys/stat.h>
+	<sys/time.h>
+	<direct.h>
+	<windows.h>
+	<winsock2.h>
+	<winsock.h>
+	<string>
+	<vector>
+	<map>
+	<utility>
+	<functional>
+	<algorithm>
+	<fstream>
+	<iostream>
+	<sstream>
+	<memory>
+	<type_traits>
+	<mutex>
+	<thread>
+	<pthread.h>
+	<unistd.h>
+	<thread>
+	<queue>
+	<condition_variable>
+	<list>
+	<queue>
+	<deque>
+	<set>
+	<bitset>
+	<stack>
+	<array>
+	<unordered_map>
+	<unordered_set>
+	<QString>
+	<QByteArray>
+	<QVector>
+	<QList>
+	<QPair>
+	<QMap>
+	<QQueue>
+	<QSet>
+	<QLinkedList>
+	<QHash>
+	<QMultiHash>
+	<QStack>
+	<boost/container/vector.hpp>
+	<boost/container/stable_vector.hpp>
+	<boost/container/list.hpp>
+	<boost/container/deque.hpp>
+	<boost/container/map.hpp>
+	<boost/container/flat_map.hpp>
+	<boost/container/set.hpp>
+	<boost/container/flat_set.hpp>
+	<wx/vector.h>
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortBehaviour.h
+	"../typdefs.hpp"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/WorstCase.h
+	<vector>
+	<algorithm>
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/BestCase.h
+	<vector>
+	<algorithm>
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/BubbleSort.h
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortInsert.h
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortSelection.h
+	<algorithm>
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortSelectionTuple.h
+	<algorithm>
+	<iostream>
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortBubbleTuple.h
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortInsertTuple.h
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortSelectionTriple.h
+	"SortBehaviour.h"
+	"../typdefs.hpp"
+	<assert.h>
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortInsertTriple.h
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/SortBubbleTriple.h
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/QuickSort.h
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/MergeSort.h
+	"SortBehaviour.h"
+
+1481468852 /home/fr/Desktop/Doktoranckie/opty/Opty/include/HeapSort.h
+	"SortBehaviour.h"
+
+1481483425 /home/fr/Desktop/Doktoranckie/opty/Opty/include/ShellSort.h
+	"SortBehaviour.h"
+
+1481481600 /home/fr/Desktop/Doktoranckie/opty/Opty/include/BitonicSort.h
+	<bits/stdc++.h>
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/QuickSortOPTY.h
+	"SortBehaviour.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/MergeSortOPTY.h
+	"SortBehaviour.h"
+	<cstdlib>
+	<errno.h>
+	<string.h>
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/WorstCaseHeapSort.h
+	"WorstCase.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/WorstCaseMergeSort.h
+	"WorstCase.h"
+
+1481357106 /home/fr/Desktop/Doktoranckie/opty/Opty/include/BestCaseHeapSort.h
+	"BestCase.h"
+
+1481468852 /home/fr/Desktop/Doktoranckie/opty/Opty/Tests.hpp
+	"typdefs.hpp"
+
+1481468852 source:/home/fr/Desktop/Doktoranckie/opty/Opty/src/MergeSortOPTY.cpp
+	"MergeSortOPTY.h"
+
+1481468852 source:/home/fr/Desktop/Doktoranckie/opty/Opty/src/WorstCaseMergeSort.cpp
+	"WorstCaseMergeSort.h"
+

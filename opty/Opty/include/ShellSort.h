@@ -15,7 +15,7 @@ public:
     int sort( std::vector<int>&toSort)
     {
         m_cnt = toSort.size();
-        for( int x = 0; x < 9; x++ )
+        for( unsigned int x = 0; x < 9; x++ )
             if( toSort.size() > m_gap[x] )
             {
                 m_idx = x;
