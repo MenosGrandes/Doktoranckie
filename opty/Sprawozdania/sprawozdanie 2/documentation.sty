@@ -18,6 +18,7 @@
 \usepackage{hyperref}
  \usepackage{url}
  \usepackage{verbatim}
+ \usepackage{mathtools}
 \usepackage{pgfplots}
 \pgfplotsset{
     legend entry/.initial=,
@@ -37,7 +38,8 @@
 \renewcommand{\lstlistingname}{Algorytm}% Listing -> Algorithm
 \newcommand{\wyjT}{gdzie $T$ to oszacowana ilość operacji a $n$ rozmiar tablicy do posortowania.\\}
 
-
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \pgfplotsset{compat=newest} % Allows to place the legend below plot
 \usepgfplotslibrary{units} % Allows to enter the units nicely

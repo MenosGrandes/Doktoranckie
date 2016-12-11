@@ -33,6 +33,9 @@
 
 #cccc folder
 .cccc
+
+#cccc folder
+.logs
 *.xml
 ## Core latex/pdflatex auxiliary files:
 *.aux

@@ -5,7 +5,7 @@
 
 #include <vector>
 #include <boost/preprocessor.hpp>
-
+#include <iostream>
 
 
 
@@ -69,11 +69,21 @@ public:
         this->time=this->time/value;
         return *this;
     }
+    std::ostream& operator<< (std::ostream& stream)
+    {
+        stream<<"c="<<this->comprasions<<" t="<<this->time<<std::endl;
+        return stream;
+    }
+
     TimeComprasions(double t,int c):time(t),comprasions(c) {};
     double time;
     int comprasions;
 };
-
+//    std::ostream& operator<< (std::ostream& stream, const TimeComprasions & tc)
+//    {
+//        stream<<"c="<<tc.comprasions<<" t="<<tc.time<<std::endl;
+//        return stream;
+//    }
 //
 //
 

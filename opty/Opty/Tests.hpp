@@ -46,6 +46,7 @@ public :
             counter++;
         }
     }
+
     void performTests()
     {
         for(unsigned int i=0; i<m_testVector.size(); i++)

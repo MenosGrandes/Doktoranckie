@@ -139,6 +139,7 @@
 		<Unit filename="include/Timer.h">
 			<Option virtualFolder="Helpers/" />
 		</Unit>
+		<Unit filename="include/VariadicTests.h" />
 		<Unit filename="include/WorstCase.h">
 			<Option virtualFolder="Sort/Cases/Worst/" />
 		</Unit>
@@ -152,6 +153,7 @@
 		<Unit filename="src/MergeSortOPTY.cpp">
 			<Option virtualFolder="Sort/FastSort/OPTY/" />
 		</Unit>
+		<Unit filename="src/VariadicTests.cpp" />
 		<Unit filename="src/WorstCaseMergeSort.cpp">
 			<Option virtualFolder="Sort/Cases/Worst/" />
 		</Unit>

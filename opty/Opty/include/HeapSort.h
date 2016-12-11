@@ -27,7 +27,7 @@ private:
             i_big = i;
             c1 = (2*i) + 1;
             c2 = c1 + 1;
-            compare+=4;
+            compare+=3;
             if( c1<max && heap[c1]>heap[i_big] )
             {
                 i_big = c1;
@@ -40,6 +40,7 @@ private:
             {
                 return;
             }
+            compare++;
             std::swap(heap[i],heap[i_big]);
             i = i_big;
         }

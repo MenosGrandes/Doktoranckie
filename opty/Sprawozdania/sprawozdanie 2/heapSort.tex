@@ -9,19 +9,30 @@ Sortowanie przez kopcowanie polega na wykorzystaniu kopca.\\
 \subsubsection{Kopiec}
 Jest to kontener danych podobny do drzewa binarnego\cite{heapsort}. Każdy element w kopcu posiada 3 inne elementu : swojego przodka oraz dwójkę dzieci, element \textit{root} nie posiada przodka ponieważ jest pierwszym elementem. 
 Element \textit{przodek} zawsze posiada wartość większa od wartości swoich dzieci.	\\
-Ogolny wzor prowadzacy do obliczenia zlozonosci czasowej tego algorytmu to:
-\begin{equation}
-T(N) = T_{buildheap}(N) +\sum_{k=1}^{n-1} T_{heapify}k + O(n-1)
-\end{equation}
 
 Aby zawsze na pierwszym miejscu znajdował się maksymalny element zbioru kopiec posiada metodę o nazwie $Heapify$. Jest ona odpowiedzialna za stworzenie takiego kopca którego każdy element jest uporządkowany tak aby wartość rodzica była wartością większa niż wartości jego dzieci.\\
 Złożoność obliczeniowa takiej funkcji to :
 \begin{align*}
 T(N) &= T(\frac{2n}{3}) + O(1) \\
-T(N) &=O(\log n)
+T(N) &=O(\ln n)
 \end{align*} 
+Lecz dla każdego elementu na wysokości $h$ złożoność tej funkcji będzie wynosić $O(h)$
 \par Kolejna funkcja wykorzystywana w tym sortowaniu jest tworzenie kopca $BuildHeap$.
-J
+W metodzie tej dla każdego elementu wykonywana jest metoda $Heapify$ która porządkuje kopiec. \\
+\par Dla $n$ elementowego kopca, którego wysokość $h$ to $\floor*{\ln n}$ w elemencie $\ceil*{\frac{n}{2^{h+1}}}$ złożoność obliczeniowa funkcji $BuildHeap$ będzie wynosić 
+\begin{equation*}
+\sum_{h=0}^{\floor*{\ln n}}\ceil*{\frac{n}{2^{h+1}}}O(h) = O \Bigg( n \sum_{h=0}^{\floor*{\ln n}}\ceil*{\frac{h}{2^{h}}} \Bigg)
+\end{equation*}
+Rozwijając powyższe równanie dla nieskończenie wielu elementów możemy otrzymać:
+\begin{equation}
+\sum_{h=0}^{\infty}\frac{h}{2^h} = \frac{\frac{1}{2}} {(1-\frac{1}{2})^2} = 2
+\end{equation}
+Oznacza to że możemy zbudować maksymalny kopiec w czasie liniowym $O(n)$.\\
+Biorąc pod uwagę wszystkie powyższe wnioski samo sortowanie przez kopcowanie będzie miało żlożoność obliczeniową:
+\begin{equation}
+O(n \ln n)
+\end{equation}
+Ponieważ procedura budowania maksymalnego kopca zajmuję $O(n)$, a dla elementów $n-1$ trzeba wywołać $Heapify$ która zajmuję $O(\ln n)$.
 \subsection{Klasyfikacja}
 \subsubsection{Optymistyczna}
 
