@@ -17,14 +17,14 @@ public:
     SortInsertTuple() {};
     ~SortInsertTuple() {};
 
-    int sort(std::vector<int> &toSort)
+    uint256_t sort(std::vector<int> &toSort)
     {
 
         const int sizeOfArray=toSort.size()-(toSort.size()%2);
-        int comprasions=0;
+         compareCounter=0;
         for(int i=0; i<sizeOfArray; i+=2)
         {
-            comprasions++;
+            compareCounter++;
             if(toSort[i] > toSort[i+1])
             {
                 std::swap(toSort[i],toSort[i+1]);
@@ -33,38 +33,38 @@ public:
             const int pom2 = toSort[i+1];
 
             int j = i-1;
-            comprasions+=2;
+            compareCounter+=2;
             while(j>=0 && toSort[j]>pom2)
             {
-                comprasions+=2;
+                compareCounter+=2;
                 toSort[j+2] =  toSort[j];
                 j--;
             }
             toSort[j+2] = pom2;
             toSort[j+1] = pom1;
-            comprasions+=2;
+            compareCounter+=2;
             while(j>=0 && toSort[j]>pom1)
             {
-                comprasions+=2;
+                compareCounter+=2;
                 toSort[j+1] = toSort[j];
                 --j;
             }
             toSort[j+1] = pom1;
         }
-        comprasions++;
+        compareCounter++;
         if(toSort.size()%2==1)
         {
             const int pom = toSort[toSort.size()-1];
             int k = toSort.size()-2;
             while(k>=0 && toSort[k]>pom)
             {
-                comprasions+=2;
+                compareCounter+=2;
                 toSort[k+1] = toSort[k];
                 --k;
             }
             toSort[k+1] = pom;
         }
-        return comprasions;
+        return compareCounter;
 
     }
 };

@@ -9,9 +9,9 @@ public:
 
     SortSelectionTriple() {};
     ~SortSelectionTriple() {};
-    int sort(std::vector<int>&toSort)
+    uint256_t sort(std::vector<int>&toSort)
     {
-        int comprasions=0;
+         compareCounter=0;
         for (unsigned int k = 0; k < toSort.size(); k += 3)
         {
             //Sort first 3 indexes
@@ -19,13 +19,13 @@ public:
             int indexOfMax_Mid = 1;
             int indexOfMax_Max = 2;
 
-            comprasions++;
+            compareCounter++;
             if (toSort[0] > toSort[1])
             {
                 indexOfMax_Min = 1;
                 indexOfMax_Mid = 0;
             }
-            comprasions++;
+            compareCounter++;
             if (toSort[2] <= toSort[indexOfMax_Min])
             {
                 indexOfMax_Max = indexOfMax_Mid;
@@ -34,33 +34,33 @@ public:
             }
             else if (toSort[2] <= toSort[indexOfMax_Mid])
             {
-                comprasions++;
+                compareCounter++;
                 indexOfMax_Max = indexOfMax_Mid;
                 indexOfMax_Mid = 2;
             }
             unsigned int i=0;
             for ( i = 3; i < toSort.size() - k; i++)
             {
-                comprasions++;
+                compareCounter++;
                 if (toSort[i] > toSort[indexOfMax_Min])
                 {
 
                     if (toSort[i] >= toSort[indexOfMax_Max])
                     {
-                        comprasions++;
+                        compareCounter++;
                         indexOfMax_Min = indexOfMax_Mid;
                         indexOfMax_Mid = indexOfMax_Max;
                         indexOfMax_Max = i;
                     }
                     else if (toSort[i] >= toSort[indexOfMax_Mid])
                     {
-                        comprasions+=2;
+                        compareCounter+=2;
                         indexOfMax_Min = indexOfMax_Mid;
                         indexOfMax_Mid = i;
                     }
                     else
                     {
-                        comprasions+=2;
+                        compareCounter+=2;
                         indexOfMax_Min = i;
                     }
                 }
@@ -70,14 +70,14 @@ public:
             int tmp3 = toSort[indexOfMax_Max];
             toSort[indexOfMax_Max] = toSort[i - 1];
             toSort[i - 1] = tmp3;
-            comprasions++;
+            compareCounter++;
             if (i - 1 == indexOfMax_Mid)
             {
                 indexOfMax_Mid = indexOfMax_Max;
             }
             else if (i - 1 == indexOfMax_Min)
             {
-                comprasions++;
+                compareCounter++;
                 indexOfMax_Min = indexOfMax_Max;
             }
 
@@ -85,7 +85,7 @@ public:
             int tmp2 = toSort[indexOfMax_Mid];
             toSort[indexOfMax_Mid] = toSort[i - 2];
             toSort[i - 2] = tmp2;
-            comprasions++;
+            compareCounter++;
             if (i - 2 == indexOfMax_Min)
             {
                 indexOfMax_Min = indexOfMax_Mid;
@@ -95,7 +95,7 @@ public:
             toSort[indexOfMax_Min] = toSort[i - 3];
             toSort[i - 3] = tmp1;
         }
-        return comprasions;
+        return compareCounter;
     }
 
 };

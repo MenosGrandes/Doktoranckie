@@ -11,10 +11,10 @@ public :
         SortBehaviour(SortBehaviour&& o)=default;
         SortBehaviour& operator=(const SortBehaviour& other)=default;
         SortBehaviour& operator=(SortBehaviour&& other)=default;
-    virtual int sort(std::vector<int>&toSort)=0;
+    virtual uint256_t sort(std::vector<int>&toSort)=0;
     static SortType m_sortType;
 protected:
-        int compareCounter;
+        uint256_t compareCounter;
 
 };
 

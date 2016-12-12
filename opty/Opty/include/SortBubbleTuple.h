@@ -49,34 +49,34 @@ public:
 
     SortBubbleTuple() {};
     ~SortBubbleTuple() {};
-    int sort(std::vector<int> &toSort)
+    uint256_t sort(std::vector<int> &toSort)
     {
-        int comprasions=0;
+         compareCounter=0;
         //const int _end=ceil(toSort.size()-(toSort.size()*0.1));
         for(unsigned int i= 0; i<toSort.size()-1; i++)//(1)
         {
             unsigned int minElem=i,maxElem=i+1;//(2)
-            comprasions++;
+            compareCounter++;
             if(toSort[minElem]>toSort[maxElem])//(3)
             {
                 std::swap(toSort[minElem],toSort[maxElem]);//(4)
             }
-            comprasions+=2;
+            compareCounter+=2;
             while(minElem>0 && toSort[minElem]<toSort[minElem-1])//(5) //N
             {
-                comprasions+=2;
+                compareCounter+=2;
                 std::swap(toSort[minElem],toSort[minElem-1]);//(6)
                 minElem--;//(7)1
             }
-            comprasions+=2;
+            compareCounter+=2;
             while(maxElem<(toSort.size()-1) && toSort[maxElem]>toSort[maxElem+1])//(8) // N
             {
-                comprasions+=2;
+                compareCounter+=2;
                 std::swap(toSort[maxElem],toSort[maxElem+1]);//(9)
                 maxElem++;//(10)
             }
         }
-        return comprasions;
+        return compareCounter;
 
 //        for(int _size=0 ; _size<toSort.size(); _size+=2)
 //        {

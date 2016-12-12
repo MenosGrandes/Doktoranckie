@@ -9,25 +9,24 @@ public:
 
     HeapSort()=default;
     ~HeapSort()=default;
-    int sort(std::vector<int>& toSort)
+    uint256_t sort(std::vector<int>& toSort)
     {
-        compare = 0;
+        compareCounter = 0;
         heap_sort(toSort);
-        return compare;
+        return compareCounter;
     }
 
 private:
-    int compare=0;
     void shift_down(std::vector<int>& heap,int i, int max)
     {
         int i_big, c1, c2;
-        compare++;
+        compareCounter++;
         while(i < max)
         {
             i_big = i;
             c1 = (2*i) + 1;
             c2 = c1 + 1;
-            compare+=3;
+            compareCounter+=3;
             if( c1<max && heap[c1]>heap[i_big] )
             {
                 i_big = c1;
@@ -40,7 +39,7 @@ private:
             {
                 return;
             }
-            compare++;
+            compareCounter++;
             std::swap(heap[i],heap[i_big]);
             i = i_big;
         }
@@ -51,7 +50,7 @@ private:
         int i = (arr.size()/2) - 1;
         while(i >= 0)
         {
-            compare++;
+            compareCounter++;
             shift_down(arr, i, arr.size());
             --i;
         }
@@ -63,7 +62,7 @@ private:
         int end = arr.size() - 1;
         while (end > 0)
         {
-            compare++;
+            compareCounter++;
             std::swap(arr[0], arr[end]);
             shift_down(arr, 0, end);
             --end;

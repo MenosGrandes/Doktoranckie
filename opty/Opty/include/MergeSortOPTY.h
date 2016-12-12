@@ -35,7 +35,7 @@ class MergeSortOPTY : public SortBehaviour
 public:
     MergeSortOPTY()=default;
     ~MergeSortOPTY()=default;
-    int sort(std::vector<int> &toSort);
+    uint256_t sort(std::vector<int> &toSort);
     static const SortType m_sortType=MERGE_OPTY;
 
 protected:

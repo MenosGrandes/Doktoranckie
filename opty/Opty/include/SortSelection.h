@@ -9,16 +9,16 @@ public:
 
     SortSelection() {};
     ~SortSelection() {};
-    int sort(std::vector<int> &toSort)
+    uint256_t sort(std::vector<int> &toSort)
     {
-        int comprasions=0;
+         compareCounter=0;
         for(VintIter it = toSort.begin(); it != toSort.end()-1; ++it)
         {
             VintIter next=(it);
             std::iter_swap((std::min_element(next++,toSort.end())),it);
-            comprasions++;
+            compareCounter++;
         }
-        return comprasions;
+        return compareCounter;
     }
 
 };

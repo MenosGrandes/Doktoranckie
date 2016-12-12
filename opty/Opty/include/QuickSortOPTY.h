@@ -2,7 +2,7 @@
 #define QUICKSORTOPTY_H
 
 #include "SortBehaviour.h"
-#define OPTY_2
+#define OPTY_1
 class QuickSortOPTY:public SortBehaviour
 {
 public:
@@ -10,9 +10,9 @@ public:
 
     QuickSortOPTY() =default;
     ~QuickSortOPTY() =default;
-    int sort(std::vector<int> &toSort)
+    uint256_t sort(std::vector<int> &toSort)
     {
-        this->compare=0;
+        compareCounter=0;
 #ifdef OPTY_1
         quickSort(&toSort[0],0,toSort.size()-1);
 #endif // OPTY_1
@@ -20,10 +20,10 @@ public:
         quickSortIterative(&toSort[0],0,toSort.size()-1);
 #endif // OPTY_2
 
-        return this->compare;
+        return compareCounter;
     }
 private :
-    int compare;
+    #ifdef OPTY_1
     void quickSort(int *arr, int low, int high)
     {
         while (low < high)
@@ -34,7 +34,7 @@ private :
 
 
             quickSort(arr, low, pi - 1);
-            this->compare++;
+            compareCounter++;
             low = pi+1;
         }
     }
@@ -46,34 +46,33 @@ private :
         std::swap(arr[mid],arr[left]);
         int i = left + 1;
         int j = right;
-        this->compare++;
+        compareCounter++;
         while (i <= j)
         {
-            //this->compare+=2;
             while(i <= j && arr[i] <= pivot)
             {
-                this->compare+=2;
+                compareCounter+=2;
                 i++;
             }
-            //this->compare+=2;
             while(i <= j && arr[j] > pivot)
             {
-                this->compare+=2;
+                compareCounter+=2;
                 j--;
             }
-            this->compare++;
+            compareCounter++;
             if (i < j)
             {
                 std::swap(arr[i], arr[j]);
             }
-            this->compare++;
+            compareCounter++;
 
         }
         std::swap(arr[i - 1],arr[left]);
         return i - 1;
     }
+#endif // OPTY_1
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+#ifdef OPTY_2
     template<typename T>
     void quickSortIterative(T *data, size_t start, size_t end)
     {
@@ -108,27 +107,27 @@ private :
                 // look for the next item larger than pivot (going from the start)
                 while(data[i] < pivot)
                 {
-                    this->compare++;
+                    compareCounter++;
                     i++;
                 }
                 // do the same for the next item larger than pivot (going from the end)
                 while(pivot < data[j])
                 {
-                    this->compare++;
+                    compareCounter++;
                     j--;
                 }
                 // swap the larger and smaller items
-                this->compare++;
+                compareCounter++;
                 if(i <= j)
                 {
                     std::swap(data[i], data[j]);
                     i++;
                     j--;
                 }
-                this->compare++;
+                compareCounter++;
             }
             // now repeat the process on all items before the pivot
-            this->compare++;
+            compareCounter++;
             if(startI < j)
             {
                 // instead of a recursive call, enqueue the new [start, end] range
@@ -137,14 +136,14 @@ private :
                 s++;
             }
             // and another time on all items after the pivot
-            this->compare++;
+            compareCounter++;
             if(i < endI)
             {
                 s->start = i;
                 s->end = endI;
                 s++;
             }
-            this->compare++;
+            compareCounter++;
         }
         while(s > stack);  // as long as we have [start, end] ranges to sort
     }
@@ -159,7 +158,7 @@ private :
     template<typename T>
     void median(T& a, T& b, T &c)
     {
-        this->compare+=3;
+        compareCounter+=3;
         if(c < a)
             std::swap(a, c);
         if(b < a)
@@ -168,7 +167,7 @@ private :
             std::swap(b, c);
     }
 
-
+#endif // OPTY_2
 
 
 

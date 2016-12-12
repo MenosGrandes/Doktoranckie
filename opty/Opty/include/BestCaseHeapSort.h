@@ -14,7 +14,7 @@ public:
 
     void generate(std::vector<int>& toSort) const
     {
-        std::sort(toSort.begin(),toSort.end(), std::greater<int>());
+        std::sort(toSort.begin(),toSort.end(), std::less<int>());
     }
 
 };

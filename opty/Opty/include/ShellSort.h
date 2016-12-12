@@ -1,6 +1,8 @@
 #ifndef SHELLSORT_H
 #define SHELLSORT_H
-
+/*
+http://algs4.cs.princeton.edu/21elementary/Shell.java.html
+*/
 #include "SortBehaviour.h"
 class ShellSort : public SortBehaviour
 {
@@ -12,20 +14,40 @@ public:
 
 
     }
-    int sort( std::vector<int>&toSort)
+    uint256_t sort( std::vector<int>&toSort)
     {
         compareCounter = 0;
-        m_cnt = toSort.size();
-        for( unsigned int x = 0; x < 9; x++ )
+
+        int iter = 0;
+        for(int i=0;i<9;i++)
         {
-            compareCounter++;
-            if( toSort.size() > m_gap[x] )
+            if(m_gap[i]<toSort.size())
             {
-                m_idx = x;
+
+                iter=i;
                 break;
             }
         }
-        sortIt( &toSort[0] );
+        int h = m_gap[iter];
+
+        while (h >= 1)
+        {
+            compareCounter++;
+            for (int i = h; i < toSort.size(); i++)
+            {
+                compareCounter+=2;
+                for (int j = i; j >= h && (toSort[j]< toSort[j-h]); j -= h)
+                {
+                    compareCounter++;
+                    int swap = toSort[j];
+                    toSort[j] = toSort[j-h];
+                    toSort[j-h] = swap;
+                }
+            }
+            h =m_gap[iter++];
+        }
+
+
 
         return compareCounter;
     }
@@ -59,7 +81,7 @@ private:
             }
         }
     }
-    int m_gap[9]= {1750,701,3010,132,57,23,10,4,1}, m_idx, m_cnt;
+    int m_gap[9]= {1750,701,301,132,57,23,10,4,1}, m_idx, m_cnt;
 };
 
 #endif // SHELLSORT_H

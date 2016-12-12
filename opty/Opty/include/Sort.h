@@ -64,7 +64,7 @@ public:
         }
         std::cout<<std::endl;
     }
-    int _sort()
+    uint256_t _sort()
     {
         return m_sortMethod->sort(this->m_data);
     }

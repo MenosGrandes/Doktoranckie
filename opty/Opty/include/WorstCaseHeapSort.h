@@ -18,7 +18,7 @@ public:
     ~WorstCaseHeapSort() = default;
     void generate(std::vector<int> &generator) const
     {
-            std::sort(generator.begin(),generator.end(),std::less<int>());
+            std::sort(generator.begin(),generator.end(),std::greater<int>());
 
     }
 

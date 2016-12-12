@@ -31,6 +31,14 @@ void TEST_CASE_HEAP()
     TestHeapSort ths2;
     TimeComprasions tc2 =ths2.test(1,n);
     std::cout<<tc2.comprasions << " "<<tc2.time<<std::endl;
+//    n = Random::getInstance().generateRandomVector(1,1000,n.size());
+        std::generate(std::begin(n),std::end(n),[&]()
+    {
+        return Random::getInstance().generate(1,10000);
+    });
+    TestHeapSort ths3;
+    TimeComprasions tc3 =ths3.test(1,n);
+    std::cout<<tc3.comprasions << " "<<tc3.time<<std::endl;
 }
 void TEST_CASE_BITONIC()
 {
@@ -67,22 +75,20 @@ int main(int argc, char* argv[] )
 
     LOG(DEBUG)<<" ";
 
-//    std::vector<int> size1{100,1000,5000,20000,60000,110000};
-//    std::vector<int> appendSize{203,511,2031,8031,11020};
+    std::vector<int> size1{100,1000,5000,20000,60000,110000};
+    std::vector<int> appendSize{203,511,2031,8031,11023};
 
-    std::vector<int> size1{100000,100001};
-    std::vector<int> appendSize{1};
+
 //    tester.createTests<TestBitonicSort>(5,size1,appendSize);
 //    tester.createTests<TestHeapSort>(5,size1,appendSize);
-    tester.createTests<TestMergeSort>(5,size1,appendSize);
-//    tester.createTests<TestMergeSortOPTY>(5,size1,appendSize);
-
+//    tester.createTests<TestMergeSort>(5,size1,appendSize);
 //    tester.createTests<TestShellSort>(5,size1,appendSize);
-//    tester.createTests<TestQuickSort>(5,size1,appendSize,WORST);
-//    tester.createTests<TestQuickSortOPTY>(50,size1,appendSize,WORST);
-
+//    tester.createTests<TestQuickSort>(5,size1,appendSize);
+    tester.createTests<TestQuickSortOPTY>(5,size1,appendSize);
+//
     tester.performTests();
 
+//TEST_CASE_HEAP();
     return 0;
 }
 

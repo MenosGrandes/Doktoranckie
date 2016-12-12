@@ -10,7 +10,7 @@ public:
     static const SortType m_sortType=MERGE;
 
     MergeSort() {}
-    int sort(std::vector<int> &toSort)
+    uint256_t sort(std::vector<int> &toSort)
     {
         compareCounter=0;
         _sort(toSort);

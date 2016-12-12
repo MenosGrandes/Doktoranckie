@@ -6,9 +6,10 @@
 #include <vector>
 #include <boost/preprocessor.hpp>
 #include <iostream>
+ #include <boost/multiprecision/cpp_int.hpp>
 
 
-
+using namespace boost::multiprecision;
 
 
 #define X_DEFINE_ENUM_WITH_STRING_CONVERSIONS_TOSTRING_CASE(r, data, elem)    \
@@ -75,9 +76,9 @@ public:
         return stream;
     }
 
-    TimeComprasions(double t,int c):time(t),comprasions(c) {};
+    TimeComprasions(double t,uint256_t c):time(t),comprasions(c) {};
     double time;
-    int comprasions;
+    uint256_t comprasions;
 };
 //    std::ostream& operator<< (std::ostream& stream, const TimeComprasions & tc)
 //    {

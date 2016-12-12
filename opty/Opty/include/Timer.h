@@ -15,7 +15,7 @@ public:
     TimeComprasions measureTimeAndComprasions( SortMethod *s)
     {
         StartCounter();
-        int comprasions= s->_sort();
+        uint256_t comprasions= s->_sort();
         double ret=GetCounter();
         return TimeComprasions(ret,comprasions);
     }
@@ -53,7 +53,7 @@ public:
     constexpr double NANOSECONDS_TO_MILLISECONDS = 1.0 / 1000000.0;
         timespec start, end;
         clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start);
-        int comprasions= s->_sort();
+        uint256_t comprasions= s->_sort();
         clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end);
 
 

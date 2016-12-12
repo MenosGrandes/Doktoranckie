@@ -5,7 +5,7 @@ int MergeSortOPTY::comparatorINT(const int a,const int b)
 {
     return a<b;
 }
-int MergeSortOPTY::sort(std::vector<int> &toSort)
+uint256_t MergeSortOPTY::sort(std::vector<int> &toSort)
 {
 //    LOG(DEBUG)<<"NIE DZIALA!!!!!!!!!!!!!!!!!!!!!";
     int *a =new int[toSort.size()];
@@ -14,7 +14,7 @@ int MergeSortOPTY::sort(std::vector<int> &toSort)
         a[i]=toSort[i];
     }
 __sort(a,toSort.size(),sizeof(int));
-
+return 0;
 }
 int MergeSortOPTY::__sort (void *base, std::size_t nmemb, std::size_t size)
 {

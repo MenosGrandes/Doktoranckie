@@ -9,23 +9,23 @@ public:
 
     SortInsert() {};
     ~SortInsert() {};
-    int sort(std::vector<int> &toSort)
+    uint256_t sort(std::vector<int> &toSort)
     {
-        int comprasions=0;
+         compareCounter=0;
         for(unsigned int i=1; i<toSort.size(); i++)
         {
             const int pom = toSort[i];
             int j = i-1;
-            comprasions++;
+            compareCounter++;
             while(j>=0 && toSort[j]>pom)
             {
-                comprasions++;
+                compareCounter++;
                 toSort[j+1] = toSort[j];
                 --j;
             }
             toSort[j+1] = pom;
         }
-        return comprasions;
+        return compareCounter;
     }
 
 };
