@@ -30,10 +30,24 @@ public:
     std::vector<int> generateRandomVector(int min,int max,int n)
     {
         std::vector<int> v(n);
-        for(int i=0; i<n; i++)
-        {
-            v[i]=generate(min,max);
-        }
+        int x=0;
+     std::generate(std::begin(v),std::end(v),[&]()
+                   {
+                       return ( rand() % max ) + min;
+                   }
+                   );
+//        for(int i=0; i<n; i++)
+//        {
+//            v[i]=generate(min,max);
+//        }
+
+//         std::generate(std::begin(n),std::end(n),[&]()
+//    {
+//        return x--;
+//    });
+
+
+
         return v;
     }
 

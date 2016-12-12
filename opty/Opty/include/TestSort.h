@@ -62,32 +62,13 @@ public:
         return tc;
     }
 
-TimeComprasions test(const int testCounts,std::vector<int> &toSort,const TEST_OPTIONS so)
+TimeComprasions test(const int testCounts,std::vector<int> &toSort)
     {
 
         Timer t;
         TimeComprasions tc(0,0);
         for(int i=0; i<testCounts; i++)
         {
-//            std::vector<int> toSort = Random::getInstance().generateRandomVector(1,1000000,sizeOfVector);
-
-            switch(so)
-            {
-            case WORST:
-            {
-                WorstCaseMethod _wcm;
-                _wcm.generate(toSort);
-            }
-            break;
-            case BEST:
-            {
-                BestCaseMethod _bcm;
-                _bcm.generate(toSort);
-            }
-            break;
-            default:
-                break;
-            }
             BasicSort *m_basicSort   = new BasicSort(toSort);
 
             tc+=t.measureTimeAndComprasions<BasicSort>(m_basicSort);

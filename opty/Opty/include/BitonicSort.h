@@ -18,14 +18,16 @@ public :
 
     int sort(std::vector<int>& toSort)
     {
+        compareCounter=0;
         this->a= toSort;
         bitonicSort(0, toSort.size(), ASCENDING);
         toSort = this->a;
-        return 0;
+        return compareCounter;
     }
-
+private :
     void bitonicSort(int lo, int n, bool dir)
     {
+        compareCounter++;
         if (n>1)
         {
             int m=n/2;
@@ -37,37 +39,37 @@ public :
 
     void bitonicMerge(int lo, int n, bool dir)
     {
+        compareCounter++;
         if (n>1)
         {
-            int m=greatestPowerOfTwoLessThan(n);
+            const int m=greatestPowerOfTwoLessThan(n);
             for (int i=lo; i<lo+n-m; i++)
-                compare(i, i+m, dir);
+            {
+                compareCounter++;
+                if (dir==(a[i]>a[i+m]))
+                {
+                   const int t=a[i];
+                    a[i]=a[i+m];
+                    a[i+m]=t;
+                }
+            }
             bitonicMerge(lo, m, dir);
             bitonicMerge(lo+m, n-m, dir);
         }
     }
 
-    void compare(int i, int j, bool dir)
-    {
-        if (dir==(a[i]>a[j]))
-            exchange(i, j);
-    }
 
-    void exchange(int i, int j)
-    {
-        int t=a[i];
-        a[i]=a[j];
-        a[j]=t;
-    }
 
     int greatestPowerOfTwoLessThan(int n)
     {
         int k=1;
         while (k<n)
-            k=k<<1;
+            {
+                compareCounter++;
+                k=k<<1;
+            }
         return k>>1;
     }
-private :
     std::vector<int>a;
     bool ASCENDING=true;    // sorting direction
 };

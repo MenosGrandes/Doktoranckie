@@ -24,14 +24,14 @@ W metodzie tej dla każdego elementu wykonywana jest metoda $Heapify$ która por
 \sum_{h=0}^{\floor*{\ln n}}\ceil*{\frac{n}{2^{h+1}}}O(h) = O \Bigg( n \sum_{h=0}^{\floor*{\ln n}}\ceil*{\frac{h}{2^{h}}} \Bigg)
 \end{equation*}
 Rozwijając powyższe równanie dla nieskończenie wielu elementów możemy otrzymać:
-\begin{equation}
+\begin{equation*}
 \sum_{h=0}^{\infty}\frac{h}{2^h} = \frac{\frac{1}{2}} {(1-\frac{1}{2})^2} = 2
-\end{equation}
+\end{equation*}
 Oznacza to że możemy zbudować maksymalny kopiec w czasie liniowym $O(n)$.\\
 Biorąc pod uwagę wszystkie powyższe wnioski samo sortowanie przez kopcowanie będzie miało żlożoność obliczeniową:
-\begin{equation}
+\begin{equation*}
 O(n \ln n)
-\end{equation}
+\end{equation*}
 Ponieważ procedura budowania maksymalnego kopca zajmuję $O(n)$, a dla elementów $n-1$ trzeba wywołać $Heapify$ która zajmuję $O(\ln n)$.
 \subsection{Klasyfikacja}
 \subsubsection{Optymistyczna}

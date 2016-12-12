@@ -14,19 +14,21 @@ public:
     }
     int sort( std::vector<int>&toSort)
     {
+        compareCounter = 0;
         m_cnt = toSort.size();
         for( unsigned int x = 0; x < 9; x++ )
+        {
+            compareCounter++;
             if( toSort.size() > m_gap[x] )
             {
                 m_idx = x;
                 break;
             }
-
+        }
         sortIt( &toSort[0] );
 
-        return 0;
+        return compareCounter;
     }
-protected:
 
 private:
     void sortIt( int* arr )
@@ -38,6 +40,7 @@ private:
             int st = 0;
             for( int x = m_gap[m_idx]; x < m_cnt; x += m_gap[m_idx] )
             {
+                compareCounter++;
                 if( arr[st] > arr[x] )
                 {
                     std::swap( arr[st], arr[x] );
@@ -49,6 +52,7 @@ private:
             {
                 m_idx = 8;
             }
+            compareCounter+=2;
             if( sorted && m_idx == 8 )
             {
                 break;
