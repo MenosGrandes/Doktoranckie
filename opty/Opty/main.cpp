@@ -83,8 +83,8 @@ int main(int argc, char* argv[] )
 //    tester.createTests<TestHeapSort>(5,size1,appendSize);
 //    tester.createTests<TestMergeSort>(5,size1,appendSize);
 //    tester.createTests<TestShellSort>(5,size1,appendSize);
-//    tester.createTests<TestQuickSort>(5,size1,appendSize);
-    tester.createTests<TestQuickSortOPTY>(5,size1,appendSize);
+    tester.createTests<TestQuickSort>(20,size1,appendSize);
+    tester.createTests<TestQuickSortOPTY>(20,size1,appendSize);
 //
     tester.performTests();
 

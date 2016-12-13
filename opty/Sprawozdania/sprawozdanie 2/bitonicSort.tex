@@ -1,13 +1,24 @@
 
 
 \section{BitonicSort}
-\begin{equation}
-\end{equation}
-\subsection{Klasyfikacja}
-\subsubsection{Optymistyczna}
-
-\subsubsection{Pesymistyczna}
-
-\subsubsection{Średnia}
-
+Jest to algorytm sortowania równoległego, która wykorzystuje sekwencje
+bitoniczne.\\
+Sekwencja bitoniczna można nazwać taka sekwencje która najpierw jest
+rosnąca potem malejąca. Zbiór $V [0 \ldots n−1]$ można nazwać sekwencja biton-
+iczna jeżeli istnieje taki indeks $i$ gdzie $0 ‹ i ‹ n − 1$ :
+\begin{equation*}
+x_0 \leq x_1 \ldots \leq x_i \; oraz \; x_i \geq x_{i+1} \ldots \geq x_{n−1}
+\end{equation*}
+Aby posortować kolekcje danych o długości n z dwóch sekwencji o długości$\frac{n}{2}$
+potrzeba $\ln(n)$ porównań.
+\begin{equation*}
+T(n) = ln(n) + T( \frac{n}{2})
+\end{equation*}
+Ponieważ jest to równanie rekurencyjne trzeba rozwinąć je do postaci nierekuren-
+cyjnej.
+\begin{align*}
+T(n) &= \ln(n) + \ln(n) − 1 + \ln(n) − 2 + \ldots + 1 \\
+&= \ln(n) \cdot \frac{\ln+1}{2} \\
+&= O(n \cdot \ln(n)^2 )
+\end{align*}
 
