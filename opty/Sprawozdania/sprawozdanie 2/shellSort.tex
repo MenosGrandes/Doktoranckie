@@ -1,15 +1,36 @@
 
 
 \section{Shellsort}
-Jest to algorytm sortowania stanowiący uogólnienie sortowania przez wstawianie. Dopuszcza on sortowanie elementów znajdujących się od siebie o określona odległość. W tej implementacji algorytmu został wykorzystany ciąg Marcina Ciury :
+Jest to algorytm sortowania stanowiący uogólnienie sortowania przez wstawianie\cite{shell}. Dopuszcza on sortowanie elementów znajdujących się od siebie o określona odległość. W tej implementacji algorytmu został wykorzystany ciąg Marcina Ciury :
 \begin{equation*}
  	1 , 4 , 10 , 23 , 57 , 132 , 301 , 701 
 \end{equation*}
 \subsection{Klasyfikacja}
 \subsubsection{Optymistyczna}
-
+Ten przypadek występuje gdy zbiór który ma być posortowany jest już posortowany.\\
+Zakładając ze posortowanie elementów oddzielonych od siebie o jedna przerwę potrzeba $n$ porównań. Dla elementów oddalonych od siebie o 3 potrzeba $3 \cdot \frac{n}{3}$ ,
+dla elementów oddalonych od siebie o 7 potrzeba $7 \cdot \frac{n}{7}$ . Ogólny wzór będzie zatem taki:
+\begin{equation*}
+2^k -1 < n
+\end{equation*}
+tak wiec 
+\begin{equation*}
+k < \ln(n+1)
+\end{equation*}
+Powyższe wzory oznaczają ze w najlepszym przypadku optymistyczna złożoność nie będzie mniejsza niż 
+\begin{equation*}
+n \cdot \ln(n+1) = O(n\cdot \ln(n))
+\end{equation*}
 \subsubsection{Pesymistyczna}
-
+Ponieważ najgorszy przypadek zawsze zależny od ciągu przerw przyjętego przy algorytmie nie można określić jednego wzoru należny określić jeden ogólny.
+Zakładając ze w najgorszym przypadku potrzeba $n^2$ porównań dla elementów oddalonych od siebie o jedna przerwę, dla elementów oddzielonych o 3 potrzeba $3 \cdot (\frac{n}{3})^2$.
+Ogólny wzór można wysnuć poprzez porównywanie ze sobą dwóch ciągów
+\begin{align*}
+& n^2 \cdot (1 +\frac{1}{3}+\frac{1}{7}+\frac{1}{15}+\frac{1}{31} \ldots )\\
+&< n^2 \cdot (1 +\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16} \ldots )\\
+& = n^2 \cdot  2
+\end{align*}
 \subsubsection{Średnia}
+Ilość porównań dla średniego przypadku zależny od ciągu przyjętego przez algorytm. Ciąg Ciury\cite{shellCiura} nie ma ogólnego wzoru przyjętego dla tego przypadku. Przyjmuje się ze algorytm ten osiąga najlepsza złożoność średnia $O(n \cdot \ln(n))$.
 
 

@@ -67,7 +67,6 @@ int main(int argc, char* argv[] )
 {
     srand((time(0)));
 
-
     el::Loggers::configureFromGlobal("conf/logconf.conf");
 
 
@@ -83,8 +82,8 @@ int main(int argc, char* argv[] )
 //    tester.createTests<TestHeapSort>(5,size1,appendSize);
 //    tester.createTests<TestMergeSort>(5,size1,appendSize);
 //    tester.createTests<TestShellSort>(5,size1,appendSize);
-    tester.createTests<TestQuickSort>(20,size1,appendSize);
-    tester.createTests<TestQuickSortOPTY>(20,size1,appendSize);
+    tester.createTests<TestQuickSort>(30,size1,appendSize);
+    tester.createTests<TestQuickSortOPTY>(30,size1,appendSize);
 //
     tester.performTests();
 
